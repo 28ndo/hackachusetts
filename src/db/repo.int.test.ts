@@ -1,9 +1,8 @@
 // Integration test for PostgresRepo (dispatch-ledger Req 7.4).
 //
-// Skipped automatically when DATABASE_URL is missing, so `npm test` is green
-// with no database. When a database is configured (vitest.config.ts merges
-// .env.local), it applies db/schema.sql and exercises a few Repo methods end
-// to end against real Postgres.
+// Runs only when TEST_DATABASE_URL is set, never against DATABASE_URL: it
+// applies db/schema.sql, which drops every table, so pointing it at the demo
+// database would wipe the seeded demo. Use a separate Neon branch for it.
 
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -12,7 +11,7 @@ import postgres from "postgres";
 import { PostgresRepo } from "@/db/repo";
 import type { Assignment, Report } from "@/core/types";
 
-const url = process.env.DATABASE_URL;
+const url = process.env.TEST_DATABASE_URL;
 
 describe.skipIf(!url)("PostgresRepo (integration)", () => {
   const sql = postgres(url!, { prepare: false });

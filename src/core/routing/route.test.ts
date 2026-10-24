@@ -47,6 +47,12 @@ describe("route() — examples", () => {
     expect(d.confidence).toBe("rule");
   });
 
+  it("sends a signal on a DCR segment to the signal owner, not DCR (DCR doesn't own signals)", () => {
+    const d = route(problem({ serviceFamily: "signal", jurisdictionCode: "3" }), { entities, overrides: [] });
+    expect(d.entityId).toBe("btd-signals");
+    expect(d.confidence).toBe("rule");
+  });
+
   it("sends an unowned family to triage without throwing", () => {
     const d = route(problem({ serviceFamily: "unknown-family" }), { entities, overrides: [] });
     expect(d.entityId).toBe("triage");
@@ -67,6 +73,17 @@ describe("route() — property based", () => {
         expect(typeof d.reason).toBe("string");
         expect(["learned", "jurisdiction", "rule", "triage"]).toContain(d.confidence);
         expect(Array.isArray(d.missing)).toBe(true);
+      }),
+    );
+  });
+
+  it("every non-triage decision goes to an entity that owns the problem's family", () => {
+    fc.assert(
+      fc.property(arbFamily, arbCode, (family, code) => {
+        const d = route(problem({ serviceFamily: family, jurisdictionCode: code }), { entities, overrides: [] });
+        if (d.entityId === "triage") return;
+        const owner = entities.find((e) => e.id === d.entityId);
+        expect(owner?.owns).toContain(family);
       }),
     );
   });

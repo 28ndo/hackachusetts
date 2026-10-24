@@ -1,8 +1,7 @@
 import Image from "next/image";
-import type { Assignment, Entity, Problem, Report } from "@/core/types";
+import type { Assignment, Entity, OutcomeCode, Problem, Report } from "@/core/types";
 import { displayAddress } from "@/app/lib/privacy";
 import { OutcomeButtons } from "@/components/OutcomeButtons";
-import { ResidentPreview } from "@/components/ResidentPreview";
 
 // A single work packet (build-plan §9): description, address (block level for
 // sensitive types), photos (linked to the city's URLs), reporter count and
@@ -16,9 +15,19 @@ interface Props {
   entity: Entity;
   reports: Report[];
   owners: { id: string; name: string }[];
-  residentPreview: { en: string; ht: string };
+  templates: Record<OutcomeCode, { en: string; ht: string }>;
   localeLabels: { en: string; ht: string };
 }
+
+// Human labels for the catalog's machine keys in need/help lists.
+const ITEM_LABELS: Record<string, string> = {
+  streetName: "Street name",
+  nearestCrossStreet: "Nearest cross street",
+  roadSegmentId: "Road segment (MassDOT Road Inventory)",
+  photo: "Photo",
+  reporterCount: "Number of people who reported it",
+};
+const label = (item: string) => ITEM_LABELS[item] ?? item;
 
 function fmt(iso: string): string {
   return new Date(iso).toLocaleDateString("en-US", {
@@ -35,7 +44,7 @@ export function Packet({
   entity,
   reports,
   owners,
-  residentPreview,
+  templates,
   localeLabels,
 }: Props) {
   const lead = reports[0];
@@ -129,7 +138,7 @@ export function Packet({
               <li key={item} className="flex items-start gap-2">
                 <span aria-hidden="true">{missing.includes(item) ? "⚠️" : "✓"}</span>
                 <span className={missing.includes(item) ? "text-amber-700 dark:text-amber-400" : ""}>
-                  {item}
+                  {label(item)}
                   {missing.includes(item) && (
                     <span className="sr-only"> (missing, ask reporter before dispatch)</span>
                   )}
@@ -142,7 +151,7 @@ export function Packet({
           <h3 className="font-medium">Helpful (optional)</h3>
           <ul className="mt-1 space-y-1 text-neutral-600 dark:text-neutral-400">
             {help.map((item) => (
-              <li key={item}>{item}</li>
+              <li key={item}>{label(item)}</li>
             ))}
           </ul>
         </div>
@@ -152,9 +161,9 @@ export function Packet({
         assignmentId={assignment.id}
         entityId={entity.id}
         owners={owners}
+        templates={templates}
+        localeLabels={localeLabels}
       />
-
-      <ResidentPreview messages={residentPreview} labels={localeLabels} />
     </article>
   );
 }

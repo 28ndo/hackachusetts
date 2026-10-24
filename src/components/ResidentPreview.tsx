@@ -3,11 +3,11 @@
 import { useState } from "react";
 
 // The resident preview panel (build-plan §5b): shows the plain-language message
-// reporters will receive, with an English / Haitian Creole switch. Messages are
-// precomputed on the server (locale files are read there) and passed in.
+// reporters will receive for the picked outcome, with an English / Haitian
+// Creole switch. `messages` is null until an outcome is picked.
 
 interface Props {
-  messages: { en: string; ht: string };
+  messages: { en: string; ht: string } | null;
   labels: { en: string; ht: string };
 }
 
@@ -45,9 +45,15 @@ export function ResidentPreview({ messages, labels }: Props) {
           ))}
         </div>
       </div>
-      <p className="text-sm text-neutral-800 dark:text-neutral-200" lang={locale}>
-        {messages[locale]}
-      </p>
+      {messages ? (
+        <p className="text-sm text-neutral-800 dark:text-neutral-200" lang={locale}>
+          {messages[locale]}
+        </p>
+      ) : (
+        <p className="text-sm text-neutral-500">
+          Pick an outcome to see the message every reporter gets, instead of &ldquo;Noted&rdquo;.
+        </p>
+      )}
       <p className="mt-2 text-xs text-neutral-500">
         Machine-drafted, pending city language review.
       </p>

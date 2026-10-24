@@ -3,10 +3,12 @@
 import { useState } from "react";
 import type { OutcomeCode } from "@/core/types";
 import { submitOutcome } from "@/app/actions";
+import { ResidentPreview } from "@/components/ResidentPreview";
 
 // The 9 one-tap outcome buttons (build-plan §6). Codes that need input reveal a
 // small inline form (date, owner picker, or note) before submitting. Each
-// submit posts to the submitOutcome server action.
+// submit posts to the submitOutcome server action. Below the form, the resident
+// preview shows the picked code's message, filled live from the form inputs.
 
 interface OwnerOption {
   id: string;
@@ -17,6 +19,8 @@ interface Props {
   assignmentId: string;
   entityId: string;
   owners: OwnerOption[]; // candidates for a NOT_OURS reroute
+  templates: Record<OutcomeCode, { en: string; ht: string }>;
+  localeLabels: { en: string; ht: string };
 }
 
 type Field = "scheduledFor" | "newOwnerId" | "note";
@@ -33,9 +37,23 @@ const CODES: { code: OutcomeCode; label: string; fields: Field[] }[] = [
   { code: "NEEDS_INFO", label: "Needs info", fields: ["note"] },
 ];
 
-export function OutcomeButtons({ assignmentId, entityId, owners }: Props) {
+export function OutcomeButtons({ assignmentId, entityId, owners, templates, localeLabels }: Props) {
   const [active, setActive] = useState<OutcomeCode | null>(null);
+  const [date, setDate] = useState("");
+  const [ownerId, setOwnerId] = useState("");
+  const [note, setNote] = useState("");
   const current = CODES.find((c) => c.code === active);
+
+  // Same placeholders and fallbacks as fillTemplate() in src/core/locales.ts,
+  // which builds the message actually stored with the outcome.
+  const fill = (tpl: string) =>
+    tpl
+      .replaceAll("{date}", date || "a date to be confirmed")
+      .replaceAll("{owner}", owners.find((o) => o.id === ownerId)?.name ?? "the right department")
+      .replaceAll("{note}", note);
+  const preview = active
+    ? { en: fill(templates[active].en), ht: fill(templates[active].ht) }
+    : null;
 
   return (
     <section aria-labelledby="outcomes-heading" className="space-y-3">
@@ -74,6 +92,8 @@ export function OutcomeButtons({ assignmentId, entityId, owners }: Props) {
                 type="date"
                 name="scheduledFor"
                 required
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
                 className="w-full rounded border border-neutral-400 px-2 py-1 dark:border-neutral-600 dark:bg-neutral-900"
               />
             </label>
@@ -85,7 +105,8 @@ export function OutcomeButtons({ assignmentId, entityId, owners }: Props) {
               <select
                 name="newOwnerId"
                 required
-                defaultValue=""
+                value={ownerId}
+                onChange={(e) => setOwnerId(e.target.value)}
                 className="w-full rounded border border-neutral-400 px-2 py-1 dark:border-neutral-600 dark:bg-neutral-900"
               >
                 <option value="" disabled>
@@ -107,6 +128,8 @@ export function OutcomeButtons({ assignmentId, entityId, owners }: Props) {
                 name="note"
                 rows={2}
                 required
+                value={note}
+                onChange={(e) => setNote(e.target.value)}
                 className="w-full rounded border border-neutral-400 px-2 py-1 dark:border-neutral-600 dark:bg-neutral-900"
               />
             </label>
@@ -120,6 +143,8 @@ export function OutcomeButtons({ assignmentId, entityId, owners }: Props) {
           </button>
         </form>
       )}
+
+      <ResidentPreview messages={preview} labels={localeLabels} />
     </section>
   );
 }

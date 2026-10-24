@@ -23,7 +23,7 @@ import { addReport } from "@/ledger/cluster";
 
 type Sql = ReturnType<typeof getSql>;
 
-interface ProblemRow {
+export interface ProblemRow {
   id: string;
   service_family: string;
   lat: number;
@@ -41,7 +41,7 @@ interface ProblemRow {
   priority: Priority;
 }
 
-interface AssignmentRow {
+export interface AssignmentRow {
   id: string;
   problem_id: string;
   entity_id: string;
@@ -54,7 +54,7 @@ interface AssignmentRow {
   state: AssignmentState;
 }
 
-interface ReportRow {
+export interface ReportRow {
   id: string;
   source: string;
   service_name: string;
@@ -81,7 +81,7 @@ function iso(d: Date | string): string {
   return typeof d === "string" ? d : d.toISOString();
 }
 
-function toProblem(r: ProblemRow): Problem {
+export function toProblem(r: ProblemRow): Problem {
   return {
     id: r.id,
     serviceFamily: r.service_family,
@@ -102,7 +102,7 @@ function toProblem(r: ProblemRow): Problem {
   };
 }
 
-function toAssignment(r: AssignmentRow): Assignment {
+export function toAssignment(r: AssignmentRow): Assignment {
   return {
     id: r.id,
     problemId: r.problem_id,
@@ -117,7 +117,7 @@ function toAssignment(r: AssignmentRow): Assignment {
   };
 }
 
-function toReport(r: ReportRow): Report {
+export function toReport(r: ReportRow): Report {
   return {
     id: r.id,
     source: r.source as Report["source"],
@@ -327,7 +327,15 @@ export class PostgresRepo implements Repo {
     const overrides = await this.listOverrides();
     const decision = route(problem, { entities, overrides });
     const owner = entities.find((e) => e.id === decision.entityId);
-    if (owner) {
+    // A re-report on a problem that already has an open packet is one more
+    // person waiting, not a new packet: don't create a duplicate assignment.
+    const [open] = isExisting
+      ? await this.sql`
+          select 1 from assignments
+          where problem_id = ${problem.id} and state not in ('closed', 'rerouted')
+          limit 1`
+      : [];
+    if (owner && !open) {
       const prio = priority(problem, owner, new Date(report.requestedAt));
       await this.sql`update problems set priority = ${this.sql.json(prio as unknown as Record<string, never>)}, status = 'routed' where id = ${problem.id}`;
       problem.priority = prio;

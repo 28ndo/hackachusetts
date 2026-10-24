@@ -2,14 +2,14 @@ import { defineConfig } from "vitest/config";
 import { loadEnv } from "vite";
 import { fileURLToPath } from "node:url";
 
-// Vitest does not load .env.local into process.env the way Next.js does, so the
-// Postgres integration test (skipped when DATABASE_URL is missing) can't see it
-// by default. loadEnv(mode, dir, "") reads .env, .env.local, .env.<mode> and
+// Vitest does not load .env.local into process.env the way Next.js does.
+// Only TEST_DATABASE_URL is passed through: the Postgres integration test drops
+// and recreates every table, so it must never see the demo DATABASE_URL.
+// loadEnv(mode, dir, "") reads .env, .env.local, .env.<mode> and
 // .env.<mode>.local with no prefix filter; "test" is the mode vitest runs under.
-// ("local" is rejected by Vite because it collides with the .local suffix.)
 const env = loadEnv("test", process.cwd(), "");
-for (const key of ["DATABASE_URL", "DATABASE_URL_UNPOOLED"]) {
-  if (env[key] && !process.env[key]) process.env[key] = env[key];
+if (env.TEST_DATABASE_URL && !process.env.TEST_DATABASE_URL) {
+  process.env.TEST_DATABASE_URL = env.TEST_DATABASE_URL;
 }
 
 export default defineConfig({

@@ -1,26 +1,26 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { loadEntities } from "@/core/entities";
-import { getRankedInbox, getReportsForProblem } from "@/app/lib/views";
-import { localeLabel, residentMessageFor } from "@/core/locales";
-import type { Outcome, Report } from "@/core/types";
+import { getRankedInbox } from "@/app/lib/views";
+import { localeLabel, outcomeTemplate } from "@/core/locales";
+import type { OutcomeCode } from "@/core/types";
 import { EntitySwitcher } from "@/components/EntitySwitcher";
 import { Packet } from "@/components/Packet";
 import { ReplayButton } from "@/components/ReplayButton";
 
 export const dynamic = "force-dynamic";
 
-// A sample outcome to render the resident preview (the common "fixed" message).
-function previewOutcome(assignmentId: string): Outcome {
-  return {
-    id: "preview",
-    assignmentId,
-    code: "FIXED",
-    scheduledFor: "2026-11-03",
-    by: "preview",
-    at: "2026-10-24T18:48:00Z",
-  };
-}
+const CODES: OutcomeCode[] = [
+  "FIXED",
+  "MADE_SAFE",
+  "SCHEDULED",
+  "DEFERRED_CAPITAL",
+  "NOT_OURS",
+  "NOT_FOUND",
+  "PRIVATE_PROPERTY",
+  "DUPLICATE",
+  "NEEDS_INFO",
+];
 
 export default async function InboxPage({
   params,
@@ -32,19 +32,20 @@ export default async function InboxPage({
   const entity = entities.find((e) => e.id === entityId);
   if (!entity) notFound();
 
-  const items = await getRankedInbox(entityId);
+  const { items, total } = await getRankedInbox(entityId);
 
-  // Load member reports for each problem (for photos, description, address).
-  const reportsByProblem = new Map<string, Report[]>();
-  for (const it of items) {
-    reportsByProblem.set(it.problem.id, await getReportsForProblem(it.problem.id));
-  }
-
-  // Candidate reroute owners: state agencies and utilities (NOT_OURS targets).
+  // Candidate reroute owners for NOT_OURS: every other entity, city departments
+  // included (a signal misrouted to DCR goes back to the city's signal team).
   const owners = entities
-    .filter((e) => e.id !== entityId && e.kind !== "city_dept")
+    .filter((e) => e.id !== entityId)
     .map((e) => ({ id: e.id, name: e.name }));
 
+  // Raw resident-message templates per code; the outcome form fills {date},
+  // {owner} and {note} live as the entity types, so the preview matches what
+  // reporters will receive.
+  const templates = Object.fromEntries(
+    CODES.map((c) => [c, { en: outcomeTemplate(c, "en"), ht: outcomeTemplate(c, "ht") }]),
+  ) as Record<OutcomeCode, { en: string; ht: string }>;
   const labels = { en: localeLabel("en"), ht: localeLabel("ht") };
 
   return (
@@ -59,7 +60,8 @@ export default async function InboxPage({
         <div>
           <h1 className="text-xl font-semibold">{entity.name}</h1>
           <p className="text-sm text-neutral-600 dark:text-neutral-400">
-            {items.length} open {items.length === 1 ? "packet" : "packets"}, ranked by priority
+            {total.toLocaleString()} open {total === 1 ? "packet" : "packets"}, ranked by priority
+            {total > items.length && ` · showing the top ${items.length}`}
           </p>
         </div>
         <EntitySwitcher
@@ -84,30 +86,22 @@ export default async function InboxPage({
         </p>
       ) : (
         <ol className="space-y-5">
-          {items.map((it) => {
-            const sample = previewOutcome(it.assignment.id);
-            return (
-              <li key={it.assignment.id}>
-                <Packet
-                  rank={it.rank}
-                  assignment={it.assignment}
-                  problem={it.problem}
-                  entity={entity}
-                  reports={reportsByProblem.get(it.problem.id) ?? []}
-                  owners={owners}
-                  residentPreview={{
-                    en: residentMessageFor("FIXED", sample, "en"),
-                    ht: residentMessageFor("FIXED", sample, "ht"),
-                  }}
-                  localeLabels={labels}
-                />
-              </li>
-            );
-          })}
+          {items.map((it) => (
+            <li key={it.assignment.id}>
+              <Packet
+                rank={it.rank}
+                assignment={it.assignment}
+                problem={it.problem}
+                entity={entity}
+                reports={it.reports}
+                owners={owners}
+                templates={templates}
+                localeLabels={labels}
+              />
+            </li>
+          ))}
         </ol>
       )}
     </main>
   );
 }
-
-

@@ -9,9 +9,11 @@ import type {
 // "reason". route() never throws and fills `missing` from the owner's `need`.
 //
 //   1. Learned override for this family + road segment (or ~50 m area key).
-//   2. Jurisdiction: jurisdictionCode 1 → MassDOT, 3 → DCR; 0 or H → private
-//      (the PRIVATE_PROPERTY path — no city entity owns it).
-//   3. Service family via entity.owns.
+//   2. Jurisdiction: jurisdictionCode 1 → MassDOT, 3 → DCR, but only when that
+//      agency owns the family (a signal on a DCR road still goes to signals);
+//      0 or H → private (the PRIVATE_PROPERTY path — no city entity owns it).
+//   3. Service family via entity.owns, preferring an owner whose jurisdiction
+//      codes match the road.
 //   4. Triage: never drop a problem.
 
 const JURISDICTION_ENTITY: Record<string, string> = {
@@ -73,7 +75,7 @@ export function route(
     const entityId = JURISDICTION_ENTITY[code];
     if (entityId) {
       const owner = byId(entityId);
-      if (owner) {
+      if (owner && owner.owns.includes(problem.serviceFamily)) {
         return {
           entityId,
           queue: owner.queues[0],
@@ -85,8 +87,14 @@ export function route(
     }
   }
 
-  // 3. Service family.
-  const owner = ctx.entities.find((e) => e.owns.includes(problem.serviceFamily));
+  // 3. Service family. Skip owners whose jurisdiction codes rule this road out
+  //    (e.g. DCR for a city street); owners without codes always qualify.
+  const owners = ctx.entities.filter((e) => e.owns.includes(problem.serviceFamily));
+  const fits = (e: Entity) =>
+    code === undefined ||
+    !e.where?.jurisdictionCodes ||
+    e.where.jurisdictionCodes.includes(code);
+  const owner = owners.find(fits) ?? owners.find((e) => e.kind === "city_dept") ?? owners[0];
   if (owner) {
     return {
       entityId: owner.id,

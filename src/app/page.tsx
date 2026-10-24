@@ -33,6 +33,11 @@ export default async function Home() {
           <span aria-hidden="true">→</span>{" "}
           <strong>{overview.totalRouted.toLocaleString()}</strong> routed
         </p>
+        <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
+          Every real Boston 311 report from Sep 24 to Oct 24, 2026. Problems cover the
+          seven types we route: potholes, streetlights, sidewalks, trees, traffic signals,
+          signs and wires.
+        </p>
         {!overview.hasDatabase && (
           <p className="mt-1 text-xs text-amber-700 dark:text-amber-400">
             Running on in-memory fixtures (no DATABASE_URL). Seed Postgres for live counts.
@@ -68,11 +73,13 @@ export default async function Home() {
         <div className="overflow-x-auto">
           <table className="w-full border-collapse text-sm">
             <caption className="sr-only">
-              Reroute rate and not-found share per entity
+              Open packets, share overdue, reroute rate and not-found share per entity
             </caption>
             <thead>
               <tr className="border-b border-neutral-300 text-left dark:border-neutral-700">
                 <th scope="col" className="py-2 pr-4">Entity</th>
+                <th scope="col" className="py-2 pr-4">Open</th>
+                <th scope="col" className="py-2 pr-4">Overdue</th>
                 <th scope="col" className="py-2 pr-4">Reroute rate</th>
                 <th scope="col" className="py-2 pr-4">Not-found share</th>
               </tr>
@@ -86,6 +93,8 @@ export default async function Home() {
                   <th scope="row" className="py-2 pr-4 font-normal">
                     {row.name}
                   </th>
+                  <td className="py-2 pr-4">{row.open.toLocaleString()}</td>
+                  <td className="py-2 pr-4">{pct(row.overdueShare)}</td>
                   <td className="py-2 pr-4">{pct(row.rerouteRate)}</td>
                   <td className="py-2 pr-4">{pct(row.notFoundShare)}</td>
                 </tr>
