@@ -1,0 +1,11 @@
+# Files Kiro's agent must not read. Takes effect via kiroAgent.agentIgnoreFiles in .vscode/settings.json.
+
+# Secrets: the agent works from .env.example, never the real values
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# 434KB minified site bundle; research/challenges.md is the readable version
+hackathon webpage.js

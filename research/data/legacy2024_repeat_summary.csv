@@ -1,0 +1,13 @@
+method,eligible_cases,repeat_cases,repeat_pct
+"A all types, geo 4dp(~10m), 14d",305523,65646,21.49
+"B all types, geo 3dp(~100m), 14d",305523,119460,39.1
+"C all types, location text exact, 14d",304950,62685,20.56
+"D excl scheduling/enforcement types, geo 4dp, 14d",154732,24175,15.62
+"E excl scheduling/enforcement types, geo 3dp, 14d",154732,42140,27.23
+"F persistent-condition types, geo 4dp, 14d",108329,19521,18.02
+"G persistent-condition types, geo 3dp, 14d",108329,34400,31.76
+"H persistent-condition types, geo 4dp, 14d, prior still open",108329,10212,9.43
+"I persistent-condition types, geo 3dp, 14d, prior still open",108329,19036,17.57
+"J citizen-reported only, persistent types, geo 4dp, 14d",54246,7584,13.98
+K all types by type table (geo 4dp 14d),305523,65646,21.49
+L persistent types geo 4dp 14d prior still open (per type),108329,10212,9.43

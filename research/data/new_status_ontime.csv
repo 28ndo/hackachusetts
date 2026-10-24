@@ -1,0 +1,9 @@
+case_status,on_time,n
+Closed,ONTIME,54184
+Closed,OVERDUE,12067
+Create,ONTIME,2
+In progress,ONTIME,1740
+In progress,OVERDUE,7840
+Needs Reallocation,ONTIME,12
+Needs Reallocation,OVERDUE,4
+Submit,OVERDUE,2

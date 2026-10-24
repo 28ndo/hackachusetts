@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Log finished spec tasks",
+      "trigger": "PostTaskExec",
+      "description": "Appends a row to the spec task trail in KIRO_LOG.md each time Kiro finishes a spec task, as evidence for the Kiro write-up.",
+      "action": {
+        "type": "command",
+        "command": "node .kiro/scripts/log-spec-task.mjs",
+        "timeout": 10
+      }
+    }
+  ]
+}

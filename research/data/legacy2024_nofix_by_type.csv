@@ -1,0 +1,31 @@
+type,closed_cases,lower_nofix,lower_pct,upper_pct,noted_code_pct
+Parking Enforcement,48098,3015,6.3,51.8,46.4
+Unsatisfactory Living Conditions,1670,451,27.0,37.7,49.0
+Illegal Dumping,2995,1082,36.1,36.6,62.2
+Sidewalk Repair (Make Safe),2286,645,28.2,31.1,29.0
+Sign Repair,4733,1401,29.6,30.0,10.7
+Abandoned Vehicles,4724,1232,26.1,27.7,12.6
+Pest Infestation - Residential,1855,393,21.2,26.3,72.2
+Improper Storage of Trash (Barrels),20394,5123,25.1,25.6,57.5
+Animal Generic Request,3199,817,25.5,25.6,12.1
+CE Collection,18065,295,1.6,25.5,33.4
+Traffic Signal Inspection,3933,819,20.8,21.2,20.1
+Missed Trash/Recycling/Yard Waste/Bulk Item,10591,1984,18.7,18.9,50.1
+Poor Conditions of Property,8722,1570,18.0,18.4,58.9
+Unshoveled Sidewalk,3784,618,16.3,16.5,51.4
+New Tree Requests,2505,387,15.4,15.4,27.4
+Request for Pothole Repair,7293,1014,13.9,15.0,12.1
+Rodent Activity,4965,715,14.4,14.9,83.9
+Pick up Dead Animal,8037,1162,14.5,14.7,11.1
+Tree Maintenance Requests,8406,1022,12.2,12.2,15.9
+Requests for Street Cleaning,21367,2157,10.1,12.0,16.9
+Equipment Repair,2582,219,8.5,11.0,13.1
+Request for Recycling Cart,4079,409,10.0,10.0,1.0
+Ground Maintenance,3372,284,8.4,9.6,10.0
+Empty Litter Basket,2463,197,8.0,9.3,15.8
+Mattress_Pickup,8534,669,7.8,7.9,0.5
+Graffiti Removal,2489,178,7.2,7.2,5.9
+Needle Pickup,10730,633,5.9,5.9,1.9
+Street Light Outages,3653,140,3.8,3.8,1.9
+Recycling Cart Return,4140,91,2.2,2.2,0.2
+Sticker Request,2434,48,2.0,2.1,29.3

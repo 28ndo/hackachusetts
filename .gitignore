@@ -1,0 +1,23 @@
+# Do NOT add .kiro/ here: the rules require it in the repo, and ignoring it can disqualify us.
+
+# Dependencies and build output
+node_modules/
+dist/
+build/
+coverage/
+.vite/
+__pycache__/
+.venv/
+
+# Secrets (commit .env.example, never .env)
+.env
+.env.*
+!.env.example
+
+# OS and editor noise
+.DS_Store
+*.log
+
+# Reference material we don't own; keep it out of the public repo
+HACKACHUSETTS - Rules.pdf
+hackathon webpage.js

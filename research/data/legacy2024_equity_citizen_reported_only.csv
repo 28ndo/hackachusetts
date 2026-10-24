@@ -1,0 +1,96 @@
+type,neighborhood,citizen_cases,ontime_pct,pct_closed,median_h,p90_h
+Request for Pothole Repair,Charlestown,184,19.6,53.3,46.6,244.8
+Request for Pothole Repair,Back Bay,569,21.6,45.2,44.6,265.6
+Request for Pothole Repair,Downtown / Financial District,470,22.3,52.6,48.8,575.4
+Request for Pothole Repair,Beacon Hill,129,24.8,58.1,66.7,320.5
+Request for Pothole Repair,Jamaica Plain,374,28.1,70.1,67.1,338.5
+Request for Pothole Repair,South End,334,32.0,56.3,23.7,195.2
+Request for Pothole Repair,Fenway / Kenmore / Audubon Circle / Longwood,200,34.0,62.5,39.7,145.7
+Request for Pothole Repair,Allston / Brighton,613,34.4,69.7,44.4,391.6
+Request for Pothole Repair,South Boston / South Boston Waterfront,360,35.0,56.1,22.4,1180.6
+Request for Pothole Repair,West Roxbury,217,36.4,76.0,38.1,217.2
+Request for Pothole Repair,Roslindale,169,40.2,75.1,46.5,261.6
+Request for Pothole Repair,Roxbury,352,40.3,72.2,42.7,131.8
+Request for Pothole Repair,Dorchester,443,44.5,73.1,23.7,327.8
+Request for Pothole Repair,Greater Mattapan,184,54.9,81.0,21.6,147.2
+Request for Pothole Repair,Hyde Park,152,59.9,75.0,16.3,174.4
+Request for Pothole Repair,East Boston,144,70.8,82.6,6.4,71.6
+Street Light Outages,Beacon Hill,114,31.6,98.2,1390.8,4587.2
+Street Light Outages,South Boston / South Boston Waterfront,114,33.3,71.9,622.1,4928.7
+Street Light Outages,East Boston,106,38.7,82.1,440.8,4525.5
+Street Light Outages,Charlestown,216,42.1,92.6,571.0,4622.4
+Street Light Outages,Back Bay,253,43.1,92.9,491.1,4964.8
+Street Light Outages,Downtown / Financial District,136,43.4,77.9,213.9,4537.4
+Street Light Outages,Dorchester,256,44.9,84.8,162.1,4389.9
+Street Light Outages,South End,182,45.6,94.0,419.5,3207.0
+Street Light Outages,Roxbury,150,48.7,96.0,333.0,2623.4
+Sidewalk Repair (Make Safe),Beacon Hill,224,5.8,51.3,3187.7,9896.0
+Sidewalk Repair (Make Safe),South End,423,9.0,27.9,467.6,11155.6
+Sidewalk Repair (Make Safe),Allston / Brighton,307,11.4,27.4,71.1,6935.0
+Sidewalk Repair (Make Safe),Roxbury,245,12.7,24.1,40.2,2698.5
+Sidewalk Repair (Make Safe),Back Bay,250,12.8,34.4,142.0,12078.7
+Sidewalk Repair (Make Safe),Fenway / Kenmore / Audubon Circle / Longwood,104,16.3,27.9,37.8,11156.1
+Sidewalk Repair (Make Safe),Downtown / Financial District,284,17.3,40.5,115.9,6074.3
+Sidewalk Repair (Make Safe),Greater Mattapan,136,17.6,24.3,4.9,13514.6
+Sidewalk Repair (Make Safe),Charlestown,140,19.3,45.0,91.8,15903.1
+Sidewalk Repair (Make Safe),Jamaica Plain,201,19.4,39.3,61.3,2244.6
+Sidewalk Repair (Make Safe),Dorchester,399,20.1,34.8,27.9,8234.4
+Sidewalk Repair (Make Safe),Roslindale,136,21.3,49.3,47.1,783.2
+Sidewalk Repair (Make Safe),South Boston / South Boston Waterfront,201,21.9,48.8,90.7,8461.9
+Sidewalk Repair (Make Safe),East Boston,161,25.5,49.7,66.0,12039.4
+Sidewalk Repair (Make Safe),West Roxbury,190,34.2,61.1,67.9,276.9
+Missed Trash/Recycling/Yard Waste/Bulk Item,Greater Mattapan,445,94.8,100.0,4.0,22.1
+Missed Trash/Recycling/Yard Waste/Bulk Item,Hyde Park,522,95.0,100.0,13.1,29.9
+Missed Trash/Recycling/Yard Waste/Bulk Item,East Boston,191,96.9,100.0,13.7,22.4
+Missed Trash/Recycling/Yard Waste/Bulk Item,Roslindale,466,97.0,100.0,9.7,20.8
+Missed Trash/Recycling/Yard Waste/Bulk Item,Roxbury,634,97.3,100.0,12.5,21.1
+Missed Trash/Recycling/Yard Waste/Bulk Item,Dorchester,1052,97.5,100.0,10.0,25.6
+Missed Trash/Recycling/Yard Waste/Bulk Item,West Roxbury,404,97.8,100.0,2.4,24.8
+Missed Trash/Recycling/Yard Waste/Bulk Item,Allston / Brighton,773,97.8,100.0,14.3,24.6
+Missed Trash/Recycling/Yard Waste/Bulk Item,Jamaica Plain,577,98.1,100.0,11.5,26.5
+Missed Trash/Recycling/Yard Waste/Bulk Item,South Boston / South Boston Waterfront,245,98.4,100.0,2.9,17.0
+Missed Trash/Recycling/Yard Waste/Bulk Item,South End,226,99.1,100.0,11.3,37.7
+Missed Trash/Recycling/Yard Waste/Bulk Item,Downtown / Financial District,128,100.0,100.0,1.8,17.6
+Missed Trash/Recycling/Yard Waste/Bulk Item,Beacon Hill,126,100.0,100.0,3.2,18.2
+Missed Trash/Recycling/Yard Waste/Bulk Item,Charlestown,162,100.0,100.0,8.7,15.7
+Rodent Activity,Roxbury,251,96.8,97.2,38.3,138.9
+Rodent Activity,South Boston / South Boston Waterfront,160,96.9,96.9,28.9,83.5
+Rodent Activity,Downtown / Financial District,110,97.3,98.2,19.8,73.6
+Rodent Activity,South End,233,97.9,98.3,23.8,98.5
+Rodent Activity,Roslindale,102,98.0,98.0,20.4,88.6
+Rodent Activity,Jamaica Plain,173,98.8,99.4,28.5,114.9
+Rodent Activity,East Boston,161,98.8,98.8,19.1,66.7
+Rodent Activity,Greater Mattapan,108,99.1,100.0,26.5,113.5
+Rodent Activity,Dorchester,358,99.2,99.2,21.9,91.2
+Rodent Activity,Back Bay,186,99.5,99.5,37.4,104.4
+Rodent Activity,Allston / Brighton,364,99.5,99.5,19.2,87.2
+Parking Enforcement,Hyde Park,437,25.4,70.0,71.2,262.1
+Parking Enforcement,West Roxbury,330,27.6,67.9,69.9,250.8
+Parking Enforcement,Jamaica Plain,1142,32.3,73.6,46.3,219.8
+Parking Enforcement,Charlestown,949,33.7,73.6,41.6,209.4
+Parking Enforcement,Roslindale,756,35.4,70.1,41.3,197.7
+Parking Enforcement,Roxbury,1295,40.1,73.1,24.3,213.7
+Parking Enforcement,Greater Mattapan,323,40.6,70.6,24.8,160.9
+Parking Enforcement,East Boston,1713,40.9,73.3,25.1,170.5
+Parking Enforcement,Mission Hill,224,41.5,67.9,17.0,173.7
+Parking Enforcement,Beacon Hill,380,41.8,67.4,20.8,162.4
+Parking Enforcement,Downtown / Financial District,1363,44.7,74.4,18.4,169.2
+Parking Enforcement,Fenway / Kenmore / Audubon Circle / Longwood,531,45.4,77.4,19.6,148.7
+Parking Enforcement,South End,1528,45.7,73.6,18.4,167.5
+Parking Enforcement,Back Bay,857,48.2,73.0,15.3,160.0
+Parking Enforcement,Dorchester,2590,48.7,77.3,18.5,172.5
+Parking Enforcement,Allston / Brighton,2166,53.9,78.3,11.7,155.1
+Parking Enforcement,South Boston / South Boston Waterfront,2652,57.4,80.1,9.1,159.2
+Sign Repair,Back Bay,125,45.6,78.4,258.4,4020.8
+Sign Repair,Downtown / Financial District,194,47.4,84.0,254.0,5325.9
+Sign Repair,West Roxbury,147,50.3,91.2,317.4,2282.0
+Sign Repair,South End,145,51.7,80.7,256.5,2436.9
+Sign Repair,Charlestown,113,57.5,95.6,256.4,1570.0
+Sign Repair,Jamaica Plain,312,64.7,93.3,139.4,1525.3
+Sign Repair,Roslindale,168,66.7,92.3,119.6,1458.7
+Sign Repair,East Boston,163,67.5,90.2,119.3,1082.4
+Sign Repair,Hyde Park,129,69.0,92.2,114.9,2267.8
+Sign Repair,Allston / Brighton,482,69.7,91.5,159.4,960.2
+Sign Repair,Dorchester,345,70.1,89.0,99.0,916.3
+Sign Repair,South Boston / South Boston Waterfront,221,72.4,85.1,94.4,443.8
+Sign Repair,Roxbury,173,79.8,94.8,101.8,504.3

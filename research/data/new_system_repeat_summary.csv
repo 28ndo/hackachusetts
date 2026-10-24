@@ -1,0 +1,7 @@
+method,eligible,repeats,pct
+all topics geo4dp 14d,75762,7853,10.37
+all topics geo3dp 14d,75762,21752,28.71
+persistent topics geo4dp 14d,25679,2458,9.57
+persistent topics geo3dp 14d,25679,6227,24.25
+persistent topics geo4dp 14d prior-still-open,25679,1519,5.92
+persistent topics geo3dp 14d prior-still-open,25679,4106,15.99

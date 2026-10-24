@@ -1,0 +1,26 @@
+category,closed_cases,pct_of_closed_2024,bucket
+Resolved,143485,55.87,
+Noted: action recorded (citation/serviced/referred/scheduled),28324,11.03,
+"Noted: BTD parking ""thank you"" boilerplate",21767,8.47,upper_extra
+Noted: other free text,13006,5.06,
+Other: mattress automation (service scheduled),7660,2.98,
+Noted: nothing found / no violation,7088,2.76,lower
+"Invalid: other (form error, wrong type/address, blank)",6584,2.56,lower
+Noted: blank text,6551,2.55,upper_extra
+Resolved (coded) but text says nothing found / no violation,6362,2.48,lower
+Duplicate,5820,2.27,lower
+Noted: not city responsibility (private/DCR/MBTA/etc.),1922,0.75,lower
+Noted: duplicate / already reported,1507,0.59,lower
+Invalid: not enough info / resubmit,1473,0.57,lower
+Noted: not enough info / resubmit,1394,0.54,lower
+Other: free text,1188,0.46,
+Other: referred to external agency / reallocated,962,0.37,lower
+Other: form error / test / blank,522,0.2,lower
+Other: not enough info / resubmit,404,0.16,lower
+No closure_reason (closed),321,0.12,
+Other: not city responsibility (private/etc.),299,0.12,lower
+"Other: auto-closed ""we apologize for the time it has taken...""",196,0.08,lower
+"Noted: auto-closed ""we apologize...""",3,0.0,lower
+TOTAL closed 2024,256838,100,
+LOWER-bound no-fix (explicit),34536,13.45,
+UPPER-bound no-fix (+BTD boilerplate +blank Noted),62854,24.47,

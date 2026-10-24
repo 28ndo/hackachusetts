@@ -1,0 +1,16 @@
+assigned_department,n,ontime_pct,med_h_closed,p90_h_closed
+Public Works Department (PWD),46266,76.9,10.4,88.0
+Parks & Recreation,13663,54.7,23.7,786.7
+Animal Care & Control,8198,81.9,4.3,71.0
+Boston Transportation Department (BTD),3972,73.5,5.2,86.6
+Boston 311,1725,95.4,0.4,2.2
+Boston Public Health Commission (BPHC),1265,96.2,0.9,3.1
+City of Boston Property Management,563,53.3,39.9,250.3
+,185,36.8,117.7,3778.7
+Boston Police Department (BPD),4,100.0,7.1,7.8
+MBTA (Mass Bay Transit Authority),2,100.0,0.1,0.1
+Mass DCR,2,100.0,1.9,3.2
+Neighborhood Services,2,100.0,0.2,0.2
+Boston Fire Department (BFD),2,100.0,0.1,0.1
+Mayor's Office of Housing (MOH),1,100.0,0.1,0.1
+Eversource,1,100.0,0.1,0.1

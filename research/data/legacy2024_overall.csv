@@ -1,0 +1,2 @@
+group,cases,pct_of_all,ontime_pct_label,with_sla,ontime_pct_sla_only,pct_still_open,closed,median_h_to_close,p90_h_to_close
+ALL,306756,100.0,76.5,258125,72.0,16.3,256838,12.6,412.2

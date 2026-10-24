@@ -1,0 +1,18 @@
+neighborhood,sla_cases,ontime_pct,expected_given_type_mix,gap_pts
+Jamaica Plain,16019,64.7,70.0,-5.3
+West Roxbury,7710,69.1,72.8,-3.8
+Charlestown,8524,61.0,64.6,-3.6
+Fenway / Kenmore / Audubon Circle / Longwood,4998,63.9,66.6,-2.6
+Roslindale,8626,68.9,71.4,-2.5
+Back Bay,13215,73.9,76.3,-2.3
+Downtown / Financial District,14306,70.8,72.4,-1.6
+Hyde Park,9079,70.1,70.8,-0.7
+South End,17637,76.8,77.4,-0.6
+Greater Mattapan,9877,74.2,74.7,-0.4
+Beacon Hill,9584,83.9,83.9,-0.1
+Roxbury,20536,74.0,74.0,0.0
+East Boston,17470,71.3,70.5,0.8
+Mission Hill,4802,77.8,76.8,1.0
+Dorchester,33144,73.3,72.3,1.1
+Allston / Brighton,24454,74.7,73.1,1.6
+South Boston / South Boston Waterfront,25057,70.8,64.4,6.4

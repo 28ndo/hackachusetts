@@ -1,0 +1,11 @@
+subject,cases,pct_of_all,ontime_pct_label,with_sla,ontime_pct_sla_only,pct_still_open,closed,median_h_to_close,p90_h_to_close
+Public Works Department,165199,53.85,86.3,135719,83.4,17.1,136981,5.2,162.7
+Transportation - Traffic Division,81063,26.43,49.2,80400,48.8,20.6,64329,23.9,507.0
+Parks & Recreation Department,19715,6.43,88.4,19293,88.2,6.4,18462,61.4,4107.2
+Inspectional Services,19185,6.25,74.2,19184,74.2,8.5,17546,63.6,2832.7
+Mayor's 24 Hour Hotline,13114,4.28,96.4,1028,53.7,4.8,12478,0.9,18.7
+Animal Control,3597,1.17,100.0,0,,9.0,3274,18.9,99.0
+Property Management,2501,0.82,68.8,2501,68.8,0.5,2489,596.7,3876.3
+Boston Water & Sewer Commission,1600,0.52,100.0,0,,28.0,1152,163.3,1011.0
+Boston Police Department,766,0.25,100.0,0,,84.2,121,13.7,81.9
+Neighborhood Services,16,0.01,100.0,0,,62.5,6,0.1,8944.3

@@ -1,0 +1,84 @@
+topic,neighborhood,cases,ontime_pct,pct_closed,median_h,p90_h,call_share_pct
+Pothole,Jamaica Plain,178,14.0,70.2,67.2,281.2,29.0
+Pothole,Fenway,101,24.8,74.3,45.2,222.6,17.0
+Pothole,Roxbury,185,25.9,76.2,42.3,154.9,38.0
+Pothole,Downtown,187,27.3,76.5,55.9,264.1,13.0
+Pothole,Dorchester,225,27.6,83.6,60.8,356.4,36.0
+Pothole,Brighton,135,28.1,83.0,68.6,228.8,21.0
+Pothole,South End,170,32.9,79.4,33.8,265.1,16.0
+Pothole,Back Bay,140,34.3,80.0,35.9,194.7,19.0
+Pothole,Charlestown,139,37.4,86.3,39.7,243.6,19.0
+Pothole,East Boston,100,39.0,84.0,25.6,267.6,36.0
+Pothole,South Boston,124,39.5,68.5,17.5,142.9,23.0
+Street Light Outage,East Boston,221,31.7,75.6,828.0,3981.9,33.0
+Street Light Outage,Hyde Park,124,32.3,87.1,456.0,2328.7,41.0
+Street Light Outage,North End,200,33.5,74.5,757.5,4425.0,28.0
+Street Light Outage,Beacon Hill,193,34.2,68.4,662.6,3421.7,18.0
+Street Light Outage,Downtown,151,35.1,66.2,561.6,4439.4,20.0
+Street Light Outage,Back Bay,318,40.3,74.2,445.0,3893.8,14.0
+Street Light Outage,Brighton,218,42.2,78.9,431.5,4505.9,19.0
+Street Light Outage,South End,467,43.0,87.8,420.3,2840.8,20.0
+Street Light Outage,West Roxbury,131,43.5,85.5,359.0,2685.4,45.0
+Street Light Outage,Charlestown,329,46.8,68.1,560.5,5150.6,17.0
+Street Light Outage,Mattapan,129,50.4,89.9,215.9,1809.1,66.0
+Street Light Outage,Roslindale,172,52.3,82.6,227.3,3768.1,36.0
+Street Light Outage,Dorchester,620,56.3,81.9,190.9,2687.5,41.0
+Street Light Outage,Jamaica Plain,228,56.6,82.0,113.4,2613.4,36.0
+Street Light Outage,South Boston,197,56.9,68.0,63.6,1746.0,19.0
+Street Light Outage,Roxbury,301,57.1,79.7,69.3,2727.4,45.0
+Sidewalk Repair,Beacon Hill,100,8.0,17.0,65.2,581.8,18.0
+Sidewalk Repair,West Roxbury,121,9.9,24.8,37.9,221.5,35.0
+Sidewalk Repair,South End,251,10.0,22.3,28.0,1005.4,12.0
+Sidewalk Repair,Allston,100,12.0,20.0,29.5,198.2,13.0
+Sidewalk Repair,Jamaica Plain,170,14.1,31.2,37.7,170.1,26.0
+Sidewalk Repair,North End,113,15.9,31.0,23.0,1041.9,13.0
+Sidewalk Repair,Dorchester,376,17.6,27.7,19.2,243.0,26.0
+Sidewalk Repair,Roxbury,150,18.0,34.0,24.5,184.2,33.0
+Sidewalk Repair,Brighton,163,21.5,33.7,19.0,120.5,20.0
+Sidewalk Repair,Back Bay,201,21.9,40.8,22.3,227.9,23.0
+Sidewalk Repair,South Boston,143,24.5,41.3,19.3,288.6,18.0
+Sidewalk Repair,Downtown,152,25.7,38.2,18.6,185.4,9.0
+Sidewalk Repair,East Boston,118,30.5,50.0,16.7,460.2,32.0
+Missed Waste Pick-up,East Boston,180,75.6,96.1,16.6,41.0,86.0
+Missed Waste Pick-up,Allston,119,76.5,97.5,16.9,42.5,82.0
+Missed Waste Pick-up,Mattapan,181,84.0,97.2,13.2,35.9,89.0
+Missed Waste Pick-up,Jamaica Plain,369,85.1,94.0,12.6,23.2,83.0
+Missed Waste Pick-up,Brighton,296,86.1,96.6,15.2,25.7,80.0
+Missed Waste Pick-up,Roslindale,227,86.3,96.5,11.8,25.3,87.0
+Missed Waste Pick-up,South Boston,195,86.7,96.4,13.0,23.9,82.0
+Missed Waste Pick-up,Dorchester,865,87.1,96.5,13.1,23.9,88.0
+Missed Waste Pick-up,Roxbury,390,88.2,96.7,13.3,22.9,87.0
+Missed Waste Pick-up,Hyde Park,334,88.6,96.4,13.5,22.6,84.0
+Missed Waste Pick-up,South End,171,89.5,98.2,11.7,23.5,73.0
+Missed Waste Pick-up,West Roxbury,240,89.6,97.5,11.7,22.1,80.0
+Missed Waste Pick-up,Charlestown,112,94.6,98.2,11.2,19.1,80.0
+Litter & Debris,Fenway,246,73.6,94.3,15.6,58.0,7.0
+Litter & Debris,Jamaica Plain,422,76.8,94.3,13.1,46.3,16.0
+Litter & Debris,Charlestown,157,80.9,94.3,11.4,36.2,21.0
+Litter & Debris,Mission Hill,132,81.8,96.2,9.2,28.7,20.0
+Litter & Debris,Downtown,201,82.1,93.5,8.4,33.1,16.0
+Litter & Debris,Mattapan,172,83.7,95.9,4.4,24.7,38.0
+Litter & Debris,Hyde Park,160,83.8,98.1,12.1,34.5,28.0
+Litter & Debris,Roslindale,257,85.2,95.7,10.2,26.6,17.0
+Litter & Debris,Roxbury,923,86.0,97.1,8.2,26.6,18.0
+Litter & Debris,West Roxbury,150,86.7,94.0,11.9,22.2,31.0
+Litter & Debris,Back Bay,617,87.0,95.1,11.8,23.1,12.0
+Litter & Debris,Dorchester,1521,88.8,96.8,7.7,22.0,16.0
+Litter & Debris,Beacon Hill,403,89.3,95.5,11.4,21.8,9.0
+Litter & Debris,Brighton,502,89.4,94.4,9.3,19.7,8.0
+Litter & Debris,North End,843,89.4,95.8,12.3,21.5,9.0
+Litter & Debris,South End,1472,91.0,96.9,8.5,21.6,5.0
+Litter & Debris,South Boston,658,91.0,95.7,3.7,20.3,10.0
+Litter & Debris,Allston,429,91.1,97.7,9.8,20.1,6.0
+Litter & Debris,East Boston,738,95.0,96.3,5.0,18.2,9.0
+Pruning Request,West Roxbury,289,27.3,77.2,144.5,2200.7,43.0
+Pruning Request,Roslindale,143,33.6,54.5,42.4,762.0,29.0
+Pruning Request,Back Bay,111,34.2,60.4,50.2,308.0,21.0
+Pruning Request,Charlestown,102,34.3,57.8,45.1,1910.6,29.0
+Pruning Request,Brighton,145,34.5,80.0,93.4,1338.9,28.0
+Pruning Request,South Boston,228,38.2,75.0,77.0,1519.1,30.0
+Pruning Request,South End,180,38.9,81.7,88.2,2250.4,27.0
+Pruning Request,Dorchester,421,39.9,77.2,67.6,2328.7,38.0
+Pruning Request,East Boston,204,40.2,66.7,45.0,905.9,22.0
+Pruning Request,Jamaica Plain,184,41.8,65.8,40.9,1821.5,21.0
+Pruning Request,Roxbury,145,43.4,77.9,46.6,2333.5,36.0

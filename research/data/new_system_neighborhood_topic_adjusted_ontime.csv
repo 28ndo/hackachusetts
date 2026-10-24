@@ -1,0 +1,24 @@
+neighborhood,cases,ontime_pct,expected_given_topic_mix,gap_pts
+Bay Village,399,65.2,74.2,-9.0
+Chinatown,609,64.4,71.9,-7.6
+Jamaica Plain,4791,70.9,73.6,-2.8
+West Roxbury,3000,66.4,69.1,-2.7
+Fenway,2191,67.1,69.2,-2.1
+Downtown,1983,66.1,68.0,-1.9
+Beacon Hill,2945,73.4,75.1,-1.7
+North End,3010,74.8,76.5,-1.7
+South Boston Waterfront,588,72.1,72.9,-0.8
+Roslindale,2788,71.3,72.1,-0.8
+Back Bay,4027,71.4,72.1,-0.6
+Mattapan,1878,70.8,71.3,-0.5
+Charlestown,2472,65.2,65.5,-0.3
+Hyde Park,2294,73.0,73.2,-0.2
+South End,6840,76.1,75.5,0.5
+Brighton,4463,76.8,76.2,0.6
+Roxbury,5789,76.3,75.3,1.0
+West End,501,68.5,67.1,1.4
+Mission Hill,1129,79.5,78.2,1.4
+Dorchester,11203,76.2,74.7,1.5
+Allston,2480,77.5,75.6,1.8
+East Boston,4503,76.6,74.6,2.0
+South Boston,5155,78.5,76.1,2.4

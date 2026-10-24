@@ -1,0 +1,6 @@
+source,cases,pct_of_all,ontime_pct_label,with_sla,ontime_pct_sla_only,pct_still_open,closed,median_h_to_close,p90_h_to_close
+Employee Generated,129573,42.24,72.4,117209,69.4,14.8,110368,11.3,297.7
+Citizens Connect App,79749,26.0,69.6,73718,67.1,14.3,68312,11.4,316.6
+Constituent Call,54474,17.76,86.0,32018,76.2,20.7,43223,40.9,645.4
+City Worker App,31617,10.31,88.1,31246,88.0,2.0,31000,2.5,627.2
+Self Service,11343,3.7,93.5,3934,81.4,65.3,3935,17.0,2350.7
