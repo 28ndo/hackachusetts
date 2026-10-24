@@ -1,0 +1,18 @@
+{
+  "_meta": {
+    "locale": "ht",
+    "label": "Kreyòl ayisyen",
+    "note": "Mesaj rezilta pou rezidan yo. Bouyon machin fè, ap tann revizyon lang vil la. Plasman: {date}, {owner}."
+  },
+  "outcome": {
+    "FIXED": "Repare nan dat {date}. Mèsi dèske ou te siyale l.",
+    "MADE_SAFE": "Nou met li ansekirite pou kounye a. Repè konplè a pwograme pou {date}.",
+    "SCHEDULED": "Sa a pwograme pou {date}. N ap fè w konnen lè travay la fini.",
+    "DEFERRED_CAPITAL": "Sa a mande yon pi gwo pwojè. Objektif nou se {date}.",
+    "NOT_OURS": "Nou voye sa bay {owner}, ki responsab kote sa a.",
+    "NOT_FOUND": "Ekip nou an pa t jwenn pwoblèm nan. Èske ou ka voye yon foto oswa plis detay?",
+    "PRIVATE_PROPERTY": "Sa a sou pwopriyete prive, kidonk vil la pa ka fè repè a. Nòt la esplike ak ki moun pou kontakte.",
+    "DUPLICATE": "Yon moun te deja siyale sa. Nou melanje rapò ou a ak pa yo epi n ap swiv li.",
+    "NEEDS_INFO": "Ekip la bezwen plis enfòmasyon anvan yo kòmanse: {note}"
+  }
+}

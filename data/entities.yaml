@@ -124,3 +124,20 @@
   handoffToday: { ontimePct: 16.9, stillOpen: 131 }
   respondWithin: 48h
   contact: "verify before the demo"
+- id: btd-signals
+  name: Boston Transportation Department, Traffic Signals and Signs
+  kind: city_dept
+  department: BTDT
+  queues: ["BTDT_Traffic Signal_Repair"]
+  owns: [signal, sign]
+  hazard:
+    signal: 4
+    sign: 2
+  where: { jurisdictionCodes: ["2"] }
+  need: ["Intersection", "Which light is out, and which street it faces"]
+  help: ["Fully dark, flashing, or stuck on one color"]
+  cant:
+    - { rule: "State roads and DCR parkways", check: "Jurisdictn in [1, 3]", sendTo: [massdot, dcr] }
+    - { rule: "Private ways and private property", check: "Jurisdictn in [0, H]", outcome: PRIVATE_PROPERTY }
+  workload: { perDay: 8.2, medianDays: 0.12, p90Days: 1.6, slaDays: 1, ontimePct: 89.4, open: 0 }
+  respondWithin: 4h
