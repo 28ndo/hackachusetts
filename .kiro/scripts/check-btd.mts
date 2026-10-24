@@ -1,0 +1,11 @@
+import { makeSql } from "../../scripts/lib/db.ts";
+const sql = makeSql();
+const [c] = await sql`select count(*)::int as n from assignments where entity_id='btd-signals'`;
+console.log("btd-signals assignments:", c.n);
+const [o] = await sql`select count(*)::int as n from assignments where entity_id='btd-signals' and state not in ('closed','rerouted')`;
+console.log("btd-signals open:", o.n);
+const sample = await sql`select id, state from assignments where entity_id='btd-signals' limit 3`;
+console.log("sample:", JSON.stringify(sample));
+const states = await sql`select state, count(*)::int n from assignments group by state`;
+console.log("states:", JSON.stringify(states));
+await sql.end();
