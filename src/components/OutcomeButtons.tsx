@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useFormStatus } from "react-dom";
 import type { OutcomeCode } from "@/core/types";
 import { submitOutcome } from "@/app/actions";
 import { ResidentPreview } from "@/components/ResidentPreview";
@@ -17,6 +18,7 @@ interface OwnerOption {
 
 interface Props {
   assignmentId: string;
+  problemId: string;
   entityId: string;
   owners: OwnerOption[]; // candidates for a NOT_OURS reroute
   templates: Record<OutcomeCode, { en: string; ht: string }>;
@@ -37,7 +39,21 @@ const CODES: { code: OutcomeCode; label: string; fields: Field[] }[] = [
   { code: "NEEDS_INFO", label: "Needs info", fields: ["note"] },
 ];
 
-export function OutcomeButtons({ assignmentId, entityId, owners, templates, localeLabels }: Props) {
+// Disabled while the server action runs, so a double-click can't submit twice.
+function SubmitButton() {
+  const { pending } = useFormStatus();
+  return (
+    <button
+      type="submit"
+      disabled={pending}
+      className="min-h-[36px] rounded-md bg-blue-700 px-4 py-1.5 text-sm font-semibold text-white hover:bg-blue-800 disabled:opacity-60 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+    >
+      {pending ? "Saving…" : "Submit outcome (demo)"}
+    </button>
+  );
+}
+
+export function OutcomeButtons({ assignmentId, problemId, entityId, owners, templates, localeLabels }: Props) {
   const [active, setActive] = useState<OutcomeCode | null>(null);
   const [date, setDate] = useState("");
   const [ownerId, setOwnerId] = useState("");
@@ -46,9 +62,10 @@ export function OutcomeButtons({ assignmentId, entityId, owners, templates, loca
 
   // Same placeholders and fallbacks as fillTemplate() in src/core/locales.ts,
   // which builds the message actually stored with the outcome.
+  const today = new Date().toISOString().slice(0, 10);
   const fill = (tpl: string) =>
     tpl
-      .replaceAll("{date}", date || "a date to be confirmed")
+      .replaceAll("{date}", date || (active === "FIXED" ? today : "a date to be confirmed"))
       .replaceAll("{owner}", owners.find((o) => o.id === ownerId)?.name ?? "the right department")
       .replaceAll("{note}", note);
   const preview = active
@@ -80,6 +97,7 @@ export function OutcomeButtons({ assignmentId, entityId, owners, templates, loca
           className="space-y-3 rounded-md border border-neutral-300 p-3 dark:border-neutral-700"
         >
           <input type="hidden" name="assignmentId" value={assignmentId} />
+          <input type="hidden" name="problemId" value={problemId} />
           <input type="hidden" name="entityId" value={entityId} />
           <input type="hidden" name="code" value={current.code} />
 
@@ -135,12 +153,7 @@ export function OutcomeButtons({ assignmentId, entityId, owners, templates, loca
             </label>
           )}
 
-          <button
-            type="submit"
-            className="min-h-[36px] rounded-md bg-blue-700 px-4 py-1.5 text-sm font-semibold text-white hover:bg-blue-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
-          >
-            Submit outcome (demo)
-          </button>
+          <SubmitButton />
         </form>
       )}
 

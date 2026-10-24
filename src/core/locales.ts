@@ -58,7 +58,11 @@ function ownerName(id: string | undefined): string {
 /** Fill a template's placeholders from an Outcome. */
 export function fillTemplate(template: string, outcome: Outcome): string {
   return template
-    .replaceAll("{date}", outcome.scheduledFor ?? "a date to be confirmed")
+    .replaceAll(
+      "{date}",
+      outcome.scheduledFor ??
+        (outcome.code === "FIXED" ? outcome.at.slice(0, 10) : "a date to be confirmed"),
+    )
     .replaceAll("{owner}", ownerName(outcome.newOwnerId))
     .replaceAll("{note}", outcome.note ?? "");
 }

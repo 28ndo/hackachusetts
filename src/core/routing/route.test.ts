@@ -53,6 +53,18 @@ describe("route() — examples", () => {
     expect(d.confidence).toBe("rule");
   });
 
+  it("sends a streetlight on a road with an unusual owner code to the city, not a utility", () => {
+    const withUtility: Entity[] = [
+      ...entities,
+      { id: "pwd-lights", name: "PWD Lights", kind: "city_dept", queues: ["PWDx_l"], owns: ["streetlight"], where: { jurisdictionCodes: ["2"] } },
+      { id: "eversource", name: "Eversource", kind: "utility", queues: ["INFO_E"], owns: ["streetlight", "wire"] },
+    ];
+    for (const code of ["5", "B", ""]) {
+      const d = route(problem({ serviceFamily: "streetlight", jurisdictionCode: code }), { entities: withUtility, overrides: [] });
+      expect(d.entityId).toBe("pwd-lights");
+    }
+  });
+
   it("sends an unowned family to triage without throwing", () => {
     const d = route(problem({ serviceFamily: "unknown-family" }), { entities, overrides: [] });
     expect(d.entityId).toBe("triage");

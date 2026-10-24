@@ -87,14 +87,14 @@ export function route(
     }
   }
 
-  // 3. Service family. Skip owners whose jurisdiction codes rule this road out
-  //    (e.g. DCR for a city street); owners without codes always qualify.
+  // 3. Service family. Prefer an owner whose jurisdiction codes match this road
+  //    (PWD for a city street), then a city department (roads with an unusual
+  //    or missing code), then whoever owns it (e.g. Eversource for wires).
   const owners = ctx.entities.filter((e) => e.owns.includes(problem.serviceFamily));
-  const fits = (e: Entity) =>
-    code === undefined ||
-    !e.where?.jurisdictionCodes ||
-    e.where.jurisdictionCodes.includes(code);
-  const owner = owners.find(fits) ?? owners.find((e) => e.kind === "city_dept") ?? owners[0];
+  const owner =
+    (code !== undefined && owners.find((e) => e.where?.jurisdictionCodes?.includes(code))) ||
+    owners.find((e) => e.kind === "city_dept") ||
+    owners[0];
   if (owner) {
     return {
       entityId: owner.id,

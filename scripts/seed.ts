@@ -288,8 +288,19 @@ async function stashReplay(
   const newest = matches.reduce((a, b) =>
     Date.parse(b.requestedAt) > Date.parse(a.requestedAt) ? b : a,
   );
+  // Replay a fresh copy, not the seeded report itself: a new id, and a time
+  // inside the 14-day cluster window (13 days after the original, capped at
+  // NOW), so it joins the same problem as one more person waiting instead of
+  // re-adding a report that's already there or opening a duplicate packet.
+  const replayAt = Math.min(NOW.getTime(), Date.parse(newest.requestedAt) + 13 * 86_400_000);
+  const replay: Report = {
+    ...newest,
+    id: `replay-${newest.id}`,
+    requestedAt: new Date(replayAt).toISOString(),
+    problemId: undefined,
+  };
   await sql`insert into replay_queue ${sql([
-    { payload: sql.json(asJson(newest)), label },
+    { payload: sql.json(asJson(replay)), label },
   ])}`;
 }
 

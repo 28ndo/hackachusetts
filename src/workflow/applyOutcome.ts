@@ -26,11 +26,16 @@ export async function applyOutcome(
   repo: Repo,
   assignmentId: string,
   outcome: Outcome,
+  problemId?: string,
 ): Promise<StateChange> {
   const spec = OUTCOMES[outcome.code];
   if (!spec) throw new Error(`Unknown outcome code: ${outcome.code}`);
 
-  const problem = await getProblemFor(repo, assignmentId);
+  // Prefer the caller's problemId; parsing the assignment id is a fallback and
+  // misreads report ids that end in a long run of digits.
+  const problem = problemId
+    ? await requireProblem(repo, problemId, assignmentId)
+    : await getProblemFor(repo, assignmentId);
   const previousProblemStatus = problem.status;
   const previousAssignmentState: AssignmentState = "sent";
 
@@ -88,6 +93,12 @@ export async function applyOutcome(
   await repo.updateAssignment(assignmentId, { state: spec.nextAssignmentState });
   await repo.updateProblem(problem.id, { status: spec.nextProblemStatus });
   return change;
+}
+
+async function requireProblem(repo: Repo, problemId: string, assignmentId: string): Promise<Problem> {
+  const problem = await repo.getProblem(problemId);
+  if (!problem) throw new Error(`No problem ${problemId} for assignment ${assignmentId}`);
+  return problem;
 }
 
 /** Recover the problem for an assignment via the "a-<problemId>…" convention. */

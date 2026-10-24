@@ -44,8 +44,13 @@ function matches(report: Report, p: Problem, family: string): boolean {
 }
 
 function attach(report: Report, p: Problem): void {
-  p.reportIds.push(report.id);
-  p.reporterCount = p.reportIds.length;
+  // Count up from the stored reporterCount: problems loaded from the database
+  // carry the count but not their member ids. A report already in the problem
+  // is not counted twice.
+  if (!p.reportIds.includes(report.id)) {
+    p.reportIds.push(report.id);
+    p.reporterCount += 1;
+  }
   if (Date.parse(report.requestedAt) < Date.parse(p.firstReportedAt)) {
     p.firstReportedAt = report.requestedAt;
   }

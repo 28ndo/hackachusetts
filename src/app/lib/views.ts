@@ -105,7 +105,12 @@ export async function getRankedInbox(
     for (const it of items) {
       if (entity) it.problem.priority = priority(it.problem, entity, DEMO_NOW);
     }
-    items.sort((x, y) => y.problem.priority.score - x.problem.priority.score);
+    // Packets that arrived by a reroute or a learned rule come first: they are
+    // new to this entity, and the demo shows them landing.
+    const learned = (it: { assignment: Assignment }) => (it.assignment.confidence === "learned" ? 1 : 0);
+    items.sort(
+      (x, y) => learned(y) - learned(x) || y.problem.priority.score - x.problem.priority.score,
+    );
     return items.slice(0, limit);
   };
 

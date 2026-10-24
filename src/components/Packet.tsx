@@ -62,8 +62,15 @@ export function Packet({
           <h2 className="text-lg font-semibold">
             #{rank}: {problem.serviceFamily} at {displayAddress(problem.neighborhood || lead?.address || "", problem.serviceFamily)}
           </h2>
-          <span className="rounded bg-neutral-200 px-2 py-0.5 text-xs font-medium dark:bg-neutral-800">
-            score {problem.priority.score.toFixed(1)}
+          <span className="flex shrink-0 gap-2">
+            {assignment.confidence === "learned" && (
+              <span className="rounded bg-green-100 px-2 py-0.5 text-xs font-semibold text-green-800 dark:bg-green-900 dark:text-green-200">
+                New to you · rerouted
+              </span>
+            )}
+            <span className="rounded bg-neutral-200 px-2 py-0.5 text-xs font-medium dark:bg-neutral-800">
+              score {problem.priority.score.toFixed(1)}
+            </span>
           </span>
         </div>
         <p className="text-sm text-neutral-700 dark:text-neutral-300">
@@ -159,6 +166,7 @@ export function Packet({
 
       <OutcomeButtons
         assignmentId={assignment.id}
+        problemId={problem.id}
         entityId={entity.id}
         owners={owners}
         templates={templates}

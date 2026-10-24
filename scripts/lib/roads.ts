@@ -18,7 +18,9 @@ export const NEAREST_MAX_METERS = 20;
 interface RoadFeature {
   type: "Feature";
   properties: { Jurisdictn?: string; St_Name?: string; OBJECTID?: number };
-  geometry: { type: "LineString"; coordinates: [number, number][] };
+  geometry:
+    | { type: "LineString"; coordinates: [number, number][] }
+    | { type: "MultiLineString"; coordinates: [number, number][][] };
 }
 interface RoadCollection {
   type: "FeatureCollection";
@@ -77,9 +79,46 @@ function bbox(lat: number, lon: number, meters: number): [number, number, number
   return [lon - dLon, lat - dLat, lon + dLon, lat + dLat];
 }
 
+/** A segment's line parts and its bounding box over every vertex, built once. */
+interface IndexedRoad {
+  f: RoadFeature;
+  parts: [number, number][][];
+  minLon: number;
+  minLat: number;
+  maxLon: number;
+  maxLat: number;
+}
+
+let index: { roads: RoadCollection; items: IndexedRoad[] } | undefined;
+
+function indexFor(roads: RoadCollection): IndexedRoad[] {
+  if (index?.roads === roads) return index.items;
+  const items: IndexedRoad[] = [];
+  for (const f of roads.features) {
+    const g = f.geometry;
+    const parts = (
+      g?.type === "MultiLineString" ? g.coordinates : g?.type === "LineString" ? [g.coordinates] : []
+    ).filter((part) => part.length >= 2);
+    if (parts.length === 0) continue;
+    let minLon = Infinity, minLat = Infinity, maxLon = -Infinity, maxLat = -Infinity;
+    for (const part of parts) {
+      for (const [x, y] of part) {
+        if (x < minLon) minLon = x;
+        if (x > maxLon) maxLon = x;
+        if (y < minLat) minLat = y;
+        if (y > maxLat) maxLat = y;
+      }
+    }
+    items.push({ f, parts, minLon, minLat, maxLon, maxLat });
+  }
+  index = { roads, items };
+  return items;
+}
+
 /**
- * Nearest road segment within 20 m of (lat, lon). Bounding-box prefilter first,
- * then exact point-to-line distance via turf. Returns undefined if none within 20 m.
+ * Nearest road segment within 20 m of (lat, lon). Prefilter on each segment's
+ * full bounding box (all vertices, all parts), then exact point-to-line distance
+ * via turf on every part. Returns undefined if none within 20 m.
  */
 export function nearestOwner(
   lat: number,
@@ -87,20 +126,16 @@ export function nearestOwner(
   roads: RoadCollection,
 ): OwnerResult | undefined {
   const pt = point([lon, lat]);
-  const box = bbox(lat, lon, NEAREST_MAX_METERS);
+  const box = bbox(lat, lon, NEAREST_MAX_METERS); // [minLon, minLat, maxLon, maxLat]
   let best: { dist: number; f: RoadFeature } | undefined;
 
-  for (const f of roads.features) {
-    const coords = f.geometry?.coordinates;
-    if (!coords || coords.length < 2) continue;
-    // Prefilter: skip segments whose first vertex is well outside the box.
-    // Cheap check on both endpoints keeps most far segments out of turf.
-    const [a, b] = [coords[0], coords[coords.length - 1]];
-    if (!endpointNearBox(a, box) && !endpointNearBox(b, box)) continue;
-
-    const dist = pointToLineDistance(pt, lineString(coords), { units: "meters" });
-    if (dist <= NEAREST_MAX_METERS && (!best || dist < best.dist)) {
-      best = { dist, f };
+  for (const r of indexFor(roads)) {
+    if (r.maxLon < box[0] || r.minLon > box[2] || r.maxLat < box[1] || r.minLat > box[3]) continue;
+    for (const part of r.parts) {
+      const dist = pointToLineDistance(pt, lineString(part), { units: "meters" });
+      if (dist <= NEAREST_MAX_METERS && (!best || dist < best.dist)) {
+        best = { dist, f: r.f };
+      }
     }
   }
 
@@ -150,20 +185,4 @@ export function loadFallbackOwners(): Map<string, OwnerResult> {
   }
   fallbackCache = map;
   return map;
-}
-
-function endpointNearBox(
-  coord: [number, number],
-  box: [number, number, number, number],
-): boolean {
-  // Expand the box a little so segments crossing it aren't missed by the
-  // cheap endpoint test (~55 m pad). box = [minLon, minLat, maxLon, maxLat].
-  const pad = 0.0005;
-  const [lon, lat] = coord;
-  return (
-    lon >= box[0] - pad &&
-    lon <= box[2] + pad &&
-    lat >= box[1] - pad &&
-    lat <= box[3] + pad
-  );
 }

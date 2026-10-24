@@ -226,7 +226,7 @@ export class PostgresRepo implements Repo {
 
   async listOverrides(): Promise<RoutingOverride[]> {
     const rows = await this.sql<OverrideRow[]>`
-      select * from routing_overrides order by created_at`;
+      select * from routing_overrides order by created_at desc`; // newest lesson wins in route()
     return rows.map(toOverride);
   }
 

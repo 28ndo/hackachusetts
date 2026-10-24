@@ -15,7 +15,16 @@ export async function submitOutcome(formData: FormData): Promise<void> {
   const repo = getRepo();
   const assignmentId = String(formData.get("assignmentId") ?? "");
   const entityId = String(formData.get("entityId") ?? "");
+  const problemId = str(formData.get("problemId"));
   const code = String(formData.get("code") ?? "") as OutcomeCode;
+
+  // A double-click or a stale tab submits twice: act only while the assignment
+  // is still open in this entity's inbox, so a second submit is a no-op.
+  const open = (await repo.listInbox(entityId)).some((a) => a.id === assignmentId);
+  if (!open) {
+    revalidatePath(`/inbox/${entityId}`);
+    return;
+  }
 
   const outcome: Outcome = {
     id: `o-${assignmentId}-${Date.now()}`,
@@ -29,7 +38,7 @@ export async function submitOutcome(formData: FormData): Promise<void> {
     at: new Date().toISOString(),
   };
 
-  await applyOutcome(repo, assignmentId, outcome);
+  await applyOutcome(repo, assignmentId, outcome, problemId);
   revalidatePath(`/inbox/${entityId}`);
   revalidatePath("/");
 }

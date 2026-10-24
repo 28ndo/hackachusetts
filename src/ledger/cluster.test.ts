@@ -105,6 +105,22 @@ describe("cluster() — property based", () => {
   });
 });
 
+describe("addReport() — problems loaded from the database", () => {
+  it("adds one to the stored reporter count (the DB row has no reportIds)", () => {
+    const [problem] = cluster([
+      { id: "r1", source: "open311", serviceName: "Traffic Signal Request", lat: 42.29, lon: -71.13, address: "Metropolitan Ave & Poplar St", requestedAt: "2026-10-06T12:00:00Z" },
+    ]);
+    // What PostgresRepo returns for a 9-report problem: count from the row, no member ids.
+    const fromDb = { ...problem, reportIds: [], reporterCount: 9 };
+    const result = addReport(
+      { id: "r10", source: "open311", serviceName: "Traffic Signal Request", lat: 42.29, lon: -71.13, address: "Metropolitan Ave & Poplar St", requestedAt: "2026-10-07T12:00:00Z" },
+      [fromDb],
+    );
+    expect(result.id).toBe(problem.id);
+    expect(result.reporterCount).toBe(10);
+  });
+});
+
 describe("addReport() — property based", () => {
   it("a re-report never closes a problem and raises reporterCount", () => {
     fc.assert(
