@@ -25,3 +25,14 @@ resources/
 
 # Local scratch notes, not used by the build
 IDEAS.md
+
+# Next.js (merged from create-next-app; never add .kiro/ here)
+/.next/
+/out/
+*.tsbuildinfo
+next-env.d.ts
+.pem
+*.pem
+
+# Vercel
+.vercel

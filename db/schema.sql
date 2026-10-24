@@ -1,0 +1,4 @@
+-- Postgres schema for the problem ledger.
+-- OWNER: P2 (problem-ledger spec). Placeholder; tables defined there.
+-- Tables to come: reports, problems, problem_reports, assignments,
+-- outcomes, routing_overrides, entities. Index for inbox queries.

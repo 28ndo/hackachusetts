@@ -187,7 +187,7 @@ Then in Kiro: **Specs → +** and paste your spec prompt (C, D or F).
 > - `tech.md`: the stack from PLAYBOOK §3, the commands `npm run dev`, `npm test` and `npm run seed`, the rule "no external API calls at request time; the seed pipeline caches all lookups", and "property-based tests use fast-check".
 > - `structure.md`: the folder layout and the ownership table from PLAYBOOK §1, the interfaces from PLAYBOOK §2, and "never edit `src/core/types.ts` without saying so explicitly in your response".
 
-**B. Scaffold (Niklas, Kiro chat, Supervised mode).**
+**B. Scaffold (Niklas: Default agent, Autopilot on, a new chat session after A; review `src/core/types.ts` before committing).**
 > Scaffold the project per tech.md and structure.md, in the repo root. Don't build features.
 > 1. A Next.js App Router app (TypeScript strict, Tailwind, `src/` dir). Install up front: `postgres yaml zod leaflet react-leaflet @types/leaflet vitest fast-check tsx @turf/turf`.
 > 2. `src/core/types.ts`: every type from build-plan §3 exactly, `OutcomeCode` from §6, `Entity` per the §4 entry format, plus `Priority`, `RoutingDecision`, `StateChange`, and the `Repo` interface from PLAYBOOK §2.
@@ -201,6 +201,7 @@ Then in Kiro: **Specs → +** and paste your spec prompt (C, D or F).
 > 4. `src/workflow/fixtureRepo.ts`: an in-memory `Repo` seeded from `src/core/fixtures.ts`. Build 8 demo problems from the real records in `research/open311/demo-picks.json` (the scenes are described in `research/open311/README.md`). Include the Morrissey Blvd streetlight (DCR), the Gallivan Blvd streetlight (MassDOT), the 9-report traffic signal at Metropolitan Ave & Poplar St, the 8-report pothole cluster at 14 Quincy St, and a mix of open and overdue.
 > 5. `db/schema.sql` (empty placeholder), `scripts/seed.ts` (placeholder), `.env.example` with `DATABASE_URL=`, npm scripts `dev`, `build`, `test` and `seed`, and one passing Vitest smoke test that imports fast-check.
 > 6. A "Demo mode: no real 311 cases are filed" banner in the root layout.
+> 7. The repo root isn't empty, so `create-next-app` will refuse to run there. Scaffold into a temporary folder and move the files in. Never overwrite `README.md`, `KIRO_LOG.md`, `PLAYBOOK.md`, `.kiro/`, `.kiroignore`, `.vscode/` or `research/`. Merge Next's `.gitignore` entries into ours, and never ignore `.kiro/`.
 
 **C. Spec `entity-workflow` (Niklas).**
 > New spec. Source of truth: build-plan §2, §6, §7, §9, §10. Build only the demo path (§9). MVP, at most 10 tasks. Use the `Repo` interface; develop against `fixtureRepo` and switch to the Postgres repo when it lands.
