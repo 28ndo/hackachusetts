@@ -6,7 +6,7 @@
 
 Boston's 311 takes in hundreds of reports a day. Three in ten closures come back as "Noted" with no reason and no recorded fix, one in five reports repeats one already filed, and a single boulevard can have three different owners. Dispatch Ledger is the dispatch and accountability layer that sits between 311 intake and the departments, state agencies and utilities that do the work. It works with whatever CRM the city runs underneath.
 
-**Live demo:** [url] · **Video (under 3 min):** [url]
+**Live demo:** https://hackachusetts-hackachusetts2.vercel.app · **Video (under 3 min):** [url]
 
 ## What it does
 
