@@ -260,4 +260,6 @@ export interface Repo {
   listOverrides(): Promise<RoutingOverride[]>;
   scorecard(): Promise<ScorecardRow[]>;
   ingestReport(report: Report): Promise<Problem>;
+  /** Pop the next held-back report from replay_queue, or undefined when empty. */
+  nextReplayReport(): Promise<Report | undefined>;
 }

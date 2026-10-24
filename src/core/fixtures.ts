@@ -224,12 +224,12 @@ export const fixtureAssignments: Assignment[] = [
   {
     id: "a-metropolitan",
     problemId: "p-metropolitan-signal",
-    entityId: "pwd-highway-d07",
+    entityId: "btd-signals",
     attempt: 1,
     sentAt: "2026-10-07T12:00:00Z",
     respondBy: "2026-10-08T12:00:00Z", // overdue
     resolveBy: "2026-10-10T12:00:00Z",
-    routingReason: "City-owned road; signal owned by Transportation",
+    routingReason: "City-owned road; signal owned by Transportation (BTDT)",
     confidence: "rule",
     state: "acknowledged",
   },
@@ -248,12 +248,12 @@ export const fixtureAssignments: Assignment[] = [
   {
     id: "a-centre-green",
     problemId: "p-centre-green-signal",
-    entityId: "pwd-highway-d07",
+    entityId: "btd-signals",
     attempt: 1,
     sentAt: "2026-10-09T12:00:00Z",
     respondBy: "2026-10-10T12:00:00Z", // overdue
     resolveBy: "2026-10-12T12:00:00Z",
-    routingReason: "City-owned road; signal owned by Transportation",
+    routingReason: "City-owned road; signal owned by Transportation (BTDT)",
     confidence: "rule",
     state: "in_progress",
   },
