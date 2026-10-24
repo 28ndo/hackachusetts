@@ -1,0 +1,9 @@
+rules:
+  - capability: filesystem
+    effect: allow
+  - capability: shell
+    match: ["npm *", "npx *", "node *", "git status*", "git diff*", "git add *", "git commit *", "git log*"]
+    effect: allow
+  - capability: shell
+    match: ["git push*", "rm -rf *"]
+    effect: ask

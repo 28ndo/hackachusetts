@@ -2,22 +2,19 @@
 
 Read this once (5 minutes). The plan is in [research/build-plan.md](research/build-plan.md); this file is how we execute it.
 
-**The idea: contract first, then three parallel lanes.** The first 25 minutes produce one shared contract: types, interfaces, fixtures and the folder layout. After that, each person works on their own machine, in their own Kiro spec, in their own folders. Nobody waits for anybody; until a real piece lands, you build against fixtures and stubs.
+> **Changed at 16:20: one driver.** Three lanes made integration too slow, so Niklas now drives all code in Kiro from one spec, `dispatch-ledger` ([research/kiro-spec-dispatch-ledger.md](research/kiro-spec-dispatch-ledger.md)). Postgres on Neon stays. The teammates switch to the video, QA and the write-up, which have to happen anyway. §1, §6, §7 and §8 are updated. §4, §5 and Prompts C, D, F and G in §9 are kept for history only.
 
 ---
 
-## 1. Who does what
+## 1. Who does what (since 16:20)
 
-| | **Niklas: the app** | **P2: the ledger** (DB teammate) | **P3: the brain and the story** (mapping teammate) |
+| | **Niklas: the only developer** | **P2: QA, review and submission** (DB teammate) | **P3: the story** (Beltran) |
 |---|---|---|---|
-| Builds | Entity inbox, work packet, outcome buttons, reroute + learn, scorecard, ops view, resident status page, map; deploy and integration | Postgres schema, all SQL, snapshot ingest, enrichment (road owner, block group), clustering, seed script, hygiene queries | `data/entities.yaml`, `route()`, `priority()`, outcome-code table and resident messages. **From 17:00:** video, README, Kiro write-up |
-| Kiro spec | `entity-workflow` | `problem-ledger` | `routing-and-priority` |
-| Owns (only you edit these) | `src/app/**`, `src/components/**`, `src/workflow/**` | `db/**`, `scripts/**`, `src/ledger/**`, `src/db/**` | `data/**`, `src/core/routing/**`, `src/core/priority.ts`, `src/core/outcomes.ts`, `docs/**` |
-| Kiro features you'll show | Specs; Autopilot for UI vs Supervised for logic; checkpoints; steering | Specs; **property-based tests** on clustering; **Neon power** | Specs; a **hook** that runs PBT on save; **OpenContext MCP**; optionally one **Kiro Web** task |
+| Does | Runs the `dispatch-ledger` spec in Kiro: data, schema, seed, routing, priority, outcomes, UI, deploy. Optionally runs `kiro-cli` on the database path in parallel. | Tests every deploy of `hackachusetts-azure.vercel.app` against build-plan §9 (on a phone too); reviews Kiro's schema and SQL (read-only) and sends Niklas one-line notes, not fixes; collects Kiro screenshots; drafts the README, testing instructions and submission text; compiles `KIRO_LOG.md` at 19:15; uploads the video | Entity catalog ✓. Now: the video script and voiceover, a 20-second stats intro (slides), and screen captures of Kiro moments as they happen (spec tasks running, a hook catching a mistake, a property test shrinking to a counterexample). Drives the recording at 18:15. |
+| Writes | All code and data | `README.md`, `KIRO_LOG.md`, `docs/**` | `docs/**`, the video |
+| Never | Edits `README.md` or `KIRO_LOG.md` by hand during the build | Edits code, even a one-line fix | Edits code |
 
-**Shared files with a single owner:**
-- `src/core/types.ts` and `.kiro/steering/**`: Niklas. Say it in chat before changing them.
-- `package.json`: announce in chat, `git pull`, install, then commit `package.json` and `package-lock.json` immediately.
+**Bugs:** send Niklas one line ("`/inbox/dcr`: photos don't load on mobile"). He fixes it in Kiro, so it stays Kiro-built.
 
 ---
 
@@ -137,10 +134,10 @@ Then in Kiro: **Specs → +** and paste your spec prompt (C, D or F).
 
 ---
 
-## 6. Git rules (first shared repo)
+## 6. Git rules
 
-- **Everyone commits to `main`; no branches today.** Separate folders make that safe.
-- **Stage paths, not everything:** use `git add src/ledger db scripts`, never `git add .`. That keeps out `.env` and other people's half-done files.
+- **Only Niklas commits code.** Teammates commit only `README.md`, `KIRO_LOG.md` and `docs/**`, straight to `main`, with `git pull --rebase` first. No more branches: the entity-catalog branch is already merged.
+- **Stage paths, not everything:** never `git add .`. That keeps out `.env` and other people's half-done files.
 - **Push at least every 30 minutes.** Small pushes mean small conflicts.
 - **Always `git pull --rebase` before `git push`.**
 - **If you get a conflict:** don't force-push and don't delete anything. Run `git status` and call Niklas.
@@ -153,12 +150,12 @@ Then in Kiro: **Specs → +** and paste your spec prompt (C, D or F).
 
 | Time | What |
 |---|---|
-| **15:45** | Scaffold pulled, everyone in their spec |
-| **16:30** | Unblock check. P2: are real problems in the DB? P3: do `route()` and `priority()` pass PBT? Niklas: does the inbox work on fixtures? |
-| **17:00** | **Integration checkpoint.** The demo path (build-plan §9) runs on real data in the deployed app, ugly is fine. If not, cut Should items. **P3 switches to the story.** |
-| **18:15** | **Feature freeze.** Only demo-path bugfixes after this. |
-| 18:15–19:15 | Record the video (P3 drives, Niklas operates the app) and upload it **publicly** |
-| 19:15–19:45 | P3 compiles `docs/kiro-log/*` into `KIRO_LOG.md`; README; submission form |
+| **16:35** | Neon connected locally and on Vercel; spec generated; P2 and P3 in their new jobs |
+| **17:15** | **Cut line 1:** Neon seeded and `/inbox/dcr` renders from Postgres on the live URL. P2 checks it. If it's missed, drop the road-segment download and use the cached checks. |
+| **17:45** | **Cut line 2:** outcomes, `NOT_OURS` reroute and replay work on the live URL. If it's missed, drop Haitian Creole and the scorecard. P3 shows a rough cut of the video intro. |
+| **18:15** | **Feature freeze.** Reseed production (`npm run seed` is the demo reset). Only demo-path bugfixes after this. |
+| 18:15–19:15 | Record the video (P3 drives, Niklas operates the app); P2 uploads it **publicly** |
+| 19:15–19:45 | P2 compiles `docs/kiro-log/*` into `KIRO_LOG.md`; README; submission form |
 | **19:45** | **Submit** |
 
 ---
@@ -167,19 +164,21 @@ Then in Kiro: **Specs → +** and paste your spec prompt (C, D or F).
 
 | Feature | Owner | How we show it |
 |---|---|---|
-| Surfaces | all | **IDE for everyone.** CLI is already covered by Niklas's logged headless hook test (14:56). Optional: P3 runs one Kiro Web task (Prompt G) around 17:00 if there's slack. Crew: skip. |
-| Specs | all | Three specs. Compare one task done spec-first with one vibe-coded (Niklas, UI polish). |
-| Hooks | P3 | The existing block-secrets and log hooks, plus a new one: on save of `src/core/**` run `npx vitest run src/core`. Break a property on purpose and screenshot the catch. |
-| Steering | Niklas | product, tech and structure, plus **personal lane files** (global steering) that keep three agents out of each other's folders. That's the strategy story. |
-| MCP | P3 | context7 and playwright (existing), plus the City of Boston **OpenContext** server (CKAN). Use it once for real, e.g. checking SLA targets from the live dataset. |
-| Property-based tests | P2, P3 | Clustering invariants (P2); priority, routing and outcome invariants (P3). Screenshot a shrunk counterexample. |
-| Powers | P2 | The Neon power for the database |
+| Surfaces | Niklas | **IDE** for the spec; **CLI V3** running the database tasks in parallel (plus the logged 14:56 headless hook test). Kiro Web: skip unless there's slack. Crew: skip. |
+| Specs | Niklas | One Quick Spec, `dispatch-ledger`, in place of three lane specs. The story: why we merged three specs into one mid-build. Compare one task done spec-first with one vibe-coded (UI polish). |
+| Hooks | Niklas (P3 screenshots) | The existing block-secrets and log hooks, plus: on save of `src/core/**` or `src/ledger/**`, run `npx vitest run`. Break a property on purpose and screenshot the catch. |
+| Steering | Niklas | product, tech and structure. **The pivot story:** the global lane files kept three agents in separate folders; at 16:20 one rewrite of `my-lane.md` let one human run two agents (IDE and CLI) across the whole repo. |
+| MCP | Niklas (P2 logs) | context7 and **Playwright**: the agent clicks through scenes 2–4 on the live URL (spec task 11). OpenContext only if there's slack. |
+| Property-based tests | Niklas (P3 screenshots) | Clustering, priority, routing and outcome invariants in the spec. Screenshot a shrunk counterexample. |
+| Powers | Niklas | The **Neon** power, to create and inspect the schema |
 
 **Check once:** after your first spec task finishes, confirm a row appears in `docs/kiro-log/trail-<you>.md`. If it doesn't, the hook's `PostTaskExec` trigger name is wrong. Recreate the hook through Kiro's hook UI ("+ → Ask Kiro to create a hook") and commit the JSON.
 
 ---
 
 ## 9. Prompts to paste into Kiro
+
+> **Since 16:20, use [research/kiro-spec-dispatch-ledger.md](research/kiro-spec-dispatch-ledger.md).** Prompts A, B and E are done. Prompts C, D, F and G below are superseded and kept only as a record for the write-up.
 
 **A. Steering (Niklas, Kiro chat).** Attach `research/build-plan.md` and `PLAYBOOK.md`.
 > Create three steering files in `.kiro/steering/`, each with `inclusion: always` front matter.

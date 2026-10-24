@@ -4,7 +4,7 @@ inclusion: always
 
 # Tech
 
-## Stack (PLAYBOOK §3; change only if the ledger owner already started on something else)
+## Stack (PLAYBOOK §3, decided)
 
 - Next.js (App Router) with TypeScript strict, and Tailwind
 - Postgres on **Neon** (create it from Vercel → Storage → Neon, so `DATABASE_URL` is set for you), using the `postgres` client

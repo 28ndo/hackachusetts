@@ -9,3 +9,12 @@
 
 # 434KB minified site bundle; research/challenges.md is the readable version
 hackathon webpage.js
+
+# Large research data: scripts may read these at runtime, but the agent shouldn't.
+# Record shape: research/open311/README.md; small real sample: research/open311/demo-picks.json
+research/open311/boston-open311-*.json
+research/open311/demo-candidates.json
+research/data/
+research/department-map.json
+research/challenges.md
+resources/
