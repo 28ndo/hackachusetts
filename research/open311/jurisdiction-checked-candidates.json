@@ -1,0 +1,5091 @@
+{
+ "checked": 150,
+ "state_owned_or_mixed": [
+  {
+   "id": "05165012-2bf6-45b0-aa0f-1cb88f5fb96e",
+   "service": "Street Light Knockdown",
+   "status": "open",
+   "requested": "2026-09-25T11:46:02Z",
+   "address": "Gallivan Blvd & Myrtlebank Ave",
+   "lat": 42.28267621,
+   "lon": -71.05413958,
+   "description": "Leaning power/telephone pole on Myrtlebank Ave at the corner of Gallivan Blvd. If you look at the right side the power line to the streetlight on Gallivan is pulled tight, no slack at all. The main lines along Myrtlebank are drooping quite  bit.",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1790336737:boston:production:rwdeuzy6a2it1qkshxnl/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1790336736/boston/production/qaxxzn8po1obo3j95s6r.jpg",
+   "segments": [
+    [
+     "GALLIVAN BOULEVARD",
+     "1"
+    ],
+    [
+     "MYRTLEBANK AVENUE",
+     "2"
+    ],
+    [
+     "ROSS ROAD",
+     "0"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "94e80746-e7a3-4f1a-9b4f-e8a403853bab",
+   "service": "Street Light Outage",
+   "status": "open",
+   "requested": "2026-09-26T21:50:00Z",
+   "address": "Arborway & Forest Hills St",
+   "lat": 42.300855,
+   "lon": -71.1070515,
+   "description": null,
+   "status_notes": "Transitioned. Reallocated to Non-City of Boston Stakeholder.",
+   "media_url": null,
+   "segments": [
+    [
+     "ARBORWAY",
+     "1"
+    ],
+    [
+     "FOREST HILLS STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT"
+   ]
+  },
+  {
+   "id": "8ee2c839-4ecd-4d80-a4d1-099dda0856df",
+   "service": "Fallen Tree or Branches",
+   "status": "closed",
+   "requested": "2026-09-26T23:16:09Z",
+   "address": "Baker St & VFW Pkwy",
+   "lat": 42.287463,
+   "lon": -71.1715995,
+   "description": null,
+   "status_notes": "Resolved. Request Completed - nothing found at the location.",
+   "media_url": null,
+   "segments": [
+    [
+     "VETERANS OF FOREIGN WARS PARKWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR"
+   ]
+  },
+  {
+   "id": "4e6a615f-da7c-446e-aba9-aa7119ee6a0b",
+   "service": "Fallen Tree or Branches",
+   "status": "open",
+   "requested": "2026-09-26T23:19:24Z",
+   "address": "Clearwater Rd & VFW Pkwy",
+   "lat": 42.296598,
+   "lon": -71.1478755,
+   "description": null,
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "CLEARWATER ROAD",
+     "0"
+    ],
+    [
+     "CLEARWATER ROAD",
+     "2"
+    ],
+    [
+     "VETERANS OF FOREIGN WARS PARKWAY",
+     "0"
+    ],
+    [
+     "VETERANS OF FOREIGN WARS PARKWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "City",
+    "DCR",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "72627ed6-db9a-4523-be53-a5fb45542ed6",
+   "service": "Fallen Tree or Branches",
+   "status": "open",
+   "requested": "2026-09-27T22:33:16Z",
+   "address": "Clifford St & Neponset Valley Pkwy",
+   "lat": 42.23658952,
+   "lon": -71.12991375,
+   "description": "Tree is close to falling off right on the corner of Clifford Street and Neponset Valley Parkway in front of a house and multiple crosswalks. There is already caution tape and traffic cones, but that will obviously not hold if the tree falls. I\u2019m unsure if this already has been reported, but I want to ensure it does.",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790548371/boston/production/pytipsyhk18m84rrllxy.jpg",
+   "segments": [
+    [
+     "CLIFFORD STREET",
+     "2"
+    ],
+    [
+     "NEPONSET VALLEY PARKWAY",
+     "3"
+    ],
+    [
+     "WINGATE ROAD",
+     "0"
+    ]
+   ],
+   "owners": [
+    "City",
+    "DCR",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "6ca3b0f1-de7d-41b5-8973-4ca6a2f2d3e3",
+   "service": "Street Light Outage",
+   "status": "open",
+   "requested": "2026-09-28T10:55:50Z",
+   "address": "593 Gallivan Blvd, Boston, MA 02124",
+   "lat": 42.283098,
+   "lon": -71.0514,
+   "description": null,
+   "status_notes": "Transitioned. Reallocated to Non-City of Boston Stakeholder.",
+   "media_url": null,
+   "segments": [
+    [
+     "GALLIVAN BOULEVARD",
+     "1"
+    ]
+   ],
+   "owners": [
+    "MassDOT"
+   ]
+  },
+  {
+   "id": "101006757264",
+   "service": "Damaged Sign",
+   "status": "closed",
+   "requested": "2026-09-28T15:31:00Z",
+   "address": "Intersection of Freeport St and William T Morrissey Blvd, Dorchester",
+   "lat": 42.300598,
+   "lon": -71.049539,
+   "description": "UMass Boston Harbor",
+   "status_notes": "If this is located on the grounds of UMass Boston, the school would be responsible for repair.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1790609365:boston:production:embbgca9ot5unmeilkae/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1790609368:boston:production:khzpxteiuit4ssgn2myx/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1790609363/boston/production/makwm0xfyoeorsdbdxya.jpg",
+   "segments": [
+    [
+     "",
+     "0"
+    ],
+    [
+     "WILLIAM T MORRISSEY BOULEVARD",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "101006757355",
+   "service": "Damaged Sign",
+   "status": "closed",
+   "requested": "2026-09-28T18:31:00Z",
+   "address": "400 Soldiers Field Rd, Allston",
+   "lat": 42.3595,
+   "lon": -71.11760833,
+   "description": "Yield sign needed at merge lane.  There is no longer a sign as you merge onto Storrow from Soldiers Field road.  Seems like a safety hazard.",
+   "status_notes": "Resubmitted as BCS-00356941 to Mass DCR.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790620298/boston/production/sfdnjqqpkgylltywe9om.jpg#spot=f34f5ec9-1066-4f5b-926f-058c97b78a0e",
+   "segments": [
+    [
+     "",
+     "0"
+    ],
+    [
+     "RAMP-CAMBRIDGE ST TO SOLDIERS FIELD RD EB",
+     "2"
+    ],
+    [
+     "SOLDIERS FIELD ROAD",
+     "3"
+    ]
+   ],
+   "owners": [
+    "City",
+    "DCR",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "cd88743d-d403-4e08-8977-5cda88132732",
+   "service": "Pothole",
+   "status": "open",
+   "requested": "2026-09-29T00:20:36Z",
+   "address": "Centre St & VFW Pkwy",
+   "lat": 42.296805,
+   "lon": -71.1328005,
+   "description": null,
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "CENTRE STREET",
+     "2"
+    ],
+    [
+     "CENTRE STREET",
+     "3"
+    ],
+    [
+     "VETERANS OF FOREIGN WARS PARKWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "City",
+    "DCR"
+   ]
+  },
+  {
+   "id": "ab26ef90-aabf-4254-a0bd-59160dc59f65",
+   "service": "Fallen Tree or Branches",
+   "status": "open",
+   "requested": "2026-09-29T22:46:55Z",
+   "address": "Arborway & Jamaicaway",
+   "lat": 42.31348643,
+   "lon": -71.12227708,
+   "description": "There is a large fallen branch hanging over a frequently used walkway on the emerald necklace. My husband tried to pull it down and said it was stuck. It looks like it could fall at any time on bicyclists and pedestrians. ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790721991/boston/production/pk4xxfsujxuevhmx7bir.jpg",
+   "segments": [
+    [
+     "ARBORWAY",
+     "3"
+    ],
+    [
+     "FRANCIS PARKMAN DRIVE",
+     "3"
+    ],
+    [
+     "PRINCE STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "DCR"
+   ]
+  },
+  {
+   "id": "9ba8a10c-4417-4b26-9c08-0b8d4e7c578a",
+   "service": "Pothole",
+   "status": "closed",
+   "requested": "2026-09-30T13:12:25Z",
+   "address": "Keane Rd & VFW Pkwy",
+   "lat": 42.29420107,
+   "lon": -71.16136369,
+   "description": "BWSC utility access hole has sunken and now is a large pothole. Difficult to show the extent of the how much it has sunk in photos. Cars hit it regularly. \nLocated on Keane Rd at the intersection of Keane and VFW Pkwy. \n ",
+   "status_notes": "Resolved. Violation issued. - We have notified BWSC, and they are scheduling the repairs.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1790773917:boston:production:ovnwmlbiqbygeb4uoze4/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1790773918:boston:production:zngh7zjn0qrc7cqugatu/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1790773915/boston/production/pom266mxrxxkwz59gvff.jpg",
+   "segments": [
+    [
+     "KEANE ROAD",
+     "2"
+    ],
+    [
+     "VETERANS OF FOREIGN WARS PARKWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "City",
+    "DCR"
+   ]
+  },
+  {
+   "id": "e83ae78a-faee-4be1-b51f-fedfb9c37449",
+   "service": "Traffic Signal Request",
+   "status": "open",
+   "requested": "2026-10-01T11:54:30Z",
+   "address": "Gallivan Blvd & Hallet St, Dorchester, MA 02122",
+   "lat": 42.283881,
+   "lon": -71.046774,
+   "description": null,
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "GALLIVAN BOULEVARD",
+     "1"
+    ],
+    [
+     "HALLET STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT"
+   ]
+  },
+  {
+   "id": "ac7468d8-4f34-49fb-b5de-a9772192292a",
+   "service": "Pothole",
+   "status": "open",
+   "requested": "2026-10-01T15:23:49Z",
+   "address": "794 VFW Pkwy, Boston, MA 02132",
+   "lat": 42.29106389,
+   "lon": -71.16677222,
+   "description": "Bad road construction manhole wobble making excessive metal to metal clashing noise . Can I put asphalt on top of it if public works doesn\u2019t take action since I made requests before ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790868084/boston/production/a3a0daghvzolcqvbsumw.jpg",
+   "segments": [
+    [
+     "VETERANS OF FOREIGN WARS PARKWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR"
+   ]
+  },
+  {
+   "id": "9537ecaf-4f3b-490d-ad51-f78c969df9d1",
+   "service": "Fallen Tree or Branches",
+   "status": "open",
+   "requested": "2026-10-01T18:18:45Z",
+   "address": "1072 Truman Pkwy, Boston, MA 02136",
+   "lat": 42.24049958,
+   "lon": -71.12602036,
+   "description": "Hello. There is a branch that is hanging down on Truman highway (in the median strip) from the Nor'easter. It does block the view in the left lane when you are heading towards Neponset Valley Parkway to turn onto Cranmore Road. Its near 1068 Truman. Thank you. ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1790878723:boston:production:vpo7smubhprowj0bkf0p/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1790878722/boston/production/xe4led1z9766xjcitnuw.jpg",
+   "segments": [
+    [
+     "None",
+     "None"
+    ],
+    [
+     "TRUMAN PARKWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR",
+    "None"
+   ]
+  },
+  {
+   "id": "f9c896e5-770b-479d-be25-bb330e81d915",
+   "service": "Pothole",
+   "status": "closed",
+   "requested": "2026-10-01T20:43:13Z",
+   "address": "Harvard Brg & James J Storrow Memorial Dr",
+   "lat": 42.35148775,
+   "lon": -71.09022083,
+   "description": "Hole in road, needs repair",
+   "status_notes": "Transitioned. Reallocated to Non-City of Boston Stakeholder.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790887390/boston/production/jogxanmoxumoojyuikaw.jpg",
+   "segments": [
+    [
+     "None",
+     "None"
+    ],
+    [
+     "RAMP-BOYLSTON ST/CHARLESGATE E TO STORROW DR EB",
+     "1"
+    ],
+    [
+     "STORROW DRIVE",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR",
+    "MassDOT",
+    "None"
+   ]
+  },
+  {
+   "id": "9d2d0d07-6139-46f9-9121-591734928cb3",
+   "service": "New / Modified Sign Request",
+   "status": "open",
+   "requested": "2026-10-02T03:15:07Z",
+   "address": "Arborway & New Washington St",
+   "lat": 42.30178692,
+   "lon": -71.11441813,
+   "description": "faded no turn sign",
+   "status_notes": "Resolved. Completed by Task.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790910691/boston/production/dndlf5louv7r15fkcbej.jpg",
+   "segments": [
+    [
+     "",
+     "0"
+    ],
+    [
+     "ARBORWAY",
+     "1"
+    ],
+    [
+     "None",
+     "None"
+    ],
+    [
+     "SOUTH STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT",
+    "None",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "f5c87a5d-dd2b-4ef9-811a-1d6296d9ddea",
+   "service": "Street Light Electrical Safety",
+   "status": "closed",
+   "requested": "2026-10-03T23:34:48Z",
+   "address": "Boylston St & Fenway",
+   "lat": 42.34633363,
+   "lon": -71.090756,
+   "description": "traffic signal has wires hanging out ",
+   "status_notes": "Transitioned. <div>\n<div>\n<div>\n<div>\n<div>\n<div>dcr advised&nbsp; bcs-00343176</div>\n</div>\n</div>\n</div>\n</div>\n</div>.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791070486/boston/production/zlmbvob202mqkiqzoly3.jpg",
+   "segments": [
+    [
+     "",
+     "0"
+    ],
+    [
+     "FENWAY",
+     "3"
+    ],
+    [
+     "None",
+     "None"
+    ]
+   ],
+   "owners": [
+    "DCR",
+    "None",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "0e8d1fa0-abb3-45ef-be35-f56fed9b4f4b",
+   "service": "Street Light Outage",
+   "status": "open",
+   "requested": "2026-10-04T01:45:06Z",
+   "address": "Gallivan Blvd & Rangeley St",
+   "lat": 42.2814409,
+   "lon": -71.06061928,
+   "description": "The street lights on Gallivan blvd have been out for almost a year.  Please fix ",
+   "status_notes": "Transitioned. Reallocated to Non-City of Boston Stakeholder.",
+   "media_url": null,
+   "segments": [
+    [
+     "GALLIVAN BOULEVARD",
+     "1"
+    ],
+    [
+     "RANGELEY STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT"
+   ]
+  },
+  {
+   "id": "cd4da2f5-b63c-44c5-a985-41afea250207",
+   "service": "Traffic Signal Knockdown",
+   "status": "closed",
+   "requested": "2026-10-04T13:40:38Z",
+   "address": "Spring St & VFW Pkwy",
+   "lat": 42.27141795,
+   "lon": -71.1725339,
+   "description": "The green light is not working on the left traffic signal. Located at the intersection of VFW Parkway and Spring St.",
+   "status_notes": "Resolved. Reallocated to Non-City of Boston Stakeholder.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791121221/boston/production/ayhnriulk7uuuezam9rm.jpg",
+   "segments": [
+    [
+     "SPRING STREET",
+     "1"
+    ],
+    [
+     "VETERANS OF FOREIGN WARS PARKWAY",
+     "1"
+    ],
+    [
+     "VETERANS OF FOREIGN WARS PARKWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR",
+    "MassDOT"
+   ]
+  },
+  {
+   "id": "63e5f974-5ea6-4b68-9092-4604c852a84b",
+   "service": "Tree or Stump Removal",
+   "status": "open",
+   "requested": "2026-10-05T11:38:42Z",
+   "address": "Soldiers Field Rd & Western Ave",
+   "lat": 42.36146219,
+   "lon": -71.14622197,
+   "description": "This sign is completely blocked by a tree of heaven, which is an invasive species that attracts another invasive species, the spotted lantern fly. Please remove this tree. Here is info about why the tree is not good:  https://extension.psu.edu/controlling-tree-of-heaven-why-it-matters",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1791200320:boston:production:uejfajlh8me1pqnuienq/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1791200318/boston/production/hztuj8dpsen5pj8qjbiz.jpg",
+   "segments": [
+    [
+     "LEO M BIRMINGHAM PARKWAY",
+     "3"
+    ],
+    [
+     "RAMP-SOLDIERS FIELD RD WB TO WESTERN AVE",
+     "2"
+    ],
+    [
+     "RAMP-WESTERN AVE TO SOLDIERS FIELD RD EB",
+     "2"
+    ],
+    [
+     "SOLDIERS FIELD ROAD",
+     "3"
+    ],
+    [
+     "WESTERN AVENUE",
+     "1"
+    ],
+    [
+     "WESTERN AVENUE",
+     "2"
+    ],
+    [
+     "WESTERN AVENUE",
+     "3"
+    ]
+   ],
+   "owners": [
+    "City",
+    "DCR",
+    "MassDOT"
+   ]
+  },
+  {
+   "id": "08adcfa2-b744-4675-a213-2862a29cd82f",
+   "service": "Traffic Signal Request",
+   "status": "open",
+   "requested": "2026-10-05T20:51:16Z",
+   "address": "Centre St & VFW Pkwy",
+   "lat": 42.29702746,
+   "lon": -71.13263332,
+   "description": "I am requesting that this signal be longer to allow pedestrians to fully cross the intersection. Due to cars consistently running the red light despite an illuminated pedestrian walk sign (as shown in photo), pedestrians must wait for several minutes before it is safe to begin crossing. As a result, there is not enough time to fully cross VFW to proceed down Centre St. ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791233356/boston/production/czt5vmzkh07q9cquj6hi.jpg",
+   "segments": [
+    [
+     "",
+     "0"
+    ],
+    [
+     "CENTRE STREET",
+     "3"
+    ],
+    [
+     "VETERANS OF FOREIGN WARS PARKWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "a77c181f-4bb3-4c00-93b4-0e818fa664fb",
+   "service": "Pothole",
+   "status": "closed",
+   "requested": "2026-10-06T00:52:21Z",
+   "address": "Arborway & New Washington St",
+   "lat": 42.301728,
+   "lon": -71.1144855,
+   "description": null,
+   "status_notes": "Resolved. Violation issued.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791387673/boston/production/okbuzbok6pytd3w7fzzw.jpg",
+   "segments": [
+    [
+     "",
+     "0"
+    ],
+    [
+     "ARBORWAY",
+     "1"
+    ],
+    [
+     "None",
+     "None"
+    ],
+    [
+     "RAMP-RT 203 EB TO SOUTH STREET",
+     "0"
+    ],
+    [
+     "SOUTH STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT",
+    "None",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "d1e910e9-dc2e-4ea3-85ac-41c293a9c522",
+   "service": "Sidewalk Repair",
+   "status": "closed",
+   "requested": "2026-10-06T14:48:34Z",
+   "address": "420 Fenway, Boston, MA 02115",
+   "lat": 42.34225841,
+   "lon": -71.10289343,
+   "description": "Broken sidewalk in Longwood/Fenway area in front of Emmanuel College.",
+   "status_notes": "Resolved. Referred to Mass DCR.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791298109/boston/production/tuocpyd7q8maughpbuws.jpg",
+   "segments": [
+    [
+     "FENWAY",
+     "3"
+    ],
+    [
+     "None",
+     "None"
+    ]
+   ],
+   "owners": [
+    "DCR",
+    "None"
+   ]
+  },
+  {
+   "id": "0e411b27-fc81-4f13-a6fd-6c3cc44d1cb0",
+   "service": "Street Light Outage",
+   "status": "open",
+   "requested": "2026-10-07T20:19:37Z",
+   "address": "525 VFW Pkwy, Boston, MA 02467",
+   "lat": 42.29576431,
+   "lon": -71.15395578,
+   "description": "Extended power outage caused by Eversource work (began 10:45 am, not expected to resolve until 12am tomorrow); no notice given to residents and Eversource is providing little information about the problem ",
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "VETERANS OF FOREIGN WARS PARKWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR"
+   ]
+  },
+  {
+   "id": "0e7e303f-686b-4e17-81f6-94185f3f4cfc",
+   "service": "Traffic Signal Request",
+   "status": "closed",
+   "requested": "2026-10-08T21:33:53Z",
+   "address": "Adams St & Gallivan Blvd",
+   "lat": 42.28272954,
+   "lon": -71.0558881,
+   "description": "Traffic light messed up. No turn signal left on Gallivan when coming off Granite Ave",
+   "status_notes": "Noted. <div>Resubmitted as&nbsp;BCS-00346840, notified Mass DOT.</div>.",
+   "media_url": null,
+   "segments": [
+    [
+     "ADAMS STREET",
+     "2"
+    ],
+    [
+     "GALLIVAN BOULEVARD",
+     "1"
+    ],
+    [
+     "GRANITE AVENUE",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT"
+   ]
+  },
+  {
+   "id": "9ad6472b-31ae-4300-8559-0fb85c2f70e7",
+   "service": "Install New Signal",
+   "status": "open",
+   "requested": "2026-10-08T21:35:55Z",
+   "address": "Adams St & Gallivan Blvd",
+   "lat": 42.28274742,
+   "lon": -71.05586377,
+   "description": "Your stupid traffic signal category requires a photo. Of what? How can I take a photo of a malfunctioning traffic light?!",
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "ADAMS STREET",
+     "2"
+    ],
+    [
+     "GALLIVAN BOULEVARD",
+     "1"
+    ],
+    [
+     "GRANITE AVENUE",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT"
+   ]
+  },
+  {
+   "id": "2da337df-a933-4fe5-a2ac-ec414e7f0c40",
+   "service": "Traffic Signal Request",
+   "status": "open",
+   "requested": "2026-10-08T22:48:43Z",
+   "address": "180 Arborway, Boston, MA 02130",
+   "lat": 42.30735237,
+   "lon": -71.11934251,
+   "description": "Crosswalk button  broken",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791499721/boston/production/z8ldj19ftq3kdfnylihs.jpg",
+   "segments": [
+    [
+     "",
+     "0"
+    ],
+    [
+     "ARBORWAY",
+     "1"
+    ],
+    [
+     "ARBORWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR",
+    "MassDOT",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "61365075-02ee-43bb-8ceb-ba375af94a84",
+   "service": "Fallen Tree or Branches",
+   "status": "open",
+   "requested": "2026-10-09T13:02:13Z",
+   "address": "406 Gallivan Blvd, Dorchester, MA 02124",
+   "lat": 42.281667,
+   "lon": -71.0606925,
+   "description": null,
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "GALLIVAN BOULEVARD",
+     "1"
+    ]
+   ],
+   "owners": [
+    "MassDOT"
+   ]
+  },
+  {
+   "id": "66532058-a7ba-41c2-a5c2-8710edac9cea",
+   "service": "Traffic Signal Request",
+   "status": "open",
+   "requested": "2026-10-10T03:12:22Z",
+   "address": "Milton St & Neponset Valley Pkwy",
+   "lat": 42.239845,
+   "lon": -71.133775,
+   "description": "The left red traffic light is out. The other colors seem to be working. Neponset Valley Pkwy and Milton St. ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791601915/boston/production/iogkx8eqsekdfo7cm0qm.jpg",
+   "segments": [
+    [
+     "NEPONSET VALLEY PARKWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR"
+   ]
+  },
+  {
+   "id": "da52decb-5e70-4b1b-82e1-3816ae370e15",
+   "service": "Street Light Outage",
+   "status": "open",
+   "requested": "2026-10-10T04:11:12Z",
+   "address": "Mount Vernon St & William T Morrissey Blvd",
+   "lat": 42.32036898,
+   "lon": -71.04987246,
+   "description": "Two street lights out at:\r\n-Dorchester, SE corner of intersection of Morrissey Blvd off ramp and Mount Vernon St. 42\u00b019'13.3\"N 71\u00b002'59.5\"W   https://maps.app.goo.gl/1FaCVmnsAvH3T9P68\r\n-Dorchester, ~200 ft NW of above, toward Morrissey Blvd overpass over Mt. Vernon St. \r\n42\u00b019'14.3\"N 71\u00b003'01.8\"W   https://maps.app.goo.gl/RWJzt8zjbHnU4Lvm6\r\n-Two (of four) lights mounted on the sidewalls of the Mt. Vernon St. underpass under Mt. Vernon St. One on one each side of Mt. Vernon St. \r\nThank you!",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1791604970:boston:production:ztz6gjd9vlbvgdafugn5/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1791604973:boston:production:jrnsqrpuwbh5f7jt8csw/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1791604968/boston/production/eqnbmxu5xnmn6cvlmvue.jpg",
+   "segments": [
+    [
+     "MOUNT VERNON STREET",
+     "3"
+    ],
+    [
+     "WILLIAM J DAY BOULEVARD",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR"
+   ]
+  },
+  {
+   "id": "6f430e76-de65-47f7-8ae5-c16b2d99a715",
+   "service": "Street Light Other",
+   "status": "open",
+   "requested": "2026-10-13T10:44:14Z",
+   "address": "Boylston St & Fenway",
+   "lat": 42.346521,
+   "lon": -71.0908155,
+   "description": null,
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "BOYLSTON STREET",
+     "3"
+    ],
+    [
+     "FENWAY",
+     "3"
+    ],
+    [
+     "None",
+     "None"
+    ]
+   ],
+   "owners": [
+    "DCR",
+    "None"
+   ]
+  },
+  {
+   "id": "96c3be33-0a15-4740-aed7-55a969c1f2ba",
+   "service": "New / Modified Sign Request",
+   "status": "open",
+   "requested": "2026-10-13T13:08:34Z",
+   "address": "Arborway & South St",
+   "lat": 42.30153329,
+   "lon": -71.1143199,
+   "description": "Bike signal signs posted on wrong poles at Forest Hills. Washington St @ Arborway",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791896909/boston/production/xemhisv13rbqrtkp3cko.jpg",
+   "segments": [
+    [
+     "",
+     "0"
+    ],
+    [
+     "ARBORWAY",
+     "1"
+    ],
+    [
+     "None",
+     "None"
+    ],
+    [
+     "SOUTH STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT",
+    "None",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "1eddf674-e820-437f-93a8-c74de6361afa",
+   "service": "Street Light Outage",
+   "status": "open",
+   "requested": "2026-10-14T02:33:51Z",
+   "address": "270 Arborway, Boston, MA 02130",
+   "lat": 42.30443311,
+   "lon": -71.11945499,
+   "description": "Street light is out across the street from 266 Arborway on the terrace / carriage way",
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "ARBORWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR"
+   ]
+  },
+  {
+   "id": "9468405e-f506-408f-8ca8-4844138081b8",
+   "service": "Install New Signal",
+   "status": "open",
+   "requested": "2026-10-15T21:38:00Z",
+   "address": "300 Fenway, Boston, MA 02115",
+   "lat": 42.33953843,
+   "lon": -71.09966568,
+   "description": "Request installation of rectangular rapid flashing beacons (RRFBs) at the marked crosswalk on Fenway drive on the Simmons College block (between Avenue-Louis Pasteur and Palace Rd). There are pedestrian signs but no flashing lights, and drivers regularly fail to yield. It is also a relatively high-speed driving zone with lots of foot traffic from students. On Oct 15, 2026, a driver accelerated and swerved around me while I was in the crosswalk (I believe the driver was distracted), in addition to a car ahead intentionally speeding up from stopped to cut me off while I was in the crosswalk (this driver was intentional). This is not an isolated incident.",
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "FENWAY",
+     "3"
+    ],
+    [
+     "None",
+     "None"
+    ]
+   ],
+   "owners": [
+    "DCR",
+    "None"
+   ]
+  },
+  {
+   "id": "080edfc1-3b3c-4348-bc11-a10785b72ebf",
+   "service": "Traffic Signal Request",
+   "status": "open",
+   "requested": "2026-10-16T00:13:27Z",
+   "address": "Jamaicaway & Perkins St",
+   "lat": 42.32095471,
+   "lon": -71.11667588,
+   "description": "Yellow light only is not working at perkins and jamaicaway signal closest to Jamaica pond. Please refer to DCR as needed, has been this way for months",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1792109583:b1i3lfmknieb2zwz5zjv/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1792109583/hngdjxxzbn0dgrrdgac0.jpg",
+   "segments": [
+    [
+     "",
+     "0"
+    ],
+    [
+     "JAMAICAWAY",
+     "3"
+    ],
+    [
+     "None",
+     "None"
+    ],
+    [
+     "PERKINS STREET",
+     "2"
+    ],
+    [
+     "PERKINS STREET",
+     "3"
+    ]
+   ],
+   "owners": [
+    "City",
+    "DCR",
+    "None",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "cafe82e0-19f6-4f25-ad68-0df8ed1ac9d8",
+   "service": "Traffic Signal Request",
+   "status": "open",
+   "requested": "2026-10-16T18:14:21Z",
+   "address": "Conley St & William T Morrissey Blvd",
+   "lat": 42.292017,
+   "lon": -71.0476605,
+   "description": null,
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "CONLEY STREET",
+     "2"
+    ],
+    [
+     "Conley Street",
+     "2"
+    ],
+    [
+     "WILLIAM T MORRISSEY BOULEVARD",
+     "3"
+    ]
+   ],
+   "owners": [
+    "City",
+    "DCR"
+   ]
+  },
+  {
+   "id": "c9a4399f-cbce-49a4-9631-fc23977be3c8",
+   "service": "Traffic Signal Request",
+   "status": "open",
+   "requested": "2026-10-18T03:43:39Z",
+   "address": "Leo M Birmingham Pkwy & Soldiers Field Rd",
+   "lat": 42.36143284,
+   "lon": -71.14584392,
+   "description": "The traffic lights at the intersection of Western Ave and Leo Birmingham Pkwy frequently leave vehicles stopped for several minutes, during which drivers often play extremely loud music directly beneath residents' windows. This is particularly disruptive at night, and we have repeatedly been awakened at 3 or 4 a.m. by music coming from vehicles waiting at the light.\r\nBesides reviewing traffic signal timing, I\u2019m asking the city to consider installing a simple courtesy sign reminding drivers that this is a residential area and asking them to keep noise to a minimum. Thank you",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1792294862:dl3nnaeqodvu4ixw911u/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1792294861/i8okcncggqyijqpvg1eu.jpg",
+   "segments": [
+    [
+     "LEO M BIRMINGHAM PARKWAY",
+     "3"
+    ],
+    [
+     "WESTERN AVENUE",
+     "2"
+    ],
+    [
+     "WESTERN AVENUE",
+     "3"
+    ]
+   ],
+   "owners": [
+    "City",
+    "DCR"
+   ]
+  },
+  {
+   "id": "f9e0280f-0501-4455-a04d-571fe545193c",
+   "service": "Pothole",
+   "status": "closed",
+   "requested": "2026-10-18T22:04:04Z",
+   "address": "Arborway & New Washington St",
+   "lat": 42.301323,
+   "lon": -71.1125415,
+   "description": null,
+   "status_notes": "Noted. No issue found at location - need pictures or better location.",
+   "media_url": null,
+   "segments": [
+    [
+     "",
+     "0"
+    ],
+    [
+     "ARBORWAY",
+     "1"
+    ],
+    [
+     "None",
+     "None"
+    ],
+    [
+     "WASHINGTON STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT",
+    "None",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "4a95b234-1af1-4c3c-8ce8-ee69d68c847a",
+   "service": "Missing / Knocked Down Sign",
+   "status": "open",
+   "requested": "2026-10-20T18:31:20Z",
+   "address": "338 Gallivan Blvd, Boston, MA 02124",
+   "lat": 42.28055388,
+   "lon": -71.06426172,
+   "description": "Toppled street sign at intersection of Becket Street and Gallivan Boulevard ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1792521055/mqa3zbfh0imi3yfdypkh.jpg",
+   "segments": [
+    [
+     "BECKET STREET",
+     "2"
+    ],
+    [
+     "GALLIVAN BOULEVARD",
+     "1"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT"
+   ]
+  },
+  {
+   "id": "6b11887b-bc97-4d70-8d6a-e5076d666887",
+   "service": "Pothole",
+   "status": "open",
+   "requested": "2026-10-20T19:23:31Z",
+   "address": "Arborway & Saint Joseph St",
+   "lat": 42.30636311,
+   "lon": -71.11948048,
+   "description": "BIG POTHOLE BEFORE TRAFFIC LIGHT AT CROSS WALK MIGHT BE ANOTHER SMALL ALONGNTHE RIGHT SIDE OF THE ROAD BUT UNABLE TO GET PIC",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1792523975/j8xwyslctwcrqhjt2evw.jpg",
+   "segments": [
+    [
+     "ARBORWAY",
+     "1"
+    ],
+    [
+     "ARBORWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR",
+    "MassDOT"
+   ]
+  },
+  {
+   "id": "18fa4955-c563-49c3-b331-1b5be4901259",
+   "service": "Traffic Signal Request",
+   "status": "open",
+   "requested": "2026-10-21T12:26:13Z",
+   "address": "Adams St & Gallivan Blvd",
+   "lat": 42.28279717,
+   "lon": -71.05589302,
+   "description": "The light at the four way light at Gallivan blvd, Granite Ave, and Adams St is messed up and off cycle allowing 2 cycles of cars to go through before allowing a walk for pedestrians, often leaving pedestrians waiting for 5+ minutes",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1792585545/drf5zgc5pmud182kaao5.jpg",
+   "segments": [
+    [
+     "ADAMS STREET",
+     "2"
+    ],
+    [
+     "GALLIVAN BOULEVARD",
+     "1"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT"
+   ]
+  },
+  {
+   "id": "15a19478-a862-42bc-8bc6-8759f111351a",
+   "service": "Traffic Signal Request",
+   "status": "open",
+   "requested": "2026-10-21T13:38:27Z",
+   "address": "Arborway & Forest Hills Entrance Dr",
+   "lat": 42.30060841,
+   "lon": -71.10656027,
+   "description": "Please add more time to the Arborway green light cycle heading to Jamaica Plain between 5 a.m. to 10 a.m. due to heavy traffic. Thank you. ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1792589902/yhbkdx7lgdmzotuyazlu.jpg",
+   "segments": [
+    [
+     "",
+     "0"
+    ],
+    [
+     "ARBORWAY",
+     "1"
+    ],
+    [
+     "JEWISH WAR VETERANS DRIVE",
+     "2"
+    ],
+    [
+     "MORTON STREET",
+     "1"
+    ],
+    [
+     "MORTON STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "d8bf7fe4-54e0-4861-a18b-2f956ec1cbfa",
+   "service": "Illegally Blocked Sidewalk",
+   "status": "closed",
+   "requested": "2026-10-21T21:49:52Z",
+   "address": "Baker St & VFW Pkwy",
+   "lat": 42.287463,
+   "lon": -71.1715995,
+   "description": null,
+   "status_notes": "Resolved. Citation issued. - violation has been issued.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_364,w_236//l_v1792619778:t3xsiosrw9sbhm1ng9wn/c_limit,h_364,w_236/fl_layer_apply,g_north_west,x_266/l_v1792676490:qleh7tvgwtsxhjar0bh1/c_limit,h_364,w_236/fl_layer_apply,g_north_west,x_522/l_v1792676491:om9dyq4su5qgu7r8e4vx/c_limit,h_364,w_236/fl_layer_apply,g_north_west,x_0,y_394/v1792619777/skwlnqdifx1j1z1aexm9.jpg",
+   "segments": [
+    [
+     "VETERANS OF FOREIGN WARS PARKWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR"
+   ]
+  },
+  {
+   "id": "633f750f-d235-4449-a10e-f554c5c7d21c",
+   "service": "Pothole",
+   "status": "open",
+   "requested": "2026-10-22T05:23:48Z",
+   "address": "Spring St & VFW Pkwy",
+   "lat": 42.27414413,
+   "lon": -71.17365692,
+   "description": "Left Lane 8 inch deep pothole heading northbound on VFW PARKWAY, West Roxbury, MA. About 100-200 feet past 1380 VFW PARKWAY northbound Left Lane. Pothole damaged my tires and suspension. $3,800 to repair my vehicle. I\u2019ll have to submit a damage claim to my vehicle. ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1792646069:qdauloq7o49pwbzyo5gp/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1792646065:brcfgiouwgok6yptxkch/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1792646067/emmkinumftuuvljovgje.jpg",
+   "segments": [
+    [
+     "",
+     "E"
+    ],
+    [
+     "VETERANS OF FOREIGN WARS PARKWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR",
+    "E"
+   ]
+  },
+  {
+   "id": "deaf2610-8052-419c-a018-5409b6f32402",
+   "service": "Unauthorized Signage",
+   "status": "closed",
+   "requested": "2026-10-22T11:47:11Z",
+   "address": "Jamaicaway & Pond St",
+   "lat": 42.31318372,
+   "lon": -71.12134718,
+   "description": "Unauthorized signage on public property; this is a repeat offense in the neighborhood. Please remove again and fine organization (at $147000 per nurse per yr avg, they can afford it)",
+   "status_notes": "Resolved. Item(s) removed - sign has been removed from location.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1792669626:vtlloxtzowcg664xtsov/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1792669624/wnpnnizolcbf3frojlig.jpg",
+   "segments": [
+    [
+     "ARBORWAY",
+     "3"
+    ],
+    [
+     "POND STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "DCR"
+   ]
+  },
+  {
+   "id": "ab296f8f-9fa2-4557-afb3-ccef773a709f",
+   "service": "Traffic Signal Request",
+   "status": "open",
+   "requested": "2026-10-24T03:09:26Z",
+   "address": "Leo M Birmingham Pkwy & Soldiers Field Rd",
+   "lat": 42.36161377,
+   "lon": -71.14558596,
+   "description": "Westbound traffic light turns green immediately after turning red. Not sure if this is by design but I\u2019m providing my feedback because it seems like it could cause an accident - traffic pattern previously had pedestrian walk light across Western Ave after that light turned red.",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1792811362/jpy1zsmocoyfpyfjx5dd.jpg",
+   "segments": [
+    [
+     "RAMP-WESTERN AVE TO SOLDIERS FIELD RD EB",
+     "2"
+    ],
+    [
+     "RAMP-WESTERN AVE TO SOLDIERS FIELD RD EB",
+     "3"
+    ],
+    [
+     "WESTERN AVENUE",
+     "2"
+    ],
+    [
+     "WESTERN AVENUE",
+     "3"
+    ]
+   ],
+   "owners": [
+    "City",
+    "DCR"
+   ]
+  },
+  {
+   "id": "f9d02ebd-a42a-4ad8-8bbd-e3f4d1d741a6",
+   "service": "Traffic Signal Request",
+   "status": "open",
+   "requested": "2026-10-24T16:30:18Z",
+   "address": "Adams St & Gallivan Blvd",
+   "lat": 42.282,
+   "lon": -71.058924,
+   "description": null,
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "ADAMS STREET",
+     "0"
+    ],
+    [
+     "ADAMS STREET",
+     "2"
+    ],
+    [
+     "GALLIVAN BOULEVARD",
+     "1"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "49232dc3-d631-4b7d-907d-2aa11237d121",
+   "service": "Fallen Tree or Branches",
+   "status": "open",
+   "requested": "2026-09-27T01:47:21Z",
+   "address": "Columbia Rd & Old Colony Ave",
+   "lat": 42.324111,
+   "lon": -71.0524215,
+   "description": null,
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "COLUMBIA ROAD",
+     "3"
+    ],
+    [
+     "OLD COLONY AVENUE",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR"
+   ]
+  },
+  {
+   "id": "1ac2582a-70f7-4a16-bf47-133539536fa7",
+   "service": "Pothole",
+   "status": "open",
+   "requested": "2026-09-28T21:52:08Z",
+   "address": "1231A-1231B Centre St, Boston, MA 02132",
+   "lat": 42.29727941,
+   "lon": -71.1316313,
+   "description": "Open Construction pit in roadway. Steel \nplate needed, at a minimum. ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790632323/boston/production/xgea2aob6bulhuuof8ju.jpg",
+   "segments": [
+    [
+     "",
+     "0"
+    ],
+    [
+     "CENTRE STREET",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "1c0458de-d1ce-418e-9b1b-bea90612b7af",
+   "service": "Pothole",
+   "status": "open",
+   "requested": "2026-09-29T02:50:10Z",
+   "address": "Centre St & Walter St",
+   "lat": 42.2984758,
+   "lon": -71.12966681,
+   "description": "Large roadway defect/depression near storm drain around 1214 Centre Street, Jamaica Plain. My vehicle suffered a flat tire after striking the defect at approximately 6:40pm on September 28, 2026. AAA advised me that several other vehicles had also sustained flat tires at this location. Cones were subsequently placed around the defect. There appears to be active/recent roadway construction in the area.",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790649960/boston/production/ntocz6rt3plglppjyaxv.jpg",
+   "segments": [
+    [
+     "CENTRE STREET",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR"
+   ]
+  },
+  {
+   "id": "397a5d92-3ef4-4c62-a7f5-d895f05f9a96",
+   "service": "Pothole",
+   "status": "closed",
+   "requested": "2026-09-29T15:22:50Z",
+   "address": "Blue Hill Ave & Morton St",
+   "lat": 42.28435531,
+   "lon": -71.09145443,
+   "description": "While making a left turn from Blue Hill Avenue onto Morton Street, I struck the raised curb/median at the intersection. I was traveling slowly and had just proceeded through the intersection after the light turned green. The impact was severe enough to cause significant damage to my vehicle\u2019s tire and wheel, and the vehicle is currently not drivable. I am reporting the curb/roadway condition for inspection and documentation. Please inspect the curb/median and surrounding roadway for any unsafe, damaged, or improperly configured conditions that may present a hazard to vehicles making this turn.",
+   "status_notes": "Noted. No issue found at location.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1790695214:boston:production:hwwbdukobao2vy4ryef8/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1790695216:boston:production:l0d9xfraodvlgw0abfxi/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1790695212/boston/production/wm5bq5qtqpnsm7zrihcf.jpg",
+   "segments": [
+    [
+     "BLUE HILL AVENUE",
+     "2"
+    ],
+    [
+     "MORTON STREET",
+     "1"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT"
+   ]
+  },
+  {
+   "id": "ddd20e96-c03f-4b32-a955-02e10308c4fb",
+   "service": "Traffic Signal Request",
+   "status": "open",
+   "requested": "2026-10-01T14:57:37Z",
+   "address": "Centre St & Walter St",
+   "lat": 42.29808879,
+   "lon": -71.13013197,
+   "description": "The traffic light at the intersection of Walter St and Centre St in Roslindale needs to be turned on. Construction has been going on for over a year and it's a dangerous intersection.",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790866474/boston/production/khlghudfqr3ohccue7rs.png",
+   "segments": [
+    [
+     "CENTRE STREET",
+     "3"
+    ],
+    [
+     "WALTER STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "DCR"
+   ]
+  }
+ ],
+ "all_checked": [
+  {
+   "id": "05165012-2bf6-45b0-aa0f-1cb88f5fb96e",
+   "service": "Street Light Knockdown",
+   "status": "open",
+   "requested": "2026-09-25T11:46:02Z",
+   "address": "Gallivan Blvd & Myrtlebank Ave",
+   "lat": 42.28267621,
+   "lon": -71.05413958,
+   "description": "Leaning power/telephone pole on Myrtlebank Ave at the corner of Gallivan Blvd. If you look at the right side the power line to the streetlight on Gallivan is pulled tight, no slack at all. The main lines along Myrtlebank are drooping quite  bit.",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1790336737:boston:production:rwdeuzy6a2it1qkshxnl/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1790336736/boston/production/qaxxzn8po1obo3j95s6r.jpg",
+   "segments": [
+    [
+     "GALLIVAN BOULEVARD",
+     "1"
+    ],
+    [
+     "MYRTLEBANK AVENUE",
+     "2"
+    ],
+    [
+     "ROSS ROAD",
+     "0"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "94e80746-e7a3-4f1a-9b4f-e8a403853bab",
+   "service": "Street Light Outage",
+   "status": "open",
+   "requested": "2026-09-26T21:50:00Z",
+   "address": "Arborway & Forest Hills St",
+   "lat": 42.300855,
+   "lon": -71.1070515,
+   "description": null,
+   "status_notes": "Transitioned. Reallocated to Non-City of Boston Stakeholder.",
+   "media_url": null,
+   "segments": [
+    [
+     "ARBORWAY",
+     "1"
+    ],
+    [
+     "FOREST HILLS STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT"
+   ]
+  },
+  {
+   "id": "8ee2c839-4ecd-4d80-a4d1-099dda0856df",
+   "service": "Fallen Tree or Branches",
+   "status": "closed",
+   "requested": "2026-09-26T23:16:09Z",
+   "address": "Baker St & VFW Pkwy",
+   "lat": 42.287463,
+   "lon": -71.1715995,
+   "description": null,
+   "status_notes": "Resolved. Request Completed - nothing found at the location.",
+   "media_url": null,
+   "segments": [
+    [
+     "VETERANS OF FOREIGN WARS PARKWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR"
+   ]
+  },
+  {
+   "id": "4e6a615f-da7c-446e-aba9-aa7119ee6a0b",
+   "service": "Fallen Tree or Branches",
+   "status": "open",
+   "requested": "2026-09-26T23:19:24Z",
+   "address": "Clearwater Rd & VFW Pkwy",
+   "lat": 42.296598,
+   "lon": -71.1478755,
+   "description": null,
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "CLEARWATER ROAD",
+     "0"
+    ],
+    [
+     "CLEARWATER ROAD",
+     "2"
+    ],
+    [
+     "VETERANS OF FOREIGN WARS PARKWAY",
+     "0"
+    ],
+    [
+     "VETERANS OF FOREIGN WARS PARKWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "City",
+    "DCR",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "bb5744aa-3cbc-4c09-9576-a18aa87e27d6",
+   "service": "Fallen Tree or Branches",
+   "status": "closed",
+   "requested": "2026-09-27T01:43:30Z",
+   "address": "American Legion Hwy & Walk Hill St",
+   "lat": 42.287661,
+   "lon": -71.106669,
+   "description": null,
+   "status_notes": "Noted. Duplicate Request.",
+   "media_url": null,
+   "segments": [
+    [
+     "AMERICAN LEGION HIGHWAY",
+     "2"
+    ],
+    [
+     "WALK HILL STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "72627ed6-db9a-4523-be53-a5fb45542ed6",
+   "service": "Fallen Tree or Branches",
+   "status": "open",
+   "requested": "2026-09-27T22:33:16Z",
+   "address": "Clifford St & Neponset Valley Pkwy",
+   "lat": 42.23658952,
+   "lon": -71.12991375,
+   "description": "Tree is close to falling off right on the corner of Clifford Street and Neponset Valley Parkway in front of a house and multiple crosswalks. There is already caution tape and traffic cones, but that will obviously not hold if the tree falls. I\u2019m unsure if this already has been reported, but I want to ensure it does.",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790548371/boston/production/pytipsyhk18m84rrllxy.jpg",
+   "segments": [
+    [
+     "CLIFFORD STREET",
+     "2"
+    ],
+    [
+     "NEPONSET VALLEY PARKWAY",
+     "3"
+    ],
+    [
+     "WINGATE ROAD",
+     "0"
+    ]
+   ],
+   "owners": [
+    "City",
+    "DCR",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "6ca3b0f1-de7d-41b5-8973-4ca6a2f2d3e3",
+   "service": "Street Light Outage",
+   "status": "open",
+   "requested": "2026-09-28T10:55:50Z",
+   "address": "593 Gallivan Blvd, Boston, MA 02124",
+   "lat": 42.283098,
+   "lon": -71.0514,
+   "description": null,
+   "status_notes": "Transitioned. Reallocated to Non-City of Boston Stakeholder.",
+   "media_url": null,
+   "segments": [
+    [
+     "GALLIVAN BOULEVARD",
+     "1"
+    ]
+   ],
+   "owners": [
+    "MassDOT"
+   ]
+  },
+  {
+   "id": "83721627-0392-4ccd-aa3a-73e7bec938d1",
+   "service": "Fallen Tree or Branches",
+   "status": "open",
+   "requested": "2026-09-28T13:11:00Z",
+   "address": "239 Neponset Valley Pkwy, Boston, MA 02136",
+   "lat": 42.23628186,
+   "lon": -71.12923944,
+   "description": "Subject: Urgent Request for Tree Inspection and Maintenance on Neponset Valley Parkway.\n\nGood morning,\n\nI am submitting this report to bring attention to the large trees that are falling and creating a potential safety hazard along Neponset Valley Parkway, particularly between 209 and 239 Neponset Valley Parkway.\n\nI am respectfully requesting that the City send the appropriate tree management team to inspect this area and address the damaged and potentially dangerous trees and properties. I am also requesting that the tree limbs and branches in front of 229 and 239 Neponset Valley Parkway be properly cut back and removed where necessary.\n\nTaking care of these trees and damaged branches now could help prevent future property damage, injuries, or other serious hazards, especially as we approach the winter season when snow, ice, and strong winds can make these conditions worse.\n\nThe safety of residents and their homes is very important, and I respectfully ask that this matter be inspected and addressed as soon as possible.\n\nThank you for your attention to this safety concern and for your assistance in keeping the residents of Neponset Valley Parkway safe. some of this trees are over 40 years old you can see clearly from the pictures. Some areas are properly taken care of while some areas have been neglected. This makes us wonder. Kindly let us do the needful to avoid destruction.\n\nRespectfully,\nConcern citizen of the Commonwealth.",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1790601033:boston:production:a0h27siqndb8zaf8ozus/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1790601034:boston:production:skxouv8vwrczn79sed29/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1790601031/boston/production/eeq4tcihrwrbuwpiqdoj.jpg",
+   "segments": [
+    [
+     "COLCHESTER STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "101006757264",
+   "service": "Damaged Sign",
+   "status": "closed",
+   "requested": "2026-09-28T15:31:00Z",
+   "address": "Intersection of Freeport St and William T Morrissey Blvd, Dorchester",
+   "lat": 42.300598,
+   "lon": -71.049539,
+   "description": "UMass Boston Harbor",
+   "status_notes": "If this is located on the grounds of UMass Boston, the school would be responsible for repair.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1790609365:boston:production:embbgca9ot5unmeilkae/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1790609368:boston:production:khzpxteiuit4ssgn2myx/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1790609363/boston/production/makwm0xfyoeorsdbdxya.jpg",
+   "segments": [
+    [
+     "",
+     "0"
+    ],
+    [
+     "WILLIAM T MORRISSEY BOULEVARD",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "101006757355",
+   "service": "Damaged Sign",
+   "status": "closed",
+   "requested": "2026-09-28T18:31:00Z",
+   "address": "400 Soldiers Field Rd, Allston",
+   "lat": 42.3595,
+   "lon": -71.11760833,
+   "description": "Yield sign needed at merge lane.  There is no longer a sign as you merge onto Storrow from Soldiers Field road.  Seems like a safety hazard.",
+   "status_notes": "Resubmitted as BCS-00356941 to Mass DCR.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790620298/boston/production/sfdnjqqpkgylltywe9om.jpg#spot=f34f5ec9-1066-4f5b-926f-058c97b78a0e",
+   "segments": [
+    [
+     "",
+     "0"
+    ],
+    [
+     "RAMP-CAMBRIDGE ST TO SOLDIERS FIELD RD EB",
+     "2"
+    ],
+    [
+     "SOLDIERS FIELD ROAD",
+     "3"
+    ]
+   ],
+   "owners": [
+    "City",
+    "DCR",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "f73e793a-9886-4ac0-81c7-53f1051f7abb",
+   "service": "Fallen Tree or Branches",
+   "status": "open",
+   "requested": "2026-09-28T20:58:39Z",
+   "address": "E Broadway & William J Day Blvd",
+   "lat": 42.33543,
+   "lon": -71.02438333,
+   "description": "Tree down ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790629114/boston/production/gq6brscwncnb24wc1oo4.jpg",
+   "segments": [],
+   "owners": []
+  },
+  {
+   "id": "03f85776-a9d9-4235-90b3-467950194c76",
+   "service": "Illegally Blocked Sidewalk",
+   "status": "closed",
+   "requested": "2026-09-28T21:22:51Z",
+   "address": "44-46 Soldiers Field Pl, Boston, MA 02135",
+   "lat": 42.359572,
+   "lon": -71.14816111,
+   "description": "Car blocking sidewalk across from the Charley apartments  in the cul de sac ",
+   "status_notes": "Transitioned. Reallocated to Non-City of Boston Stakeholder.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1790630566:boston:production:bfnqnna6es3l6vg2uiva/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1790630565/boston/production/cmrfgcffkmjfg6jzfyjo.jpg",
+   "segments": [
+    [
+     "SOLDIERS FIELD PLACE",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "cd88743d-d403-4e08-8977-5cda88132732",
+   "service": "Pothole",
+   "status": "open",
+   "requested": "2026-09-29T00:20:36Z",
+   "address": "Centre St & VFW Pkwy",
+   "lat": 42.296805,
+   "lon": -71.1328005,
+   "description": null,
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "CENTRE STREET",
+     "2"
+    ],
+    [
+     "CENTRE STREET",
+     "3"
+    ],
+    [
+     "VETERANS OF FOREIGN WARS PARKWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "City",
+    "DCR"
+   ]
+  },
+  {
+   "id": "ff63960e-0187-45bc-a357-16c7fd5ed5a0",
+   "service": "Fallen Tree or Branches",
+   "status": "closed",
+   "requested": "2026-09-29T11:39:51Z",
+   "address": "150-160 American Legion Hwy, Boston, MA 02124",
+   "lat": 42.294708,
+   "lon": -71.0924895,
+   "description": "Broken tree from storm ",
+   "status_notes": "Resolved. Request Completed - removed by JD OD.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1790691489:boston:production:ihtzjbqizkl1c2mty93d/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1790691487/boston/production/dqcktntk0tokar0bxzsl.jpg",
+   "segments": [],
+   "owners": []
+  },
+  {
+   "id": "824d75d4-cf78-491d-bb92-1ff26938aaed",
+   "service": "Fallen Tree or Branches",
+   "status": "closed",
+   "requested": "2026-09-29T15:44:26Z",
+   "address": "Agassiz Rd & Fenway",
+   "lat": 42.34286524,
+   "lon": -71.09240931,
+   "description": "Broken willow limb- still partially connected to tree but could break anytime. ",
+   "status_notes": "Resolved. Request Completed - removed hanger from city park, BY DR GR.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1790696638:boston:production:mepremthvfrrehbl1gle/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1790808331:boston:production:r3i77n46ib1qcx43yarp/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1790696636/boston/production/szpobzstcmpbfhymf5ct.jpg",
+   "segments": [],
+   "owners": []
+  },
+  {
+   "id": "ab26ef90-aabf-4254-a0bd-59160dc59f65",
+   "service": "Fallen Tree or Branches",
+   "status": "open",
+   "requested": "2026-09-29T22:46:55Z",
+   "address": "Arborway & Jamaicaway",
+   "lat": 42.31348643,
+   "lon": -71.12227708,
+   "description": "There is a large fallen branch hanging over a frequently used walkway on the emerald necklace. My husband tried to pull it down and said it was stuck. It looks like it could fall at any time on bicyclists and pedestrians. ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790721991/boston/production/pk4xxfsujxuevhmx7bir.jpg",
+   "segments": [
+    [
+     "ARBORWAY",
+     "3"
+    ],
+    [
+     "FRANCIS PARKMAN DRIVE",
+     "3"
+    ],
+    [
+     "PRINCE STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "DCR"
+   ]
+  },
+  {
+   "id": "d077bcc0-8e81-4517-8cee-5770659ace3c",
+   "service": "Sidewalk Repair",
+   "status": "open",
+   "requested": "2026-09-29T23:49:05Z",
+   "address": "Brookline Ave & Riverway",
+   "lat": 42.33593638,
+   "lon": -71.11030737,
+   "description": "Dangerous roots and bumps on bike path leading to the intersection of Brookline Ave and Riverway. It is a series of roots that cause difficulty with biking and for those with mobility issues.",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1790725720:boston:production:cwwbelvmlgmx1kubstqi/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1790725721:boston:production:vr6uqmdirmmqyq1qgkkq/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1790725719/boston/production/khywedgjlvmd2p1yv1rj.jpg",
+   "segments": [
+    [
+     "",
+     "0"
+    ],
+    [
+     "BROOKLINE AVENUE",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "9ba8a10c-4417-4b26-9c08-0b8d4e7c578a",
+   "service": "Pothole",
+   "status": "closed",
+   "requested": "2026-09-30T13:12:25Z",
+   "address": "Keane Rd & VFW Pkwy",
+   "lat": 42.29420107,
+   "lon": -71.16136369,
+   "description": "BWSC utility access hole has sunken and now is a large pothole. Difficult to show the extent of the how much it has sunk in photos. Cars hit it regularly. \nLocated on Keane Rd at the intersection of Keane and VFW Pkwy. \n ",
+   "status_notes": "Resolved. Violation issued. - We have notified BWSC, and they are scheduling the repairs.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1790773917:boston:production:ovnwmlbiqbygeb4uoze4/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1790773918:boston:production:zngh7zjn0qrc7cqugatu/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1790773915/boston/production/pom266mxrxxkwz59gvff.jpg",
+   "segments": [
+    [
+     "KEANE ROAD",
+     "2"
+    ],
+    [
+     "VETERANS OF FOREIGN WARS PARKWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "City",
+    "DCR"
+   ]
+  },
+  {
+   "id": "e6065c5f-ee1b-4ccf-b5fb-1c20be2b5c47",
+   "service": "Tree or Stump Removal",
+   "status": "closed",
+   "requested": "2026-09-30T19:42:34Z",
+   "address": "364-366 Neponset Ave, Boston, MA 02122",
+   "lat": 42.28744632,
+   "lon": -71.04503009,
+   "description": "Fallen tree",
+   "status_notes": "Resolved. Request Completed - broken Limbs removed from play area  trees need to be trimmed.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790797352/boston/production/nhqykc3qrhfqdo1b35bn.jpg",
+   "segments": [],
+   "owners": []
+  },
+  {
+   "id": "32b03088-4cd1-4bd3-bfe3-f64c8205c152",
+   "service": "Street Light Outage",
+   "status": "open",
+   "requested": "2026-10-01T00:22:39Z",
+   "address": "270 Arborway, Boston, MA 02130",
+   "lat": 42.304563,
+   "lon": -71.119161,
+   "description": "The street light across from 270 Arborway, Jamaica Plain, MA 02130 is out and needs to be fixed. Thank you",
+   "status_notes": "Transitioned. Reallocated to Non-City of Boston Stakeholder.",
+   "media_url": null,
+   "segments": [],
+   "owners": []
+  },
+  {
+   "id": "e83ae78a-faee-4be1-b51f-fedfb9c37449",
+   "service": "Traffic Signal Request",
+   "status": "open",
+   "requested": "2026-10-01T11:54:30Z",
+   "address": "Gallivan Blvd & Hallet St, Dorchester, MA 02122",
+   "lat": 42.283881,
+   "lon": -71.046774,
+   "description": null,
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "GALLIVAN BOULEVARD",
+     "1"
+    ],
+    [
+     "HALLET STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT"
+   ]
+  },
+  {
+   "id": "ac7468d8-4f34-49fb-b5de-a9772192292a",
+   "service": "Pothole",
+   "status": "open",
+   "requested": "2026-10-01T15:23:49Z",
+   "address": "794 VFW Pkwy, Boston, MA 02132",
+   "lat": 42.29106389,
+   "lon": -71.16677222,
+   "description": "Bad road construction manhole wobble making excessive metal to metal clashing noise . Can I put asphalt on top of it if public works doesn\u2019t take action since I made requests before ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790868084/boston/production/a3a0daghvzolcqvbsumw.jpg",
+   "segments": [
+    [
+     "VETERANS OF FOREIGN WARS PARKWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR"
+   ]
+  },
+  {
+   "id": "5a3df06a-0b28-47a4-a6fd-f4b4462a27b8",
+   "service": "Pothole",
+   "status": "open",
+   "requested": "2026-10-01T16:01:46Z",
+   "address": "2 Jamaicaway Ct, Boston, MA 02130",
+   "lat": 42.317253,
+   "lon": -71.1164295,
+   "description": null,
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "JAMAICAWAY COURT",
+     "0"
+    ]
+   ],
+   "owners": [
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "0fea76f5-65b9-45d3-89e0-748395481394",
+   "service": "Traffic Signal Request",
+   "status": "open",
+   "requested": "2026-10-01T17:45:07Z",
+   "address": "American Legion Hwy & Walk Hill St",
+   "lat": 42.287661,
+   "lon": -71.106669,
+   "description": null,
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "AMERICAN LEGION HIGHWAY",
+     "2"
+    ],
+    [
+     "WALK HILL STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "9537ecaf-4f3b-490d-ad51-f78c969df9d1",
+   "service": "Fallen Tree or Branches",
+   "status": "open",
+   "requested": "2026-10-01T18:18:45Z",
+   "address": "1072 Truman Pkwy, Boston, MA 02136",
+   "lat": 42.24049958,
+   "lon": -71.12602036,
+   "description": "Hello. There is a branch that is hanging down on Truman highway (in the median strip) from the Nor'easter. It does block the view in the left lane when you are heading towards Neponset Valley Parkway to turn onto Cranmore Road. Its near 1068 Truman. Thank you. ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1790878723:boston:production:vpo7smubhprowj0bkf0p/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1790878722/boston/production/xe4led1z9766xjcitnuw.jpg",
+   "segments": [
+    [
+     "None",
+     "None"
+    ],
+    [
+     "TRUMAN PARKWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR",
+    "None"
+   ]
+  },
+  {
+   "id": "f9c896e5-770b-479d-be25-bb330e81d915",
+   "service": "Pothole",
+   "status": "closed",
+   "requested": "2026-10-01T20:43:13Z",
+   "address": "Harvard Brg & James J Storrow Memorial Dr",
+   "lat": 42.35148775,
+   "lon": -71.09022083,
+   "description": "Hole in road, needs repair",
+   "status_notes": "Transitioned. Reallocated to Non-City of Boston Stakeholder.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790887390/boston/production/jogxanmoxumoojyuikaw.jpg",
+   "segments": [
+    [
+     "None",
+     "None"
+    ],
+    [
+     "RAMP-BOYLSTON ST/CHARLESGATE E TO STORROW DR EB",
+     "1"
+    ],
+    [
+     "STORROW DRIVE",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR",
+    "MassDOT",
+    "None"
+   ]
+  },
+  {
+   "id": "70e988b7-bd48-4b71-9364-f043c2d724f4",
+   "service": "Sidewalk Repair",
+   "status": "open",
+   "requested": "2026-10-02T02:22:58Z",
+   "address": "1256 Soldiers Field Rd, Boston, MA 02135",
+   "lat": 42.36339508,
+   "lon": -71.1374595,
+   "description": "Please repave this! It is a hazard for walkers, bikers, and wheelchairs.",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790907535/boston/production/uonyb3ebcrlfch16nvav.jpg",
+   "segments": [
+    [
+     "TELFORD STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "9d2d0d07-6139-46f9-9121-591734928cb3",
+   "service": "New / Modified Sign Request",
+   "status": "open",
+   "requested": "2026-10-02T03:15:07Z",
+   "address": "Arborway & New Washington St",
+   "lat": 42.30178692,
+   "lon": -71.11441813,
+   "description": "faded no turn sign",
+   "status_notes": "Resolved. Completed by Task.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790910691/boston/production/dndlf5louv7r15fkcbej.jpg",
+   "segments": [
+    [
+     "",
+     "0"
+    ],
+    [
+     "ARBORWAY",
+     "1"
+    ],
+    [
+     "None",
+     "None"
+    ],
+    [
+     "SOUTH STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT",
+    "None",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "f5c87a5d-dd2b-4ef9-811a-1d6296d9ddea",
+   "service": "Street Light Electrical Safety",
+   "status": "closed",
+   "requested": "2026-10-03T23:34:48Z",
+   "address": "Boylston St & Fenway",
+   "lat": 42.34633363,
+   "lon": -71.090756,
+   "description": "traffic signal has wires hanging out ",
+   "status_notes": "Transitioned. <div>\n<div>\n<div>\n<div>\n<div>\n<div>dcr advised&nbsp; bcs-00343176</div>\n</div>\n</div>\n</div>\n</div>\n</div>.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791070486/boston/production/zlmbvob202mqkiqzoly3.jpg",
+   "segments": [
+    [
+     "",
+     "0"
+    ],
+    [
+     "FENWAY",
+     "3"
+    ],
+    [
+     "None",
+     "None"
+    ]
+   ],
+   "owners": [
+    "DCR",
+    "None",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "0e8d1fa0-abb3-45ef-be35-f56fed9b4f4b",
+   "service": "Street Light Outage",
+   "status": "open",
+   "requested": "2026-10-04T01:45:06Z",
+   "address": "Gallivan Blvd & Rangeley St",
+   "lat": 42.2814409,
+   "lon": -71.06061928,
+   "description": "The street lights on Gallivan blvd have been out for almost a year.  Please fix ",
+   "status_notes": "Transitioned. Reallocated to Non-City of Boston Stakeholder.",
+   "media_url": null,
+   "segments": [
+    [
+     "GALLIVAN BOULEVARD",
+     "1"
+    ],
+    [
+     "RANGELEY STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT"
+   ]
+  },
+  {
+   "id": "cd4da2f5-b63c-44c5-a985-41afea250207",
+   "service": "Traffic Signal Knockdown",
+   "status": "closed",
+   "requested": "2026-10-04T13:40:38Z",
+   "address": "Spring St & VFW Pkwy",
+   "lat": 42.27141795,
+   "lon": -71.1725339,
+   "description": "The green light is not working on the left traffic signal. Located at the intersection of VFW Parkway and Spring St.",
+   "status_notes": "Resolved. Reallocated to Non-City of Boston Stakeholder.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791121221/boston/production/ayhnriulk7uuuezam9rm.jpg",
+   "segments": [
+    [
+     "SPRING STREET",
+     "1"
+    ],
+    [
+     "VETERANS OF FOREIGN WARS PARKWAY",
+     "1"
+    ],
+    [
+     "VETERANS OF FOREIGN WARS PARKWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR",
+    "MassDOT"
+   ]
+  },
+  {
+   "id": "1542871f-f56d-4d7d-ba18-85a6915191c2",
+   "service": "Unauthorized Signage",
+   "status": "closed",
+   "requested": "2026-10-05T02:36:55Z",
+   "address": "180 Arborway, Boston, MA 02130",
+   "lat": 42.30730818,
+   "lon": -71.11901946,
+   "description": "Someone has attached unauthorized political signs to the pedestrian traffic signal in the median of the Arborway, near the main entrance to the Arnold Arboretum on one side and a residence at 180 Arborway on the other side. The signs say Protect the Arboretum and Sign the Petition, with a large QR code. Zoom into the photo to see the signs on the traffic signal pole. They were posted by an anonymous political group, not by the Arboretum. These signs appeared in the same general location about two months ago -- see my BOS:311 case BCS-00273504. You removed the signs then. Please remove them again.",
+   "status_notes": "Resolved. Item(s) removed.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791167814/boston/production/tjmgblw2mzgsyvb6iaeh.jpg",
+   "segments": [],
+   "owners": []
+  },
+  {
+   "id": "e23667df-0bf6-4b41-a036-60bce6a109f0",
+   "service": "Street Light Outage",
+   "status": "open",
+   "requested": "2026-10-05T09:24:37Z",
+   "address": "1650 Soldiers Field Rd, Boston, MA 02135",
+   "lat": 42.3594,
+   "lon": -71.1524295,
+   "description": null,
+   "status_notes": "Transitioned. Reallocated to Non-City of Boston Stakeholder.",
+   "media_url": null,
+   "segments": [],
+   "owners": []
+  },
+  {
+   "id": "63e5f974-5ea6-4b68-9092-4604c852a84b",
+   "service": "Tree or Stump Removal",
+   "status": "open",
+   "requested": "2026-10-05T11:38:42Z",
+   "address": "Soldiers Field Rd & Western Ave",
+   "lat": 42.36146219,
+   "lon": -71.14622197,
+   "description": "This sign is completely blocked by a tree of heaven, which is an invasive species that attracts another invasive species, the spotted lantern fly. Please remove this tree. Here is info about why the tree is not good:  https://extension.psu.edu/controlling-tree-of-heaven-why-it-matters",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1791200320:boston:production:uejfajlh8me1pqnuienq/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1791200318/boston/production/hztuj8dpsen5pj8qjbiz.jpg",
+   "segments": [
+    [
+     "LEO M BIRMINGHAM PARKWAY",
+     "3"
+    ],
+    [
+     "RAMP-SOLDIERS FIELD RD WB TO WESTERN AVE",
+     "2"
+    ],
+    [
+     "RAMP-WESTERN AVE TO SOLDIERS FIELD RD EB",
+     "2"
+    ],
+    [
+     "SOLDIERS FIELD ROAD",
+     "3"
+    ],
+    [
+     "WESTERN AVENUE",
+     "1"
+    ],
+    [
+     "WESTERN AVENUE",
+     "2"
+    ],
+    [
+     "WESTERN AVENUE",
+     "3"
+    ]
+   ],
+   "owners": [
+    "City",
+    "DCR",
+    "MassDOT"
+   ]
+  },
+  {
+   "id": "727c3655-fe37-427b-8316-a873f382216c",
+   "service": "Fallen Tree or Branches",
+   "status": "open",
+   "requested": "2026-10-05T17:49:09Z",
+   "address": "Fenway & Forsyth Way",
+   "lat": 42.34043387,
+   "lon": -71.09267413,
+   "description": "Pile of brush at edge of Forsyth Park",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791222543/boston/production/rkbaxxm03qb60ofp9ptk.jpg",
+   "segments": [
+    [
+     "FENWAY",
+     "2"
+    ],
+    [
+     "None",
+     "None"
+    ]
+   ],
+   "owners": [
+    "City",
+    "None"
+   ]
+  },
+  {
+   "id": "25b166f9-641d-4bd3-a16a-5f9d0fa4e4c2",
+   "service": "Traffic Signal Request",
+   "status": "open",
+   "requested": "2026-10-05T18:43:53Z",
+   "address": "Fullerton St & Brookline Ave, Fenway, MA 02215",
+   "lat": 42.344892,
+   "lon": -71.100981,
+   "description": null,
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "BROOKLINE AVENUE",
+     "2"
+    ],
+    [
+     "FULLERTON STREET",
+     "2"
+    ],
+    [
+     "KILMARNOCK STREET",
+     "0"
+    ]
+   ],
+   "owners": [
+    "City",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "08adcfa2-b744-4675-a213-2862a29cd82f",
+   "service": "Traffic Signal Request",
+   "status": "open",
+   "requested": "2026-10-05T20:51:16Z",
+   "address": "Centre St & VFW Pkwy",
+   "lat": 42.29702746,
+   "lon": -71.13263332,
+   "description": "I am requesting that this signal be longer to allow pedestrians to fully cross the intersection. Due to cars consistently running the red light despite an illuminated pedestrian walk sign (as shown in photo), pedestrians must wait for several minutes before it is safe to begin crossing. As a result, there is not enough time to fully cross VFW to proceed down Centre St. ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791233356/boston/production/czt5vmzkh07q9cquj6hi.jpg",
+   "segments": [
+    [
+     "",
+     "0"
+    ],
+    [
+     "CENTRE STREET",
+     "3"
+    ],
+    [
+     "VETERANS OF FOREIGN WARS PARKWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "a77c181f-4bb3-4c00-93b4-0e818fa664fb",
+   "service": "Pothole",
+   "status": "closed",
+   "requested": "2026-10-06T00:52:21Z",
+   "address": "Arborway & New Washington St",
+   "lat": 42.301728,
+   "lon": -71.1144855,
+   "description": null,
+   "status_notes": "Resolved. Violation issued.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791387673/boston/production/okbuzbok6pytd3w7fzzw.jpg",
+   "segments": [
+    [
+     "",
+     "0"
+    ],
+    [
+     "ARBORWAY",
+     "1"
+    ],
+    [
+     "None",
+     "None"
+    ],
+    [
+     "RAMP-RT 203 EB TO SOUTH STREET",
+     "0"
+    ],
+    [
+     "SOUTH STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT",
+    "None",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "6173f7d8-0b4d-4abe-b991-e2f5bd7bf26d",
+   "service": "Fallen Tree or Branches",
+   "status": "closed",
+   "requested": "2026-10-06T10:54:44Z",
+   "address": "Francis Parkman Dr & Jamaicaway",
+   "lat": 42.31405818,
+   "lon": -71.12207835,
+   "description": "Downed tree limbs.",
+   "status_notes": "Resolved. Request Completed - Tree limbs been removed from pathway.  DR BL.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1791291884:boston:production:sikpvcw4yye4gncbd19s/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1791291886:boston:production:epcsecq5glgvv9cj8dz2/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1791284082/boston/production/sfqrbp04vs5xwtsmetpp.jpg",
+   "segments": [],
+   "owners": []
+  },
+  {
+   "id": "d95e1268-d6dd-41c4-b471-20575bf816e8",
+   "service": "Fallen Tree or Branches",
+   "status": "closed",
+   "requested": "2026-10-06T10:59:13Z",
+   "address": "Eliot St & Jamaicaway",
+   "lat": 42.3141151,
+   "lon": -71.11966111,
+   "description": "Another broken limb at Jamaica Pond.",
+   "status_notes": "Resolved. Request Completed - Tree limb removed \nDR BL.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1791291999:boston:production:xohzvdzqjlilcijukfho/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1791292002:boston:production:zvoz3obbzxg32vdzfscu/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1791284351/boston/production/ynv1c7acvkcuykm5cs8f.jpg",
+   "segments": [
+    [
+     "",
+     "0"
+    ]
+   ],
+   "owners": [
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "d1e910e9-dc2e-4ea3-85ac-41c293a9c522",
+   "service": "Sidewalk Repair",
+   "status": "closed",
+   "requested": "2026-10-06T14:48:34Z",
+   "address": "420 Fenway, Boston, MA 02115",
+   "lat": 42.34225841,
+   "lon": -71.10289343,
+   "description": "Broken sidewalk in Longwood/Fenway area in front of Emmanuel College.",
+   "status_notes": "Resolved. Referred to Mass DCR.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791298109/boston/production/tuocpyd7q8maughpbuws.jpg",
+   "segments": [
+    [
+     "FENWAY",
+     "3"
+    ],
+    [
+     "None",
+     "None"
+    ]
+   ],
+   "owners": [
+    "DCR",
+    "None"
+   ]
+  },
+  {
+   "id": "fc7f3b59-992c-4f33-874f-f76cab726267",
+   "service": "Pothole",
+   "status": "open",
+   "requested": "2026-10-06T20:43:05Z",
+   "address": "American Legion Hwy & Cummins Hwy",
+   "lat": 42.278454,
+   "lon": -71.116452,
+   "description": null,
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "AMERICAN LEGION HIGHWAY",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "0e411b27-fc81-4f13-a6fd-6c3cc44d1cb0",
+   "service": "Street Light Outage",
+   "status": "open",
+   "requested": "2026-10-07T20:19:37Z",
+   "address": "525 VFW Pkwy, Boston, MA 02467",
+   "lat": 42.29576431,
+   "lon": -71.15395578,
+   "description": "Extended power outage caused by Eversource work (began 10:45 am, not expected to resolve until 12am tomorrow); no notice given to residents and Eversource is providing little information about the problem ",
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "VETERANS OF FOREIGN WARS PARKWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR"
+   ]
+  },
+  {
+   "id": "28de7fe3-1da1-4e91-b737-337802be80d4",
+   "service": "Traffic Signal Knockdown",
+   "status": "closed",
+   "requested": "2026-10-07T23:26:01Z",
+   "address": "American Legion Hwy & Cummins Hwy",
+   "lat": 42.278454,
+   "lon": -71.116452,
+   "description": null,
+   "status_notes": "Resolved. Completed by Task - Make safe and secured CB door.",
+   "media_url": null,
+   "segments": [
+    [
+     "AMERICAN LEGION HIGHWAY",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "c79e2860-0447-41f8-ba52-8537f926558b",
+   "service": "Pothole",
+   "status": "open",
+   "requested": "2026-10-08T11:47:52Z",
+   "address": "240 Arborway, Boston, MA 02130",
+   "lat": 42.305607,
+   "lon": -71.1192915,
+   "description": null,
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "JAMAICA PLACE",
+     "0"
+    ]
+   ],
+   "owners": [
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "5708950a-8069-4261-8775-b47326578368",
+   "service": "Sidewalk Repair",
+   "status": "open",
+   "requested": "2026-10-08T15:38:47Z",
+   "address": "266 Gallivan Blvd, Dorchester, MA 02124",
+   "lat": 42.27947,
+   "lon": -71.0683,
+   "description": null,
+   "status_notes": null,
+   "media_url": null,
+   "segments": [],
+   "owners": []
+  },
+  {
+   "id": "94fa356a-018c-48e9-ab56-f1e1c62e940d",
+   "service": "Illegally Blocked Sidewalk",
+   "status": "closed",
+   "requested": "2026-10-08T19:48:32Z",
+   "address": "Truman Pkwy & Williams Ave",
+   "lat": 42.251148,
+   "lon": -71.119611,
+   "description": null,
+   "status_notes": "Noted. No violation found by Code Enforcement.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791549490/boston/production/uaxeccef9ayvmfck3xdv.jpg",
+   "segments": [
+    [
+     "WILLIAMS AVENUE",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "0e7e303f-686b-4e17-81f6-94185f3f4cfc",
+   "service": "Traffic Signal Request",
+   "status": "closed",
+   "requested": "2026-10-08T21:33:53Z",
+   "address": "Adams St & Gallivan Blvd",
+   "lat": 42.28272954,
+   "lon": -71.0558881,
+   "description": "Traffic light messed up. No turn signal left on Gallivan when coming off Granite Ave",
+   "status_notes": "Noted. <div>Resubmitted as&nbsp;BCS-00346840, notified Mass DOT.</div>.",
+   "media_url": null,
+   "segments": [
+    [
+     "ADAMS STREET",
+     "2"
+    ],
+    [
+     "GALLIVAN BOULEVARD",
+     "1"
+    ],
+    [
+     "GRANITE AVENUE",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT"
+   ]
+  },
+  {
+   "id": "9ad6472b-31ae-4300-8559-0fb85c2f70e7",
+   "service": "Install New Signal",
+   "status": "open",
+   "requested": "2026-10-08T21:35:55Z",
+   "address": "Adams St & Gallivan Blvd",
+   "lat": 42.28274742,
+   "lon": -71.05586377,
+   "description": "Your stupid traffic signal category requires a photo. Of what? How can I take a photo of a malfunctioning traffic light?!",
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "ADAMS STREET",
+     "2"
+    ],
+    [
+     "GALLIVAN BOULEVARD",
+     "1"
+    ],
+    [
+     "GRANITE AVENUE",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT"
+   ]
+  },
+  {
+   "id": "2da337df-a933-4fe5-a2ac-ec414e7f0c40",
+   "service": "Traffic Signal Request",
+   "status": "open",
+   "requested": "2026-10-08T22:48:43Z",
+   "address": "180 Arborway, Boston, MA 02130",
+   "lat": 42.30735237,
+   "lon": -71.11934251,
+   "description": "Crosswalk button  broken",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791499721/boston/production/z8ldj19ftq3kdfnylihs.jpg",
+   "segments": [
+    [
+     "",
+     "0"
+    ],
+    [
+     "ARBORWAY",
+     "1"
+    ],
+    [
+     "ARBORWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR",
+    "MassDOT",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "6d58b803-170a-4840-93b4-596a4fd98dc3",
+   "service": "Street Light Outage",
+   "status": "closed",
+   "requested": "2026-10-08T23:08:32Z",
+   "address": "373-385 Neponset Ave, Boston, MA 02122",
+   "lat": 42.28671659,
+   "lon": -71.04474025,
+   "description": "Lights out on neponset Ave from Morrissey to Chickatawbut ",
+   "status_notes": "Resolved. Completed by Task.",
+   "media_url": null,
+   "segments": [
+    [
+     "NEPONSET AVENUE",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "61365075-02ee-43bb-8ceb-ba375af94a84",
+   "service": "Fallen Tree or Branches",
+   "status": "open",
+   "requested": "2026-10-09T13:02:13Z",
+   "address": "406 Gallivan Blvd, Dorchester, MA 02124",
+   "lat": 42.281667,
+   "lon": -71.0606925,
+   "description": null,
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "GALLIVAN BOULEVARD",
+     "1"
+    ]
+   ],
+   "owners": [
+    "MassDOT"
+   ]
+  },
+  {
+   "id": "66532058-a7ba-41c2-a5c2-8710edac9cea",
+   "service": "Traffic Signal Request",
+   "status": "open",
+   "requested": "2026-10-10T03:12:22Z",
+   "address": "Milton St & Neponset Valley Pkwy",
+   "lat": 42.239845,
+   "lon": -71.133775,
+   "description": "The left red traffic light is out. The other colors seem to be working. Neponset Valley Pkwy and Milton St. ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791601915/boston/production/iogkx8eqsekdfo7cm0qm.jpg",
+   "segments": [
+    [
+     "NEPONSET VALLEY PARKWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR"
+   ]
+  },
+  {
+   "id": "da52decb-5e70-4b1b-82e1-3816ae370e15",
+   "service": "Street Light Outage",
+   "status": "open",
+   "requested": "2026-10-10T04:11:12Z",
+   "address": "Mount Vernon St & William T Morrissey Blvd",
+   "lat": 42.32036898,
+   "lon": -71.04987246,
+   "description": "Two street lights out at:\r\n-Dorchester, SE corner of intersection of Morrissey Blvd off ramp and Mount Vernon St. 42\u00b019'13.3\"N 71\u00b002'59.5\"W   https://maps.app.goo.gl/1FaCVmnsAvH3T9P68\r\n-Dorchester, ~200 ft NW of above, toward Morrissey Blvd overpass over Mt. Vernon St. \r\n42\u00b019'14.3\"N 71\u00b003'01.8\"W   https://maps.app.goo.gl/RWJzt8zjbHnU4Lvm6\r\n-Two (of four) lights mounted on the sidewalls of the Mt. Vernon St. underpass under Mt. Vernon St. One on one each side of Mt. Vernon St. \r\nThank you!",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1791604970:boston:production:ztz6gjd9vlbvgdafugn5/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1791604973:boston:production:jrnsqrpuwbh5f7jt8csw/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1791604968/boston/production/eqnbmxu5xnmn6cvlmvue.jpg",
+   "segments": [
+    [
+     "MOUNT VERNON STREET",
+     "3"
+    ],
+    [
+     "WILLIAM J DAY BOULEVARD",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR"
+   ]
+  },
+  {
+   "id": "6f430e76-de65-47f7-8ae5-c16b2d99a715",
+   "service": "Street Light Other",
+   "status": "open",
+   "requested": "2026-10-13T10:44:14Z",
+   "address": "Boylston St & Fenway",
+   "lat": 42.346521,
+   "lon": -71.0908155,
+   "description": null,
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "BOYLSTON STREET",
+     "3"
+    ],
+    [
+     "FENWAY",
+     "3"
+    ],
+    [
+     "None",
+     "None"
+    ]
+   ],
+   "owners": [
+    "DCR",
+    "None"
+   ]
+  },
+  {
+   "id": "7b34b01d-fcf2-4108-8d81-242a4975eab0",
+   "service": "Traffic Signal Request",
+   "status": "open",
+   "requested": "2026-10-13T11:27:06Z",
+   "address": "Craddock St & Neponset Ave",
+   "lat": 42.28625556,
+   "lon": -71.04370833,
+   "description": "Who is in charge of this actual mess????? It\u2019s the most poorly done sequence in the world. ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791890806/boston/production/msrrvbw1brskk5nm3l0p.jpg",
+   "segments": [
+    [
+     "CRADDOCK STREET",
+     "0"
+    ],
+    [
+     "NEPONSET AVENUE",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "96c3be33-0a15-4740-aed7-55a969c1f2ba",
+   "service": "New / Modified Sign Request",
+   "status": "open",
+   "requested": "2026-10-13T13:08:34Z",
+   "address": "Arborway & South St",
+   "lat": 42.30153329,
+   "lon": -71.1143199,
+   "description": "Bike signal signs posted on wrong poles at Forest Hills. Washington St @ Arborway",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791896909/boston/production/xemhisv13rbqrtkp3cko.jpg",
+   "segments": [
+    [
+     "",
+     "0"
+    ],
+    [
+     "ARBORWAY",
+     "1"
+    ],
+    [
+     "None",
+     "None"
+    ],
+    [
+     "SOUTH STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT",
+    "None",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "1eddf674-e820-437f-93a8-c74de6361afa",
+   "service": "Street Light Outage",
+   "status": "open",
+   "requested": "2026-10-14T02:33:51Z",
+   "address": "270 Arborway, Boston, MA 02130",
+   "lat": 42.30443311,
+   "lon": -71.11945499,
+   "description": "Street light is out across the street from 266 Arborway on the terrace / carriage way",
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "ARBORWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR"
+   ]
+  },
+  {
+   "id": "2f6b439a-0c0d-4616-a48f-2d3436754813",
+   "service": "New / Modified Sign Request",
+   "status": "open",
+   "requested": "2026-10-14T11:41:25Z",
+   "address": "Brookline Ave & Fenway Plz",
+   "lat": 42.34524786,
+   "lon": -71.10070733,
+   "description": "The parking pole on 133 Brookline Ave )in front of Atrius health) doesn\u2019t have the tow zone restriction given Red Sox games. That sign is almost at curb height and 15 feet far away. Hard to see. Nothing wrong but ideally these would all be together so it\u2019s easier for a Parker to understand all restrictions together and not miss the tow zone one ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1791978084:boston:production:ahjikh7sgtyfcb3n9vku/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1791978083/boston/production/bptnkariox0obih1iulb.jpg",
+   "segments": [
+    [
+     "BROOKLINE AVENUE",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "780d730d-70d4-4c3f-9165-212fdde7eb2e",
+   "service": "Pothole",
+   "status": "closed",
+   "requested": "2026-10-14T23:29:39Z",
+   "address": "American Legion Hwy & Blue Hill Ave",
+   "lat": 42.29824944,
+   "lon": -71.08716675,
+   "description": "Huge pot hole on the corner and intersection of blue hill Avenue and American legion highway ",
+   "status_notes": "Resolved. Pothole has been filled.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1792020550:boston:production:b3pbjzwkg4qufl2gdokh/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1792020551:boston:production:p7djqhhul7fck5hznewu/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1792020549/boston/production/xawutlqqk3hofydusmjw.jpg",
+   "segments": [
+    [
+     "AMERICAN LEGION HIGHWAY",
+     "2"
+    ],
+    [
+     "BLUE HILL AVENUE",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "9468405e-f506-408f-8ca8-4844138081b8",
+   "service": "Install New Signal",
+   "status": "open",
+   "requested": "2026-10-15T21:38:00Z",
+   "address": "300 Fenway, Boston, MA 02115",
+   "lat": 42.33953843,
+   "lon": -71.09966568,
+   "description": "Request installation of rectangular rapid flashing beacons (RRFBs) at the marked crosswalk on Fenway drive on the Simmons College block (between Avenue-Louis Pasteur and Palace Rd). There are pedestrian signs but no flashing lights, and drivers regularly fail to yield. It is also a relatively high-speed driving zone with lots of foot traffic from students. On Oct 15, 2026, a driver accelerated and swerved around me while I was in the crosswalk (I believe the driver was distracted), in addition to a car ahead intentionally speeding up from stopped to cut me off while I was in the crosswalk (this driver was intentional). This is not an isolated incident.",
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "FENWAY",
+     "3"
+    ],
+    [
+     "None",
+     "None"
+    ]
+   ],
+   "owners": [
+    "DCR",
+    "None"
+   ]
+  },
+  {
+   "id": "080edfc1-3b3c-4348-bc11-a10785b72ebf",
+   "service": "Traffic Signal Request",
+   "status": "open",
+   "requested": "2026-10-16T00:13:27Z",
+   "address": "Jamaicaway & Perkins St",
+   "lat": 42.32095471,
+   "lon": -71.11667588,
+   "description": "Yellow light only is not working at perkins and jamaicaway signal closest to Jamaica pond. Please refer to DCR as needed, has been this way for months",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1792109583:b1i3lfmknieb2zwz5zjv/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1792109583/hngdjxxzbn0dgrrdgac0.jpg",
+   "segments": [
+    [
+     "",
+     "0"
+    ],
+    [
+     "JAMAICAWAY",
+     "3"
+    ],
+    [
+     "None",
+     "None"
+    ],
+    [
+     "PERKINS STREET",
+     "2"
+    ],
+    [
+     "PERKINS STREET",
+     "3"
+    ]
+   ],
+   "owners": [
+    "City",
+    "DCR",
+    "None",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "cafe82e0-19f6-4f25-ad68-0df8ed1ac9d8",
+   "service": "Traffic Signal Request",
+   "status": "open",
+   "requested": "2026-10-16T18:14:21Z",
+   "address": "Conley St & William T Morrissey Blvd",
+   "lat": 42.292017,
+   "lon": -71.0476605,
+   "description": null,
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "CONLEY STREET",
+     "2"
+    ],
+    [
+     "Conley Street",
+     "2"
+    ],
+    [
+     "WILLIAM T MORRISSEY BOULEVARD",
+     "3"
+    ]
+   ],
+   "owners": [
+    "City",
+    "DCR"
+   ]
+  },
+  {
+   "id": "ccbc2ec0-d401-4c9c-ab0b-ac5cea3b341d",
+   "service": "Street Light Outage",
+   "status": "open",
+   "requested": "2026-10-16T22:56:27Z",
+   "address": "1208 VFW Pkwy, Boston, MA 02132",
+   "lat": 42.27948,
+   "lon": -71.170551,
+   "description": null,
+   "status_notes": null,
+   "media_url": null,
+   "segments": [],
+   "owners": []
+  },
+  {
+   "id": "c9a4399f-cbce-49a4-9631-fc23977be3c8",
+   "service": "Traffic Signal Request",
+   "status": "open",
+   "requested": "2026-10-18T03:43:39Z",
+   "address": "Leo M Birmingham Pkwy & Soldiers Field Rd",
+   "lat": 42.36143284,
+   "lon": -71.14584392,
+   "description": "The traffic lights at the intersection of Western Ave and Leo Birmingham Pkwy frequently leave vehicles stopped for several minutes, during which drivers often play extremely loud music directly beneath residents' windows. This is particularly disruptive at night, and we have repeatedly been awakened at 3 or 4 a.m. by music coming from vehicles waiting at the light.\r\nBesides reviewing traffic signal timing, I\u2019m asking the city to consider installing a simple courtesy sign reminding drivers that this is a residential area and asking them to keep noise to a minimum. Thank you",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1792294862:dl3nnaeqodvu4ixw911u/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1792294861/i8okcncggqyijqpvg1eu.jpg",
+   "segments": [
+    [
+     "LEO M BIRMINGHAM PARKWAY",
+     "3"
+    ],
+    [
+     "WESTERN AVENUE",
+     "2"
+    ],
+    [
+     "WESTERN AVENUE",
+     "3"
+    ]
+   ],
+   "owners": [
+    "City",
+    "DCR"
+   ]
+  },
+  {
+   "id": "f9e0280f-0501-4455-a04d-571fe545193c",
+   "service": "Pothole",
+   "status": "closed",
+   "requested": "2026-10-18T22:04:04Z",
+   "address": "Arborway & New Washington St",
+   "lat": 42.301323,
+   "lon": -71.1125415,
+   "description": null,
+   "status_notes": "Noted. No issue found at location - need pictures or better location.",
+   "media_url": null,
+   "segments": [
+    [
+     "",
+     "0"
+    ],
+    [
+     "ARBORWAY",
+     "1"
+    ],
+    [
+     "None",
+     "None"
+    ],
+    [
+     "WASHINGTON STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT",
+    "None",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "a8c74c67-9a68-4d5a-83b6-bbf23410ef38",
+   "service": "Fallen Tree or Branches",
+   "status": "open",
+   "requested": "2026-10-20T14:40:21Z",
+   "address": "Fenway & Forsyth Way",
+   "lat": 42.34042506,
+   "lon": -71.09241902,
+   "description": "Northeastern Arboretum Fens Team branches for removal",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1792507216/u28naavosrjiuhhainsw.jpg",
+   "segments": [
+    [
+     "FENWAY",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "e84291b3-4d98-4727-bb4c-66ced501c03a",
+   "service": "Fallen Tree or Branches",
+   "status": "open",
+   "requested": "2026-10-20T17:53:25Z",
+   "address": "Fenway & Palace Rd",
+   "lat": 42.33970702,
+   "lon": -71.09832342,
+   "description": "Piles of brush from Fens Team left along path at the southwest edge of the Fens. ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1792518800:wraithvxhunzaqdnhtsm/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1792518799/cjl6npbybe4o6nyhexyi.jpg",
+   "segments": [],
+   "owners": []
+  },
+  {
+   "id": "f9c74cd7-c86b-477e-8450-8577d3318c4a",
+   "service": "Fallen Tree or Branches",
+   "status": "closed",
+   "requested": "2026-10-20T17:56:27Z",
+   "address": "Fenway & Forsyth Way",
+   "lat": 42.34050389,
+   "lon": -71.09239348,
+   "description": "Piles of brush left next to NU parking lot along Fenway. Pickup request denied by Urban Forestry because it looks like DCR property. Could this be sent to DCR for attention? Brush has been there almost 2 weeks. Thank you. ",
+   "status_notes": "Resolved. Request Completed - Removed piles of brushes from park pathway. OD BL.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1792586887:reegrnqzosjgq01cturd/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1792586890:phnjublxczdc8hpv8vxy/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1792518982/rmgewvdger5rntwckdvg.jpg",
+   "segments": [
+    [
+     "FENWAY",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "4a95b234-1af1-4c3c-8ce8-ee69d68c847a",
+   "service": "Missing / Knocked Down Sign",
+   "status": "open",
+   "requested": "2026-10-20T18:31:20Z",
+   "address": "338 Gallivan Blvd, Boston, MA 02124",
+   "lat": 42.28055388,
+   "lon": -71.06426172,
+   "description": "Toppled street sign at intersection of Becket Street and Gallivan Boulevard ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1792521055/mqa3zbfh0imi3yfdypkh.jpg",
+   "segments": [
+    [
+     "BECKET STREET",
+     "2"
+    ],
+    [
+     "GALLIVAN BOULEVARD",
+     "1"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT"
+   ]
+  },
+  {
+   "id": "6b11887b-bc97-4d70-8d6a-e5076d666887",
+   "service": "Pothole",
+   "status": "open",
+   "requested": "2026-10-20T19:23:31Z",
+   "address": "Arborway & Saint Joseph St",
+   "lat": 42.30636311,
+   "lon": -71.11948048,
+   "description": "BIG POTHOLE BEFORE TRAFFIC LIGHT AT CROSS WALK MIGHT BE ANOTHER SMALL ALONGNTHE RIGHT SIDE OF THE ROAD BUT UNABLE TO GET PIC",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1792523975/j8xwyslctwcrqhjt2evw.jpg",
+   "segments": [
+    [
+     "ARBORWAY",
+     "1"
+    ],
+    [
+     "ARBORWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR",
+    "MassDOT"
+   ]
+  },
+  {
+   "id": "8c100e90-e1b0-40c8-83a0-394e2365f4d9",
+   "service": "New / Modified Sign Request",
+   "status": "open",
+   "requested": "2026-10-21T12:04:59Z",
+   "address": "Mckone St & Neponset Ave",
+   "lat": 42.28931268,
+   "lon": -71.04781757,
+   "description": "What street is this ? All the signs down here look like this ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1792584294/wm3flzyqkykcd4vdnen6.jpg",
+   "segments": [
+    [
+     "COFFEY STREET",
+     "2"
+    ],
+    [
+     "MCKONE STREET",
+     "2"
+    ],
+    [
+     "NEPONSET AVENUE",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "18fa4955-c563-49c3-b331-1b5be4901259",
+   "service": "Traffic Signal Request",
+   "status": "open",
+   "requested": "2026-10-21T12:26:13Z",
+   "address": "Adams St & Gallivan Blvd",
+   "lat": 42.28279717,
+   "lon": -71.05589302,
+   "description": "The light at the four way light at Gallivan blvd, Granite Ave, and Adams St is messed up and off cycle allowing 2 cycles of cars to go through before allowing a walk for pedestrians, often leaving pedestrians waiting for 5+ minutes",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1792585545/drf5zgc5pmud182kaao5.jpg",
+   "segments": [
+    [
+     "ADAMS STREET",
+     "2"
+    ],
+    [
+     "GALLIVAN BOULEVARD",
+     "1"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT"
+   ]
+  },
+  {
+   "id": "15a19478-a862-42bc-8bc6-8759f111351a",
+   "service": "Traffic Signal Request",
+   "status": "open",
+   "requested": "2026-10-21T13:38:27Z",
+   "address": "Arborway & Forest Hills Entrance Dr",
+   "lat": 42.30060841,
+   "lon": -71.10656027,
+   "description": "Please add more time to the Arborway green light cycle heading to Jamaica Plain between 5 a.m. to 10 a.m. due to heavy traffic. Thank you. ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1792589902/yhbkdx7lgdmzotuyazlu.jpg",
+   "segments": [
+    [
+     "",
+     "0"
+    ],
+    [
+     "ARBORWAY",
+     "1"
+    ],
+    [
+     "JEWISH WAR VETERANS DRIVE",
+     "2"
+    ],
+    [
+     "MORTON STREET",
+     "1"
+    ],
+    [
+     "MORTON STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "1d48169f-eee5-4070-aaee-b8180bf29f69",
+   "service": "Pothole",
+   "status": "closed",
+   "requested": "2026-10-21T18:58:01Z",
+   "address": "American Legion Hwy & Stella Rd",
+   "lat": 42.280677,
+   "lon": -71.1162315,
+   "description": null,
+   "status_notes": "Transitioned. Area maintained by private owner - Stella rd is a private way. Abutters are responsible for repairs.",
+   "media_url": null,
+   "segments": [
+    [
+     "AMERICAN LEGION HIGHWAY",
+     "2"
+    ],
+    [
+     "STELLA ROAD",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "7b923cf9-43d1-4b6d-9ac0-6128c3662986",
+   "service": "Unauthorized Signage",
+   "status": "closed",
+   "requested": "2026-10-21T21:42:18Z",
+   "address": "273 Neponset Ave, Boston, MA 02122",
+   "lat": 42.28969974,
+   "lon": -71.04818072,
+   "description": "Daycare has declared itself a school and arbitrarily adjusted the speed limit. No way these signs are legitimate, they\u2019re not even spelled right ",
+   "status_notes": "Transitioned. Reallocated to Non-City of Boston Stakeholder.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1792618933/gmtmiupawvyb8u7bpxhd.jpg",
+   "segments": [
+    [
+     "NEPONSET AVENUE",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "d8bf7fe4-54e0-4861-a18b-2f956ec1cbfa",
+   "service": "Illegally Blocked Sidewalk",
+   "status": "closed",
+   "requested": "2026-10-21T21:49:52Z",
+   "address": "Baker St & VFW Pkwy",
+   "lat": 42.287463,
+   "lon": -71.1715995,
+   "description": null,
+   "status_notes": "Resolved. Citation issued. - violation has been issued.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_364,w_236//l_v1792619778:t3xsiosrw9sbhm1ng9wn/c_limit,h_364,w_236/fl_layer_apply,g_north_west,x_266/l_v1792676490:qleh7tvgwtsxhjar0bh1/c_limit,h_364,w_236/fl_layer_apply,g_north_west,x_522/l_v1792676491:om9dyq4su5qgu7r8e4vx/c_limit,h_364,w_236/fl_layer_apply,g_north_west,x_0,y_394/v1792619777/skwlnqdifx1j1z1aexm9.jpg",
+   "segments": [
+    [
+     "VETERANS OF FOREIGN WARS PARKWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR"
+   ]
+  },
+  {
+   "id": "633f750f-d235-4449-a10e-f554c5c7d21c",
+   "service": "Pothole",
+   "status": "open",
+   "requested": "2026-10-22T05:23:48Z",
+   "address": "Spring St & VFW Pkwy",
+   "lat": 42.27414413,
+   "lon": -71.17365692,
+   "description": "Left Lane 8 inch deep pothole heading northbound on VFW PARKWAY, West Roxbury, MA. About 100-200 feet past 1380 VFW PARKWAY northbound Left Lane. Pothole damaged my tires and suspension. $3,800 to repair my vehicle. I\u2019ll have to submit a damage claim to my vehicle. ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1792646069:qdauloq7o49pwbzyo5gp/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1792646065:brcfgiouwgok6yptxkch/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1792646067/emmkinumftuuvljovgje.jpg",
+   "segments": [
+    [
+     "",
+     "E"
+    ],
+    [
+     "VETERANS OF FOREIGN WARS PARKWAY",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR",
+    "E"
+   ]
+  },
+  {
+   "id": "deaf2610-8052-419c-a018-5409b6f32402",
+   "service": "Unauthorized Signage",
+   "status": "closed",
+   "requested": "2026-10-22T11:47:11Z",
+   "address": "Jamaicaway & Pond St",
+   "lat": 42.31318372,
+   "lon": -71.12134718,
+   "description": "Unauthorized signage on public property; this is a repeat offense in the neighborhood. Please remove again and fine organization (at $147000 per nurse per yr avg, they can afford it)",
+   "status_notes": "Resolved. Item(s) removed - sign has been removed from location.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1792669626:vtlloxtzowcg664xtsov/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1792669624/wnpnnizolcbf3frojlig.jpg",
+   "segments": [
+    [
+     "ARBORWAY",
+     "3"
+    ],
+    [
+     "POND STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "DCR"
+   ]
+  },
+  {
+   "id": "43366ac0-40e4-4225-b96c-88a6b9862975",
+   "service": "Install New Signal",
+   "status": "closed",
+   "requested": "2026-10-22T18:09:24Z",
+   "address": "150-160 American Legion Hwy, Boston, MA 02124",
+   "lat": 42.29470057,
+   "lon": -71.09249038,
+   "description": "Brooke Charter School in Mattapan on American Legion Highway needs a flashing school zone light. Too many people speed in that area & ignore the cross guard or kids in the middle of the road. it's extremely dangerous",
+   "status_notes": "There are 3 signalized Traffic Signal intersection, one at Kingsbird andother at Franklin Ave and a third between them.",
+   "media_url": null,
+   "segments": [],
+   "owners": []
+  },
+  {
+   "id": "9585001e-ffdc-4d48-9d11-a1d3e86b6c23",
+   "service": "Street Light Outage",
+   "status": "open",
+   "requested": "2026-10-22T23:34:24Z",
+   "address": "Chickatawbut St & Neponset Ave",
+   "lat": 42.28769836,
+   "lon": -71.04481383,
+   "description": "Light out in hockey rink in Garvey playground ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1792712063/chrbmqj45pynwljrwkez.jpg",
+   "segments": [],
+   "owners": []
+  },
+  {
+   "id": "7bca192f-47cb-4523-afcd-dff0c1b9a4e9",
+   "service": "Pothole",
+   "status": "open",
+   "requested": "2026-10-23T16:05:36Z",
+   "address": "570 American Legion Hwy, Boston, MA 02131",
+   "lat": 42.286761,
+   "lon": -71.107722,
+   "description": null,
+   "status_notes": null,
+   "media_url": null,
+   "segments": [],
+   "owners": []
+  },
+  {
+   "id": "b6462994-3dd0-4ecd-8563-747a9dd1b0d6",
+   "service": "Street Light Outage",
+   "status": "open",
+   "requested": "2026-10-23T17:11:06Z",
+   "address": "Claymont Ter & Neponset Ave",
+   "lat": 42.29353716,
+   "lon": -71.05115522,
+   "description": "Street lights on during the day",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1792775462/g94fmkptcqlgxhppl6lf.jpg",
+   "segments": [
+    [
+     "CLAYMONT TERRACE",
+     "2"
+    ],
+    [
+     "NEPONSET AVENUE",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "ab296f8f-9fa2-4557-afb3-ccef773a709f",
+   "service": "Traffic Signal Request",
+   "status": "open",
+   "requested": "2026-10-24T03:09:26Z",
+   "address": "Leo M Birmingham Pkwy & Soldiers Field Rd",
+   "lat": 42.36161377,
+   "lon": -71.14558596,
+   "description": "Westbound traffic light turns green immediately after turning red. Not sure if this is by design but I\u2019m providing my feedback because it seems like it could cause an accident - traffic pattern previously had pedestrian walk light across Western Ave after that light turned red.",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1792811362/jpy1zsmocoyfpyfjx5dd.jpg",
+   "segments": [
+    [
+     "RAMP-WESTERN AVE TO SOLDIERS FIELD RD EB",
+     "2"
+    ],
+    [
+     "RAMP-WESTERN AVE TO SOLDIERS FIELD RD EB",
+     "3"
+    ],
+    [
+     "WESTERN AVENUE",
+     "2"
+    ],
+    [
+     "WESTERN AVENUE",
+     "3"
+    ]
+   ],
+   "owners": [
+    "City",
+    "DCR"
+   ]
+  },
+  {
+   "id": "f9d02ebd-a42a-4ad8-8bbd-e3f4d1d741a6",
+   "service": "Traffic Signal Request",
+   "status": "open",
+   "requested": "2026-10-24T16:30:18Z",
+   "address": "Adams St & Gallivan Blvd",
+   "lat": 42.282,
+   "lon": -71.058924,
+   "description": null,
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "ADAMS STREET",
+     "0"
+    ],
+    [
+     "ADAMS STREET",
+     "2"
+    ],
+    [
+     "GALLIVAN BOULEVARD",
+     "1"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "101006755911",
+   "service": "Damaged Sign",
+   "status": "closed",
+   "requested": "2026-09-24T20:39:00Z",
+   "address": "Intersection of Lochstead Ave and Centre St, Jamaica Plain",
+   "lat": 42.31749594,
+   "lon": -71.11326512,
+   "description": "Fire lane sign removed",
+   "status_notes": "Case Resolved.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790282342/boston/production/r2wahexv2hkwwzmsboio.jpg#spot=db03a294-d1a4-478d-abfc-f817f046ca6d",
+   "segments": [
+    [
+     "CENTRE STREET",
+     "2"
+    ],
+    [
+     "LOCHSTEAD AVENUE",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "16079f60-9953-4107-ade7-0697ea158259",
+   "service": "Street Light Outage",
+   "status": "closed",
+   "requested": "2026-09-24T22:19:41Z",
+   "address": "1293-1317 Washington St, Boston, MA 02118",
+   "lat": 42.342311,
+   "lon": -71.068152,
+   "description": null,
+   "status_notes": "Resolved. Completed by Task.",
+   "media_url": null,
+   "segments": [],
+   "owners": []
+  },
+  {
+   "id": "101006756472",
+   "service": "Damaged Sign",
+   "status": "open",
+   "requested": "2026-09-25T21:24:00Z",
+   "address": "Intersection of Spring Park Ave and Centre St, Jamaica Plain",
+   "lat": 42.31783266,
+   "lon": -71.11283648,
+   "description": "Pedestrian sign post is directly in front of the driveway to 509 Centre Street. It requires a dangerous turn to get onto the street. If moved to the edge of the crosswalk, it would be safer. Previous signs at this crosswalk have been repeatedly run over.",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790371485/boston/production/totjkxeyclx5ef64uxpt.jpg#spot=28120da0-859d-479a-aa5b-a7b25d2e488b",
+   "segments": [
+    [
+     "CENTRE STREET",
+     "2"
+    ],
+    [
+     "SPRING PARK AVENUE",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "5caf3b05-58e8-4b02-8b97-b107e160268a",
+   "service": "Street Light Outage",
+   "status": "open",
+   "requested": "2026-09-26T14:30:24Z",
+   "address": "391 Hyde Park Ave, Boston, MA 02131",
+   "lat": 42.286932,
+   "lon": -71.1190125,
+   "description": "Street light in front of 391 Hyde Park Avenue is not working.",
+   "status_notes": null,
+   "media_url": null,
+   "segments": [],
+   "owners": []
+  },
+  {
+   "id": "0e9aea48-3002-432d-acd7-73884f660deb",
+   "service": "Street Light Knockdown",
+   "status": "closed",
+   "requested": "2026-09-26T20:00:46Z",
+   "address": "88-92 Washington St, Boston, MA 02129",
+   "lat": 42.37398,
+   "lon": -71.067204,
+   "description": "Broken gas street light in Charlestown ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790452746/boston/production/hjci4a5yap14dgvvxqos.jpg",
+   "segments": [
+    [
+     "NEW RUTHERFORD AVENUE",
+     "2"
+    ],
+    [
+     "None",
+     "None"
+    ],
+    [
+     "WASHINGTON STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "None"
+   ]
+  },
+  {
+   "id": "2943ce1a-01af-4d21-83b9-a4b1814c2708",
+   "service": "Fallen Tree or Branches",
+   "status": "closed",
+   "requested": "2026-09-26T22:15:08Z",
+   "address": "5114 Washington St, Boston, MA 02132",
+   "lat": 42.263361,
+   "lon": -71.1543105,
+   "description": null,
+   "status_notes": "Resolved. Request Completed - twig removed from crosswalk.",
+   "media_url": null,
+   "segments": [],
+   "owners": []
+  },
+  {
+   "id": "61500f79-df62-4d05-a5ce-9937a77d2b86",
+   "service": "Fallen Tree or Branches",
+   "status": "closed",
+   "requested": "2026-09-26T23:21:10Z",
+   "address": "Massachusetts Ave & Washington St",
+   "lat": 42.336459,
+   "lon": -71.0770275,
+   "description": null,
+   "status_notes": "Resolved. Request Completed - Removed downed tree into street and sidewalk.  JL JB BL OD.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790469607/boston/production/zofjodq1mn3p8qvjuvzd.jpg",
+   "segments": [
+    [
+     "MASSACHUSETTS AVENUE",
+     "2"
+    ],
+    [
+     "WASHINGTON STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "b2e9230d-703e-4982-a7c8-814eeeb98086",
+   "service": "Fallen Tree or Branches",
+   "status": "closed",
+   "requested": "2026-09-26T23:42:47Z",
+   "address": "123 Centre St, Boston, MA 02119",
+   "lat": 42.327171,
+   "lon": -71.0963415,
+   "description": null,
+   "status_notes": "Resolved. Request Completed - removed by northern tree.",
+   "media_url": null,
+   "segments": [],
+   "owners": []
+  },
+  {
+   "id": "c7c149bc-a7a1-4046-a1d0-0f968e4504a1",
+   "service": "Fallen Tree or Branches",
+   "status": "closed",
+   "requested": "2026-09-27T00:05:17Z",
+   "address": "56 River St, Boston, MA 02108",
+   "lat": 42.357474,
+   "lon": -71.0707095,
+   "description": null,
+   "status_notes": "Noted. No issue found at location - Nothing found blocking. MFD.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790470573/boston/production/swf3ksplxaourlhq6fpg.jpg",
+   "segments": [
+    [
+     "LIME STREET",
+     "2"
+    ],
+    [
+     "RIVER STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "1a080ea7-8795-435f-b7de-131852e6c446",
+   "service": "Fallen Tree or Branches",
+   "status": "closed",
+   "requested": "2026-09-27T00:31:55Z",
+   "address": "River St & Temple St",
+   "lat": 42.271857,
+   "lon": -71.0721135,
+   "description": null,
+   "status_notes": "Resolved. Request Completed - private tree fell on sidewalk private tree was removed from sidewalk put back on Private property by JB, OD.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790473525/boston/production/ljcezoqj5gq9fmgqyjrr.jpg",
+   "segments": [
+    [
+     "RIVER STREET",
+     "2"
+    ],
+    [
+     "TAYLOR TERRACE",
+     "0"
+    ],
+    [
+     "TEMPLE STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "49232dc3-d631-4b7d-907d-2aa11237d121",
+   "service": "Fallen Tree or Branches",
+   "status": "open",
+   "requested": "2026-09-27T01:47:21Z",
+   "address": "Columbia Rd & Old Colony Ave",
+   "lat": 42.324111,
+   "lon": -71.0524215,
+   "description": null,
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "COLUMBIA ROAD",
+     "3"
+    ],
+    [
+     "OLD COLONY AVENUE",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR"
+   ]
+  },
+  {
+   "id": "0d16515d-36e0-497b-a433-f1cbdaf3c15e",
+   "service": "Fallen Tree or Branches",
+   "status": "closed",
+   "requested": "2026-09-27T12:01:50Z",
+   "address": "1748 Columbia Rd, Boston, MA 02127",
+   "lat": 42.331005,
+   "lon": -71.0313615,
+   "description": null,
+   "status_notes": "Resolved. Request Completed - Large leader from a COB tree removed by Royer.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1790513403:boston:production:sp0digifgjyj80bkdqin/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1790513405:boston:production:aokeoklt8bkmfktjzzc6/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1790512135/boston/production/umukk9285tyboojkzguv.jpg",
+   "segments": [
+    [
+     "N STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "18cbd8bf-0f2c-4e46-b3c2-ad26a6ad242c",
+   "service": "Fallen Tree or Branches",
+   "status": "closed",
+   "requested": "2026-09-27T12:10:49Z",
+   "address": "1754 Columbia Rd, Boston, MA 02127",
+   "lat": 42.330537,
+   "lon": -71.0324415,
+   "description": null,
+   "status_notes": "Noted. Duplicate Request - duplicate of BCS-00334152.",
+   "media_url": null,
+   "segments": [
+    [
+     "MARINE ROAD",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "57e21f70-190e-4c40-9281-1386efd83f1b",
+   "service": "Fallen Tree or Branches",
+   "status": "closed",
+   "requested": "2026-09-27T16:04:24Z",
+   "address": "Martin Luther King Jr Blvd & Washington St",
+   "lat": 42.321555,
+   "lon": -71.0921115,
+   "description": null,
+   "status_notes": "Noted. Duplicate Request - BCS-00334289.",
+   "media_url": null,
+   "segments": [
+    [
+     "MARTIN LUTHER KING BOULEVARD",
+     "2"
+    ],
+    [
+     "WASHINGTON STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "3f56d738-e539-4736-b377-8fc29fee9cc1",
+   "service": "Tree or Stump Removal",
+   "status": "closed",
+   "requested": "2026-09-27T17:21:24Z",
+   "address": "1754 Columbia Rd, Boston, MA 02127",
+   "lat": 42.33041131,
+   "lon": -71.03229426,
+   "description": "Request for evaluation of rotted tree trunk\n\nThanks to the crews who cleared the fallen branch so fast! \n\nLooking at where the branch broke, the inside of the trunk has a good amount of black rot. Could an arborist please come out and take a look to see if the whole tree needs to be removed? Thank you!",
+   "status_notes": "Resolved. Completed by Task - Tree was removed by Royer Tree Service. A new tree request case will be made for this location. If you have any questions, please call the Park Line at 617-635-8733.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790529658/boston/production/guzxcfp9fbsuqh9rgbc6.jpg",
+   "segments": [
+    [
+     "COLUMBIA ROAD",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "34f288ee-406d-41d8-a9d4-56a4cda861ab",
+   "service": "Sidewalk Repair",
+   "status": "open",
+   "requested": "2026-09-27T19:18:23Z",
+   "address": "704-718 Centre St, Boston, MA 02130",
+   "lat": 42.31133702,
+   "lon": -71.11438518,
+   "description": "Uneven/ deteriorated sidewalk. Trip hazard.",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1790536675:boston:production:el4siyabsnev4pfss32a/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1790536674/boston/production/qww4r4wndvm4pxdiuzjc.jpg",
+   "segments": [
+    [
+     "CENTRE STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "1f612ec7-91ac-4143-9314-904469c0a991",
+   "service": "Sidewalk Repair",
+   "status": "open",
+   "requested": "2026-09-27T22:02:07Z",
+   "address": "821-831 Washington St, Boston, MA 02116",
+   "lat": 42.34872867,
+   "lon": -71.06407029,
+   "description": "Sidewalk falling apart",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1790546500:boston:production:y3rhafdohdlncpiwzx3h/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1790546498/boston/production/kejzz2mq6f9gmqjxx1oi.jpg",
+   "segments": [
+    [
+     "WASHINGTON STREET",
+     "2"
+    ],
+    [
+     "WASHINGTON STREET",
+     "None"
+    ]
+   ],
+   "owners": [
+    "City",
+    "None"
+   ]
+  },
+  {
+   "id": "f4c4b60a-a061-4e96-aac0-8b099dab7cdd",
+   "service": "Pothole",
+   "status": "open",
+   "requested": "2026-09-27T22:29:09Z",
+   "address": "3977 Washington St, Boston, MA 02131",
+   "lat": 42.29339574,
+   "lon": -71.12105454,
+   "description": "Big Pothole on Colgate St in Roslindale :( takes up street parking spaces. ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_364,w_236//l_v1790548120:boston:production:ia5cwboxwokccjcadybt/c_limit,h_364,w_236/fl_layer_apply,g_north_west,x_266/l_v1790548121:boston:production:tqtneadq16xc2eodk0h2/c_limit,h_364,w_236/fl_layer_apply,g_north_west,x_522/l_v1791042071:boston:production:fw8y28akrq9g6gejpv8y/c_limit,h_364,w_236/fl_layer_apply,g_north_west,x_0,y_394/v1790548119/boston/production/ubq95ckvdcjayvidwxmv.jpg",
+   "segments": [
+    [
+     "BROOKSTONE STREET",
+     "0"
+    ],
+    [
+     "COLGATE ROAD",
+     "2"
+    ],
+    [
+     "WASHINGTON STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "ea5d9f95-b919-49e4-8034-6cd33e327746",
+   "service": "Fallen Tree or Branches",
+   "status": "closed",
+   "requested": "2026-09-28T12:42:09Z",
+   "address": "301 Washington St, Boston, MA 02135",
+   "lat": 42.349401,
+   "lon": -71.1505485,
+   "description": null,
+   "status_notes": "Noted. No issue found at location - No downed tree blocking sidewalk at the given location. Branch from bpd tree broke off onto their property and isn't impacting the sidewalk.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_364,w_236//l_v1790602167:boston:production:wjnucafmqmwwzikfohnm/c_limit,h_364,w_236/fl_layer_apply,g_north_west,x_266/l_v1790602169:boston:production:xepzj4sjfzgsy36zkpop/c_limit,h_364,w_236/fl_layer_apply,g_north_west,x_522/l_v1790602171:boston:production:l484vqpm0uaqco0xo96o/c_limit,h_364,w_236/fl_layer_apply,g_north_west,x_0,y_394/v1790602165/boston/production/lqytlw2dssmcnzn8wkds.jpg",
+   "segments": [],
+   "owners": []
+  },
+  {
+   "id": "801be236-5551-4e21-8311-dcbf65de2c83",
+   "service": "Pothole",
+   "status": "closed",
+   "requested": "2026-09-28T13:48:53Z",
+   "address": "891 Centre St, Boston, MA 02130",
+   "lat": 42.309216,
+   "lon": -71.120502,
+   "description": "Multiple dangerous potholes in the intersection/corner of 891 Centre Street, Arborway and Prince Street, Jamaica Plain, MA.  Natioanl Grid had replaced major pipes couple years ago in this area.  National Grid did not correctly apply asphalt in this busy intersection and as a result potholes have developed and are getting larger and deeper.  Please repair ASAP before winter begins.",
+   "status_notes": "Noted. No issue found at location - nothing found at this location need pictures or better location.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1790682891:boston:production:vrlv1eo20za4jdiobz31/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1790682889/boston/production/u4kkrli1exjxng4vx1jp.jpg",
+   "segments": [],
+   "owners": []
+  },
+  {
+   "id": "77fab3c4-c156-483c-803b-d48ef3d950fb",
+   "service": "Pothole",
+   "status": "closed",
+   "requested": "2026-09-28T14:06:58Z",
+   "address": "72 Washington St, Boston, MA 02129",
+   "lat": 42.373629,
+   "lon": -71.066421,
+   "description": null,
+   "status_notes": "Resolved. Violation issued. - BWSC has been notified and is scheduling repairs.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1790882406:boston:production:cobqn8yuz2jyciz3svuz/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1790882404/boston/production/nkcuogpkjmxir8hmw27w.jpg",
+   "segments": [
+    [
+     "UNION STREET",
+     "2"
+    ],
+    [
+     "WASHINGTON STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "60bc4751-9170-4ff9-84cf-c7cbd0ed761d",
+   "service": "Sidewalk Repair",
+   "status": "open",
+   "requested": "2026-09-28T17:57:06Z",
+   "address": "757 Washington St, Boston, MA 02124",
+   "lat": 42.28494391,
+   "lon": -71.07128419,
+   "description": "The sidewalk in front of the Dorchester YMCA at 776 Washington Street is damaged and uneven, creating a potential tripping hazard for members, families, seniors, children, and pedestrians. Please inspect and repair the affected area to ensure the sidewalk is safe and accessible.",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1790618201:boston:production:xrgqau9ochb8f2hdnoyc/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1790618202:boston:production:teqq45virawkzv00seze/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1790618200/boston/production/q4zr827uews6g4hzrc8p.jpg",
+   "segments": [
+    [
+     "WASHINGTON STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "1ac2582a-70f7-4a16-bf47-133539536fa7",
+   "service": "Pothole",
+   "status": "open",
+   "requested": "2026-09-28T21:52:08Z",
+   "address": "1231A-1231B Centre St, Boston, MA 02132",
+   "lat": 42.29727941,
+   "lon": -71.1316313,
+   "description": "Open Construction pit in roadway. Steel \nplate needed, at a minimum. ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790632323/boston/production/xgea2aob6bulhuuof8ju.jpg",
+   "segments": [
+    [
+     "",
+     "0"
+    ],
+    [
+     "CENTRE STREET",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "1c0458de-d1ce-418e-9b1b-bea90612b7af",
+   "service": "Pothole",
+   "status": "open",
+   "requested": "2026-09-29T02:50:10Z",
+   "address": "Centre St & Walter St",
+   "lat": 42.2984758,
+   "lon": -71.12966681,
+   "description": "Large roadway defect/depression near storm drain around 1214 Centre Street, Jamaica Plain. My vehicle suffered a flat tire after striking the defect at approximately 6:40pm on September 28, 2026. AAA advised me that several other vehicles had also sustained flat tires at this location. Cones were subsequently placed around the defect. There appears to be active/recent roadway construction in the area.",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790649960/boston/production/ntocz6rt3plglppjyaxv.jpg",
+   "segments": [
+    [
+     "CENTRE STREET",
+     "3"
+    ]
+   ],
+   "owners": [
+    "DCR"
+   ]
+  },
+  {
+   "id": "5c915b62-222f-4769-9a2c-fc02b4e7f7ee",
+   "service": "Sidewalk Repair",
+   "status": "closed",
+   "requested": "2026-09-29T13:10:34Z",
+   "address": "3531-3541 Washington St, Boston, MA 02130",
+   "lat": 42.30504,
+   "lon": -71.109171,
+   "description": null,
+   "status_notes": "Noted. No issue found at location - There is nothing found at this location see pictures.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1790704477:boston:production:vbmyy2kvubm688dp1s1o/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1790704475/boston/production/f8q23zvaadcajavn8qvm.jpg",
+   "segments": [
+    [
+     "WASHINGTON STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "7cff5f7e-f028-4227-8233-1c64f45933c1",
+   "service": "Sidewalk Repair",
+   "status": "open",
+   "requested": "2026-09-29T14:46:04Z",
+   "address": "1739-1743 Washington St, Boston, MA 02118",
+   "lat": 42.33685313,
+   "lon": -71.07670114,
+   "description": "Dangerous sidewalk. ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1790693160:boston:production:qcojuhw3k4zuv5hhdkva/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1790693158/boston/production/khvvnnt8oa7u12asfjd3.jpg",
+   "segments": [
+    [
+     "WASHINGTON STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "397a5d92-3ef4-4c62-a7f5-d895f05f9a96",
+   "service": "Pothole",
+   "status": "closed",
+   "requested": "2026-09-29T15:22:50Z",
+   "address": "Blue Hill Ave & Morton St",
+   "lat": 42.28435531,
+   "lon": -71.09145443,
+   "description": "While making a left turn from Blue Hill Avenue onto Morton Street, I struck the raised curb/median at the intersection. I was traveling slowly and had just proceeded through the intersection after the light turned green. The impact was severe enough to cause significant damage to my vehicle\u2019s tire and wheel, and the vehicle is currently not drivable. I am reporting the curb/roadway condition for inspection and documentation. Please inspect the curb/median and surrounding roadway for any unsafe, damaged, or improperly configured conditions that may present a hazard to vehicles making this turn.",
+   "status_notes": "Noted. No issue found at location.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1790695214:boston:production:hwwbdukobao2vy4ryef8/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1790695216:boston:production:l0d9xfraodvlgw0abfxi/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1790695212/boston/production/wm5bq5qtqpnsm7zrihcf.jpg",
+   "segments": [
+    [
+     "BLUE HILL AVENUE",
+     "2"
+    ],
+    [
+     "MORTON STREET",
+     "1"
+    ]
+   ],
+   "owners": [
+    "City",
+    "MassDOT"
+   ]
+  },
+  {
+   "id": "a5edfc0b-3d64-48b7-b139-14fc34bdc2a7",
+   "service": "Pothole",
+   "status": "closed",
+   "requested": "2026-09-29T16:25:19Z",
+   "address": "3977 Washington St, Boston, MA 02131",
+   "lat": 42.29343027,
+   "lon": -71.12113941,
+   "description": "street collapsing. construction equipment has been parked here and now patch has very quickly failed",
+   "status_notes": "Transitioned. Area maintained by private owner.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1792416690:xfo3jrvcv76ptp8gv0f4/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1790699117/boston/production/sqs7v63llqdrnx7j1zng.jpg",
+   "segments": [
+    [
+     "COLGATE ROAD",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "3488fc95-3dbd-414f-9ecc-20b3241caec0",
+   "service": "Street Light Other",
+   "status": "open",
+   "requested": "2026-09-29T18:09:02Z",
+   "address": "Centre St & Guernsey St",
+   "lat": 42.28943283,
+   "lon": -71.14209404,
+   "description": "Daylighting request at the corner of Montclair and Centre, residents submitted petition with roughly 50 signatures. ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1790705271:boston:production:qoa5iuvos7aokjby9cep/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1790705274:boston:production:yyfj3bl4wjwrqlsbcbpq/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1790705266/boston/production/y1pk5gjb6eqvc1yurhvh.jpg",
+   "segments": [
+    [
+     "CENTRE STREET",
+     "2"
+    ],
+    [
+     "GUERNSEY STREET",
+     "2"
+    ],
+    [
+     "MONTCLAIR AVENUE",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "4999bb9e-af8a-42fd-a12a-a7fc23ae5600",
+   "service": "Illegally Blocked Sidewalk",
+   "status": "closed",
+   "requested": "2026-09-29T20:00:15Z",
+   "address": "804 Hyde Park Ave, Boston, MA 02136",
+   "lat": 42.27227784,
+   "lon": -71.11997502,
+   "description": "Crew always taking over one lane of Hyde Park Ave with no detail. ",
+   "status_notes": "Noted. No violation found by Code Enforcement.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1790740651:boston:production:smsj1xrj0994r8r5egrp/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1790712010/boston/production/yjkeyzaimz6w88ahkuyl.jpg",
+   "segments": [
+    [
+     "HYDE PARK AVENUE",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "ab691516-0140-4fe2-9338-6c347c40be1d",
+   "service": "Pothole",
+   "status": "closed",
+   "requested": "2026-09-29T22:41:47Z",
+   "address": "315-333 Washington St, Boston, MA 02108",
+   "lat": 42.35743798,
+   "lon": -71.05961582,
+   "description": "Pothole in roadway around old telecom patch strip, needs to patched/repaired near 18 Province St, thanks",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_364,w_236//l_v1790721700:boston:production:zyir93sgpagxmvyjexzz/c_limit,h_364,w_236/fl_layer_apply,g_north_west,x_266/l_v1790721702:boston:production:bckdjpaa4yrzzt4pphcr/c_limit,h_364,w_236/fl_layer_apply,g_north_west,x_522/l_v1790883204:boston:production:gz5y7apup9nytxkrmjrq/c_limit,h_364,w_236/fl_layer_apply,g_north_west,x_0,y_394/v1790721699/boston/production/gjcx6gfeij5c5zrxrgjm.jpg",
+   "segments": [
+    [
+     "PROVINCE STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "101006758160",
+   "service": "Damaged Sign",
+   "status": "open",
+   "requested": "2026-09-30T11:25:00Z",
+   "address": "Intersection of Old Morton St and River St, Mattapan",
+   "lat": 42.27194434,
+   "lon": -71.07123893,
+   "description": "Stick holding up sign | Public safety sign: [No]  Type of sign: [Tow zone sign being held up with a stick]  Is the pole still there: [No]",
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "OLD MORTON STREET",
+     "2"
+    ],
+    [
+     "RIVER STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "2d83b193-6e32-40fa-8fd8-9a532bfa70f5",
+   "service": "Traffic Signal Request",
+   "status": "closed",
+   "requested": "2026-09-30T13:41:22Z",
+   "address": "Foster St & Washington St",
+   "lat": 42.34910047,
+   "lon": -71.15714472,
+   "description": "Signal timing at Foster & Washington causes extreme backups on Foster",
+   "status_notes": "Resolved. Completed by Task - There was a communication issue which has since been resolved traffic should be much improved.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790775677/boston/production/xjktc4vcwnowhaibtfgz.jpg",
+   "segments": [
+    [
+     "FOSTER STREET",
+     "2"
+    ],
+    [
+     "WASHINGTON STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "987a9cb5-5aa4-434e-be0d-54bc5908bf1a",
+   "service": "Illegally Blocked Sidewalk",
+   "status": "closed",
+   "requested": "2026-09-30T14:30:39Z",
+   "address": "358-358C Centre St, Boston, MA 02130",
+   "lat": 42.32240688,
+   "lon": -71.10742293,
+   "description": "Illegally dumped.",
+   "status_notes": "Resolved. Request Completed - removed.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790778634/boston/production/b8b0hhzqnqumygm1j17g.jpg",
+   "segments": [
+    [
+     "CENTRE STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "4df66c00-b3c9-4135-89bc-086d7af7aaa7",
+   "service": "Sidewalk Repair",
+   "status": "open",
+   "requested": "2026-09-30T14:54:37Z",
+   "address": "1848-1852 Centre St, Boston, MA 02132",
+   "lat": 42.2862,
+   "lon": -71.15423,
+   "description": "uneven sidewalk/walking surface- trip hazard- appears the sidewalk is lifting due to growing tree roots and the asphalt repair is not holding- in front of Santander Bank @1850 Centre St West Roxbury MA",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1790779939:boston:production:kdr832q2vfbwdxobzwte/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1790779937/boston/production/sj4rt5vtizeh6iwl8sib.jpg",
+   "segments": [],
+   "owners": []
+  },
+  {
+   "id": "308ca469-8444-4610-85ff-f955a5290db2",
+   "service": "Sidewalk Repair",
+   "status": "closed",
+   "requested": "2026-09-30T15:17:05Z",
+   "address": "1222-1226 Washington St, Boston, MA 02118",
+   "lat": 42.34299778,
+   "lon": -71.06671987,
+   "description": "Please repair sidewalk numerous requests no response.  Thank you.",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1792156623:ufcfbaf8whzlqte05wvj/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1790781420/boston/production/n5yj1kexbcqropvkrn8i.jpg",
+   "segments": [
+    [
+     "",
+     "0"
+    ],
+    [
+     "WASHINGTON STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "e4ac7ef2-a61e-4148-9f87-267d750b5bbe",
+   "service": "Fallen Tree or Branches",
+   "status": "closed",
+   "requested": "2026-09-30T15:46:26Z",
+   "address": "176-178 Hyde Park Ave, Boston, MA 02130",
+   "lat": 42.29496,
+   "lon": -71.116551,
+   "description": null,
+   "status_notes": "Resolved. Request Completed - private tree fell over private property inspected by DR GR.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790797208/boston/production/eiq8skssyugycxgibit6.jpg",
+   "segments": [
+    [
+     "PATTEN STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "ae22d0d7-ee8c-41c9-bde8-e905f81d9933",
+   "service": "Traffic Signal Request",
+   "status": "open",
+   "requested": "2026-09-30T19:05:08Z",
+   "address": "Centre St & Green St",
+   "lat": 42.31321797,
+   "lon": -71.11399565,
+   "description": "The light at Green St & Centre St in JP was recently repaired & the light timing is now so short that only a couple cars can make it through the light & it\u2019s causing a major backup down Green St ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790795084/boston/production/hicsswufb9nc61dhbu7v.jpg",
+   "segments": [
+    [
+     "CENTRE STREET",
+     "2"
+    ],
+    [
+     "GREEN STREET",
+     "2"
+    ],
+    [
+     "MYRTLE STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "983ee8ee-b8a5-430c-b39b-da1f314e8052",
+   "service": "Illegally Blocked Sidewalk",
+   "status": "closed",
+   "requested": "2026-09-30T19:11:59Z",
+   "address": "1868 Centre St, Boston, MA 02132",
+   "lat": 42.28566841,
+   "lon": -71.1547279,
+   "description": "truck is completely blocking sidewalk access pedestrians are having to walk in the street.",
+   "status_notes": "Resolved. Reallocated to Non-City of Boston Stakeholder.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790795514/boston/production/ubx7tvjdm13axoxseegs.jpg",
+   "segments": [
+    [
+     "COREY STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "1ec00e6d-dcdb-42e4-9734-524f71556b64",
+   "service": "Install New Signal",
+   "status": "closed",
+   "requested": "2026-09-30T21:47:18Z",
+   "address": "Washington St & Wellsmere Rd",
+   "lat": 42.28011209,
+   "lon": -71.13494228,
+   "description": "Request to install stoplight at Washington St and Wellsmere Ave in Roslindale",
+   "status_notes": "Resolved. Completed by Task - A study was conducted to see if the location met any of the 8 Traffic Signal Warrants as is laid out in the Manual on Uniformed Traffic Control Devices.",
+   "media_url": null,
+   "segments": [
+    [
+     "WASHINGTON STREET",
+     "2"
+    ],
+    [
+     "WELLSMERE ROAD",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "197202ff-f015-4a08-8e96-48618cd9c578",
+   "service": "Traffic Signal Request",
+   "status": "closed",
+   "requested": "2026-10-01T00:51:55Z",
+   "address": "478-482A Blue Hill Ave, Boston, MA 02121",
+   "lat": 42.30817898,
+   "lon": -71.08304501,
+   "description": "Signal head out at Washington and Blue Hill Ave facing Washington ",
+   "status_notes": "Resolved. Request Completed.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790815914/boston/production/wxaqgrpu7agmoqp9wula.jpg",
+   "segments": [
+    [
+     "BLUE HILL AVENUE",
+     "2"
+    ],
+    [
+     "WASHINGTON STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "501c76ec-d0a1-43e1-b23f-91525e523376",
+   "service": "Pothole",
+   "status": "closed",
+   "requested": "2026-10-01T01:42:33Z",
+   "address": "3977 Washington St, Boston, MA 02131",
+   "lat": 42.29339232,
+   "lon": -71.12103179,
+   "description": "Fresh asphalt has been damaged. It's now a large hole. This pic doesn't show the depth, just the location. It's easily 5-6 inches deep. ",
+   "status_notes": "Transitioned. Area maintained by private owner.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1792418039:xpnxvttfdtfbcd2fzgkd/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1790818928/boston/production/tlziymgi5reljdhslw3z.jpg",
+   "segments": [
+    [
+     "BROOKSTONE STREET",
+     "0"
+    ],
+    [
+     "COLGATE ROAD",
+     "2"
+    ],
+    [
+     "WASHINGTON STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "74e88e19-b1b3-4ffc-a633-27d234d129fa",
+   "service": "Missing / Knocked Down Sign",
+   "status": "closed",
+   "requested": "2026-10-01T03:57:35Z",
+   "address": "88 Washington St, Boston, MA 02135",
+   "lat": 42.3440962,
+   "lon": -71.14365589,
+   "description": "Fallen over bus 65 inbound stop sign",
+   "status_notes": "Transitioned. Outside Agency.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790827050/boston/production/aeqw6hgv6skdbuijmncz.jpg",
+   "segments": [
+    [
+     "WASHINGTON STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "15347a78-a93b-4d4f-bd93-824366c457b5",
+   "service": "Sidewalk Repair",
+   "status": "closed",
+   "requested": "2026-10-01T12:27:45Z",
+   "address": "1222-1226 Washington St, Boston, MA 02118",
+   "lat": 42.34299683,
+   "lon": -71.06670509,
+   "description": "Please repair sidewalk numerous requests no response thank you",
+   "status_notes": "duplicate case, we are aware of this issue.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790857660/boston/production/jnnxpdcukfsqnserlgc0.jpg",
+   "segments": [
+    [
+     "",
+     "0"
+    ],
+    [
+     "WASHINGTON STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "d42a3a9d-1c5a-4dd2-86bd-e75da78bcd3c",
+   "service": "Sidewalk Repair",
+   "status": "open",
+   "requested": "2026-10-01T12:49:23Z",
+   "address": "Brackett St & Washington St",
+   "lat": 42.35023116,
+   "lon": -71.16554712,
+   "description": " Very uneven sidewalk. 7/11 should be responsible for this repair",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790858961/boston/production/enst8gvvdoty4asrmhi4.jpg",
+   "segments": [
+    [
+     "BRACKETT STREET",
+     "2"
+    ],
+    [
+     "WASHINGTON STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "ddd20e96-c03f-4b32-a955-02e10308c4fb",
+   "service": "Traffic Signal Request",
+   "status": "open",
+   "requested": "2026-10-01T14:57:37Z",
+   "address": "Centre St & Walter St",
+   "lat": 42.29808879,
+   "lon": -71.13013197,
+   "description": "The traffic light at the intersection of Walter St and Centre St in Roslindale needs to be turned on. Construction has been going on for over a year and it's a dangerous intersection.",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790866474/boston/production/khlghudfqr3ohccue7rs.png",
+   "segments": [
+    [
+     "CENTRE STREET",
+     "3"
+    ],
+    [
+     "WALTER STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "DCR"
+   ]
+  },
+  {
+   "id": "477f0ea5-2644-41b9-b202-b3ac77ff7f44",
+   "service": "Sidewalk Repair",
+   "status": "open",
+   "requested": "2026-10-01T17:54:55Z",
+   "address": "1337-1341 Hyde Park Ave, Boston, MA 02136",
+   "lat": 42.253344,
+   "lon": -71.124966,
+   "description": null,
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790944710/boston/production/gymhrqpjerzuia8tqquh.jpg",
+   "segments": [],
+   "owners": []
+  },
+  {
+   "id": "eb70b37e-0fff-48a6-9b94-b40364826211",
+   "service": "Unauthorized Signage",
+   "status": "closed",
+   "requested": "2026-10-01T18:42:16Z",
+   "address": "699 Washington St, Boston, MA 02124",
+   "lat": 42.28713977,
+   "lon": -71.07130229,
+   "description": "Unauthorized signage James G Grant Co. All along Washington St Dor # 697 #701 etc....",
+   "status_notes": "Noted. No violation found by Code Enforcement - no violation signs were removed.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1790880131:boston:production:ed6nub2bzutst8fzth1j/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1790880129/boston/production/smqvnpuiuistb1ag8tjg.jpg",
+   "segments": [
+    [
+     "WALTON STREET",
+     "2"
+    ],
+    [
+     "WASHINGTON STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "4cbeb558-eee6-4d4e-8a53-39ecc90c471c",
+   "service": "Sidewalk Repair",
+   "status": "closed",
+   "requested": "2026-10-01T19:40:20Z",
+   "address": "98-100 Centre St, Boston, MA 02119",
+   "lat": 42.32786436,
+   "lon": -71.09545979,
+   "description": "Pavers need to be replaced after gas line busted",
+   "status_notes": "Noted. Criteria Not Met - private property owners responsibility.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790883592/boston/production/yhhwgzubleguolxlktt5.jpg",
+   "segments": [
+    [
+     "CENTRE STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "afe8be33-4533-4f38-a52b-f6aeb1df0286",
+   "service": "Pothole",
+   "status": "open",
+   "requested": "2026-10-01T19:49:20Z",
+   "address": "610-618 Washington St, Boston, MA 02135",
+   "lat": 42.350445,
+   "lon": -71.167842,
+   "description": null,
+   "status_notes": null,
+   "media_url": null,
+   "segments": [
+    [
+     "BRECK AVENUE",
+     "2"
+    ],
+    [
+     "WASHINGTON STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "5c25aa41-8ab0-40fd-a906-ca339d3c3f4e",
+   "service": "Pothole",
+   "status": "closed",
+   "requested": "2026-10-01T20:23:11Z",
+   "address": "Colgate Rd & Washington St",
+   "lat": 42.293304,
+   "lon": -71.1208395,
+   "description": null,
+   "status_notes": "Noted. No issue found at location - no potholes found.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_364,w_236//l_v1791228455:boston:production:gtprev51tmdadcgl2jg3/c_limit,h_364,w_236/fl_layer_apply,g_north_west,x_266/l_v1791228457:boston:production:nbkqbcydjyfbjljdzyeh/c_limit,h_364,w_236/fl_layer_apply,g_north_west,x_522/l_v1791228459:boston:production:qjpdd92gf1drdpc521o5/c_limit,h_364,w_236/fl_layer_apply,g_north_west,x_0,y_394/v1791228452/boston/production/ea228wbq3j5t8m9iiojp.jpg",
+   "segments": [
+    [
+     "BROOKSTONE STREET",
+     "0"
+    ],
+    [
+     "COLGATE ROAD",
+     "2"
+    ],
+    [
+     "WASHINGTON STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "74b22767-ec7a-4aaf-b09c-af151354601c",
+   "service": "Sidewalk Repair",
+   "status": "open",
+   "requested": "2026-10-01T21:56:07Z",
+   "address": "Rutland St & Washington St",
+   "lat": 42.33862267,
+   "lon": -71.07427599,
+   "description": "Broken sidewalk",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790891765/boston/production/xogjjkdjdsb43wycds6x.jpg",
+   "segments": [
+    [
+     "RUTLAND STREET",
+     "2"
+    ],
+    [
+     "WASHINGTON STREET",
+     "2"
+    ],
+    [
+     "WASHINGTON STREET",
+     "None"
+    ]
+   ],
+   "owners": [
+    "City",
+    "None"
+   ]
+  },
+  {
+   "id": "052d2a9c-798c-444b-ab6b-c094df7aa330",
+   "service": "Install New Signal",
+   "status": "open",
+   "requested": "2026-10-01T22:20:27Z",
+   "address": "Cummins Hwy & Washington St",
+   "lat": 42.28640187,
+   "lon": -71.12817418,
+   "description": "There seems to be the need for a green arrow at the traffic light when you're on Washington St. turning right onto Cummins Hwy. When cars are on Cummins and turning onto Washington, there's no reason why the other cars have to wait, especially since there's a don't walk sign on during this time.",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790893225/boston/production/azm3bgoof2u8qa43ndta.jpg",
+   "segments": [
+    [
+     "CUMMINS HIGHWAY",
+     "2"
+    ],
+    [
+     "SOUTH STREET",
+     "2"
+    ],
+    [
+     "WASHINGTON STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "8f56b32c-7585-4bef-bb1e-53ba069f57e7",
+   "service": "Missing / Knocked Down Sign",
+   "status": "open",
+   "requested": "2026-10-02T00:03:54Z",
+   "address": "E Newton St & Washington St",
+   "lat": 42.33856637,
+   "lon": -71.07379458,
+   "description": "Panels off, ready to steal ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790899432/boston/production/qitbwndmg8skj38fcec7.jpg",
+   "segments": [
+    [
+     "WASHINGTON STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "2f1c86f8-1947-4624-ac10-37ff887fb71f",
+   "service": "Missing / Knocked Down Sign",
+   "status": "open",
+   "requested": "2026-10-02T12:35:19Z",
+   "address": "545-549 Blue Hill Ave, Boston, MA 02121",
+   "lat": 42.30621333,
+   "lon": -71.0849305,
+   "description": "Damaged handicap parking sign ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1790944514:boston:production:cn25ylazru1ns1egenl0/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1790944513/boston/production/xtmkrvn1gg56devkzr6a.jpg",
+   "segments": [
+    [
+     "NAZING STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "6c3412e2-0b61-45c7-96ba-4359a36f83b4",
+   "service": "Illegally Blocked Sidewalk",
+   "status": "closed",
+   "requested": "2026-10-02T12:49:37Z",
+   "address": "519-531 Columbia Rd, Boston, MA 02125",
+   "lat": 42.31536098,
+   "lon": -71.06661179,
+   "description": "Siempre ocupando espacio endrogandose en la puerta principal del negocio ",
+   "status_notes": "Noted. No violation found by Code Enforcement - Not a code enforcement issue please refer to BPD.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790945352/boston/production/lsbqmjjvqg8kx7a4zbzb.jpg",
+   "segments": [
+    [
+     "COLUMBIA ROAD",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "fa9cda37-5238-424a-9e5e-561ecdb9a27b",
+   "service": "Pothole",
+   "status": "closed",
+   "requested": "2026-10-02T13:46:23Z",
+   "address": "Hyde Park Ave & Margin St",
+   "lat": 42.25123611,
+   "lon": -71.12559444,
+   "description": "Multiple potholes near the intersection of Hyde Park Ave and Margin St in Hyde Park that need repair.",
+   "status_notes": "potholes completed.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1791387427:boston:production:whicsqp4squaecd8buhn/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1790948560/boston/production/wd3aijxgvbeivwop8ysd.jpg",
+   "segments": [
+    [
+     "HYDE PARK AVENUE",
+     "2"
+    ],
+    [
+     "MARGIN STREET",
+     "0"
+    ],
+    [
+     "None",
+     "None"
+    ]
+   ],
+   "owners": [
+    "City",
+    "None",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "58af3397-9ee8-4fa9-9fc3-48308e01d7af",
+   "service": "Illegally Blocked Sidewalk",
+   "status": "closed",
+   "requested": "2026-10-02T14:15:39Z",
+   "address": "Centre Street Ter & Marcella St",
+   "lat": 42.32559504,
+   "lon": -71.09658305,
+   "description": "Trash can still out from Thursday!",
+   "status_notes": "Resolved. Citation issued.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1790950531:boston:production:qupcrerpdn1lmlae0efk/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1790959136:boston:production:bcirap80i0v9jxzruflw/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1790950530/boston/production/ywn2egdu5pg7x3kkhd09.jpg",
+   "segments": [
+    [
+     "MARCELLA STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "27110bbe-a35a-4e1d-8fca-75176e9a28c3",
+   "service": "Illegally Blocked Sidewalk",
+   "status": "open",
+   "requested": "2026-10-02T14:46:49Z",
+   "address": "201 Washington St, Boston, MA 02108",
+   "lat": 42.35853847,
+   "lon": -71.05832208,
+   "description": "Blocking sidewalk, fake parking permit in window. Located exactly on the sidewalk in front of the OldState House. Fake home made parking permit says \"Parking Permit Old State Hoise, care of the facilities & preservation department, Campbell Waterhousr - Director 774-454-7493\"  this is not a valid parking permit. Grey Nissan Altima, Massachusetts plates 1WDD55",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1790952407:boston:production:dy9clyg8ugjfr3ftadno/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1790952408:boston:production:abucriodwgjuadoimps5/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1790952406/boston/production/fdybf3w0gqebehx7ztqx.jpg",
+   "segments": [],
+   "owners": []
+  },
+  {
+   "id": "de294bd6-2714-4040-9e9b-b9b6ed7d73a3",
+   "service": "Missing / Knocked Down Sign",
+   "status": "closed",
+   "requested": "2026-10-02T15:23:11Z",
+   "address": "Prescott St & Washington St",
+   "lat": 42.37278743,
+   "lon": -71.06359094,
+   "description": "Street sign fell down. I don't know truck hit. I don't know what happened but here it is on the street",
+   "status_notes": "Resolved. Request resolved.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_364,w_236//l_v1790954585:boston:production:uxxqtt5idlxnj59pzygr/c_limit,h_364,w_236/fl_layer_apply,g_north_west,x_266/l_v1790954586:boston:production:lsvfoapagmftfskdg2fb/c_limit,h_364,w_236/fl_layer_apply,g_north_west,x_522/l_v1791378652:boston:production:ofrxbgc7la7qgkmxjgo7/c_limit,h_364,w_236/fl_layer_apply,g_north_west,x_0,y_394/v1790954584/boston/production/rqejaod5kairfealmsah.jpg",
+   "segments": [
+    [
+     "PRESCOTT STREET",
+     "2"
+    ],
+    [
+     "WASHINGTON STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "a756ab25-051b-4966-8ef9-ecea98b10d31",
+   "service": "Illegally Blocked Sidewalk",
+   "status": "closed",
+   "requested": "2026-10-02T17:10:22Z",
+   "address": "1887-1899 Washington St, Boston, MA 02119",
+   "lat": 42.33507288,
+   "lon": -71.0797282,
+   "description": "There are drugs actively being used and the sidewalk is blocked, next to a preschool with children present.",
+   "status_notes": "Transitioned. Reallocated to Non-City of Boston Stakeholder.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790960998/boston/production/q3sdeyhiyv1odqnchiip.jpg",
+   "segments": [],
+   "owners": []
+  },
+  {
+   "id": "589617f2-31e3-4be4-b4b6-04c40328742a",
+   "service": "Missing / Knocked Down Sign",
+   "status": "closed",
+   "requested": "2026-10-02T17:54:30Z",
+   "address": "Prescott St & Washington St",
+   "lat": 42.372747,
+   "lon": -71.06364,
+   "description": null,
+   "status_notes": "Resolved. Request resolved.",
+   "media_url": null,
+   "segments": [
+    [
+     "PRESCOTT STREET",
+     "2"
+    ],
+    [
+     "WASHINGTON STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "d86715ce-ada7-4415-b5bc-97ef153160c5",
+   "service": "Traffic Signal Request",
+   "status": "closed",
+   "requested": "2026-10-02T19:43:04Z",
+   "address": "Centre St & South St",
+   "lat": 42.288219,
+   "lon": -71.144712,
+   "description": null,
+   "status_notes": "Resolved. Completed by Task.",
+   "media_url": null,
+   "segments": [
+    [
+     "CENTRE STREET",
+     "2"
+    ],
+    [
+     "SOUTH STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  },
+  {
+   "id": "d10312ee-db12-4f6e-879a-7b87ba3184db",
+   "service": "Sidewalk Repair",
+   "status": "open",
+   "requested": "2026-10-02T21:02:43Z",
+   "address": "377-385 Washington St, Boston, MA 02135",
+   "lat": 42.349302,
+   "lon": -71.154351,
+   "description": "Metal remains from a broken sign pole are sticking up out of the sidewalk, maybe about 1/2\". Sharp edges. Location: in front of 381 Washington St (Johnny D's), Brighton, MA.",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790974883/boston/production/vpidgouk2d731xh0cavx.jpg",
+   "segments": [
+    [
+     "ARGUS PLACE",
+     "0"
+    ],
+    [
+     "WASHINGTON STREET",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City",
+    "unaccepted"
+   ]
+  },
+  {
+   "id": "d733dd5c-e91c-4dcb-9685-88b4c9c19390",
+   "service": "Street Light Outage",
+   "status": "open",
+   "requested": "2026-10-02T23:08:48Z",
+   "address": "1366B-1370B Blue Hill Ave, Boston, MA 02126",
+   "lat": 42.27669255,
+   "lon": -71.09337866,
+   "description": "Replace street light bulb in front of 1366 blue hill avenue. ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1790982503:boston:production:pihedcqqijljoln3i7ct/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1790982504:boston:production:pk3raqln7roocpltazay/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1790982501/boston/production/isnxoiwinxlxipjlvr3y.jpg",
+   "segments": [
+    [
+     "BLUE HILL AVENUE",
+     "2"
+    ]
+   ],
+   "owners": [
+    "City"
+   ]
+  }
+ ]
+}

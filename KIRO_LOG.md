@@ -2,7 +2,7 @@
 
 This is our running evidence log. It becomes the Kiro write-up, which is a third of the score ("Implementation") and the basis for Best Use of Kiro.
 
-**Rule of thumb:** if Kiro did something you'd mention in the demo, log it within 5 minutes, with proof: a commit hash, or a screenshot saved in `docs/kiro/`. Type `#log-kiro-usage` in Kiro chat to have Kiro write the row for you. Finished spec tasks are logged automatically at the bottom of this file.
+**Rule of thumb:** if Kiro did something you'd mention in the demo, log it within 5 minutes, with proof: a commit hash, or a screenshot saved in `docs/kiro/`. Type `#log-kiro-usage` in Kiro chat to have Kiro write the row for you. During the build, each person logs to their own file in `docs/kiro-log/` (finished spec tasks are logged there automatically), so three people pushing never conflict. At 19:15 we compile those files into this one.
 
 ## Coverage plan
 
@@ -22,7 +22,7 @@ The judges ask about every row. Each one needs an owner and at least one logged 
 
 | Time | Who | Surface | Feature | What happened | Evidence |
 |---|---|---|---|---|---|
-| | | | | | |
+| 14:56 | Niklas | CLI (V3, headless) | Hooks, Steering | Setup check: a headless `kiro-cli chat --v3` run loaded the always-on steering (global + `hackathon-guardrails`) but not the fileMatch and manual files, as designed; the `block-secrets` PreToolUse hook blocked a write containing a fake Anthropic key, and the file was never created | uncommitted; `.kiro/hooks/block-secrets.json` |
 
 ## Moments worth a screenshot
 

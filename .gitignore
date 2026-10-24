@@ -21,3 +21,7 @@ __pycache__/
 # Reference material we don't own; keep it out of the public repo
 HACKACHUSETTS - Rules.pdf
 hackathon webpage.js
+resources/
+
+# Local scratch notes, not used by the build
+IDEAS.md

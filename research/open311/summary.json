@@ -1,0 +1,246 @@
+{
+ "rows": 20730,
+ "first_requested": "2026-09-24T19:00:12Z",
+ "last_requested": "2026-10-24T18:48:25Z",
+ "days_covered": 31,
+ "min_per_day": 229,
+ "max_per_day": 937,
+ "pct_with_description": 81.1,
+ "pct_with_media_url": 69.2,
+ "pct_with_status_notes": 60.9,
+ "pct_with_2plus_photos": 25.8,
+ "status": [
+  [
+   "closed",
+   12918
+  ],
+  [
+   "open",
+   7812
+  ]
+ ],
+ "top_services": [
+  [
+   "Illegal Parking",
+   6182
+  ],
+  [
+   "Litter & Debris",
+   1966
+  ],
+  [
+   "Needle Pickup",
+   740
+  ],
+  [
+   "Dead Animal General",
+   725
+  ],
+  [
+   "Rodent Activity",
+   694
+  ],
+  [
+   "Trash Placed Out Early",
+   680
+  ],
+  [
+   "Sidewalk Repair",
+   608
+  ],
+  [
+   "Improper Trash Storage",
+   598
+  ],
+  [
+   "Illegal Dumping or Disposal",
+   576
+  ],
+  [
+   "Street Light Outage",
+   559
+  ],
+  [
+   "Pothole",
+   492
+  ],
+  [
+   "Overflowing Trash",
+   463
+  ],
+  [
+   "Fallen Tree or Branches",
+   449
+  ],
+  [
+   "Other",
+   384
+  ],
+  [
+   "Domestic Animal Issue",
+   374
+  ],
+  [
+   "Illegally Blocked Sidewalk",
+   355
+  ],
+  [
+   "Traffic Signal Request",
+   326
+  ],
+  [
+   "Illegal Graffiti",
+   297
+  ],
+  [
+   "Missing / Knocked Down Sign",
+   296
+  ],
+  [
+   "Pest Infestation - Residential",
+   288
+  ],
+  [
+   "Unsatisfactory Living Conditions",
+   284
+  ],
+  [
+   "Pruning Request",
+   256
+  ],
+  [
+   "Abandoned Vehicles",
+   250
+  ],
+  [
+   "Abandoned Vehicle",
+   227
+  ],
+  [
+   "Missed Waste Pick-up",
+   220
+  ],
+  [
+   "Wild Animal Issue",
+   203
+  ],
+  [
+   "Park Groundskeeping",
+   187
+  ],
+  [
+   "New / Modified Sign Request",
+   178
+  ],
+  [
+   "Construction Debris",
+   159
+  ],
+  [
+   "Utility Contractor Complaints",
+   149
+  ]
+ ],
+ "top_status_notes": [
+  [
+   "Resolved. Citation issued.",
+   798
+  ],
+  [
+   "Resolved. Needles have been picked up.",
+   482
+  ],
+  [
+   "Resolved.",
+   479
+  ],
+  [
+   "Resolved. Officer Dispatched.",
+   459
+  ],
+  [
+   "Resolved. Request Completed.",
+   396
+  ],
+  [
+   "Noted. No violation found by Code Enforcement.",
+   382
+  ],
+  [
+   "Resolved. Animal has been collected.",
+   356
+  ],
+  [
+   "Resolved. Vehicle Ticketed.",
+   327
+  ],
+  [
+   "Transitioned. Reallocated to Non-City of Boston Stakeholder.",
+   304
+  ],
+  [
+   "Resolved. No Vehicle Found.",
+   293
+  ],
+  [
+   "Resolved. Item has been picked up.",
+   235
+  ],
+  [
+   "Resolved. Area has been treated.",
+   183
+  ],
+  [
+   "Resolved. Vehicle Moved.",
+   183
+  ],
+  [
+   "Resolved. No Violation Found.",
+   179
+  ],
+  [
+   "Resolved. Area has been swept.",
+   176
+  ],
+  [
+   "Resolved. Completed by Task.",
+   175
+  ],
+  [
+   "Resolved. Debris has been picked up.",
+   161
+  ],
+  [
+   "Resolved. Item(s) removed.",
+   129
+  ],
+  [
+   "Noted.",
+   106
+  ],
+  [
+   "Resolved. Request Completed - all set.",
+   96
+  ],
+  [
+   "Case Resolved. Vehicle not at location.",
+   93
+  ],
+  [
+   "Resolved. Violation issued.",
+   92
+  ],
+  [
+   "Noted. No issue found at location.",
+   87
+  ],
+  [
+   "Noted. No violation found by Code Enforcement - sent to dpw for removal.",
+   80
+  ],
+  [
+   "Noted. Duplicate Request.",
+   79
+  ]
+ ]
+}

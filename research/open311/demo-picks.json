@@ -1,0 +1,644 @@
+{
+ "routing_morrissey_streetlight_DCR": [
+  {
+   "service_request_id": "da52decb-5e70-4b1b-82e1-3816ae370e15",
+   "status": "open",
+   "service_name": "Street Light Outage",
+   "service_code": "d60952e6-4ac3-4d69-96f2-1953bc410beb",
+   "description": "Two street lights out at:\r\n-Dorchester, SE corner of intersection of Morrissey Blvd off ramp and Mount Vernon St. 42\u00b019'13.3\"N 71\u00b002'59.5\"W   https://maps.app.goo.gl/1FaCVmnsAvH3T9P68\r\n-Dorchester, ~200 ft NW of above, toward Morrissey Blvd overpass over Mt. Vernon St. \r\n42\u00b019'14.3\"N 71\u00b003'01.8\"W   https://maps.app.goo.gl/RWJzt8zjbHnU4Lvm6\r\n-Two (of four) lights mounted on the sidewalls of the Mt. Vernon St. underpass under Mt. Vernon St. One on one each side of Mt. Vernon St. \r\nThank you!",
+   "requested_datetime": "2026-10-10T04:11:12Z",
+   "updated_datetime": "2026-10-10T04:12:18Z",
+   "address": "Mount Vernon St & William T Morrissey Blvd",
+   "lat": 42.32036898,
+   "long": -71.04987246,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1791604970:boston:production:ztz6gjd9vlbvgdafugn5/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1791604973:boston:production:jrnsqrpuwbh5f7jt8csw/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1791604968/boston/production/eqnbmxu5xnmn6cvlmvue.jpg",
+   "token": "e42bf648-c39c-480a-aa61-58345b4cb02a",
+   "extended_attributes": {
+    "x": "777899.87553127",
+    "y": "2942091.92484317",
+    "photos": [
+     {
+      "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791604968/boston/production/eqnbmxu5xnmn6cvlmvue.jpg",
+      "title": null,
+      "created_at": "2026-10-10T04:12:18.900648Z"
+     },
+     {
+      "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791604970/boston/production/ztz6gjd9vlbvgdafugn5.jpg",
+      "title": null,
+      "created_at": "2026-10-10T04:12:18.906708Z"
+     },
+     {
+      "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791604973/boston/production/jrnsqrpuwbh5f7jt8csw.jpg",
+      "title": null,
+      "created_at": "2026-10-10T04:12:18.910291Z"
+     }
+    ]
+   }
+  }
+ ],
+ "routing_gallivan_streetlight_MassDOT": [
+  {
+   "service_request_id": "6ca3b0f1-de7d-41b5-8973-4ca6a2f2d3e3",
+   "status": "open",
+   "status_notes": "Transitioned. Reallocated to Non-City of Boston Stakeholder.",
+   "service_name": "Street Light Outage",
+   "service_code": "d60952e6-4ac3-4d69-96f2-1953bc410beb",
+   "requested_datetime": "2026-09-28T10:55:50Z",
+   "updated_datetime": "2026-09-28T11:16:08Z",
+   "address": "593 Gallivan Blvd, Boston, MA 02124",
+   "lat": 42.283098,
+   "long": -71.0514,
+   "token": "1d15e9c7-689b-4aae-935f-4225c917fe0d",
+   "extended_attributes": {
+    "x": "777558.20239602",
+    "y": "2928507.65255673"
+   }
+  }
+ ],
+ "multi_owner_vfw_streetlight_DCR_plus_Eversource": [
+  {
+   "service_request_id": "0e411b27-fc81-4f13-a6fd-6c3cc44d1cb0",
+   "status": "open",
+   "service_name": "Street Light Outage",
+   "service_code": "d60952e6-4ac3-4d69-96f2-1953bc410beb",
+   "description": "Extended power outage caused by Eversource work (began 10:45 am, not expected to resolve until 12am tomorrow); no notice given to residents and Eversource is providing little information about the problem ",
+   "requested_datetime": "2026-10-07T20:19:37Z",
+   "updated_datetime": "2026-10-07T20:20:13Z",
+   "address": "525 VFW Pkwy, Boston, MA 02467",
+   "lat": 42.29576431,
+   "long": -71.15395578,
+   "token": "f64a2a1f-bfac-47b6-86f5-eba1607902a3",
+   "extended_attributes": {
+    "x": "749787.97091955",
+    "y": "2932994.18554503"
+   }
+  }
+ ],
+ "before_html_leak_fenway_DCR": [
+  {
+   "service_request_id": "f5c87a5d-dd2b-4ef9-811a-1d6296d9ddea",
+   "status": "closed",
+   "status_notes": "Transitioned. <div>\n<div>\n<div>\n<div>\n<div>\n<div>dcr advised&nbsp; bcs-00343176</div>\n</div>\n</div>\n</div>\n</div>\n</div>.",
+   "service_name": "Street Light Electrical Safety",
+   "service_code": "593e0368-e976-4092-8461-4d2135353377",
+   "description": "traffic signal has wires hanging out ",
+   "requested_datetime": "2026-10-03T23:34:48Z",
+   "updated_datetime": "2026-10-05T20:25:50Z",
+   "address": "Boylston St & Fenway",
+   "lat": 42.34633363,
+   "long": -71.090756,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791070486/boston/production/zlmbvob202mqkiqzoly3.jpg",
+   "token": "f7f267da-06da-4bb0-848c-f3857757569b",
+   "extended_attributes": {
+    "x": "766797.95667019",
+    "y": "2951498.21325077",
+    "photos": [
+     {
+      "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791070486/boston/production/zlmbvob202mqkiqzoly3.jpg",
+      "title": null,
+      "created_at": "2026-10-03T23:35:23.051394Z"
+     }
+    ]
+   }
+  }
+ ],
+ "before_umass_morrissey_sign": [
+  {
+   "service_request_id": "101006757264",
+   "status": "closed",
+   "status_notes": "If this is located on the grounds of UMass Boston, the school would be responsible for repair.",
+   "service_name": "Damaged Sign",
+   "service_code": "Transportation - Traffic Division:Signs & Signals:Sign Repair",
+   "description": "UMass Boston Harbor",
+   "requested_datetime": "2026-09-28T15:31:00Z",
+   "updated_datetime": "2026-09-29T19:58:15Z",
+   "address": "Intersection of Freeport St and William T Morrissey Blvd, Dorchester",
+   "lat": 42.300598,
+   "long": -71.049539,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1790609365:boston:production:embbgca9ot5unmeilkae/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1790609368:boston:production:khzpxteiuit4ssgn2myx/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1790609363/boston/production/makwm0xfyoeorsdbdxya.jpg",
+   "token": "c9225888-74fd-444d-8963-ea9fee236d7c",
+   "details": {
+    "eform.BTDT05_DamagedSign.polestillthere": "No"
+   },
+   "attributes": [
+    {
+     "label": "Has pole:",
+     "value": "No",
+     "name": "eform.BTDT05_DamagedSign.polestillthere",
+     "code": "No"
+    }
+   ],
+   "extended_attributes": {
+    "x": "778028.10638647",
+    "y": "2934887.55150724",
+    "photos": [
+     {
+      "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790609363/boston/production/makwm0xfyoeorsdbdxya.jpg#spot=58c23424-bf21-48f2-b550-645c963ffb8f",
+      "title": null,
+      "created_at": "2026-09-28T15:31:45.333006Z"
+     },
+     {
+      "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790609365/boston/production/embbgca9ot5unmeilkae.jpg#spot=bc994e76-2fc2-40c6-ab55-ca7b84556a23",
+      "title": null,
+      "created_at": "2026-09-28T15:31:45.337533Z"
+     },
+     {
+      "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790609368/boston/production/khzpxteiuit4ssgn2myx.jpg#spot=8174249d-d4cc-427a-8ac1-a04fc3c7f020",
+      "title": null,
+      "created_at": "2026-09-28T15:31:45.341184Z"
+     }
+    ]
+   }
+  }
+ ],
+ "before_noted_resubmitted_massdot": [
+  {
+   "service_request_id": "0e7e303f-686b-4e17-81f6-94185f3f4cfc",
+   "status": "closed",
+   "status_notes": "Noted. <div>Resubmitted as&nbsp;BCS-00346840, notified Mass DOT.</div>.",
+   "service_name": "Traffic Signal Request",
+   "service_code": "66ff546d-7fb6-4949-b844-f92d8312f9f1",
+   "description": "Traffic light messed up. No turn signal left on Gallivan when coming off Granite Ave",
+   "requested_datetime": "2026-10-08T21:33:53Z",
+   "updated_datetime": "2026-10-08T22:05:08Z",
+   "address": "Adams St & Gallivan Blvd",
+   "lat": 42.28272954,
+   "long": -71.0558881,
+   "token": "fad7dcb9-ed00-46d1-a5be-7bb570e6ef62",
+   "extended_attributes": {
+    "x": "776344.42892831",
+    "y": "2928367.02534550"
+   }
+  }
+ ],
+ "cluster_closure_didnt_hold_metropolitan_signal": [
+  {
+   "service_request_id": "5d309bf1-e925-4bb9-baa7-3306630a1cdc",
+   "status": "open",
+   "status_notes": "Resolved. Request Completed - reported by shop all out on arrival same while at location lights restored by eversourse tightened power connects+ grounds on back board +brakers intersection running stop+go.",
+   "service_name": "Traffic Signal Request",
+   "service_code": "66ff546d-7fb6-4949-b844-f92d8312f9f1",
+   "description": "Traffic lights are out. I dont have a photo. ",
+   "requested_datetime": "2026-10-06T12:21:37Z",
+   "updated_datetime": "2026-10-06T15:03:21Z",
+   "address": "Metropolitan Ave & Poplar St",
+   "lat": 42.27590301,
+   "long": -71.12567547,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791289271/boston/production/raatchf4qqotwti86as0.jpg",
+   "token": "62ea74aa-6d44-46ba-b762-e6bbb2c6fa2e",
+   "extended_attributes": {
+    "x": "757470.84647200",
+    "y": "2925788.73638011",
+    "photos": [
+     {
+      "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791289271/boston/production/raatchf4qqotwti86as0.jpg",
+      "title": null,
+      "created_at": "2026-10-06T12:22:42.470823Z"
+     }
+    ]
+   }
+  },
+  {
+   "service_request_id": "0b9d39af-6f54-40e5-ac8c-ae48dd6e3a92",
+   "status": "closed",
+   "status_notes": "Noted. Duplicate Request.",
+   "service_name": "Traffic Signal Request",
+   "service_code": "66ff546d-7fb6-4949-b844-f92d8312f9f1",
+   "requested_datetime": "2026-10-06T12:35:59Z",
+   "updated_datetime": "2026-10-19T22:18:30Z",
+   "address": "Metropolitan Ave & Poplar St",
+   "lat": 42.275907,
+   "long": -71.125668,
+   "token": "e6548191-5cf5-4485-8bd8-e76804d38c7f",
+   "extended_attributes": {
+    "x": "757472.86169858",
+    "y": "2925790.19926562"
+   }
+  },
+  {
+   "service_request_id": "6f5ffea5-f5cb-4f00-bf80-b1611abd278e",
+   "status": "closed",
+   "status_notes": "Resolved. Request Completed - Reported by shop all out, upon arrival stop and go, checked time and day OK, indications coming up normal. \n\n  Int.stop and go.",
+   "service_name": "Traffic Signal Request",
+   "service_code": "66ff546d-7fb6-4949-b844-f92d8312f9f1",
+   "requested_datetime": "2026-10-06T14:54:28Z",
+   "updated_datetime": "2026-10-06T17:04:55Z",
+   "address": "Metropolitan Ave & Poplar St",
+   "lat": 42.275907,
+   "long": -71.125668,
+   "token": "dd0f37ca-b781-46d9-9ec1-cd1d9db79b32",
+   "extended_attributes": {
+    "x": "757472.86169858",
+    "y": "2925790.19926562"
+   }
+  },
+  {
+   "service_request_id": "c9f263ba-a9bb-40ef-b6f0-2410f6f7478e",
+   "status": "closed",
+   "status_notes": "Resolved. Completed by Task - Reported by shop all out, upon arrival stop and go checked indications coming up normal, clear alarms ok.\n\n  Int.stop and go.",
+   "service_name": "Traffic Signal Request",
+   "service_code": "66ff546d-7fb6-4949-b844-f92d8312f9f1",
+   "requested_datetime": "2026-10-06T21:16:20Z",
+   "updated_datetime": "2026-10-19T22:22:00Z",
+   "address": "Metropolitan Ave & Poplar St",
+   "lat": 42.275907,
+   "long": -71.125668,
+   "token": "bbed712a-e1ac-426e-a4cc-0d18886e5ae0",
+   "extended_attributes": {
+    "x": "757472.86169858",
+    "y": "2925790.19926562"
+   }
+  },
+  {
+   "service_request_id": "b4969286-0f05-4a65-a581-39b0abfd245a",
+   "status": "closed",
+   "status_notes": "Resolved. Completed by Task - No power in the CB, is Eversource problem, notified tech base, and 311.",
+   "service_name": "Traffic Signal Request",
+   "service_code": "66ff546d-7fb6-4949-b844-f92d8312f9f1",
+   "requested_datetime": "2026-10-06T22:49:02Z",
+   "updated_datetime": "2026-10-06T23:20:49Z",
+   "address": "Metropolitan Ave & Poplar St",
+   "lat": 42.275907,
+   "long": -71.125668,
+   "token": "bd34e0d3-8e6a-42e8-b021-9fdab74d700d",
+   "extended_attributes": {
+    "x": "757472.86169858",
+    "y": "2925790.19926562"
+   }
+  },
+  {
+   "service_request_id": "c6a2a7e0-64eb-4d1f-a8b4-3e13241e4b4f",
+   "status": "closed",
+   "status_notes": "Resolved. Completed by Task.",
+   "service_name": "Traffic Signal Request",
+   "service_code": "66ff546d-7fb6-4949-b844-f92d8312f9f1",
+   "requested_datetime": "2026-10-07T11:31:00Z",
+   "updated_datetime": "2026-10-07T13:33:43Z",
+   "address": "Metropolitan Ave & Poplar St",
+   "lat": 42.275907,
+   "long": -71.125668,
+   "token": "c3e13fe4-81f8-4b03-9f16-1a5eb6edb539",
+   "extended_attributes": {
+    "x": "757472.86169858",
+    "y": "2925790.19926562"
+   }
+  },
+  {
+   "service_request_id": "48089feb-190a-471a-9984-8e3f1d1d9d6c",
+   "status": "open",
+   "service_name": "Traffic Signal Request",
+   "service_code": "66ff546d-7fb6-4949-b844-f92d8312f9f1",
+   "description": "Traffic lights out. Not working",
+   "requested_datetime": "2026-10-07T11:41:50Z",
+   "updated_datetime": "2026-10-07T11:42:24Z",
+   "address": "Metropolitan Ave & Poplar St",
+   "lat": 42.27589526,
+   "long": -71.12568116,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791373284/boston/production/oflboc8eja1saeabgmj1.jpg",
+   "token": "4a65ca66-d30f-4820-b385-8e373ac60818",
+   "extended_attributes": {
+    "x": "757469.31898010",
+    "y": "2925785.90541065",
+    "photos": [
+     {
+      "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791373284/boston/production/oflboc8eja1saeabgmj1.jpg",
+      "title": null,
+      "created_at": "2026-10-07T11:42:24.135241Z"
+     }
+    ]
+   }
+  },
+  {
+   "service_request_id": "f7d35ca8-778b-45e3-b084-b94b00ebee7f",
+   "status": "closed",
+   "status_notes": "Transitioned. Reallocated to Non-City of Boston Stakeholder - We identified a issue in the disconnect. Our contractor has been notified and is going to replace the circuit breaker in the disconnect. He will be on scene this afternoon.",
+   "service_name": "Traffic Signal Request",
+   "service_code": "66ff546d-7fb6-4949-b844-f92d8312f9f1",
+   "description": "Traffic lights are not working. It\u2019s been 2 days. ",
+   "requested_datetime": "2026-10-07T14:07:32Z",
+   "updated_datetime": "2026-10-07T20:36:58Z",
+   "address": "Metropolitan Ave & Poplar St",
+   "lat": 42.27593237,
+   "long": -71.12567078,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791382050/boston/production/gjw4bz8hrsgxviatv19z.jpg",
+   "token": "c760359b-1318-4ae8-9dfa-c074f87b116c",
+   "extended_attributes": {
+    "x": "757472.06877300",
+    "y": "2925799.44115725",
+    "photos": [
+     {
+      "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791382050/boston/production/gjw4bz8hrsgxviatv19z.jpg",
+      "title": null,
+      "created_at": "2026-10-07T14:08:05.699698Z"
+     }
+    ]
+   }
+  },
+  {
+   "service_request_id": "1c8233a1-5620-41b2-94be-96f07e98e765",
+   "status": "closed",
+   "status_notes": "Noted. Duplicate Request.",
+   "service_name": "Traffic Signal Request",
+   "service_code": "66ff546d-7fb6-4949-b844-f92d8312f9f1",
+   "description": "Traffic lights out on corner of Popular and Metropolitan Streets",
+   "requested_datetime": "2026-10-07T15:55:05Z",
+   "updated_datetime": "2026-10-07T16:36:28Z",
+   "address": "Metropolitan Ave & Poplar St",
+   "lat": 42.27573226,
+   "long": -71.12564689,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791388503/boston/production/g2j3n1rfoq02o3r17vuz.jpg",
+   "token": "a6a2a9ac-8a48-49b8-8d77-082388c1d8a2",
+   "extended_attributes": {
+    "x": "757478.85417738",
+    "y": "2925726.54656707",
+    "photos": [
+     {
+      "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791388503/boston/production/g2j3n1rfoq02o3r17vuz.jpg",
+      "title": null,
+      "created_at": "2026-10-07T15:55:38.871134Z"
+     }
+    ]
+   }
+  }
+ ],
+ "cluster_quincy_st_pothole_8x": [
+  {
+   "service_request_id": "bb0a0241-7161-4b09-b2a0-b3144b71995b",
+   "status": "closed",
+   "status_notes": "Resolved. Violation issued.",
+   "service_name": "Pothole",
+   "service_code": "9aaa7721-e212-4d16-a77e-d8f8d2f4ba28",
+   "description": "Pothole in the street",
+   "requested_datetime": "2026-09-24T21:48:29Z",
+   "updated_datetime": "2026-09-25T15:58:22Z",
+   "address": "14 Quincy St, Boston, MA 02119",
+   "lat": 42.31613737,
+   "long": -71.08172201,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790286485/boston/production/reeitul9acvuvv9cpke4.jpg",
+   "token": "03477845-47b5-43f8-b884-8b345de8d5d9",
+   "extended_attributes": {
+    "x": "769294.06629483",
+    "y": "2940506.00847204",
+    "photos": [
+     {
+      "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790286485/boston/production/reeitul9acvuvv9cpke4.jpg",
+      "title": null,
+      "created_at": "2026-09-24T21:49:22.618782Z"
+     }
+    ]
+   }
+  },
+  {
+   "service_request_id": "217a85da-867b-4236-b2b7-4d7bddf50737",
+   "status": "closed",
+   "status_notes": "Resolved. Violation issued.",
+   "service_name": "Pothole",
+   "service_code": "9aaa7721-e212-4d16-a77e-d8f8d2f4ba28",
+   "description": "Pothole in the street",
+   "requested_datetime": "2026-09-30T00:16:24Z",
+   "updated_datetime": "2026-09-30T12:23:21Z",
+   "address": "14 Quincy St, Boston, MA 02119",
+   "lat": 42.31614506,
+   "long": -71.08173374,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790727379/boston/production/nf9m3aia76bpcwnaop2d.jpg",
+   "token": "44682688-0199-49a3-9ed1-6e6bc80c7364",
+   "extended_attributes": {
+    "x": "769290.88008423",
+    "y": "2940508.79527791",
+    "photos": [
+     {
+      "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790727379/boston/production/nf9m3aia76bpcwnaop2d.jpg",
+      "title": null,
+      "created_at": "2026-09-30T00:17:29.459474Z"
+     }
+    ]
+   }
+  },
+  {
+   "service_request_id": "9748d9d0-e399-4a19-be80-202d36312509",
+   "status": "closed",
+   "status_notes": "Resolved. Violation issued.",
+   "service_name": "Pothole",
+   "service_code": "9aaa7721-e212-4d16-a77e-d8f8d2f4ba28",
+   "description": "Pothole in the street it's been there for 4 weeks. This is the 8th or 9th report I've made about this. ",
+   "requested_datetime": "2026-10-11T17:35:52Z",
+   "updated_datetime": "2026-10-12T10:59:53Z",
+   "address": "14 Quincy St, Boston, MA 02119",
+   "lat": 42.31613762,
+   "long": -71.081721,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791740147/boston/production/kqsvresn0pgnmgxlgvj4.jpg",
+   "token": "a62c8941-fd4e-4820-8855-e1f0f98ae84c",
+   "extended_attributes": {
+    "x": "769294.33901031",
+    "y": "2940506.10091573",
+    "photos": [
+     {
+      "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791740147/boston/production/kqsvresn0pgnmgxlgvj4.jpg",
+      "title": null,
+      "created_at": "2026-10-11T17:36:57.160037Z"
+     }
+    ]
+   }
+  }
+ ],
+ "cluster_centre_green_signal_7x": [
+  {
+   "service_request_id": "ae22d0d7-ee8c-41c9-bde8-e905f81d9933",
+   "status": "open",
+   "service_name": "Traffic Signal Request",
+   "service_code": "66ff546d-7fb6-4949-b844-f92d8312f9f1",
+   "description": "The light at Green St & Centre St in JP was recently repaired & the light timing is now so short that only a couple cars can make it through the light & it\u2019s causing a major backup down Green St ",
+   "requested_datetime": "2026-09-30T19:05:08Z",
+   "updated_datetime": "2026-09-30T19:05:58Z",
+   "address": "Centre St & Green St",
+   "lat": 42.31321797,
+   "long": -71.11399565,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790795084/boston/production/hicsswufb9nc61dhbu7v.jpg",
+   "token": "e553df0e-c107-44c0-94fc-db74c55f8ff5",
+   "extended_attributes": {
+    "x": "760570.21934025",
+    "y": "2939400.97638714",
+    "photos": [
+     {
+      "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790795084/boston/production/hicsswufb9nc61dhbu7v.jpg",
+      "title": null,
+      "created_at": "2026-09-30T19:05:58.301803Z"
+     }
+    ]
+   }
+  },
+  {
+   "service_request_id": "92987d0a-3426-446c-a29c-4f6f71862cf8",
+   "status": "open",
+   "service_name": "Traffic Signal Request",
+   "service_code": "66ff546d-7fb6-4949-b844-f92d8312f9f1",
+   "description": "Timing for Green Street light (Green & Centre) at 8AM is causing major traffic on Green Street. Please adjust timing to allow for more traffic to clear on Green Street. ",
+   "requested_datetime": "2026-10-06T12:03:29Z",
+   "updated_datetime": "2026-10-06T12:04:46Z",
+   "address": "Centre St & Green St",
+   "lat": 42.31324276,
+   "long": -71.11409898,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1791288097:boston:production:ihtpwwuofwwuu4vu4tod/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1791288095/boston/production/ri0w0iejliyrhqmht7wo.jpg",
+   "token": "93f66b4b-1453-445e-9165-26ad4d610ced",
+   "extended_attributes": {
+    "x": "760542.23073798",
+    "y": "2939409.88382288",
+    "photos": [
+     {
+      "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791288095/boston/production/ri0w0iejliyrhqmht7wo.jpg",
+      "title": null,
+      "created_at": "2026-10-06T12:04:46.800721Z"
+     },
+     {
+      "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791288097/boston/production/ihtpwwuofwwuu4vu4tod.jpg",
+      "title": null,
+      "created_at": "2026-10-06T12:04:46.805375Z"
+     }
+    ]
+   }
+  },
+  {
+   "service_request_id": "bebe1af8-953f-437d-ac0a-5abb28556480",
+   "status": "closed",
+   "status_notes": "Noted. This case was not processed correctly.&nbsp; A new case was created BCS-00050106.",
+   "service_name": "Traffic Signal Request",
+   "service_code": "66ff546d-7fb6-4949-b844-f92d8312f9f1",
+   "requested_datetime": "2026-10-08T11:34:35Z",
+   "updated_datetime": "2026-10-08T19:35:04Z",
+   "address": "Centre St & Green St",
+   "lat": 42.31323,
+   "long": -71.1140985,
+   "token": "0080998f-2f72-4fe8-b055-3c81a8628a9d",
+   "extended_attributes": {
+    "x": "760542.38160162",
+    "y": "2939405.23444995"
+   }
+  },
+  {
+   "service_request_id": "b996114f-f4d9-4ea7-9479-f1352154155d",
+   "status": "closed",
+   "status_notes": "Resolved. Completed by Task - Adjusted timing for Green Street during PM peak time.",
+   "service_name": "Traffic Signal Request",
+   "service_code": "66ff546d-7fb6-4949-b844-f92d8312f9f1",
+   "description": "Traffic light timing doesn\u2019t work. Going from green street to Centre street in JP is completely backed up every morning because there isn\u2019t enough time for the light ",
+   "requested_datetime": "2026-10-08T11:57:27Z",
+   "updated_datetime": "2026-10-19T18:58:58Z",
+   "address": "Centre St & Green St",
+   "lat": 42.31321044,
+   "long": -71.11394295,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791460642/boston/production/pq6v00xbefwmted5yfgx.jpg",
+   "token": "bf25671e-e9ce-4af2-97e6-919480720daa",
+   "extended_attributes": {
+    "x": "760584.48556240",
+    "y": "2939398.29683750",
+    "photos": [
+     {
+      "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791460642/boston/production/pq6v00xbefwmted5yfgx.jpg",
+      "title": null,
+      "created_at": "2026-10-08T11:58:00.772401Z"
+     }
+    ]
+   }
+  },
+  {
+   "service_request_id": "a2b71d46-f8c5-41a6-98d6-373880c978a9",
+   "status": "open",
+   "service_name": "Traffic Signal Request",
+   "service_code": "66ff546d-7fb6-4949-b844-f92d8312f9f1",
+   "description": "Traffic light at Centre St and Green St in JP was recently configured and is much, much shorter than it was. Approximately four cars can go through per light cycle which significantly slows traffic. There is no right turn on red and there is a large bike lane where the turn lane should be, so cars need to wait for the light. This has made traffic much worse in an area where it was already bad. The lights should be reset to how they were before. ",
+   "requested_datetime": "2026-10-08T12:13:47Z",
+   "updated_datetime": "2026-10-08T12:15:05Z",
+   "address": "Centre St & Green St",
+   "lat": 42.3131589,
+   "long": -71.11406674,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791461555/boston/production/qh9fykjtai5ojroxfjnt.jpg",
+   "token": "4c85b584-d4f8-4611-b03b-54e01e7dc2d7",
+   "extended_attributes": {
+    "x": "760551.08898152",
+    "y": "2939379.36327089",
+    "photos": [
+     {
+      "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791461555/boston/production/qh9fykjtai5ojroxfjnt.jpg",
+      "title": null,
+      "created_at": "2026-10-08T12:15:05.534344Z"
+     }
+    ]
+   }
+  },
+  {
+   "service_request_id": "211ba048-65b7-4e18-80dd-d2b67d31f62b",
+   "status": "open",
+   "service_name": "Traffic Signal Request",
+   "service_code": "66ff546d-7fb6-4949-b844-f92d8312f9f1",
+   "requested_datetime": "2026-10-08T18:37:01Z",
+   "updated_datetime": "2026-10-08T18:52:21Z",
+   "address": "Centre St & Green St",
+   "lat": 42.31323,
+   "long": -71.1140985,
+   "token": "11732f21-67b2-4682-89db-8b75176768ad",
+   "extended_attributes": {
+    "x": "760542.38160162",
+    "y": "2939405.23444995"
+   }
+  },
+  {
+   "service_request_id": "e0c67c05-58fb-4b7b-9c02-155190c9857b",
+   "status": "open",
+   "service_name": "Traffic Signal Request",
+   "service_code": "66ff546d-7fb6-4949-b844-f92d8312f9f1",
+   "description": "Centre st and green st. City did something recently that has caused traffic to slow much more slowly than usual. 3-4 cars can go per cycle which then causes cars to illegally turn on red creating a danger for pedestrians. Please reset to how it was before! 8 seconds is not long enough for this major road. ",
+   "requested_datetime": "2026-10-09T12:08:28Z",
+   "updated_datetime": "2026-10-09T12:09:19Z",
+   "address": "Centre St & Green St",
+   "lat": 42.3132291,
+   "long": -71.11407703,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791547579/boston/production/sfk1v8jjsvy6ktxofaep.jpg",
+   "token": "77fe2d03-9c12-42e8-a8c1-a27c52ae247c",
+   "extended_attributes": {
+    "x": "760548.19008892",
+    "y": "2939404.93274801",
+    "photos": [
+     {
+      "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1791547579/boston/production/sfk1v8jjsvy6ktxofaep.jpg",
+      "title": null,
+      "created_at": "2026-10-09T12:09:18.985052Z"
+     }
+    ]
+   }
+  },
+  {
+   "service_request_id": "f68c46f0-6439-4b4d-81a0-e66758094552",
+   "status": "closed",
+   "status_notes": "Noted. This case was not processed correctly.&nbsp; A new case was created BCS-00050106.",
+   "service_name": "Traffic Signal Request",
+   "service_code": "66ff546d-7fb6-4949-b844-f92d8312f9f1",
+   "requested_datetime": "2026-10-09T18:13:48Z",
+   "updated_datetime": "2026-10-13T20:29:09Z",
+   "address": "Centre St & Green St",
+   "lat": 42.31323,
+   "long": -71.1140985,
+   "token": "cab4fcf0-e763-4ae9-8a11-9a031b3ce9fb",
+   "extended_attributes": {
+    "x": "760542.38160162",
+    "y": "2939405.23444995"
+   }
+  },
+  {
+   "service_request_id": "d1751381-8166-4337-9814-17b1f4369ba6",
+   "status": "closed",
+   "status_notes": "Resolved. Completed by Task - Adjusted Time for Green Street.",
+   "service_name": "Traffic Signal Request",
+   "service_code": "66ff546d-7fb6-4949-b844-f92d8312f9f1",
+   "requested_datetime": "2026-10-09T20:08:32Z",
+   "updated_datetime": "2026-10-19T18:49:56Z",
+   "address": "Centre St & Green St",
+   "lat": 42.31323,
+   "long": -71.1140985,
+   "token": "19582983-ad9a-4762-a14e-3765b043cc38",
+   "extended_attributes": {
+    "x": "760542.38160162",
+    "y": "2939405.23444995"
+   }
+  }
+ ]
+}

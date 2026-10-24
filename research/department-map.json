@@ -1,0 +1,8993 @@
+{
+ "_source": "Boston 311 Department Map (team artifact), built from Analyze Boston 311 Service Requests 2024 (306,756 cases). Queue checklists are suggestions; workload is 2024 legacy-system data; public data shows only the final queue. Spot-checked against the raw 2024 data on 2026-10-24.",
+ "_fields": {
+  "departments": "code -> {name, what, need[] (required info), help[] (optional info), can[], cant[]}",
+  "requestTypes": "type -> {need[], help[]}",
+  "queueOverrides": "queue -> {need[], help[], note}",
+  "outsideAgencies": "INFO_* queue -> outside entity",
+  "workload": "{dep: code -> stats, q: 'DEP|queue' -> stats}; stats = {perDay, median (days to close), p90 (days), sla (city deadline, days), ontime (%), open (count still open), peak (busiest month 1-12)}. Ignore 'own' here: its meaning is undocumented.",
+  "quality": "departments: code -> {total, closed, bad, dup, miss, own, inv, noev}; queues: code -> [{q, ...same, types[], ex[] example closures}]. bad/dup/miss/own/inv/noev are % of closed: no-fix total, duplicate, missing info, wrong owner, invalid, no evidence found.",
+  "actions": "{dep, q} -> [[action taken, % of closures]] mined from closure comments",
+  "mainTypes": "'DEP|queue' -> top request types"
+ },
+ "departments": {
+  "PWDx": {
+   "name": "Public Works",
+   "what": "Trash, recycling, bulk items, street cleaning, potholes, sidewalks, streetlights, snow, code enforcement.",
+   "need": [
+    "Exact address, or the nearest address and a landmark",
+    "What the problem is, in one sentence",
+    "For missed pickups: your collection day and what was missed",
+    "For bulk items: the list of items and the pickup date"
+   ],
+   "help": [
+    "Photo that shows the surroundings so the crew can find it",
+    "Which side of the street",
+    "For illegal dumping: the plate of the vehicle, if seen"
+   ],
+   "can": [
+    "Pick up trash, recycling, bulk items and mattresses",
+    "Sweep and clean streets",
+    "Fill potholes and make sidewalks safe",
+    "Fix streetlights",
+    "Plow snow",
+    "Code enforcement officers ticket improper trash and dumping"
+   ],
+   "cant": [
+    "Private ways and private property",
+    "State roads and DCR parkways",
+    "Road cuts by utility companies (forwarded to the utility)"
+   ]
+  },
+  "BTDT": {
+   "name": "Transportation",
+   "what": "Parking, signs, traffic signals, abandoned vehicles and bikes.",
+   "need": [
+    "Exact address or intersection",
+    "For vehicles: plate, make and color",
+    "For signs: which sign and which side of the street",
+    "For signals: the intersection and which light or direction"
+   ],
+   "help": [
+    "Photo",
+    "When it happens, for repeat parking problems",
+    "For bikes: photo of the bike and what it is locked to"
+   ],
+   "can": [
+    "Ticket and tow illegally parked cars",
+    "Tag and remove abandoned vehicles and bikes",
+    "Repair and install signs and pavement markings",
+    "Repair traffic signals",
+    "Study intersections for changes",
+    "Manage meters and parking permits"
+   ],
+   "cant": [
+    "MBTA property",
+    "State roads (MassDOT)",
+    "Private parking lots"
+   ]
+  },
+  "PARK": {
+   "name": "Parks and Recreation",
+   "what": "Street trees, parks, playgrounds, park lighting.",
+   "need": [
+    "Street address of the tree, or the park name and where in the park",
+    "What is wrong (dead, broken branch, blocking, damaged equipment)"
+   ],
+   "help": [
+    "Photo",
+    "Is the tree on the sidewalk strip or in a private yard",
+    "For emergencies: is it blocking the road or on wires"
+   ],
+   "can": [
+    "Prune and remove city trees",
+    "Plant new street trees",
+    "Respond to tree emergencies",
+    "Maintain park grounds",
+    "Repair playground equipment and park lights"
+   ],
+   "cant": [
+    "Trees on private property",
+    "DCR parks",
+    "Trees tangled in power lines (utility company)"
+   ]
+  },
+  "ISD": {
+   "name": "Inspectional Services",
+   "what": "Housing conditions, rodents, pests, heat, building permits, food establishments.",
+   "need": [
+    "Address",
+    "For problems inside a home: the apartment (unit) number",
+    "What the problem is and where",
+    "For problems inside a home: how to reach the tenant so the inspector can get in",
+    "For heat: whether it is happening right now"
+   ],
+   "help": [
+    "Photos",
+    "For rodents: which part of the property",
+    "Whether the landlord was already told"
+   ],
+   "can": [
+    "Inspect homes, businesses and construction sites",
+    "Issue violations and legal orders to owners",
+    "Bait for rodents in public areas",
+    "Inspect restaurants and food businesses",
+    "Enforce permits and stop unpermitted work",
+    "Condemn unsafe buildings"
+   ],
+   "cant": [
+    "Bait or trap on private property",
+    "Inspect without access to the unit",
+    "Settle landlord and tenant disputes outside the code"
+   ]
+  },
+  "INFO": {
+   "name": "Boston 311 central team",
+   "what": "Takes requests that do not fit a category and routes them.",
+   "need": [
+    "A clear description",
+    "Location",
+    "Best guess at the category"
+   ],
+   "help": [
+    "Contact information for follow up"
+   ],
+   "can": [
+    "Answer questions",
+    "Create and route requests to any department",
+    "Forward to outside agencies (MBTA, National Grid, state)"
+   ],
+   "cant": [
+    "Fix anything directly, it only routes"
+   ]
+  },
+  "GEN": {
+   "name": "Needle pickup team",
+   "what": "Public Health Commission team that collects discarded needles.",
+   "need": [
+    "The precise spot (for example, under the bench at the corner)",
+    "When the needles were seen"
+   ],
+   "help": [
+    "How many",
+    "Photo"
+   ],
+   "can": [
+    "Recover needles and sharps, usually within hours"
+   ],
+   "cant": []
+  },
+  "BWSC": {
+   "name": "Water and Sewer Commission",
+   "what": "Catch basins, hydrants, manhole and utility covers, water and sewer.",
+   "need": [
+    "Exact location of the specific basin, hydrant or cover",
+    "What is wrong (clogged, leaking, broken, missing cover)"
+   ],
+   "help": [
+    "Photo",
+    "Is water flooding right now"
+   ],
+   "can": [
+    "Clean catch basins",
+    "Repair hydrants",
+    "Replace manhole and utility covers",
+    "Fix water and sewer problems"
+   ],
+   "cant": [
+    "Gas, electric and telecom covers (utility companies)"
+   ]
+  },
+  "PROP": {
+   "name": "Property Management",
+   "what": "Graffiti removal and city buildings.",
+   "need": [
+    "Exact spot",
+    "Whose wall or surface it is"
+   ],
+   "help": [
+    "Photo",
+    "Owner permission, if it is a private building"
+   ],
+   "can": [
+    "Remove graffiti from city property",
+    "Remove it from private walls when it will not damage the surface"
+   ],
+   "cant": [
+    "Federal property (National Park Service)",
+    "Surfaces that could be damaged"
+   ]
+  },
+  "ANML": {
+   "name": "Animal Care and Control",
+   "what": "Stray, injured and dead animals.",
+   "need": [
+    "Exact location",
+    "What kind of animal, alive or dead",
+    "When it was seen"
+   ],
+   "help": [
+    "Photo"
+   ],
+   "can": [
+    "Pick up stray, injured and dead animals",
+    "Respond to animal complaints"
+   ],
+   "cant": [
+    "Wildlife on private property"
+   ]
+  },
+  "BPD": {
+   "name": "Police",
+   "what": "Crime, theft, some vehicle and rental issues.",
+   "need": [
+    "For crime or theft: report directly to police, not 311"
+   ],
+   "help": [
+    "For short term rentals: the listing link"
+   ],
+   "can": [
+    "Enforce the law",
+    "Investigate crimes"
+   ],
+   "cant": [
+    "Take crime reports through 311"
+   ]
+  },
+  "BHA": {
+   "name": "Boston Housing Authority",
+   "what": "Public housing developments.",
+   "need": [
+    "Development name",
+    "For problems inside an apartment: the unit number",
+    "What is wrong"
+   ],
+   "help": [
+    "Photo"
+   ],
+   "can": [
+    "Maintenance in public housing"
+   ],
+   "cant": [
+    "Private housing"
+   ]
+  },
+  "ONS": {
+   "name": "Neighborhood Services",
+   "what": "The mayor’s neighborhood liaisons.",
+   "need": [
+    "Neighborhood",
+    "What the issue is"
+   ],
+   "help": [],
+   "can": [
+    "Connect residents with the right department",
+    "Follow up on neighborhood issues"
+   ],
+   "cant": [
+    "Do the repair work itself"
+   ]
+  },
+  "DND": {
+   "name": "Neighborhood Development",
+   "what": "City owned vacant lots.",
+   "need": [
+    "Address of the lot"
+   ],
+   "help": [
+    "Photo"
+   ],
+   "can": [
+    "Clean and maintain city owned lots"
+   ],
+   "cant": [
+    "Street trees (Parks)",
+    "Private lots"
+   ]
+  },
+  "DISB": {
+   "name": "Disability Commission",
+   "what": "Accessible parking signs and curb ramps.",
+   "need": [
+    "Address of the residence or the ramp",
+    "What is needed: new sign, repair, or ramp"
+   ],
+   "help": [
+    "Contact information"
+   ],
+   "can": [
+    "Process accessible parking sign requests",
+    "Send curb ramp needs to the ramp team"
+   ],
+   "cant": []
+  },
+  "GRNi": {
+   "name": "Green Infrastructure",
+   "what": "Green streets and stormwater features.",
+   "need": [
+    "Exact location"
+   ],
+   "help": [
+    "Photo"
+   ],
+   "can": [
+    "Maintain green infrastructure"
+   ],
+   "cant": []
+  },
+  "ECON": {
+   "name": "Economic Opportunity",
+   "what": "Outdoor dining.",
+   "need": [
+    "Business name and address"
+   ],
+   "help": [
+    "Photo"
+   ],
+   "can": [
+    "Manage outdoor dining permits"
+   ],
+   "cant": []
+  }
+ },
+ "requestTypes": {
+  "Abandoned Bicycle": {
+   "need": [
+    "What the bike is locked to"
+   ],
+   "help": [
+    "Photo of the bike",
+    "How long it has been there"
+   ]
+  },
+  "Abandoned Vehicles": {
+   "need": [
+    "Plate, make and color",
+    "How long it has been parked there"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "Animal Generic Request": {
+   "need": [
+    "What kind of animal",
+    "Alive or dead, hurt or stray"
+   ],
+   "help": [
+    "When it was seen"
+   ]
+  },
+  "BWSC General Request": {
+   "need": [
+    "What the water or sewer problem is"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "BWSC Pothole": {
+   "need": [
+    "Which part of the street (lane, near which corner)"
+   ],
+   "help": [
+    "Photo",
+    "How big it is"
+   ]
+  },
+  "Bicycle Issues": {
+   "need": [
+    "What the bike lane or bike rack problem is"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "Bridge Maintenance": {
+   "need": [
+    "Which bridge",
+    "What the problem is"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "CE Collection": {
+   "need": [
+    "What was left out (bags, furniture, debris)"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "Catchbasin": {
+   "need": [
+    "Where the storm drain is",
+    "Clogged, broken, or flooding"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "Cemetery Maintenance Request": {
+   "need": [
+    "Which cemetery",
+    "What needs doing"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "Contractor Complaints": {
+   "need": [
+    "What work is happening"
+   ],
+   "help": [
+    "Contractor name or permit number",
+    "Photo of the work"
+   ]
+  },
+  "Contractors Complaint": {
+   "need": [
+    "What work is happening"
+   ],
+   "help": [
+    "Contractor name or permit number",
+    "Photo of the work"
+   ]
+  },
+  "Electrical": {
+   "need": [
+    "What the electrical danger is",
+    "Apartment (unit) number, if it is inside a home"
+   ],
+   "help": [
+    "Photos"
+   ]
+  },
+  "Plumbing": {
+   "need": [
+    "What the plumbing problem is",
+    "Apartment (unit) number, if it is inside a home"
+   ],
+   "help": [
+    "Photos"
+   ]
+  },
+  "Empty Litter Basket": {
+   "need": [
+    "Which basket (corner or nearest address)"
+   ],
+   "help": []
+  },
+  "Litter Basket Maintenance": {
+   "need": [
+    "Which basket (corner or nearest address)",
+    "What is broken"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "Request for Litter Basket Installation": {
+   "need": [
+    "Where you want a basket"
+   ],
+   "help": []
+  },
+  "Equipment Repair": {
+   "need": [
+    "Which park, and which equipment (swing, bench, fountain)",
+    "What is broken"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "Food Alert - Confirmed": {
+   "need": [
+    "Business name",
+    "Date of visit",
+    "What you saw"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "Unsanitary Conditions - Establishment": {
+   "need": [
+    "Business name",
+    "Date of visit",
+    "What you saw"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "Unsanitary Conditions - Food": {
+   "need": [
+    "Business name",
+    "Date of visit",
+    "What you saw"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "General Comments For An Employee": {
+   "need": [
+    "What the question or comment is"
+   ],
+   "help": []
+  },
+  "General Comments For a Program or Policy": {
+   "need": [
+    "What the question or comment is"
+   ],
+   "help": []
+  },
+  "Phone Bank Service Inquiry": {
+   "need": [
+    "What the question or comment is"
+   ],
+   "help": []
+  },
+  "Walk-In Service Inquiry": {
+   "need": [
+    "What the question or comment is"
+   ],
+   "help": []
+  },
+  "Transportation General Request": {
+   "need": [
+    "What the question or comment is"
+   ],
+   "help": []
+  },
+  "Public Works General Request": {
+   "need": [
+    "What the problem is"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "Parks General Request": {
+   "need": [
+    "What the request is"
+   ],
+   "help": []
+  },
+  "General Lighting Request": {
+   "need": [
+    "Where more light is needed",
+    "Why (dark corner, safety)"
+   ],
+   "help": []
+  },
+  "Install New Lighting": {
+   "need": [
+    "Where a new light is needed",
+    "Why (dark corner, safety)"
+   ],
+   "help": []
+  },
+  "Upgrade Existing Lighting": {
+   "need": [
+    "Which light",
+    "What is wrong with it (too dim, wrong color)"
+   ],
+   "help": []
+  },
+  "General Traffic Engineering Request": {
+   "need": [
+    "What change is wanted on the street"
+   ],
+   "help": []
+  },
+  "Graffiti Removal": {
+   "need": [
+    "What the graffiti is on (wall, sign, mailbox)",
+    "Whose property it is"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "PWD Graffiti": {
+   "need": [
+    "What the graffiti is on (wall, sign, mailbox)",
+    "Whose property it is"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "Ground Maintenance": {
+   "need": [
+    "Which park or area",
+    "What needs doing (mowing, litter, overgrown)"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "Heat - Excessive  Insufficient": {
+   "need": [
+    "Apartment (unit) number",
+    "Is it happening right now",
+    "How to reach the tenant so the inspector can get in"
+   ],
+   "help": [
+    "Indoor temperature, if known"
+   ]
+  },
+  "Unsatisfactory Living Conditions": {
+   "need": [
+    "Apartment (unit) number",
+    "Where in the apartment",
+    "How to reach the tenant so the inspector can get in"
+   ],
+   "help": [
+    "Photos"
+   ]
+  },
+  "Maintenance Complaint - Residential": {
+   "need": [
+    "Apartment (unit) number",
+    "Where in the apartment",
+    "How to reach the tenant so the inspector can get in"
+   ],
+   "help": [
+    "Photos"
+   ]
+  },
+  "Pest Infestation - Residential": {
+   "need": [
+    "Apartment (unit) number",
+    "What pest, and where in the apartment",
+    "How to reach the tenant so the inspector can get in"
+   ],
+   "help": [
+    "Photos"
+   ]
+  },
+  "Illegal Vending": {
+   "need": [
+    "What is being sold",
+    "When the vendor is there"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "Improper Storage of Trash (Barrels)": {
+   "need": [
+    "What the problem is (bags on the sidewalk, no lids, out on the wrong day)"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "Item Price Missing": {
+   "need": [
+    "Store name",
+    "Which item"
+   ],
+   "help": [
+    "Photo of the shelf"
+   ]
+  },
+  "Unit Pricing Wrong/Missing": {
+   "need": [
+    "Store name",
+    "Which item"
+   ],
+   "help": [
+    "Photo of the shelf tag"
+   ]
+  },
+  "Scanning Overcharge": {
+   "need": [
+    "Store name",
+    "Item, shelf price, and price charged"
+   ],
+   "help": [
+    "Photo of the receipt"
+   ]
+  },
+  "Knockdown Replacement": {
+   "need": [
+    "Where the knocked down pole is"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "Street Light Knock Downs": {
+   "need": [
+    "Where the pole is",
+    "Is it blocking the road or sidewalk"
+   ],
+   "help": [
+    "Are wires exposed (if so, call 911)"
+   ]
+  },
+  "Loud Parties/Music/People": {
+   "need": [
+    "When it happens"
+   ],
+   "help": [
+    "How often"
+   ]
+  },
+  "Major System Failure": {
+   "need": [
+    "What is down"
+   ],
+   "help": []
+  },
+  "Mattress_Pickup": {
+   "need": [
+    "Your collection day"
+   ],
+   "help": []
+  },
+  "Schedule a Bulk Item Pickup": {
+   "need": [
+    "List of items",
+    "Your collection day"
+   ],
+   "help": []
+  },
+  "Schedule a Bulk Item Pickup SS": {
+   "need": [
+    "List of items",
+    "Your collection day"
+   ],
+   "help": []
+  },
+  "Missed Trash/Recycling/Yard Waste/Bulk Item": {
+   "need": [
+    "Your collection day",
+    "What was missed (trash, recycling, yard waste, bulk item)"
+   ],
+   "help": []
+  },
+  "Misc. Snow Complaint": {
+   "need": [
+    "What the snow problem is"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "Request for Snow Plowing": {
+   "need": [
+    "Street name, and which stretch"
+   ],
+   "help": []
+  },
+  "Request for Snow Plowing (Emergency Responder)": {
+   "need": [
+    "Street name, and which stretch"
+   ],
+   "help": []
+  },
+  "Missing Sign": {
+   "need": [
+    "Which sign was there",
+    "Which corner"
+   ],
+   "help": []
+  },
+  "Sign Repair": {
+   "need": [
+    "Which sign (stop, street name, parking)",
+    "Which corner or side of the street"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "New Sign  Crosswalk or Pavement Marking": {
+   "need": [
+    "What is being asked for (crosswalk, sign, painted line)",
+    "Where exactly"
+   ],
+   "help": []
+  },
+  "Municipal Parking Lot Complaints": {
+   "need": [
+    "Which city lot",
+    "What the problem is"
+   ],
+   "help": []
+  },
+  "Private Parking Lot Complaints": {
+   "need": [
+    "Lot address",
+    "What the problem is"
+   ],
+   "help": []
+  },
+  "Valet Parking Problems": {
+   "need": [
+    "Business name",
+    "What the problem is"
+   ],
+   "help": []
+  },
+  "Needle Pickup": {
+   "need": [
+    "The precise spot (for example, under the bench at the corner)"
+   ],
+   "help": [
+    "How many",
+    "When they were seen"
+   ]
+  },
+  "New Tree Requests": {
+   "need": [
+    "Address where you want a tree"
+   ],
+   "help": []
+  },
+  "Planting": {
+   "need": [
+    "Where"
+   ],
+   "help": []
+  },
+  "Tree Maintenance Requests": {
+   "need": [
+    "Address the tree is in front of",
+    "What is wrong (dead, broken branch, leaning)"
+   ],
+   "help": [
+    "Photo",
+    "Is it on wires or blocking the road"
+   ]
+  },
+  "Tree in Park": {
+   "need": [
+    "Which park, and where in the park",
+    "What is wrong with the tree"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "Tree Emergencies": {
+   "need": [
+    "Address the tree is in front of",
+    "Is it blocking the road or on wires"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "News Boxes": {
+   "need": [
+    "Which box (corner)",
+    "What is wrong"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "Park Improvement Requests": {
+   "need": [
+    "Which park",
+    "What improvement"
+   ],
+   "help": []
+  },
+  "Parking Enforcement": {
+   "need": [
+    "Plate, make and color",
+    "What the violation is (hydrant, double parked, resident spot)"
+   ],
+   "help": [
+    "How long it has been there"
+   ]
+  },
+  "Parking Meter Repairs": {
+   "need": [
+    "Meter number (printed on the meter)"
+   ],
+   "help": [
+    "What is wrong (screen blank, not taking payment)"
+   ]
+  },
+  "Parks Lighting/Electrical Issues": {
+   "need": [
+    "Which park, and which light"
+   ],
+   "help": []
+  },
+  "Pick up Dead Animal": {
+   "need": [
+    "What kind of animal"
+   ],
+   "help": [
+    "When it was seen"
+   ]
+  },
+  "Pickup/Clear Conduit": {
+   "need": [
+    "Where the pole or wiring is"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "StreetLight Pole WO": {
+   "need": [
+    "Where the pole is",
+    "What is wrong with it"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "Pole Compliance": {
+   "need": [
+    "Where the pole is",
+    "What is wrong with it"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "Poor Conditions of Property": {
+   "need": [
+    "What the problem is (overgrown, trash in the yard)"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "Recycling Cart Return": {
+   "need": [
+    "New cart or replacement (damaged, stolen)"
+   ],
+   "help": []
+  },
+  "Request for Recycling Cart": {
+   "need": [
+    "New cart or replacement (damaged, stolen)"
+   ],
+   "help": []
+  },
+  "Sticker Request": {
+   "need": [
+    "What the sticker is for"
+   ],
+   "help": []
+  },
+  "Request for Pothole Repair": {
+   "need": [
+    "Which part of the street (lane, near which corner)"
+   ],
+   "help": [
+    "Photo",
+    "How big it is"
+   ]
+  },
+  "Roadway Repair": {
+   "need": [
+    "Which part of the street",
+    "What is wrong with the road"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "Requests for Street Cleaning": {
+   "need": [
+    "What needs cleaning (litter, broken glass, spill)"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "Requests for Traffic Signal Studies or Reviews": {
+   "need": [
+    "Intersection",
+    "What change is wanted (new light, longer crossing time)"
+   ],
+   "help": []
+  },
+  "Traffic Signal Inspection": {
+   "need": [
+    "Intersection",
+    "Which light is out, and which street it faces"
+   ],
+   "help": [
+    "Fully dark, flashing, or stuck on one color"
+   ]
+  },
+  "Traffic Signal Repair": {
+   "need": [
+    "Intersection",
+    "Which light is out, and which street it faces"
+   ],
+   "help": [
+    "Fully dark, flashing, or stuck on one color"
+   ]
+  },
+  "Rodent Activity": {
+   "need": [
+    "Where on the property (yard, alley, trash area)"
+   ],
+   "help": [
+    "Photo of burrows or droppings"
+   ]
+  },
+  "Short Term Rental": {
+   "need": [
+    "Which apartment is being rented"
+   ],
+   "help": [
+    "Listing link"
+   ]
+  },
+  "Sidewalk Repair (Make Safe)": {
+   "need": [
+    "Which part of the sidewalk (in front of which number)"
+   ],
+   "help": [
+    "Photo",
+    "Is it a tripping hazard"
+   ]
+  },
+  "Space Savers": {
+   "need": [
+    "Exact spot"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "Street Light Outages": {
+   "need": [
+    "Pole number (on a tag on the pole) or nearest address"
+   ],
+   "help": [
+    "Out, flickering, or on during the day"
+   ]
+  },
+  "Student Move-in Issues": {
+   "need": [
+    "What the problem is"
+   ],
+   "help": []
+  },
+  "Utility Call-In": {
+   "need": [
+    "What the utility problem is"
+   ],
+   "help": []
+  },
+  "Utility Casting Repair": {
+   "need": [
+    "Where the metal cover is",
+    "Loose, sunken, or missing"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "Work Hours-Loud Noise Complaints": {
+   "need": [
+    "What work is happening",
+    "What time it is happening"
+   ],
+   "help": []
+  },
+  "Working Beyond Hours": {
+   "need": [
+    "What work is happening",
+    "What time it is happening"
+   ],
+   "help": []
+  },
+  "Work w/out Permit": {
+   "need": [
+    "What work is happening"
+   ],
+   "help": [
+    "Contractor name"
+   ]
+  }
+ },
+ "queueOverrides": {
+  "INFO_Homeless Issue": {
+   "need": [
+    "Exact location",
+    "What is needed: help for a person, or cleanup of the area",
+    "Is anyone in danger right now (if yes, call 911)"
+   ],
+   "help": [
+    "How many people"
+   ],
+   "note": "A person, not an object. The request should say whether someone needs help or the area needs cleaning."
+  },
+  "INFO_Unsheltered_Persons": {
+   "need": [
+    "Exact location",
+    "What is needed: help for a person, or cleanup of the area",
+    "Is anyone in danger right now (if yes, call 911)"
+   ],
+   "help": [
+    "How many people"
+   ],
+   "note": "A person, not an object. The request should say whether someone needs help or the area needs cleaning."
+  },
+  "INFO_Encampments": {
+   "need": [
+    "Exact location",
+    "How many tents or people",
+    "What is needed: outreach, or cleanup of the area"
+   ],
+   "help": [
+    "Is anyone in danger right now (if yes, call 911)"
+   ]
+  },
+  "INFO_HumanWaste": {
+   "need": [
+    "The precise spot"
+   ],
+   "help": [
+    "Photo"
+   ]
+  },
+  "INFO_Low Hanging Wire": {
+   "need": [
+    "Exact location",
+    "What the wire is attached to (pole, tree, building)",
+    "How low it hangs"
+   ],
+   "help": [
+    "Is it sparking or blocking the road (if yes, call 911)"
+   ]
+  },
+  "INFO_Down Wire": {
+   "need": [
+    "Exact location",
+    "Is the wire on the ground"
+   ],
+   "help": [
+    "Is it sparking or blocking the road (if yes, call 911)"
+   ]
+  },
+  "INFO_Reallocation From Dept": {
+   "need": [
+    "Exact location",
+    "What the problem is"
+   ],
+   "help": [],
+   "note": "Requests a department sent back because they were not theirs. Every case here is a routing mistake."
+  },
+  "INFO01_GenericeFormforOtherServiceRequestType": {
+   "need": [
+    "Exact location",
+    "What the problem is"
+   ],
+   "help": [],
+   "note": "Requests that did not fit any category on the form."
+  },
+  "INFO02_SelfServiceGenericeFormforOtherService": {
+   "need": [
+    "Exact location",
+    "What the problem is"
+   ],
+   "help": [],
+   "note": "Requests that did not fit any category on the form."
+  }
+ },
+ "outsideAgencies": {
+  "INFO_Mass DCR": "the state parks agency (DCR)",
+  "INFO_Mass DOT": "the state transportation department (MassDOT)",
+  "INFO_MBTA": "the MBTA",
+  "INFO_Eversource": "Eversource",
+  "INFO_Massport": "Massport",
+  "INFO_USPS Issues": "the Postal Service",
+  "INFO_JC Decaux": "JCDecaux, the company that runs bus shelters",
+  "INFO_BPHC": "the Public Health Commission"
+ },
+ "workload": {
+  "dep": {
+   "ANML": {
+    "perDay": 0.5,
+    "median": 0.98,
+    "p90": 9.2,
+    "ontime": 57.3,
+    "open": 53,
+    "sla": 2.9,
+    "own": 46.5,
+    "peak": 8
+   },
+   "BHA": {
+    "perDay": 0.4,
+    "median": 26.39,
+    "p90": 215.8,
+    "ontime": 2.3,
+    "open": 126,
+    "sla": 1.9,
+    "own": 53.5,
+    "peak": 5
+   },
+   "BPD": {
+    "perDay": 0.4,
+    "median": 2.58,
+    "p90": 32.5,
+    "ontime": 27.7,
+    "open": 113,
+    "sla": 9,
+    "own": 59.4,
+    "peak": 8
+   },
+   "BTDT": {
+    "perDay": 222.5,
+    "median": 1.02,
+    "p90": 24.9,
+    "ontime": 49.9,
+    "open": 16327,
+    "sla": 1.6,
+    "own": 61.6,
+    "peak": 10
+   },
+   "BWSC": {
+    "perDay": 9.3,
+    "median": 8.97,
+    "p90": 57.4,
+    "ontime": 52.3,
+    "open": 1776,
+    "sla": 1.6,
+    "own": 51.8,
+    "peak": 3
+   },
+   "DISB": {
+    "perDay": 0.1,
+    "median": 140.92,
+    "p90": 344.7,
+    "ontime": 47.1,
+    "open": 0,
+    "sla": 15,
+    "own": 44.1,
+    "peak": 9
+   },
+   "DND": {
+    "perDay": 0.1,
+    "median": 56.84,
+    "p90": 333.6,
+    "ontime": 41.9,
+    "open": 17,
+    "sla": 365,
+    "own": 44.2,
+    "peak": 7
+   },
+   "ECON": {
+    "perDay": 0,
+    "median": 9.02,
+    "p90": 32.9,
+    "ontime": 0,
+    "open": 0,
+    "sla": 3.4,
+    "own": 66.7,
+    "peak": 5
+   },
+   "GEN": {
+    "perDay": 29.4,
+    "median": 0.03,
+    "p90": 0.5,
+    "ontime": 100,
+    "open": 0,
+    "sla": 1.1,
+    "own": 42.2,
+    "peak": 7
+   },
+   "GRNi": {
+    "perDay": 0,
+    "median": 14.1,
+    "p90": 412.9,
+    "ontime": 50,
+    "open": 0,
+    "sla": 10.7,
+    "own": 75,
+    "peak": 4
+   },
+   "INFO": {
+    "perDay": 35.5,
+    "median": 0.87,
+    "p90": 12.8,
+    "ontime": 54.8,
+    "open": 5892,
+    "sla": 2.8,
+    "own": 43.9,
+    "peak": 7
+   },
+   "ISD": {
+    "perDay": 50.9,
+    "median": 2.82,
+    "p90": 122,
+    "ontime": 72.4,
+    "open": 1646,
+    "sla": 30,
+    "own": 40.3,
+    "peak": 8
+   },
+   "ONS": {
+    "perDay": 0.2,
+    "median": 6.07,
+    "p90": 279.8,
+    "ontime": 26.7,
+    "open": 64,
+    "sla": 14.7,
+    "own": 28,
+    "peak": 3
+   },
+   "PARK": {
+    "perDay": 51.2,
+    "median": 2.11,
+    "p90": 168.7,
+    "ontime": 93.2,
+    "open": 123,
+    "sla": 365,
+    "own": 60.3,
+    "peak": 6
+   },
+   "PROP": {
+    "perDay": 7,
+    "median": 25.14,
+    "p90": 161.8,
+    "ontime": 67.6,
+    "open": 0,
+    "sla": 66,
+    "own": 66.6,
+    "peak": 8
+   },
+   "PWDx": {
+    "perDay": 430.6,
+    "median": 0.2,
+    "p90": 6,
+    "ontime": 89.7,
+    "open": 23781,
+    "sla": 2.3,
+    "own": 49.6,
+    "peak": 8
+   }
+  },
+  "q": {
+   "ANML|ANML_General": {
+    "perDay": 0.5,
+    "median": 0.98,
+    "p90": 9.2,
+    "ontime": 57.3,
+    "open": 53,
+    "sla": 2.9,
+    "own": 46.5,
+    "peak": 8
+   },
+   "BHA|BHA_General": {
+    "perDay": 0.4,
+    "median": 26.39,
+    "p90": 215.8,
+    "ontime": 2.3,
+    "open": 126,
+    "sla": 1.9,
+    "own": 53.5,
+    "peak": 5
+   },
+   "BPD|BPD_Districts": {
+    "perDay": 0.4,
+    "median": 2.58,
+    "p90": 32.5,
+    "ontime": 27.7,
+    "open": 113,
+    "sla": 9,
+    "own": 59.4,
+    "peak": 8
+   },
+   "BTDT|BTDT_AVRS Interface Queue": {
+    "perDay": 13.2,
+    "median": 42.91,
+    "p90": 112.9,
+    "ontime": 22.3,
+    "open": 0,
+    "sla": 17.9,
+    "own": 56.5,
+    "peak": 9
+   },
+   "BTDT|BTDT_Abandoned Bicycle": {
+    "perDay": 2.4,
+    "median": 2.62,
+    "p90": 9.1,
+    "ontime": 97,
+    "open": 340,
+    "sla": 1.6,
+    "own": 36.6,
+    "peak": 7
+   },
+   "BTDT|BTDT_Administration": {
+    "perDay": 1.7,
+    "median": 185.05,
+    "p90": 399.9,
+    "ontime": 74.1,
+    "open": 9,
+    "sla": 3.1,
+    "own": 35.9,
+    "peak": 1
+   },
+   "BTDT|BTDT_BostonBikes": {
+    "perDay": 0.8,
+    "median": 0.91,
+    "p90": 6.1,
+    "ontime": 9.8,
+    "open": 291,
+    "sla": 14,
+    "own": 36.8,
+    "peak": 6
+   },
+   "BTDT|BTDT_Broken Meter Complaints": {
+    "perDay": 0.2,
+    "median": 0.88,
+    "p90": 3.3,
+    "ontime": 10.7,
+    "open": 53,
+    "sla": 14,
+    "own": 44.6,
+    "peak": 8
+   },
+   "BTDT|BTDT_District 01": {
+    "perDay": 0.7,
+    "median": 0.59,
+    "p90": 3,
+    "ontime": 98.8,
+    "open": 0,
+    "sla": 14.6,
+    "own": 55.2,
+    "peak": 7
+   },
+   "BTDT|BTDT_District 02": {
+    "perDay": 0.7,
+    "median": 0.76,
+    "p90": 2.8,
+    "ontime": 99.6,
+    "open": 0,
+    "sla": 14.9,
+    "own": 35.5,
+    "peak": 9
+   },
+   "BTDT|BTDT_District 03": {
+    "perDay": 0.2,
+    "median": 0.87,
+    "p90": 2.1,
+    "ontime": 100,
+    "open": 0,
+    "sla": 15,
+    "own": 39.1,
+    "peak": 3
+   },
+   "BTDT|BTDT_District 04": {
+    "perDay": 0.1,
+    "median": 1.38,
+    "p90": 3,
+    "ontime": 95.7,
+    "open": 0,
+    "sla": 14.1,
+    "own": 31.9,
+    "peak": 10
+   },
+   "BTDT|BTDT_District 05": {
+    "perDay": 0.2,
+    "median": 1.18,
+    "p90": 4.9,
+    "ontime": 98.6,
+    "open": 0,
+    "sla": 15,
+    "own": 42,
+    "peak": 4
+   },
+   "BTDT|BTDT_District 06": {
+    "perDay": 0.5,
+    "median": 1.87,
+    "p90": 8.9,
+    "ontime": 98.9,
+    "open": 0,
+    "sla": 14.7,
+    "own": 36.5,
+    "peak": 10
+   },
+   "BTDT|BTDT_Engineering_New Sign and Pavement Marking Requests": {
+    "perDay": 2.8,
+    "median": 16.12,
+    "p90": 295.1,
+    "ontime": 57.6,
+    "open": 2,
+    "sla": 30,
+    "own": 28.2,
+    "peak": 5
+   },
+   "BTDT|BTDT_Engineering_Request for Traffic Signal Study or Review": {
+    "perDay": 3.8,
+    "median": 9.08,
+    "p90": 327.9,
+    "ontime": 38.5,
+    "open": 72,
+    "sla": 1,
+    "own": 50.5,
+    "peak": 10
+   },
+   "BTDT|BTDT_General Comments": {
+    "perDay": 1.2,
+    "median": 221.13,
+    "p90": 410.3,
+    "ontime": 18.7,
+    "open": 2,
+    "sla": 15,
+    "own": 25.5,
+    "peak": 5
+   },
+   "BTDT|BTDT_OPC_Phone Bank Service": {
+    "perDay": 0.1,
+    "median": 61.94,
+    "p90": 328.1,
+    "ontime": 75,
+    "open": 0,
+    "sla": 15,
+    "own": 0,
+    "peak": 1
+   },
+   "BTDT|BTDT_OPC_Walk-In Service": {
+    "perDay": 0,
+    "median": 15.95,
+    "p90": 238.2,
+    "ontime": 53.3,
+    "open": 0,
+    "sla": 14,
+    "own": 13.3,
+    "peak": 5
+   },
+   "BTDT|BTDT_Parking Enforcement": {
+    "perDay": 172.7,
+    "median": 0.7,
+    "p90": 6.7,
+    "ontime": 48.4,
+    "open": 15244,
+    "sla": 1.5,
+    "own": 66,
+    "peak": 5
+   },
+   "BTDT|BTDT_Parking Lot_Municipal Parking Lot Complaints": {
+    "perDay": 0.2,
+    "median": 3.01,
+    "p90": 66.3,
+    "ontime": 50.9,
+    "open": 1,
+    "sla": 7,
+    "own": 50.9,
+    "peak": 9
+   },
+   "BTDT|BTDT_Parking Lot_PrivateParkingLotComplaints": {
+    "perDay": 0,
+    "median": 2.03,
+    "p90": 2,
+    "ontime": 28.6,
+    "open": 6,
+    "sla": 5.2,
+    "own": 42.9,
+    "peak": 2
+   },
+   "BTDT|BTDT_Parking Lot_Valet Parking Problems": {
+    "perDay": 0,
+    "median": null,
+    "p90": null,
+    "ontime": 0,
+    "open": 8,
+    "sla": 15.6,
+    "own": 87.5,
+    "peak": 1
+   },
+   "BTDT|BTDT_Pavement Marking_Maintenance": {
+    "perDay": 0,
+    "median": 152.88,
+    "p90": 342.7,
+    "ontime": 0,
+    "open": 0,
+    "sla": 1.1,
+    "own": 33.3,
+    "peak": 1
+   },
+   "BTDT|BTDT_Permits & Special Events": {
+    "perDay": 0.1,
+    "median": 6.82,
+    "p90": 38.1,
+    "ontime": 16.3,
+    "open": 28,
+    "sla": 4.2,
+    "own": 48.8,
+    "peak": 9
+   },
+   "BTDT|BTDT_Sign Repair": {
+    "perDay": 0.3,
+    "median": 5.5,
+    "p90": 75.3,
+    "ontime": 65.3,
+    "open": 0,
+    "sla": 14.6,
+    "own": 59.2,
+    "peak": 12
+   },
+   "BTDT|BTDT_Sign Shop Clerical": {
+    "perDay": 0,
+    "median": 167.23,
+    "p90": 297.4,
+    "ontime": 50,
+    "open": 0,
+    "sla": 2,
+    "own": 50,
+    "peak": 3
+   },
+   "BTDT|BTDT_Sign Shop_Sign Installation": {
+    "perDay": 11.8,
+    "median": 8.75,
+    "p90": 103.9,
+    "ontime": 59.9,
+    "open": 271,
+    "sla": 15,
+    "own": 42.2,
+    "peak": 3
+   },
+   "BTDT|BTDT_Traffic Signal_Graffiti": {
+    "perDay": 0.6,
+    "median": 1.78,
+    "p90": 306,
+    "ontime": 73.9,
+    "open": 0,
+    "sla": 180,
+    "own": 25.7,
+    "peak": 8
+   },
+   "BTDT|BTDT_Traffic Signal_Knock Downs/Contractor": {
+    "perDay": 0,
+    "median": 4.05,
+    "p90": 4.3,
+    "ontime": 50,
+    "open": 0,
+    "sla": 9.3,
+    "own": 0,
+    "peak": 2
+   },
+   "BTDT|BTDT_Traffic Signal_Repair": {
+    "perDay": 8.2,
+    "median": 0.12,
+    "p90": 1.6,
+    "ontime": 89.4,
+    "open": 0,
+    "sla": 1,
+    "own": 52.6,
+    "peak": 1
+   },
+   "BWSC|BWSC_All Cases": {
+    "perDay": 7.6,
+    "median": 6.81,
+    "p90": 53.5,
+    "ontime": 56.5,
+    "open": 1595,
+    "sla": 1.6,
+    "own": 51.2,
+    "peak": 1
+   },
+   "BWSC|BWSC_Pothole": {
+    "perDay": 1.7,
+    "median": 14.4,
+    "p90": 66.9,
+    "ontime": 34.1,
+    "open": 181,
+    "sla": 1.5,
+    "own": 54.4,
+    "peak": 4
+   },
+   "DISB|DISB_General_Request": {
+    "perDay": 0,
+    "median": 139.83,
+    "p90": 309,
+    "ontime": 27.3,
+    "open": 0,
+    "sla": 15.7,
+    "own": 9.1,
+    "peak": 2
+   },
+   "DISB|DISB_HP Sign": {
+    "perDay": 0.1,
+    "median": 172.01,
+    "p90": 369.9,
+    "ontime": 56.5,
+    "open": 0,
+    "sla": 14.5,
+    "own": 60.9,
+    "peak": 9
+   },
+   "DND|DND_General": {
+    "perDay": 0.1,
+    "median": 56.84,
+    "p90": 333.6,
+    "ontime": 41.9,
+    "open": 17,
+    "sla": 365,
+    "own": 44.2,
+    "peak": 7
+   },
+   "ECON|ECON_OutdoorDining": {
+    "perDay": 0,
+    "median": 9.02,
+    "p90": 32.9,
+    "ontime": 0,
+    "open": 0,
+    "sla": 3.4,
+    "own": 66.7,
+    "peak": 5
+   },
+   "GEN|GEN_Needle_Pickup": {
+    "perDay": 29.4,
+    "median": 0.03,
+    "p90": 0.5,
+    "ontime": 100,
+    "open": 0,
+    "sla": 1.1,
+    "own": 42.2,
+    "peak": 7
+   },
+   "GRNi|GRNi_Green_Infrastructure": {
+    "perDay": 0,
+    "median": 14.1,
+    "p90": 412.9,
+    "ontime": 50,
+    "open": 0,
+    "sla": 10.7,
+    "own": 75,
+    "peak": 4
+   },
+   "INFO|INFO01_GenericeFormforOtherServiceRequestTypes": {
+    "perDay": 16.6,
+    "median": 0.87,
+    "p90": 5.3,
+    "ontime": 80.4,
+    "open": 2020,
+    "sla": 3,
+    "own": 43,
+    "peak": 7
+   },
+   "INFO|INFO02_SelfServiceGenericeFormforOtherServiceRequestTypes": {
+    "perDay": 0,
+    "median": 2.29,
+    "p90": 2.7,
+    "ontime": 100,
+    "open": 0,
+    "sla": 6.2,
+    "own": 0,
+    "peak": 7
+   },
+   "INFO|INFO03_Mobile \"Other\" Requests": {
+    "perDay": 0.1,
+    "median": 0.01,
+    "p90": 0.2,
+    "ontime": 100,
+    "open": 0,
+    "sla": 9.5,
+    "own": 81.8,
+    "peak": 8
+   },
+   "INFO|INFO_BPHC": {
+    "perDay": 0.3,
+    "median": 387.89,
+    "p90": 507.9,
+    "ontime": 11.5,
+    "open": 80,
+    "sla": 2.7,
+    "own": 49,
+    "peak": 8
+   },
+   "INFO|INFO_Down Wire": {
+    "perDay": 0,
+    "median": null,
+    "p90": null,
+    "ontime": 0,
+    "open": 5,
+    "sla": 9.6,
+    "own": 100,
+    "peak": 2
+   },
+   "INFO|INFO_Encampments": {
+    "perDay": 0.7,
+    "median": 7.21,
+    "p90": 64.8,
+    "ontime": 19.2,
+    "open": 54,
+    "sla": 1.8,
+    "own": 47.9,
+    "peak": 8
+   },
+   "INFO|INFO_Eversource": {
+    "perDay": 0.4,
+    "median": 10.02,
+    "p90": 145.1,
+    "ontime": 16.9,
+    "open": 131,
+    "sla": 3,
+    "own": 45.9,
+    "peak": 4
+   },
+   "INFO|INFO_Homeless Issue": {
+    "perDay": 0.2,
+    "median": 2.31,
+    "p90": 256,
+    "ontime": 7.3,
+    "open": 51,
+    "sla": 1.4,
+    "own": 50.9,
+    "peak": 7
+   },
+   "INFO|INFO_HumanWaste": {
+    "perDay": 0.2,
+    "median": 0.95,
+    "p90": 2.9,
+    "ontime": 14.5,
+    "open": 51,
+    "sla": 1.1,
+    "own": 38.7,
+    "peak": 8
+   },
+   "INFO|INFO_JC Decaux": {
+    "perDay": 0.1,
+    "median": 1.01,
+    "p90": 9.4,
+    "ontime": 52.2,
+    "open": 7,
+    "sla": 2.9,
+    "own": 43.5,
+    "peak": 11
+   },
+   "INFO|INFO_Low Hanging Wire": {
+    "perDay": 0.2,
+    "median": 21.3,
+    "p90": 45.2,
+    "ontime": 20.5,
+    "open": 62,
+    "sla": 365,
+    "own": 29.5,
+    "peak": 5
+   },
+   "INFO|INFO_MBTA": {
+    "perDay": 1.9,
+    "median": 6.88,
+    "p90": 65.8,
+    "ontime": 3.8,
+    "open": 631,
+    "sla": 3.1,
+    "own": 44.4,
+    "peak": 4
+   },
+   "INFO|INFO_Mass DCR": {
+    "perDay": 6.8,
+    "median": 6.84,
+    "p90": 54.8,
+    "ontime": 9.9,
+    "open": 1992,
+    "sla": 3,
+    "own": 39.3,
+    "peak": 5
+   },
+   "INFO|INFO_Mass DOT": {
+    "perDay": 2,
+    "median": 5.77,
+    "p90": 160.2,
+    "ontime": 3.8,
+    "open": 697,
+    "sla": 1.6,
+    "own": 45.6,
+    "peak": 5
+   },
+   "INFO|INFO_Massport": {
+    "perDay": 0.3,
+    "median": 3.3,
+    "p90": 23.2,
+    "ontime": 11.8,
+    "open": 87,
+    "sla": 4,
+    "own": 40.9,
+    "peak": 9
+   },
+   "INFO|INFO_Mayors Policy Office": {
+    "perDay": 0,
+    "median": null,
+    "p90": null,
+    "ontime": 14.3,
+    "open": 7,
+    "sla": 14,
+    "own": 14.3,
+    "peak": 4
+   },
+   "INFO|INFO_Reallocation From Dept": {
+    "perDay": 5.5,
+    "median": 0.63,
+    "p90": 8.7,
+    "ontime": 85.4,
+    "open": 9,
+    "sla": 1.9,
+    "own": 50.2,
+    "peak": 5
+   },
+   "INFO|INFO_USPS Issues": {
+    "perDay": 0,
+    "median": 6.03,
+    "p90": 37.5,
+    "ontime": 23.1,
+    "open": 3,
+    "sla": 1.1,
+    "own": 46.2,
+    "peak": 3
+   },
+   "INFO|INFO_Unsheltered_Persons": {
+    "perDay": 0.1,
+    "median": 7.31,
+    "p90": 65.5,
+    "ontime": 27.7,
+    "open": 5,
+    "sla": 2.2,
+    "own": 66,
+    "peak": 8
+   },
+   "ISD|ISD_Administrative": {
+    "perDay": 0.4,
+    "median": 5.88,
+    "p90": 25,
+    "ontime": 29.8,
+    "open": 0,
+    "sla": 3,
+    "own": 50.3,
+    "peak": 3
+   },
+   "ISD|ISD_Building (INTERNAL)": {
+    "perDay": 12.1,
+    "median": 11.83,
+    "p90": 330,
+    "ontime": 54.2,
+    "open": 110,
+    "sla": 7,
+    "own": 66.1,
+    "peak": 6
+   },
+   "ISD|ISD_Electrical": {
+    "perDay": 1.4,
+    "median": 9.19,
+    "p90": 243.8,
+    "ontime": 47.2,
+    "open": 0,
+    "sla": 7.7,
+    "own": 21.8,
+    "peak": 12
+   },
+   "ISD|ISD_Environmental Services (INTERNAL)": {
+    "perDay": 16.5,
+    "median": 1.09,
+    "p90": 4.7,
+    "ontime": 99.4,
+    "open": 0,
+    "sla": 30,
+    "own": 46.2,
+    "peak": 8
+   },
+   "ISD|ISD_Health (INTERNAL)": {
+    "perDay": 3.5,
+    "median": 1.75,
+    "p90": 5.8,
+    "ontime": 75.8,
+    "open": 2,
+    "sla": 2,
+    "own": 85.1,
+    "peak": 6
+   },
+   "ISD|ISD_Housing (INTERNAL)": {
+    "perDay": 16.1,
+    "median": 8.81,
+    "p90": 129.9,
+    "ontime": 61.7,
+    "open": 1534,
+    "sla": 120,
+    "own": 5.2,
+    "peak": 1
+   },
+   "ISD|ISD_Housing_ShortTermRental": {
+    "perDay": 0.6,
+    "median": 7.98,
+    "p90": 71,
+    "ontime": 77.7,
+    "open": 0,
+    "sla": 43.4,
+    "own": 75.2,
+    "peak": 7
+   },
+   "ISD|ISD_Plumbing": {
+    "perDay": 0.2,
+    "median": 291.02,
+    "p90": 523.6,
+    "ontime": 8.6,
+    "open": 0,
+    "sla": 7.5,
+    "own": 24.3,
+    "peak": 12
+   },
+   "ISD|ISD_Weights and Measures (INTERNAL)": {
+    "perDay": 0.1,
+    "median": 1.14,
+    "p90": 3.9,
+    "ontime": 50,
+    "open": 0,
+    "sla": 1,
+    "own": 45.2,
+    "peak": 7
+   },
+   "ONS|ONS_Allston_Brighton": {
+    "perDay": 0,
+    "median": null,
+    "p90": null,
+    "ontime": 50,
+    "open": 2,
+    "sla": 14.9,
+    "own": 0,
+    "peak": 7
+   },
+   "ONS|ONS_BackBay_Fenway_MissionHill": {
+    "perDay": 0,
+    "median": 3.17,
+    "p90": 3.2,
+    "ontime": 28.6,
+    "open": 6,
+    "sla": 5,
+    "own": 14.3,
+    "peak": 3
+   },
+   "ONS|ONS_Charlestown": {
+    "perDay": 0,
+    "median": 7.17,
+    "p90": 225.3,
+    "ontime": 33.3,
+    "open": 0,
+    "sla": 1,
+    "own": 33.3,
+    "peak": 4
+   },
+   "ONS|ONS_EastBoston": {
+    "perDay": 0,
+    "median": 2.68,
+    "p90": 2.7,
+    "ontime": 16.7,
+    "open": 5,
+    "sla": 10,
+    "own": 50,
+    "peak": 6
+   },
+   "ONS|ONS_General": {
+    "perDay": 0,
+    "median": 3.18,
+    "p90": 3.2,
+    "ontime": 23.1,
+    "open": 12,
+    "sla": 17,
+    "own": 30.8,
+    "peak": 2
+   },
+   "ONS|ONS_HydePark": {
+    "perDay": 0,
+    "median": null,
+    "p90": null,
+    "ontime": 66.7,
+    "open": 3,
+    "sla": 1,
+    "own": 0,
+    "peak": 4
+   },
+   "ONS|ONS_JamaicaPlain": {
+    "perDay": 0,
+    "median": 12.63,
+    "p90": 17.1,
+    "ontime": 66.7,
+    "open": 1,
+    "sla": 97,
+    "own": 66.7,
+    "peak": 3
+   },
+   "ONS|ONS_Mattapan": {
+    "perDay": 0,
+    "median": null,
+    "p90": null,
+    "ontime": 20,
+    "open": 5,
+    "sla": 30,
+    "own": 40,
+    "peak": 6
+   },
+   "ONS|ONS_MidDorchester": {
+    "perDay": 0,
+    "median": null,
+    "p90": null,
+    "ontime": 0,
+    "open": 5,
+    "sla": 14,
+    "own": 20,
+    "peak": 4
+   },
+   "ONS|ONS_NorthEnd_WaterFront_WestEnd": {
+    "perDay": 0,
+    "median": null,
+    "p90": null,
+    "ontime": 20,
+    "open": 5,
+    "sla": 14,
+    "own": 20,
+    "peak": 6
+   },
+   "ONS|ONS_Roslindale": {
+    "perDay": 0,
+    "median": null,
+    "p90": null,
+    "ontime": 0,
+    "open": 2,
+    "sla": 20.8,
+    "own": 0,
+    "peak": 3
+   },
+   "ONS|ONS_Roxbury": {
+    "perDay": 0,
+    "median": 490.14,
+    "p90": 490.1,
+    "ontime": 40,
+    "open": 4,
+    "sla": 11,
+    "own": 60,
+    "peak": 4
+   },
+   "ONS|ONS_SouthBoston": {
+    "perDay": 0,
+    "median": null,
+    "p90": null,
+    "ontime": 0,
+    "open": 7,
+    "sla": 15.6,
+    "own": 28.6,
+    "peak": 3
+   },
+   "ONS|ONS_SouthDorchester": {
+    "perDay": 0,
+    "median": 3.07,
+    "p90": 5.5,
+    "ontime": 57.1,
+    "open": 5,
+    "sla": 14.6,
+    "own": 14.3,
+    "peak": 7
+   },
+   "ONS|ONS_WestRoxbury": {
+    "perDay": 0,
+    "median": null,
+    "p90": null,
+    "ontime": 0,
+    "open": 2,
+    "sla": 15.5,
+    "own": 0,
+    "peak": 2
+   },
+   "PARK|PARK_Carpentry": {
+    "perDay": 1.3,
+    "median": 2.62,
+    "p90": 24.2,
+    "ontime": 78.6,
+    "open": 0,
+    "sla": 7.6,
+    "own": 52.1,
+    "peak": 9
+   },
+   "PARK|PARK_Cemetery Maintenance Request": {
+    "perDay": 0.2,
+    "median": 10.76,
+    "p90": 92.8,
+    "ontime": 67.2,
+    "open": 0,
+    "sla": 7.1,
+    "own": 34.5,
+    "peak": 1
+   },
+   "PARK|PARK_General Comments": {
+    "perDay": 0.2,
+    "median": 0.07,
+    "p90": 1.3,
+    "ontime": 100,
+    "open": 0,
+    "sla": 14.3,
+    "own": 35.6,
+    "peak": 6
+   },
+   "PARK|PARK_Graffiti": {
+    "perDay": 1.1,
+    "median": 1.1,
+    "p90": 7.9,
+    "ontime": 90,
+    "open": 0,
+    "sla": 7,
+    "own": 54.1,
+    "peak": 5
+   },
+   "PARK|PARK_Maintenance_Ground Maintenance": {
+    "perDay": 0.6,
+    "median": 0.2,
+    "p90": 2.1,
+    "ontime": 95.8,
+    "open": 0,
+    "sla": 7,
+    "own": 58.5,
+    "peak": 6
+   },
+   "PARK|PARK_Maintenance_Horticulture": {
+    "perDay": 0.1,
+    "median": 1.82,
+    "p90": 9,
+    "ontime": 87.5,
+    "open": 0,
+    "sla": 7,
+    "own": 40.6,
+    "peak": 6
+   },
+   "PARK|PARK_Maintenance_Lighting Electrical": {
+    "perDay": 0.7,
+    "median": 1.07,
+    "p90": 12.5,
+    "ontime": 86.9,
+    "open": 0,
+    "sla": 10.6,
+    "own": 35.9,
+    "peak": 9
+   },
+   "PARK|PARK_Maintenance_Region 1": {
+    "perDay": 3.1,
+    "median": 0.87,
+    "p90": 4,
+    "ontime": 88.4,
+    "open": 0,
+    "sla": 7,
+    "own": 46.7,
+    "peak": 6
+   },
+   "PARK|PARK_Maintenance_Region 2": {
+    "perDay": 1.8,
+    "median": 1.01,
+    "p90": 7,
+    "ontime": 87.9,
+    "open": 0,
+    "sla": 7,
+    "own": 44.9,
+    "peak": 6
+   },
+   "PARK|PARK_Maintenance_Region 3": {
+    "perDay": 1.4,
+    "median": 1.05,
+    "p90": 6.9,
+    "ontime": 84.4,
+    "open": 0,
+    "sla": 7,
+    "own": 38.5,
+    "peak": 7
+   },
+   "PARK|PARK_Maintenance_Region 4": {
+    "perDay": 1.3,
+    "median": 0.93,
+    "p90": 4.1,
+    "ontime": 90.9,
+    "open": 0,
+    "sla": 7,
+    "own": 47.9,
+    "peak": 7
+   },
+   "PARK|PARK_Maintenance_Region 5": {
+    "perDay": 1,
+    "median": 1.01,
+    "p90": 9.3,
+    "ontime": 82.7,
+    "open": 0,
+    "sla": 7,
+    "own": 48.3,
+    "peak": 7
+   },
+   "PARK|PARK_Maintenance_Region 6": {
+    "perDay": 1.9,
+    "median": 0.65,
+    "p90": 2.9,
+    "ontime": 93.4,
+    "open": 0,
+    "sla": 7,
+    "own": 39.8,
+    "peak": 6
+   },
+   "PARK|PARK_Maintenance_Support Services": {
+    "perDay": 0.3,
+    "median": 2.58,
+    "p90": 8.9,
+    "ontime": 81.6,
+    "open": 0,
+    "sla": 7,
+    "own": 34.2,
+    "peak": 4
+   },
+   "PARK|PARK_Maintenance_Trades": {
+    "perDay": 1.4,
+    "median": 0.18,
+    "p90": 12.9,
+    "ontime": 86.4,
+    "open": 5,
+    "sla": 7,
+    "own": 58.9,
+    "peak": 9
+   },
+   "PARK|PARK_New Tree Requests": {
+    "perDay": 6.6,
+    "median": 159.74,
+    "p90": 307.2,
+    "ontime": 93.5,
+    "open": 74,
+    "sla": 365,
+    "own": 69.1,
+    "peak": 3
+   },
+   "PARK|PARK_Painting": {
+    "perDay": 0.3,
+    "median": 1.99,
+    "p90": 22.1,
+    "ontime": 80,
+    "open": 0,
+    "sla": 7,
+    "own": 65.7,
+    "peak": 4
+   },
+   "PARK|PARK_Park Improvement Requests": {
+    "perDay": 1,
+    "median": 23.65,
+    "p90": 290,
+    "ontime": 71.5,
+    "open": 19,
+    "sla": 7.1,
+    "own": 62.8,
+    "peak": 7
+   },
+   "PARK|PARK_Plumbing": {
+    "perDay": 1.2,
+    "median": 2.09,
+    "p90": 11.1,
+    "ontime": 82.8,
+    "open": 0,
+    "sla": 7.6,
+    "own": 46.6,
+    "peak": 6
+   },
+   "PARK|PARK_Tree Emergencies": {
+    "perDay": 4.4,
+    "median": 0.13,
+    "p90": 2,
+    "ontime": 98.8,
+    "open": 0,
+    "sla": 365,
+    "own": 53.4,
+    "peak": 6
+   },
+   "PARK|PARK_Tree Maintenance Request": {
+    "perDay": 20,
+    "median": 21.92,
+    "p90": 161,
+    "ontime": 99,
+    "open": 2,
+    "sla": 365,
+    "own": 71.8,
+    "peak": 6
+   },
+   "PARK|PARK_Tree in Park": {
+    "perDay": 0.6,
+    "median": 36.66,
+    "p90": 270.2,
+    "ontime": 84.8,
+    "open": 20,
+    "sla": 365,
+    "own": 47.2,
+    "peak": 6
+   },
+   "PARK|PARK_Urban_Wilds": {
+    "perDay": 0.1,
+    "median": 4.7,
+    "p90": 28.9,
+    "ontime": 76.9,
+    "open": 2,
+    "sla": 8,
+    "own": 38.5,
+    "peak": 4
+   },
+   "PARK|PARK_Welding": {
+    "perDay": 0.9,
+    "median": 2.04,
+    "p90": 15.5,
+    "ontime": 81.4,
+    "open": 1,
+    "sla": 7.6,
+    "own": 46.3,
+    "peak": 6
+   },
+   "PROP|PROP_GRAF_GraffitiRemoval": {
+    "perDay": 7,
+    "median": 25.14,
+    "p90": 161.8,
+    "ontime": 67.6,
+    "open": 0,
+    "sla": 66,
+    "own": 66.6,
+    "peak": 8
+   },
+   "PWDx|PWDx_Bridge Maintenance": {
+    "perDay": 0.2,
+    "median": 7.47,
+    "p90": 212.4,
+    "ontime": 54.8,
+    "open": 5,
+    "sla": 1.7,
+    "own": 31,
+    "peak": 3
+   },
+   "PWDx|PWDx_Code Enforcement": {
+    "perDay": 106.4,
+    "median": 0.13,
+    "p90": 0.8,
+    "ontime": 98.6,
+    "open": 0,
+    "sla": 3,
+    "own": 58.8,
+    "peak": 8
+   },
+   "PWDx|PWDx_Contractor Complaints": {
+    "perDay": 4.7,
+    "median": 0.82,
+    "p90": 10.7,
+    "ontime": 78,
+    "open": 0,
+    "sla": 3,
+    "own": 48.9,
+    "peak": 1
+   },
+   "PWDx|PWDx_District 02: Jamaica Plain": {
+    "perDay": 7.6,
+    "median": 0.15,
+    "p90": 3,
+    "ontime": 84.8,
+    "open": 0,
+    "sla": 1.6,
+    "own": 56.2,
+    "peak": 9
+   },
+   "PWDx|PWDx_District 03: North Dorchester": {
+    "perDay": 12.7,
+    "median": 0.05,
+    "p90": 0.9,
+    "ontime": 98.2,
+    "open": 0,
+    "sla": 1.1,
+    "own": 57.9,
+    "peak": 8
+   },
+   "PWDx|PWDx_District 04: Allston/Brighton": {
+    "perDay": 12.6,
+    "median": 0.09,
+    "p90": 1.2,
+    "ontime": 94.8,
+    "open": 0,
+    "sla": 1.6,
+    "own": 66.7,
+    "peak": 8
+   },
+   "PWDx|PWDx_District 05: South Boston": {
+    "perDay": 8.3,
+    "median": 0.08,
+    "p90": 0.7,
+    "ontime": 98.8,
+    "open": 0,
+    "sla": 1.5,
+    "own": 65.4,
+    "peak": 9
+   },
+   "PWDx|PWDx_District 06: West Roxbury and Roslindale": {
+    "perDay": 6.1,
+    "median": 0.09,
+    "p90": 2,
+    "ontime": 89.1,
+    "open": 0,
+    "sla": 1.5,
+    "own": 56.9,
+    "peak": 7
+   },
+   "PWDx|PWDx_District 07: South Dorchester": {
+    "perDay": 10.8,
+    "median": 0.07,
+    "p90": 1,
+    "ontime": 94.9,
+    "open": 0,
+    "sla": 1.2,
+    "own": 64.1,
+    "peak": 3
+   },
+   "PWDx|PWDx_District 08: Hyde Park": {
+    "perDay": 5.4,
+    "median": 0.04,
+    "p90": 0.9,
+    "ontime": 97.9,
+    "open": 0,
+    "sla": 1,
+    "own": 78.4,
+    "peak": 4
+   },
+   "PWDx|PWDx_District 09: East Boston": {
+    "perDay": 9.3,
+    "median": 0.07,
+    "p90": 0.9,
+    "ontime": 98.1,
+    "open": 0,
+    "sla": 1.1,
+    "own": 71.5,
+    "peak": 9
+   },
+   "PWDx|PWDx_District 10A: Roxbury": {
+    "perDay": 8.3,
+    "median": 0.2,
+    "p90": 1.8,
+    "ontime": 92.7,
+    "open": 0,
+    "sla": 1.5,
+    "own": 61.5,
+    "peak": 8
+   },
+   "PWDx|PWDx_District 10B: Roxbury": {
+    "perDay": 8.9,
+    "median": 0.11,
+    "p90": 1.8,
+    "ontime": 92.9,
+    "open": 0,
+    "sla": 1.4,
+    "own": 65.4,
+    "peak": 9
+   },
+   "PWDx|PWDx_District 1A: Charlestown": {
+    "perDay": 2.6,
+    "median": 0.08,
+    "p90": 1.1,
+    "ontime": 91.2,
+    "open": 0,
+    "sla": 1.6,
+    "own": 58.3,
+    "peak": 8
+   },
+   "PWDx|PWDx_District 1B: North End": {
+    "perDay": 19,
+    "median": 0.07,
+    "p90": 0.7,
+    "ontime": 97.9,
+    "open": 0,
+    "sla": 1.3,
+    "own": 85,
+    "peak": 8
+   },
+   "PWDx|PWDx_District 1C: Downtown": {
+    "perDay": 29.6,
+    "median": 0.07,
+    "p90": 0.9,
+    "ontime": 95.5,
+    "open": 0,
+    "sla": 1.4,
+    "own": 72.2,
+    "peak": 8
+   },
+   "PWDx|PWDx_Empty Litter Basket": {
+    "perDay": 0.3,
+    "median": 0.2,
+    "p90": 1.2,
+    "ontime": 93.6,
+    "open": 0,
+    "sla": 1.1,
+    "own": 45.9,
+    "peak": 1
+   },
+   "PWDx|PWDx_Engineering_Design": {
+    "perDay": 0.1,
+    "median": 55.1,
+    "p90": 232,
+    "ontime": 15,
+    "open": 25,
+    "sla": 1.6,
+    "own": 37.5,
+    "peak": 10
+   },
+   "PWDx|PWDx_Engineering_PIC": {
+    "perDay": 0.1,
+    "median": 199.03,
+    "p90": 237.2,
+    "ontime": 35.7,
+    "open": 23,
+    "sla": 1.9,
+    "own": 32.1,
+    "peak": 2
+   },
+   "PWDx|PWDx_Graffiti": {
+    "perDay": 0.7,
+    "median": 8.07,
+    "p90": 53.8,
+    "ontime": 49,
+    "open": 0,
+    "sla": 7.6,
+    "own": 42.3,
+    "peak": 6
+   },
+   "PWDx|PWDx_Highway Construction": {
+    "perDay": 4.7,
+    "median": 107.32,
+    "p90": 510.9,
+    "ontime": 4,
+    "open": 1155,
+    "sla": 1.5,
+    "own": 33.8,
+    "peak": 4
+   },
+   "PWDx|PWDx_Highway Construction General": {
+    "perDay": 0.3,
+    "median": 46.79,
+    "p90": 146.3,
+    "ontime": 3.2,
+    "open": 28,
+    "sla": 7.6,
+    "own": 55.3,
+    "peak": 1
+   },
+   "PWDx|PWDx_IPL Damaged Cart Replacement": {
+    "perDay": 0.5,
+    "median": 7.86,
+    "p90": 15.9,
+    "ontime": 46.6,
+    "open": 0,
+    "sla": 7,
+    "own": 100,
+    "peak": 7
+   },
+   "PWDx|PWDx_Litter Basket Maintenance": {
+    "perDay": 0.3,
+    "median": 0.49,
+    "p90": 3.3,
+    "ontime": 92.6,
+    "open": 0,
+    "sla": 1.8,
+    "own": 50,
+    "peak": 4
+   },
+   "PWDx|PWDx_Major System Failure": {
+    "perDay": 0.7,
+    "median": 0.12,
+    "p90": 3.9,
+    "ontime": 82.8,
+    "open": 0,
+    "sla": 1.6,
+    "own": 76.7,
+    "peak": 1
+   },
+   "PWDx|PWDx_Missed Trash\\Recycling\\Yard Waste\\Bulk Item": {
+    "perDay": 33,
+    "median": 0.5,
+    "p90": 1,
+    "ontime": 97.8,
+    "open": 0,
+    "sla": 1.1,
+    "own": 40.1,
+    "peak": 1
+   },
+   "PWDx|PWDx_News Boxes": {
+    "perDay": 0,
+    "median": 10.49,
+    "p90": 116.2,
+    "ontime": 33.3,
+    "open": 0,
+    "sla": 9.5,
+    "own": 66.7,
+    "peak": 1
+   },
+   "PWDx|PWDx_Pick Up Dead Animals": {
+    "perDay": 0.2,
+    "median": 0.02,
+    "p90": 2.1,
+    "ontime": 94.5,
+    "open": 0,
+    "sla": 1.6,
+    "own": 82.4,
+    "peak": 7
+   },
+   "PWDx|PWDx_Recycling": {
+    "perDay": 2.2,
+    "median": 1.93,
+    "p90": 12.8,
+    "ontime": 99,
+    "open": 0,
+    "sla": 22,
+    "own": 4.2,
+    "peak": 4
+   },
+   "PWDx|PWDx_Recycling Cart Return": {
+    "perDay": 0.5,
+    "median": 3.63,
+    "p90": 19.3,
+    "ontime": 62.8,
+    "open": 0,
+    "sla": 7,
+    "own": 34.2,
+    "peak": 7
+   },
+   "PWDx|PWDx_Recycling Sent to Contractor": {
+    "perDay": 19.4,
+    "median": 11.86,
+    "p90": 21.9,
+    "ontime": 50,
+    "open": 0,
+    "sla": 9,
+    "own": 41,
+    "peak": 7
+   },
+   "PWDx|PWDx_Request for Litter Basket Installation": {
+    "perDay": 0.3,
+    "median": 1.26,
+    "p90": 4.7,
+    "ontime": 90.7,
+    "open": 0,
+    "sla": 7,
+    "own": 46.3,
+    "peak": 1
+   },
+   "PWDx|PWDx_Request for Street Cleaning": {
+    "perDay": 0.9,
+    "median": 0.01,
+    "p90": 1.8,
+    "ontime": 94.8,
+    "open": 0,
+    "sla": 1.6,
+    "own": 67.4,
+    "peak": 7
+   },
+   "PWDx|PWDx_Requests for Pothole Repair": {
+    "perDay": 0.4,
+    "median": 0.07,
+    "p90": 1.6,
+    "ontime": 95.3,
+    "open": 0,
+    "sla": 1,
+    "own": 64.4,
+    "peak": 3
+   },
+   "PWDx|PWDx_Requests for Snow Plowing": {
+    "perDay": 0.1,
+    "median": 0.02,
+    "p90": 12.9,
+    "ontime": 61.1,
+    "open": 0,
+    "sla": 3.8,
+    "own": 100,
+    "peak": 12
+   },
+   "PWDx|PWDx_Requests for Snow Plowing (Emergency Responder)": {
+    "perDay": 0,
+    "median": 0,
+    "p90": 0,
+    "ontime": 100,
+    "open": 0,
+    "sla": null,
+    "own": 100,
+    "peak": 12
+   },
+   "PWDx|PWDx_Roadway Repair": {
+    "perDay": 0.9,
+    "median": 0.2,
+    "p90": 4.4,
+    "ontime": 83.8,
+    "open": 205,
+    "sla": 1.7,
+    "own": 45.5,
+    "peak": 8
+   },
+   "PWDx|PWDx_Roadway Repair_ARP_Resurfacing": {
+    "perDay": 4.7,
+    "median": 1.62,
+    "p90": 248.9,
+    "ontime": 10.1,
+    "open": 1656,
+    "sla": 1.5,
+    "own": 43.2,
+    "peak": 4
+   },
+   "PWDx|PWDx_Roadway Repair_CRP_Resurfacing": {
+    "perDay": 0.1,
+    "median": null,
+    "p90": null,
+    "ontime": 25,
+    "open": 28,
+    "sla": 1.6,
+    "own": 50,
+    "peak": 5
+   },
+   "PWDx|PWDx_Roadway Repair_Ponding": {
+    "perDay": 0,
+    "median": 26.69,
+    "p90": 26.7,
+    "ontime": 31.2,
+    "open": 15,
+    "sla": 2,
+    "own": 37.5,
+    "peak": 8
+   },
+   "PWDx|PWDx_Roadway Repair_Reconstruction": {
+    "perDay": 0.2,
+    "median": 6.5,
+    "p90": 31.8,
+    "ontime": 24.2,
+    "open": 32,
+    "sla": 4.8,
+    "own": 41.9,
+    "peak": 7
+   },
+   "PWDx|PWDx_STRL Pole Compliance": {
+    "perDay": 0.5,
+    "median": 13.73,
+    "p90": 181.3,
+    "ontime": 43.9,
+    "open": 5,
+    "sla": 8.9,
+    "own": 37.6,
+    "peak": 7
+   },
+   "PWDx|PWDx_Schedule a Bulk Item Pickup": {
+    "perDay": 52.6,
+    "median": 0.8,
+    "p90": 6.1,
+    "ontime": 100,
+    "open": 18039,
+    "sla": 5.6,
+    "own": 18.1,
+    "peak": 8
+   },
+   "PWDx|PWDx_Sidewalk Repair": {
+    "perDay": 7.6,
+    "median": 2.72,
+    "p90": 528.1,
+    "ontime": 14.7,
+    "open": 2072,
+    "sla": 1.4,
+    "own": 33.3,
+    "peak": 8
+   },
+   "PWDx|PWDx_Sidewalk Repair (Make Safe)": {
+    "perDay": 0.2,
+    "median": 0.02,
+    "p90": 0.9,
+    "ontime": 98.8,
+    "open": 0,
+    "sla": 1,
+    "own": 42.5,
+    "peak": 5
+   },
+   "PWDx|PWDx_Snow Cases": {
+    "perDay": 0,
+    "median": 3.16,
+    "p90": 11.1,
+    "ontime": 93.8,
+    "open": 13,
+    "sla": 14,
+    "own": 68.8,
+    "peak": 12
+   },
+   "PWDx|PWDx_Space Saver Removal": {
+    "perDay": 0.2,
+    "median": 4.16,
+    "p90": 13,
+    "ontime": 38.1,
+    "open": 52,
+    "sla": 1,
+    "own": 74.6,
+    "peak": 1
+   },
+   "PWDx|PWDx_Sticker Request": {
+    "perDay": 6.7,
+    "median": 0.53,
+    "p90": 1,
+    "ontime": 99.3,
+    "open": 0,
+    "sla": 1,
+    "own": 9.9,
+    "peak": 6
+   },
+   "PWDx|PWDx_Street Light Knock Downs": {
+    "perDay": 1.1,
+    "median": 0.11,
+    "p90": 1,
+    "ontime": 93.3,
+    "open": 0,
+    "sla": 1.6,
+    "own": 50.9,
+    "peak": 8
+   },
+   "PWDx|PWDx_Street Light Knockdown Replacement": {
+    "perDay": 0.3,
+    "median": 6.1,
+    "p90": 309.6,
+    "ontime": 51.7,
+    "open": 17,
+    "sla": 60,
+    "own": 89.8,
+    "peak": 4
+   },
+   "PWDx|PWDx_Street Light Outages": {
+    "perDay": 10,
+    "median": 10.02,
+    "p90": 184.5,
+    "ontime": 48.7,
+    "open": 312,
+    "sla": 15,
+    "own": 53.4,
+    "peak": 3
+   },
+   "PWDx|PWDx_Street Light Outages - Gas": {
+    "perDay": 0.5,
+    "median": 14.66,
+    "p90": 145.1,
+    "ontime": 49.4,
+    "open": 2,
+    "sla": 15,
+    "own": 38.1,
+    "peak": 2
+   },
+   "PWDx|PWDx_Street Light Outages - Long-Term Repair": {
+    "perDay": 0.3,
+    "median": 175.91,
+    "p90": 421.6,
+    "ontime": 5.1,
+    "open": 37,
+    "sla": 14.6,
+    "own": 38.8,
+    "peak": 1
+   },
+   "PWDx|PWDx_Street Light_General Lighting Request": {
+    "perDay": 2.5,
+    "median": 0.51,
+    "p90": 145.5,
+    "ontime": 70.1,
+    "open": 45,
+    "sla": 45,
+    "own": 80.2,
+    "peak": 4
+   },
+   "PWDx|PWDx_Street Light_Install New Lighting": {
+    "perDay": 0.1,
+    "median": 65.92,
+    "p90": 265,
+    "ontime": 28.6,
+    "open": 9,
+    "sla": 60,
+    "own": 42.9,
+    "peak": 3
+   },
+   "PWDx|PWDx_Street Light_Pickup_Clear Conduit": {
+    "perDay": 0,
+    "median": 0.26,
+    "p90": 228.5,
+    "ontime": 85.7,
+    "open": 0,
+    "sla": 15.1,
+    "own": 100,
+    "peak": 2
+   },
+   "PWDx|PWDx_Street Light_Upgrade Existing Lighting": {
+    "perDay": 0.1,
+    "median": 93,
+    "p90": 241.4,
+    "ontime": 26.9,
+    "open": 6,
+    "sla": 60,
+    "own": 15.4,
+    "peak": 10
+   },
+   "PWDx|PWDx_Utility Call-In": {
+    "perDay": 0,
+    "median": 0,
+    "p90": 0,
+    "ontime": 100,
+    "open": 0,
+    "sla": 4,
+    "own": 100,
+    "peak": 6
+   },
+   "PWDx|PWDx_Utility Casting Repair": {
+    "perDay": 0.1,
+    "median": 0.15,
+    "p90": 3.7,
+    "ontime": 87.2,
+    "open": 0,
+    "sla": 1.5,
+    "own": 71.8,
+    "peak": 9
+   },
+   "PWDx|PWDx_WM_Mattress_Pickup": {
+    "perDay": 24.2,
+    "median": 2.36,
+    "p90": 7,
+    "ontime": 99.7,
+    "open": 0,
+    "sla": 3.6,
+    "own": 4.3,
+    "peak": 4
+   },
+   "PWDx|PWDx_Work Hours-Loud Noise Complaints": {
+    "perDay": 0.3,
+    "median": 0.4,
+    "p90": 2.8,
+    "ontime": 94.5,
+    "open": 0,
+    "sla": 5,
+    "own": 51.6,
+    "peak": 10
+   }
+  }
+ },
+ "quality": {
+  "departments": {
+   "ANML": {
+    "total": 185,
+    "closed": 132,
+    "bad": 28,
+    "dup": 6.1,
+    "miss": 15.9,
+    "own": 3.8,
+    "inv": 3,
+    "noev": 0
+   },
+   "BHA": {
+    "total": 129,
+    "closed": 3,
+    "bad": 33.3,
+    "dup": 33.3,
+    "miss": 0,
+    "own": 0,
+    "inv": 0,
+    "noev": 0
+   },
+   "BPD": {
+    "total": 155,
+    "closed": 42,
+    "bad": 14.3,
+    "dup": 4.8,
+    "miss": 2.4,
+    "own": 7.1,
+    "inv": 0,
+    "noev": 0
+   },
+   "BTDT": {
+    "total": 81447,
+    "closed": 65120,
+    "bad": 9.8,
+    "dup": 6,
+    "miss": 1.1,
+    "own": 0.7,
+    "inv": 2,
+    "noev": 0.1
+   },
+   "BWSC": {
+    "total": 3406,
+    "closed": 1630,
+    "bad": 11.1,
+    "dup": 1.3,
+    "miss": 4,
+    "own": 2,
+    "inv": 3.9,
+    "noev": 0.2
+   },
+   "DISB": {
+    "total": 34,
+    "closed": 34,
+    "bad": 32.4,
+    "dup": 11.8,
+    "miss": 14.7,
+    "own": 5.9,
+    "inv": 0,
+    "noev": 0
+   },
+   "DND": {
+    "total": 43,
+    "closed": 26,
+    "bad": 3.8,
+    "dup": 0,
+    "miss": 0,
+    "own": 3.8,
+    "inv": 0,
+    "noev": 0
+   },
+   "ECON": {
+    "total": 3,
+    "closed": 3,
+    "bad": 0,
+    "dup": 0,
+    "miss": 0,
+    "own": 0,
+    "inv": 0,
+    "noev": 0
+   },
+   "GEN": {
+    "total": 10747,
+    "closed": 10747,
+    "bad": 10.7,
+    "dup": 3.4,
+    "miss": 6.7,
+    "own": 0.1,
+    "inv": 0.5,
+    "noev": 1.9
+   },
+   "GRNi": {
+    "total": 4,
+    "closed": 4,
+    "bad": 50,
+    "dup": 50,
+    "miss": 0,
+    "own": 0,
+    "inv": 0,
+    "noev": 0
+   },
+   "INFO": {
+    "total": 12983,
+    "closed": 7091,
+    "bad": 41.9,
+    "dup": 5.1,
+    "miss": 14,
+    "own": 20.6,
+    "inv": 3.2,
+    "noev": 1.2
+   },
+   "ISD": {
+    "total": 18624,
+    "closed": 16978,
+    "bad": 17.5,
+    "dup": 4.9,
+    "miss": 2.1,
+    "own": 1.2,
+    "inv": 9.3,
+    "noev": 1.7
+   },
+   "ONS": {
+    "total": 75,
+    "closed": 11,
+    "bad": 18.2,
+    "dup": 9.1,
+    "miss": 0,
+    "own": 9.1,
+    "inv": 0,
+    "noev": 0
+   },
+   "PARK": {
+    "total": 18736,
+    "closed": 18613,
+    "bad": 11.2,
+    "dup": 6.8,
+    "miss": 0.9,
+    "own": 2,
+    "inv": 1.6,
+    "noev": 0.7
+   },
+   "PROP": {
+    "total": 2574,
+    "closed": 2574,
+    "bad": 5.9,
+    "dup": 0.9,
+    "miss": 0.6,
+    "own": 2.9,
+    "inv": 1.5,
+    "noev": 0
+   },
+   "PWDx": {
+    "total": 157610,
+    "closed": 133829,
+    "bad": 5.4,
+    "dup": 1,
+    "miss": 1.1,
+    "own": 1.5,
+    "inv": 1.7,
+    "noev": 5.8
+   }
+  },
+  "queues": {
+   "ANML": [
+    {
+     "q": "ANML_General",
+     "total": 185,
+     "closed": 132,
+     "bad": 28,
+     "dup": 6.1,
+     "miss": 15.9,
+     "own": 3.8,
+     "inv": 3,
+     "noev": 0,
+     "types": [
+      "Pick up Dead Animal",
+      "Rodent Activity",
+      "Pest Infestation - Residential",
+      "Poor Conditions of Property"
+     ],
+     "ex": [
+      "Referred to External Agency",
+      "Resolved The pigeon was gone on arrival. BSG111"
+     ]
+    }
+   ],
+   "BHA": [
+    {
+     "q": "BHA_General",
+     "total": 129,
+     "closed": 3,
+     "bad": 33.3,
+     "dup": 33.3,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Requests for Street Cleaning",
+      "Request for Pothole Repair",
+      "Tree Maintenance Requests",
+      "Ground Maintenance"
+     ],
+     "ex": [
+      "Duplicate of Existing Case Duplicate of 101005373607"
+     ]
+    }
+   ],
+   "BPD": [
+    {
+     "q": "BPD_Districts",
+     "total": 155,
+     "closed": 42,
+     "bad": 14.3,
+     "dup": 4.8,
+     "miss": 2.4,
+     "own": 7.1,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Abandoned Vehicles",
+      "Traffic Signal Inspection",
+      "Requests for Street Cleaning",
+      "Short Term Rental"
+     ],
+     "ex": [
+      "Referred to External Agency BTD referral",
+      "Duplicate of Existing Case Please refer this isue to BPD directly when it occurs."
+     ]
+    }
+   ],
+   "BTDT": [
+    {
+     "q": "BTDT_Parking Enforcement",
+     "total": 63221,
+     "closed": 47977,
+     "bad": 6.2,
+     "dup": 3,
+     "miss": 0.7,
+     "own": 0.4,
+     "inv": 2.1,
+     "noev": 0,
+     "types": [
+      "Parking Enforcement",
+      "Abandoned Vehicles",
+      "Transportation General Request",
+      "General Comments For a Program or Policy"
+     ],
+     "ex": [
+      "Duplicate of Existing Case",
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi"
+     ]
+    },
+    {
+     "q": "BTDT_AVRS Interface Queue",
+     "total": 4827,
+     "closed": 4827,
+     "bad": 18.7,
+     "dup": 15.8,
+     "miss": 0.8,
+     "own": 1.2,
+     "inv": 0.8,
+     "noev": 0,
+     "types": [
+      "Abandoned Vehicles",
+      "Parking Enforcement",
+      "Abandoned Bicycle",
+      "Requests for Street Cleaning"
+     ],
+     "ex": [
+      "Duplicate of Existing Case This case has been closed as a duplicate. There is another existing case that has reported the same issue. Please refer to case: 1010",
+      "Duplicate of Existing Case"
+     ]
+    },
+    {
+     "q": "BTDT_Sign Shop_Sign Installation",
+     "total": 4327,
+     "closed": 4056,
+     "bad": 12.4,
+     "dup": 11,
+     "miss": 1,
+     "own": 0.3,
+     "inv": 0.1,
+     "noev": 1.8,
+     "types": [
+      "Sign Repair",
+      "Missing Sign",
+      "Pavement Marking Inspection",
+      "New Sign  Crosswalk or Pavement Marking"
+     ],
+     "ex": [
+      "Duplicate of Existing Case Duplicate CRM. Work Order already submitted for signage replacement.",
+      "Duplicate of Existing Case This job has already been submitted"
+     ]
+    },
+    {
+     "q": "BTDT_Traffic Signal_Repair",
+     "total": 2987,
+     "closed": 2987,
+     "bad": 17,
+     "dup": 12.2,
+     "miss": 0.3,
+     "own": 3.1,
+     "inv": 1.4,
+     "noev": 0,
+     "types": [
+      "Traffic Signal Inspection",
+      "Street Light Outages",
+      "Sign Repair",
+      "Requests for Traffic Signal Studies or Reviews"
+     ],
+     "ex": [
+      "Duplicate of Existing Case",
+      "Noted Eversource outage Eversource notified"
+     ]
+    },
+    {
+     "q": "BTDT_Engineering_Request for Traffic Signal Study or Review",
+     "total": 1407,
+     "closed": 1335,
+     "bad": 15.7,
+     "dup": 1.8,
+     "miss": 7.8,
+     "own": 2.1,
+     "inv": 4.3,
+     "noev": 0,
+     "types": [
+      "Traffic Signal Inspection",
+      "Requests for Traffic Signal Studies or Reviews",
+      "New Sign  Crosswalk or Pavement Marking",
+      "Sign Repair"
+     ],
+     "ex": [
+      "Invalid Additional information is needed such as what time of day it's happening. Please call the Boston operator 311. Give additional information to the Boston",
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi"
+     ]
+    },
+    {
+     "q": "BTDT_Engineering_New Sign and Pavement Marking Requests",
+     "total": 1036,
+     "closed": 1034,
+     "bad": 21.3,
+     "dup": 3.2,
+     "miss": 7.4,
+     "own": 3.4,
+     "inv": 7.4,
+     "noev": 0,
+     "types": [
+      "New Sign  Crosswalk or Pavement Marking",
+      "General Traffic Engineering Request",
+      "Sign Repair",
+      "Requests for Traffic Signal Studies or Reviews"
+     ],
+     "ex": [
+      "Duplicate of Existing Case",
+      "Noted Thank you for your message. We will take this location under advisement depending on the safety context and the number of residents who reach out. Please "
+     ]
+    },
+    {
+     "q": "BTDT_Abandoned Bicycle",
+     "total": 870,
+     "closed": 530,
+     "bad": 11.5,
+     "dup": 0.4,
+     "miss": 7.5,
+     "own": 2.5,
+     "inv": 1.1,
+     "noev": 0.2,
+     "types": [
+      "Abandoned Bicycle",
+      "Requests for Street Cleaning",
+      "Transportation General Request",
+      "Parking Enforcement"
+     ],
+     "ex": [
+      "Noted Thank you for reporting this to the Boston Transportation Department. Please resubmit the case with the exact address as well as a picture of the bike and",
+      "Noted This bike is attached to private property so the property owner would need to remove the bike."
+     ]
+    },
+    {
+     "q": "BTDT_Administration",
+     "total": 626,
+     "closed": 617,
+     "bad": 16.2,
+     "dup": 3.6,
+     "miss": 5.2,
+     "own": 1.5,
+     "inv": 6,
+     "noev": 0.2,
+     "types": [
+      "Transportation General Request",
+      "Traffic Signal Inspection",
+      "Requests for Traffic Signal Studies or Reviews",
+      "Sidewalk Repair (Make Safe)"
+     ],
+     "ex": [
+      "Duplicate of Existing Case",
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi"
+     ]
+    },
+    {
+     "q": "BTDT_General Comments",
+     "total": 439,
+     "closed": 437,
+     "bad": 12.4,
+     "dup": 5,
+     "miss": 1.8,
+     "own": 1.4,
+     "inv": 4.1,
+     "noev": 0,
+     "types": [
+      "General Comments For a Program or Policy",
+      "New Sign  Crosswalk or Pavement Marking",
+      "General Comments For An Employee",
+      "General Traffic Engineering Request"
+     ],
+     "ex": [
+      "Duplicate of Existing Case",
+      "Resolved If any individual that has received a parking ticket in Boston believes that the ticket was given for an illegitimate reason they are welcome to appeal"
+     ]
+    },
+    {
+     "q": "BTDT_BostonBikes",
+     "total": 296,
+     "closed": 5,
+     "bad": 60,
+     "dup": 0,
+     "miss": 60,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Traffic Signal Inspection",
+      "Requests for Traffic Signal Studies or Reviews",
+      "Bicycle Issues",
+      "Requests for Street Cleaning"
+     ],
+     "ex": [
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi"
+     ]
+    },
+    {
+     "q": "BTDT_District 02",
+     "total": 256,
+     "closed": 256,
+     "bad": 92.2,
+     "dup": 91.4,
+     "miss": 0,
+     "own": 0.4,
+     "inv": 0.8,
+     "noev": 0,
+     "types": [
+      "Sign Repair",
+      "Missing Sign",
+      "Pavement Marking Inspection",
+      "Request for Pothole Repair"
+     ],
+     "ex": [
+      "Duplicate of Existing Case This case has been processed please refer to case # 101005694301",
+      "Duplicate of Existing Case"
+     ]
+    },
+    {
+     "q": "BTDT_District 01",
+     "total": 248,
+     "closed": 248,
+     "bad": 86.3,
+     "dup": 78.6,
+     "miss": 1.2,
+     "own": 0,
+     "inv": 6.5,
+     "noev": 0,
+     "types": [
+      "Sign Repair",
+      "Missing Sign",
+      "Contractor Complaints",
+      "Parking on Front/Back Yards (Illegal Parking)"
+     ],
+     "ex": [
+      "Duplicate of Existing Case",
+      "Duplicate of Existing Case The following request has already been submitted to the City of Boston. Please follow case #101005734323 for any information relating"
+     ]
+    },
+    {
+     "q": "BTDT_Traffic Signal_Graffiti",
+     "total": 222,
+     "closed": 222,
+     "bad": 1.8,
+     "dup": 1.8,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Traffic Signal Repair",
+      "PWD Graffiti",
+      "Traffic Signal Inspection",
+      "Transportation General Request"
+     ],
+     "ex": [
+      "Duplicate of Existing Case",
+      "Duplicate of Existing Case This case has been processed please refer to case # 101005673231"
+     ]
+    },
+    {
+     "q": "BTDT_District 06",
+     "total": 189,
+     "closed": 189,
+     "bad": 87.3,
+     "dup": 85.7,
+     "miss": 1.6,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Sign Repair",
+      "Missing Sign",
+      "Pavement Marking Inspection",
+      "Contractors Complaint"
+     ],
+     "ex": [
+      "Duplicate of Existing Case",
+      "Duplicate of Existing Case The following request has already been submitted to the City of Boston. Please follow case #101005744725 for any information relating"
+     ]
+    },
+    {
+     "q": "BTDT_Sign Repair",
+     "total": 98,
+     "closed": 98,
+     "bad": 66.3,
+     "dup": 48,
+     "miss": 11.2,
+     "own": 0,
+     "inv": 7.1,
+     "noev": 1,
+     "types": [
+      "Sign Repair",
+      "New Sign  Crosswalk or Pavement Marking",
+      "Missing Sign",
+      "Sidewalk Repair (Make Safe)"
+     ],
+     "ex": [
+      "Duplicate of Existing Case",
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi"
+     ]
+    },
+    {
+     "q": "BTDT_District 03",
+     "total": 69,
+     "closed": 69,
+     "bad": 91.3,
+     "dup": 91.3,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Sign Repair",
+      "Pavement Marking Inspection",
+      "New Sign  Crosswalk or Pavement Marking",
+      "Missing Sign"
+     ],
+     "ex": [
+      "Duplicate of Existing Case This case has been processed please refer to case # 101005527699",
+      "Duplicate of Existing Case This case has been processed please refer to case # 101005652483"
+     ]
+    },
+    {
+     "q": "BTDT_District 05",
+     "total": 69,
+     "closed": 69,
+     "bad": 87,
+     "dup": 82.6,
+     "miss": 1.4,
+     "own": 2.9,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Sign Repair",
+      "Pavement Marking Inspection",
+      "Missing Sign",
+      "Work w/out Permit"
+     ],
+     "ex": [
+      "Duplicate of Existing Case",
+      "Duplicate of Existing Case Duplicate CRM. Work Order already submitted for signage replacement."
+     ]
+    },
+    {
+     "q": "BTDT_Parking Lot_Municipal Parking Lot Complaints",
+     "total": 57,
+     "closed": 56,
+     "bad": 0,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Requests for Street Cleaning",
+      "Municipal Parking Lot Complaints",
+      "Ground Maintenance",
+      "Tree Maintenance Requests"
+     ],
+     "ex": []
+    },
+    {
+     "q": "BTDT_Broken Meter Complaints",
+     "total": 56,
+     "closed": 3,
+     "bad": 100,
+     "dup": 0,
+     "miss": 66.7,
+     "own": 0,
+     "inv": 33.3,
+     "noev": 0,
+     "types": [
+      "Parking Meter Repairs",
+      "PWD Graffiti",
+      "Traffic Signal Repair",
+      "Parking Enforcement"
+     ],
+     "ex": [
+      "Noted This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submit "
+     ]
+    },
+    {
+     "q": "BTDT_District 04",
+     "total": 47,
+     "closed": 47,
+     "bad": 87.2,
+     "dup": 87.2,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Sign Repair",
+      "Missing Sign",
+      "Traffic Signal Repair",
+      "Requests for Street Cleaning"
+     ],
+     "ex": [
+      "Duplicate of Existing Case",
+      "Duplicate of Existing Case The following request has already been submitted to the City of Boston. Please follow case # 101005736272 for any information relatin"
+     ]
+    },
+    {
+     "q": "BTDT_Permits & Special Events",
+     "total": 43,
+     "closed": 15,
+     "bad": 0,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Parking Enforcement",
+      "Contractor Complaints",
+      "Sign Repair",
+      "Work Hours-Loud Noise Complaints"
+     ],
+     "ex": []
+    },
+    {
+     "q": "BTDT_OPC_Phone Bank Service",
+     "total": 20,
+     "closed": 20,
+     "bad": 0,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Phone Bank Service Inquiry",
+      "General Comments For a Program or Policy",
+      "Transportation General Request",
+      "General Comments For An Employee"
+     ],
+     "ex": []
+    },
+    {
+     "q": "BTDT_OPC_Walk-In Service",
+     "total": 15,
+     "closed": 15,
+     "bad": 20,
+     "dup": 0,
+     "miss": 20,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "General Comments For An Employee",
+      "General Comments For a Program or Policy",
+      "Walk-In Service Inquiry",
+      "Illegal Posting of Signs"
+     ],
+     "ex": [
+      "Noted Hi The moving permit department will be reaching out to you. They need more information. Thank you.",
+      "Noted Hi I will be reaching out to you for more information."
+     ]
+    },
+    {
+     "q": "BTDT_Parking Lot_Valet Parking Problems",
+     "total": 8,
+     "closed": 0,
+     "bad": 0,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Valet Parking Problems",
+      "New Sign  Crosswalk or Pavement Marking"
+     ],
+     "ex": []
+    },
+    {
+     "q": "BTDT_Parking Lot_PrivateParkingLotComplaints",
+     "total": 7,
+     "closed": 1,
+     "bad": 100,
+     "dup": 0,
+     "miss": 100,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Private Parking Lot Complaints",
+      "Space Savers",
+      "General Comments For a Program or Policy"
+     ],
+     "ex": [
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi"
+     ]
+    },
+    {
+     "q": "BTDT_Pavement Marking_Maintenance",
+     "total": 3,
+     "closed": 3,
+     "bad": 0,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Sidewalk Repair (Make Safe)",
+      "New Sign  Crosswalk or Pavement Marking"
+     ],
+     "ex": []
+    },
+    {
+     "q": "BTDT_Sign Shop Clerical",
+     "total": 2,
+     "closed": 2,
+     "bad": 0,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "General Comments For An Employee",
+      "Parking Enforcement"
+     ],
+     "ex": []
+    },
+    {
+     "q": "BTDT_Traffic Signal_Knock Downs/Contractor",
+     "total": 2,
+     "closed": 2,
+     "bad": 0,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Sign Repair",
+      "Traffic Signal Inspection"
+     ],
+     "ex": []
+    }
+   ],
+   "BWSC": [
+    {
+     "q": "BWSC_All Cases",
+     "total": 2766,
+     "closed": 1171,
+     "bad": 14.2,
+     "dup": 1.6,
+     "miss": 5.4,
+     "own": 2,
+     "inv": 5.2,
+     "noev": 0.3,
+     "types": [
+      "Request for Pothole Repair",
+      "Catchbasin",
+      "BWSC General Request",
+      "Fire Hydrant"
+     ],
+     "ex": [
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi",
+      "Noted This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submit "
+     ]
+    },
+    {
+     "q": "BWSC_Pothole",
+     "total": 640,
+     "closed": 459,
+     "bad": 3.3,
+     "dup": 0.4,
+     "miss": 0.7,
+     "own": 1.7,
+     "inv": 0.4,
+     "noev": 0,
+     "types": [
+      "Request for Pothole Repair",
+      "Utility Casting Repair",
+      "BWSC Pothole",
+      "Sidewalk Repair (Make Safe)"
+     ],
+     "ex": [
+      "Referred to External Agency",
+      "Resolved Could not locate pothole. Did not find anything to patch at this location. 2/14"
+     ]
+    }
+   ],
+   "DISB": [
+    {
+     "q": "DISB_HP Sign",
+     "total": 23,
+     "closed": 23,
+     "bad": 34.8,
+     "dup": 13,
+     "miss": 21.7,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Transportation General Request",
+      "Sign Repair",
+      "New Sign  Crosswalk or Pavement Marking",
+      "Public Works General Request"
+     ],
+     "ex": [
+      "Duplicate of Existing Case",
+      "Resolved Thank you for contacting the City of Boston Disability Commission. The accessible parking space at/near your residence will be removed in the coming we"
+     ]
+    },
+    {
+     "q": "DISB_General_Request",
+     "total": 11,
+     "closed": 11,
+     "bad": 27.3,
+     "dup": 9.1,
+     "miss": 0,
+     "own": 18.2,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "New Sign  Crosswalk or Pavement Marking",
+      "General Comments For a Program or Policy",
+      "Sign Repair",
+      "Sidewalk Repair (Make Safe)"
+     ],
+     "ex": [
+      "Noted Thank you for contacting the City of Boston Disability Commission. Your concern has been forwarded to the ADA Curb Ramps team for further action. Please r",
+      "Duplicate of Existing Case"
+     ]
+    }
+   ],
+   "DND": [
+    {
+     "q": "DND_General",
+     "total": 43,
+     "closed": 26,
+     "bad": 3.8,
+     "dup": 0,
+     "miss": 0,
+     "own": 3.8,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Tree Maintenance Requests",
+      "Ground Maintenance",
+      "Improper Storage of Trash (Barrels)",
+      "Trash on Vacant Lot"
+     ],
+     "ex": [
+      "Referred to External Agency Code enforcement"
+     ]
+    }
+   ],
+   "ECON": [
+    {
+     "q": "ECON_OutdoorDining",
+     "total": 3,
+     "closed": 3,
+     "bad": 0,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Improper Storage of Trash (Barrels)",
+      "Parking Enforcement",
+      "Requests for Street Cleaning"
+     ],
+     "ex": []
+    }
+   ],
+   "GEN": [
+    {
+     "q": "GEN_Needle_Pickup",
+     "total": 10747,
+     "closed": 10747,
+     "bad": 10.7,
+     "dup": 3.4,
+     "miss": 6.7,
+     "own": 0.1,
+     "inv": 0.5,
+     "noev": 1.9,
+     "types": [
+      "Needle Pickup",
+      "Requests for Street Cleaning",
+      "Pick up Dead Animal",
+      "Ground Maintenance"
+     ],
+     "ex": [
+      "Resolved No needles found. CD",
+      "Resolved Unable to locate dw"
+     ]
+    }
+   ],
+   "GRNi": [
+    {
+     "q": "GRNi_Green_Infrastructure",
+     "total": 4,
+     "closed": 4,
+     "bad": 50,
+     "dup": 50,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Sign Repair",
+      "Requests for Street Cleaning",
+      "Equipment Repair"
+     ],
+     "ex": [
+      "Duplicate of Existing Case Duplicate of an existing field sheet",
+      "Duplicate of Existing Case Duplicate of existing case # 5043801 which has been processed to replace the knocked down pole with signs at given location ."
+     ]
+    }
+   ],
+   "INFO": [
+    {
+     "q": "INFO01_GenericeFormforOtherServiceRequestTypes",
+     "total": 6085,
+     "closed": 4065,
+     "bad": 37.3,
+     "dup": 2.8,
+     "miss": 21.4,
+     "own": 9.3,
+     "inv": 4.2,
+     "noev": 0,
+     "types": [
+      "Animal Generic Request",
+      "Loud Parties/Music/People",
+      "Request for Pothole Repair",
+      "Requests for Street Cleaning"
+     ],
+     "ex": [
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi",
+      "Noted This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submit "
+     ]
+    },
+    {
+     "q": "INFO_Mass DCR",
+     "total": 2483,
+     "closed": 491,
+     "bad": 94.1,
+     "dup": 2,
+     "miss": 4.7,
+     "own": 92.5,
+     "inv": 0,
+     "noev": 0.4,
+     "types": [
+      "Ground Maintenance",
+      "Requests for Street Cleaning",
+      "Request for Pothole Repair",
+      "Traffic Signal Inspection"
+     ],
+     "ex": [
+      "Referred to External Agency",
+      "Duplicate of Existing Case Duplicate of 101005372810"
+     ]
+    },
+    {
+     "q": "INFO_Reallocation From Dept",
+     "total": 2015,
+     "closed": 2006,
+     "bad": 39.2,
+     "dup": 10.7,
+     "miss": 4.7,
+     "own": 23.2,
+     "inv": 1.8,
+     "noev": 4.1,
+     "types": [
+      "Requests for Street Cleaning",
+      "Request for Pothole Repair",
+      "Pick up Dead Animal",
+      "Traffic Signal Inspection"
+     ],
+     "ex": [
+      "Per Public Works: Nothing found at said location need picture with context please",
+      "Per Public Works: Private property"
+     ]
+    },
+    {
+     "q": "INFO_Mass DOT",
+     "total": 744,
+     "closed": 47,
+     "bad": 70.2,
+     "dup": 10.6,
+     "miss": 0,
+     "own": 66,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Requests for Street Cleaning",
+      "Request for Pothole Repair",
+      "Traffic Signal Inspection",
+      "Sidewalk Repair (Make Safe)"
+     ],
+     "ex": [
+      "Referred to External Agency reported to MassDOT",
+      "Duplicate of Existing Case Duplicate of 101005564074 MassDOT has been notified."
+     ]
+    },
+    {
+     "q": "INFO_MBTA",
+     "total": 705,
+     "closed": 74,
+     "bad": 78.4,
+     "dup": 0,
+     "miss": 0,
+     "own": 78.4,
+     "inv": 0,
+     "noev": 1.4,
+     "types": [
+      "Requests for Street Cleaning",
+      "Sign Repair",
+      "Request for Pothole Repair",
+      "Pick up Dead Animal"
+     ],
+     "ex": [
+      "Referred to External Agency reported to MBTA",
+      "per MBTA. If the issue persists please resubmit with photo showing the area in question. Thank you."
+     ]
+    },
+    {
+     "q": "INFO_Encampments",
+     "total": 261,
+     "closed": 207,
+     "bad": 6.3,
+     "dup": 0.5,
+     "miss": 1,
+     "own": 3.4,
+     "inv": 1.4,
+     "noev": 0.5,
+     "types": [
+      "Requests for Street Cleaning",
+      "Ground Maintenance",
+      "Improper Storage of Trash (Barrels)",
+      "Poor Conditions of Property"
+     ],
+     "ex": [
+      "Referred to External Agency CRT states: Forwarded to MADOT. Please close the case. -MN",
+      "Referred to External Agency This information was shared with the MBTA. Thank you."
+     ]
+    },
+    {
+     "q": "INFO_Eversource",
+     "total": 148,
+     "closed": 17,
+     "bad": 64.7,
+     "dup": 0,
+     "miss": 0,
+     "own": 64.7,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Request for Pothole Repair",
+      "Street Light Outages",
+      "Tree Maintenance Requests",
+      "PWD Graffiti"
+     ],
+     "ex": [
+      "Referred to External Agency this has been completed K Curran Eversource",
+      "Referred to External Agency We did have a crew go out and based on the completion results the customer will need a new service to replace the old one. Their ele"
+     ]
+    },
+    {
+     "q": "INFO_Massport",
+     "total": 110,
+     "closed": 23,
+     "bad": 78.3,
+     "dup": 13,
+     "miss": 0,
+     "own": 65.2,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Pick up Dead Animal",
+      "Equipment Repair",
+      "Ground Maintenance",
+      "Requests for Street Cleaning"
+     ],
+     "ex": [
+      "Referred to External Agency",
+      "Duplicate of Existing Case"
+     ]
+    },
+    {
+     "q": "INFO_BPHC",
+     "total": 96,
+     "closed": 16,
+     "bad": 75,
+     "dup": 6.2,
+     "miss": 0,
+     "own": 68.8,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Requests for Street Cleaning",
+      "Pigeon Infestation",
+      "Abandoned Bicycle",
+      "Ground Maintenance"
+     ],
+     "ex": [
+      "Referred to External Agency",
+      "Referred to External Agency Referred to city of Boston Animal Control."
+     ]
+    },
+    {
+     "q": "INFO_Low Hanging Wire",
+     "total": 78,
+     "closed": 16,
+     "bad": 93.8,
+     "dup": 12.5,
+     "miss": 0,
+     "own": 81.2,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Tree Maintenance Requests",
+      "Street Light Outages",
+      "Sign Repair",
+      "Sidewalk Repair (Make Safe)"
+     ],
+     "ex": [
+      "Duplicate of Existing Case Broadband & Cable Office is working with telecomms to resolve based on earlier report from this location",
+      "Referred to External Agency Eversource contractor trimmed May 17 D White Eversource"
+     ]
+    },
+    {
+     "q": "INFO_HumanWaste",
+     "total": 62,
+     "closed": 11,
+     "bad": 27.3,
+     "dup": 0,
+     "miss": 0,
+     "own": 27.3,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Requests for Street Cleaning",
+      "Pick up Dead Animal",
+      "Needle Pickup",
+      "Ground Maintenance"
+     ],
+     "ex": [
+      "Noted Per Dcr on July 5th Thank you for sending this along to us. I have reported the matter to our Operations staff for the area so they can remove. BH DCR Com",
+      "Referred to External Agency reported to MBTA"
+     ]
+    },
+    {
+     "q": "INFO_Homeless Issue",
+     "total": 55,
+     "closed": 4,
+     "bad": 0,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Requests for Street Cleaning",
+      "Parking Enforcement",
+      "Poor Conditions of Property",
+      "Public Works General Request"
+     ],
+     "ex": []
+    },
+    {
+     "q": "INFO_Unsheltered_Persons",
+     "total": 47,
+     "closed": 42,
+     "bad": 11.9,
+     "dup": 0,
+     "miss": 0,
+     "own": 2.4,
+     "inv": 9.5,
+     "noev": 0,
+     "types": [
+      "Requests for Street Cleaning",
+      "Abandoned Vehicles",
+      "Pick up Dead Animal",
+      "Needle Pickup"
+     ],
+     "ex": [
+      "Invalid Invalid case submission.",
+      "Referred to External Agency Perkins William 8:49?AM (8 hours ago) to Kellie Yailka Stephen 311reply@boston.gov streetoutreach@pd.boston.gov coordinated.response"
+     ]
+    },
+    {
+     "q": "INFO03_Mobile \"Other\" Requests",
+     "total": 44,
+     "closed": 44,
+     "bad": 52.3,
+     "dup": 20.5,
+     "miss": 0,
+     "own": 0,
+     "inv": 31.8,
+     "noev": 0,
+     "types": [
+      "Student Move-in Issues",
+      "Schedule a Bulk Item Pickup"
+     ],
+     "ex": [
+      "Invalid Thank you for contacting Boston 311 Mattress recycling can be scheduled on the city's website boston.gov On the homepage click on the \"Mattress Recyclin",
+      "Invalid Thank you for contacting Boston 311 Mattress/Box Spring recycling can be scheduled on the city's website boston.gov On the homepage click on the \"Mattre"
+     ]
+    },
+    {
+     "q": "INFO_JC Decaux",
+     "total": 23,
+     "closed": 16,
+     "bad": 50,
+     "dup": 12.5,
+     "miss": 0,
+     "own": 37.5,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Requests for Street Cleaning",
+      "Equipment Repair",
+      "Sign Repair",
+      "Public Works General Request"
+     ],
+     "ex": [
+      "Duplicate of Existing Case This is a duplicate ticket. The glass has been cleaned up. Thank you Camille",
+      "Referred to External Agency"
+     ]
+    },
+    {
+     "q": "INFO_USPS Issues",
+     "total": 13,
+     "closed": 10,
+     "bad": 90,
+     "dup": 0,
+     "miss": 0,
+     "own": 90,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "PWD Graffiti",
+      "Requests for Street Cleaning",
+      "Sidewalk Repair (Make Safe)",
+      "CE Collection"
+     ],
+     "ex": [
+      "Referred to External Agency USPS owns and maintains all mailboxes in the City of Boston. We have referred your request to the contacts at the USPS to respond an",
+      "Referred to External Agency We referred this report to the USPS. Thank you for reporting this."
+     ]
+    },
+    {
+     "q": "INFO_Mayors Policy Office",
+     "total": 7,
+     "closed": 0,
+     "bad": 0,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "General Comments For a Program or Policy",
+      "Public Works General Request"
+     ],
+     "ex": []
+    },
+    {
+     "q": "INFO_Down Wire",
+     "total": 5,
+     "closed": 0,
+     "bad": 0,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Parks Lighting/Electrical Issues",
+      "Tree Maintenance Requests",
+      "Sidewalk Repair (Make Safe)"
+     ],
+     "ex": []
+    },
+    {
+     "q": "INFO02_SelfServiceGenericeFormforOtherServiceRequestTypes",
+     "total": 2,
+     "closed": 2,
+     "bad": 0,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Equipment Repair",
+      "Pick up Dead Animal"
+     ],
+     "ex": []
+    }
+   ],
+   "ISD": [
+    {
+     "q": "ISD_Environmental Services (INTERNAL)",
+     "total": 6046,
+     "closed": 6046,
+     "bad": 8.4,
+     "dup": 4,
+     "miss": 1.6,
+     "own": 1.3,
+     "inv": 1.6,
+     "noev": 2,
+     "types": [
+      "Rodent Activity",
+      "Pest Infestation - Residential",
+      "Illegal Auto Body Shop",
+      "Abandoned Building"
+     ],
+     "ex": [
+      "Duplicate of Existing Case",
+      "Noted Rodent activity not found. Investigating area will continue monitoring."
+     ]
+    },
+    {
+     "q": "ISD_Housing (INTERNAL)",
+     "total": 5888,
+     "closed": 4354,
+     "bad": 28.6,
+     "dup": 6.9,
+     "miss": 1.4,
+     "own": 0.6,
+     "inv": 19.8,
+     "noev": 0.1,
+     "types": [
+      "Unsatisfactory Living Conditions",
+      "Heat - Excessive  Insufficient",
+      "Maintenance Complaint - Residential",
+      "Pest Infestation - Residential"
+     ],
+     "ex": [
+      "Duplicate of Existing Case",
+      "Invalid No contact info provided. IC"
+     ]
+    },
+    {
+     "q": "ISD_Building (INTERNAL)",
+     "total": 4432,
+     "closed": 4322,
+     "bad": 14.1,
+     "dup": 2.8,
+     "miss": 2.1,
+     "own": 1.7,
+     "inv": 7.5,
+     "noev": 2,
+     "types": [
+      "Work w/out Permit",
+      "Contractors Complaint",
+      "Working Beyond Hours",
+      "Building Inspection Request"
+     ],
+     "ex": [
+      "Resolved No violation found",
+      "Invalid Duplicate complaint"
+     ]
+    },
+    {
+     "q": "ISD_Health (INTERNAL)",
+     "total": 1289,
+     "closed": 1287,
+     "bad": 13.8,
+     "dup": 3.1,
+     "miss": 5.4,
+     "own": 0.4,
+     "inv": 5,
+     "noev": 5.2,
+     "types": [
+      "Unsanitary Conditions - Establishment",
+      "Food Alert - Confirmed",
+      "Unsanitary Conditions - Food",
+      "Food Alert - Unconfirmed"
+     ],
+     "ex": [
+      "Invalid Not enough information",
+      "Invalid Duplicate complaint"
+     ]
+    },
+    {
+     "q": "ISD_Electrical",
+     "total": 500,
+     "closed": 500,
+     "bad": 41,
+     "dup": 2.2,
+     "miss": 0.4,
+     "own": 0,
+     "inv": 38.4,
+     "noev": 0,
+     "types": [
+      "Electrical",
+      "Building Inspection Request",
+      "Contractors Complaint",
+      "Unsafe Dangerous Conditions"
+     ],
+     "ex": [
+      "Invalid case invalid refer to case number 101005378391",
+      "Invalid system error refer to case # 101005468178"
+     ]
+    },
+    {
+     "q": "ISD_Housing_ShortTermRental",
+     "total": 206,
+     "closed": 206,
+     "bad": 33,
+     "dup": 2.4,
+     "miss": 18.4,
+     "own": 0,
+     "inv": 12.1,
+     "noev": 2.9,
+     "types": [
+      "Short Term Rental"
+     ],
+     "ex": [
+      "Resolved Insufficient evidence to proceed.",
+      "Duplicate of Existing Case duplicate case"
+     ]
+    },
+    {
+     "q": "ISD_Administrative",
+     "total": 151,
+     "closed": 151,
+     "bad": 90.1,
+     "dup": 66.9,
+     "miss": 2.6,
+     "own": 16.6,
+     "inv": 4,
+     "noev": 0,
+     "types": [
+      "Sidewalk Repair (Make Safe)",
+      "Contractor Complaints",
+      "Requests for Street Cleaning",
+      "Parking Enforcement"
+     ],
+     "ex": [
+      "Referred to External Agency public works",
+      "Duplicate of Existing Case new case number 101005358431"
+     ]
+    },
+    {
+     "q": "ISD_Plumbing",
+     "total": 70,
+     "closed": 70,
+     "bad": 4.3,
+     "dup": 0,
+     "miss": 0,
+     "own": 1.4,
+     "inv": 2.9,
+     "noev": 0,
+     "types": [
+      "Plumbing",
+      "Work w/out Permit",
+      "Sewage/Septic Back-Up",
+      "Building Inspection Request"
+     ],
+     "ex": [
+      "Referred to External Agency Referred to BHA maintenance"
+     ]
+    },
+    {
+     "q": "ISD_Weights and Measures (INTERNAL)",
+     "total": 42,
+     "closed": 42,
+     "bad": 26.2,
+     "dup": 9.5,
+     "miss": 9.5,
+     "own": 0,
+     "inv": 7.1,
+     "noev": 0,
+     "types": [
+      "Scanning Overcharge",
+      "Unit Pricing Wrong/Missing",
+      "Item Price Missing",
+      "No Price on Gas/Wrong Price"
+     ],
+     "ex": [
+      "Duplicate of Existing Case",
+      "Noted we tried reaching out to the consumer twice we need more information. Like how did he know there was no hot water and how much he was reimbursed."
+     ]
+    }
+   ],
+   "ONS": [
+    {
+     "q": "ONS_General",
+     "total": 13,
+     "closed": 1,
+     "bad": 0,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "New Sign  Crosswalk or Pavement Marking",
+      "Sign Repair",
+      "Abandoned Vehicles",
+      "Request for Pothole Repair"
+     ],
+     "ex": []
+    },
+    {
+     "q": "ONS_BackBay_Fenway_MissionHill",
+     "total": 7,
+     "closed": 1,
+     "bad": 0,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Requests for Street Cleaning",
+      "Contractor Complaints",
+      "Litter Basket Maintenance",
+      "New Sign  Crosswalk or Pavement Marking"
+     ],
+     "ex": []
+    },
+    {
+     "q": "ONS_SouthBoston",
+     "total": 7,
+     "closed": 0,
+     "bad": 0,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Sign Repair",
+      "General Lighting Request",
+      "Requests for Street Cleaning",
+      "New Sign  Crosswalk or Pavement Marking"
+     ],
+     "ex": []
+    },
+    {
+     "q": "ONS_SouthDorchester",
+     "total": 7,
+     "closed": 2,
+     "bad": 50,
+     "dup": 50,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Sign Repair",
+      "Public Works General Request",
+      "Equipment Repair",
+      "New Sign  Crosswalk or Pavement Marking"
+     ],
+     "ex": [
+      "Duplicate of Existing Case Per ONS: Duplicate case. This is in the property management queue."
+     ]
+    },
+    {
+     "q": "ONS_EastBoston",
+     "total": 6,
+     "closed": 1,
+     "bad": 0,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "New Sign  Crosswalk or Pavement Marking",
+      "Requests for Street Cleaning",
+      "Improper Storage of Trash (Barrels)",
+      "Sign Repair"
+     ],
+     "ex": []
+    },
+    {
+     "q": "ONS_Mattapan",
+     "total": 5,
+     "closed": 0,
+     "bad": 0,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "New Sign  Crosswalk or Pavement Marking",
+      "Public Works General Request",
+      "General Comments For a Program or Policy"
+     ],
+     "ex": []
+    },
+    {
+     "q": "ONS_MidDorchester",
+     "total": 5,
+     "closed": 0,
+     "bad": 0,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Requests for Street Cleaning",
+      "General Traffic Engineering Request",
+      "New Sign  Crosswalk or Pavement Marking",
+      "Sign Repair"
+     ],
+     "ex": []
+    },
+    {
+     "q": "ONS_NorthEnd_WaterFront_WestEnd",
+     "total": 5,
+     "closed": 0,
+     "bad": 0,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Sign Repair",
+      "Public Works General Request",
+      "New Sign  Crosswalk or Pavement Marking",
+      "Requests for Street Cleaning"
+     ],
+     "ex": []
+    },
+    {
+     "q": "ONS_Roxbury",
+     "total": 5,
+     "closed": 1,
+     "bad": 0,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Illegal Vending",
+      "Working Beyond Hours",
+      "General Comments For a Program or Policy",
+      "Transportation General Request"
+     ],
+     "ex": []
+    },
+    {
+     "q": "ONS_Charlestown",
+     "total": 3,
+     "closed": 3,
+     "bad": 0,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Requests for Street Cleaning",
+      "Public Works General Request"
+     ],
+     "ex": []
+    },
+    {
+     "q": "ONS_HydePark",
+     "total": 3,
+     "closed": 0,
+     "bad": 0,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Public Works General Request",
+      "Requests for Street Cleaning"
+     ],
+     "ex": []
+    },
+    {
+     "q": "ONS_JamaicaPlain",
+     "total": 3,
+     "closed": 2,
+     "bad": 50,
+     "dup": 0,
+     "miss": 0,
+     "own": 50,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Parks General Request",
+      "General Comments For a Program or Policy",
+      "Traffic Signal Repair"
+     ],
+     "ex": [
+      "Resolved Forwarded to property management Thanks! Caroline"
+     ]
+    },
+    {
+     "q": "ONS_Allston_Brighton",
+     "total": 2,
+     "closed": 0,
+     "bad": 0,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Sign Repair",
+      "Public Works General Request"
+     ],
+     "ex": []
+    },
+    {
+     "q": "ONS_Roslindale",
+     "total": 2,
+     "closed": 0,
+     "bad": 0,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Parking Enforcement",
+      "Requests for Traffic Signal Studies or Reviews"
+     ],
+     "ex": []
+    },
+    {
+     "q": "ONS_WestRoxbury",
+     "total": 2,
+     "closed": 0,
+     "bad": 0,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Request for Pothole Repair",
+      "New Sign  Crosswalk or Pavement Marking"
+     ],
+     "ex": []
+    }
+   ],
+   "PARK": [
+    {
+     "q": "PARK_Tree Maintenance Request",
+     "total": 7310,
+     "closed": 7308,
+     "bad": 12,
+     "dup": 7,
+     "miss": 0.3,
+     "own": 3.3,
+     "inv": 1.5,
+     "noev": 0.1,
+     "types": [
+      "Tree Maintenance Requests",
+      "New Tree Requests",
+      "Sidewalk Repair (Make Safe)",
+      "Requests for Street Cleaning"
+     ],
+     "ex": [
+      "Noted Duplicate of existing case",
+      "Invalid No request details in case"
+     ]
+    },
+    {
+     "q": "PARK_New Tree Requests",
+     "total": 2414,
+     "closed": 2340,
+     "bad": 14.3,
+     "dup": 11.1,
+     "miss": 0.5,
+     "own": 1.1,
+     "inv": 1.8,
+     "noev": 0,
+     "types": [
+      "New Tree Requests",
+      "Tree Maintenance Requests",
+      "Sidewalk Repair (Make Safe)",
+      "General Comments For a Program or Policy"
+     ],
+     "ex": [
+      "Invalid eform did not populate.",
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi"
+     ]
+    },
+    {
+     "q": "PARK_Tree Emergencies",
+     "total": 1617,
+     "closed": 1617,
+     "bad": 22.9,
+     "dup": 15,
+     "miss": 2.5,
+     "own": 4.2,
+     "inv": 1.3,
+     "noev": 4.2,
+     "types": [
+      "Tree Maintenance Requests",
+      "Tree Emergencies",
+      "Requests for Street Cleaning",
+      "New Tree Requests"
+     ],
+     "ex": [
+      "Resolved Nothing found at this location",
+      "Resolved Nothing found at this location need more information"
+     ]
+    },
+    {
+     "q": "PARK_Maintenance_Region 1",
+     "total": 1134,
+     "closed": 1134,
+     "bad": 1.7,
+     "dup": 0.4,
+     "miss": 0.8,
+     "own": 0.4,
+     "inv": 0,
+     "noev": 0.7,
+     "types": [
+      "Ground Maintenance",
+      "Pick up Dead Animal",
+      "Empty Litter Basket",
+      "Requests for Street Cleaning"
+     ],
+     "ex": [
+      "Noted Searched for rat not found",
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi"
+     ]
+    },
+    {
+     "q": "PARK_Maintenance_Region 6",
+     "total": 681,
+     "closed": 681,
+     "bad": 2.1,
+     "dup": 0.6,
+     "miss": 1.5,
+     "own": 0,
+     "inv": 0,
+     "noev": 0.6,
+     "types": [
+      "Ground Maintenance",
+      "Empty Litter Basket",
+      "Pick up Dead Animal",
+      "Equipment Repair"
+     ],
+     "ex": [
+      "Resolved Duplicate of case #101005406194",
+      "Noted Walked park and could not locate Debris"
+     ]
+    },
+    {
+     "q": "PARK_Maintenance_Region 2",
+     "total": 653,
+     "closed": 653,
+     "bad": 1.7,
+     "dup": 0.8,
+     "miss": 0.3,
+     "own": 0.6,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Ground Maintenance",
+      "Empty Litter Basket",
+      "Pick up Dead Animal",
+      "Requests for Street Cleaning"
+     ],
+     "ex": [
+      "Duplicate of Existing Case this case has already been submitted twice",
+      "Duplicate of Existing Case this case has already been submitted"
+     ]
+    },
+    {
+     "q": "PARK_Maintenance_Region 3",
+     "total": 527,
+     "closed": 527,
+     "bad": 2.8,
+     "dup": 1.1,
+     "miss": 0.6,
+     "own": 0.6,
+     "inv": 0.6,
+     "noev": 5.3,
+     "types": [
+      "Ground Maintenance",
+      "Pick up Dead Animal",
+      "Equipment Repair",
+      "Requests for Street Cleaning"
+     ],
+     "ex": [
+      "Resolved Inspected the area nothing found",
+      "Noted Inspected the area nothing found"
+     ]
+    },
+    {
+     "q": "PARK_Maintenance_Trades",
+     "total": 521,
+     "closed": 516,
+     "bad": 19.4,
+     "dup": 12.8,
+     "miss": 1.6,
+     "own": 3.1,
+     "inv": 3.3,
+     "noev": 0,
+     "types": [
+      "Equipment Repair",
+      "Sidewalk Repair (Make Safe)",
+      "Ground Maintenance",
+      "Parks General Request"
+     ],
+     "ex": [
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi",
+      "Duplicate of Existing Case Issue being handled by DCR under case #5871114"
+     ]
+    },
+    {
+     "q": "PARK_Carpentry",
+     "total": 468,
+     "closed": 468,
+     "bad": 4.5,
+     "dup": 3.2,
+     "miss": 0.9,
+     "own": 0.2,
+     "inv": 0.4,
+     "noev": 0,
+     "types": [
+      "Equipment Repair",
+      "Ground Maintenance",
+      "Sign Repair",
+      "Parks General Request"
+     ],
+     "ex": [
+      "Resolved Could not locate any benches at that address",
+      "Duplicate of Existing Case Duplicate of 101005386645. Case has been forwarded to Design & Construction Division for contracted repair/replacement."
+     ]
+    },
+    {
+     "q": "PARK_Maintenance_Region 4",
+     "total": 461,
+     "closed": 461,
+     "bad": 2.8,
+     "dup": 0.9,
+     "miss": 0.9,
+     "own": 0.4,
+     "inv": 0.7,
+     "noev": 1.7,
+     "types": [
+      "Ground Maintenance",
+      "Pick up Dead Animal",
+      "Equipment Repair",
+      "Requests for Street Cleaning"
+     ],
+     "ex": [
+      "Resolved Nothing found at time of inspection",
+      "Noted After inspection we couldn't find anything"
+     ]
+    },
+    {
+     "q": "PARK_Plumbing",
+     "total": 425,
+     "closed": 425,
+     "bad": 3.8,
+     "dup": 2.6,
+     "miss": 0.5,
+     "own": 0.2,
+     "inv": 0.5,
+     "noev": 0,
+     "types": [
+      "Equipment Repair",
+      "Ground Maintenance",
+      "Parks General Request",
+      "Sidewalk Repair (Make Safe)"
+     ],
+     "ex": [
+      "Resolved Duplicate of case #101005486539. Fountains are currently in the process of being turned on.",
+      "Noted This is not a Boston city park. Please contact DCR"
+     ]
+    },
+    {
+     "q": "PARK_Graffiti",
+     "total": 399,
+     "closed": 399,
+     "bad": 4,
+     "dup": 1.5,
+     "miss": 1.8,
+     "own": 0,
+     "inv": 0.8,
+     "noev": 0,
+     "types": [
+      "Equipment Repair",
+      "Ground Maintenance",
+      "PWD Graffiti",
+      "Requests for Street Cleaning"
+     ],
+     "ex": [
+      "Noted Been looking for it can't find it",
+      "Resolved Duplicate of case #101005384058"
+     ]
+    },
+    {
+     "q": "PARK_Maintenance_Region 5",
+     "total": 358,
+     "closed": 358,
+     "bad": 3.4,
+     "dup": 1.7,
+     "miss": 1.1,
+     "own": 0.3,
+     "inv": 0.3,
+     "noev": 0.3,
+     "types": [
+      "Ground Maintenance",
+      "Pick up Dead Animal",
+      "Empty Litter Basket",
+      "Requests for Street Cleaning"
+     ],
+     "ex": [
+      "Resolved Nothing found. Please resubmit case with more info and location if we missed it.",
+      "Duplicate of Existing Case"
+     ]
+    },
+    {
+     "q": "PARK_Park Improvement Requests",
+     "total": 358,
+     "closed": 339,
+     "bad": 21.2,
+     "dup": 13.3,
+     "miss": 3.5,
+     "own": 0.6,
+     "inv": 3.8,
+     "noev": 0,
+     "types": [
+      "Park Improvement Requests",
+      "Equipment Repair",
+      "Ground Maintenance",
+      "Sidewalk Repair (Make Safe)"
+     ],
+     "ex": [
+      "Duplicate of Existing Case Duplicate of case# 101005811918. Replacement signs were ordered today.",
+      "Noted This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submit "
+     ]
+    },
+    {
+     "q": "PARK_Welding",
+     "total": 328,
+     "closed": 327,
+     "bad": 2.1,
+     "dup": 2.1,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Equipment Repair",
+      "Ground Maintenance",
+      "Sidewalk Repair (Make Safe)",
+      "Improper Storage of Trash (Barrels)"
+     ],
+     "ex": [
+      "Resolved Duplicate of case #101005329900",
+      "Duplicate of Existing Case same as #5454056"
+     ]
+    },
+    {
+     "q": "PARK_Maintenance_Lighting Electrical",
+     "total": 245,
+     "closed": 245,
+     "bad": 13.5,
+     "dup": 7.3,
+     "miss": 2.9,
+     "own": 0,
+     "inv": 3.3,
+     "noev": 0,
+     "types": [
+      "Parks Lighting/Electrical Issues",
+      "Equipment Repair",
+      "Street Light Outages",
+      "Ground Maintenance"
+     ],
+     "ex": [
+      "Noted This is a duplicate work order",
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi"
+     ]
+    },
+    {
+     "q": "PARK_Tree in Park",
+     "total": 231,
+     "closed": 211,
+     "bad": 18,
+     "dup": 13.3,
+     "miss": 1.4,
+     "own": 1.9,
+     "inv": 1.4,
+     "noev": 0.5,
+     "types": [
+      "Tree Maintenance Requests",
+      "Tree in Park",
+      "New Tree Requests",
+      "Ground Maintenance"
+     ],
+     "ex": [
+      "Noted The removal of the dead trees as well as their replacement will be part of the upcoming Capital Construction Improvement project of the MARY ELLEN WELCH G",
+      "Noted Duplicate of existing case #101005490640 for the same request."
+     ]
+    },
+    {
+     "q": "PARK_Maintenance_Ground Maintenance",
+     "total": 212,
+     "closed": 212,
+     "bad": 40.1,
+     "dup": 9,
+     "miss": 4.7,
+     "own": 0.5,
+     "inv": 25.9,
+     "noev": 0,
+     "types": [
+      "Ground Maintenance",
+      "Pick up Dead Animal",
+      "Requests for Street Cleaning",
+      "Empty Litter Basket"
+     ],
+     "ex": [
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi",
+      "Invalid No information in description and no eForm attached."
+     ]
+    },
+    {
+     "q": "PARK_Maintenance_Support Services",
+     "total": 114,
+     "closed": 114,
+     "bad": 3.5,
+     "dup": 0.9,
+     "miss": 0,
+     "own": 0,
+     "inv": 2.6,
+     "noev": 0,
+     "types": [
+      "Ground Maintenance",
+      "Equipment Repair",
+      "Unshoveled Sidewalk",
+      "Park Improvement Requests"
+     ],
+     "ex": [
+      "Resolved Duplicate of case #101005405892"
+     ]
+    },
+    {
+     "q": "PARK_Painting",
+     "total": 105,
+     "closed": 105,
+     "bad": 1,
+     "dup": 1,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Equipment Repair",
+      "Ground Maintenance",
+      "PWD Graffiti",
+      "Park Improvement Requests"
+     ],
+     "ex": []
+    },
+    {
+     "q": "PARK_General Comments",
+     "total": 59,
+     "closed": 59,
+     "bad": 10.2,
+     "dup": 1.7,
+     "miss": 1.7,
+     "own": 6.8,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "General Comments For a Program or Policy",
+      "General Comments For An Employee",
+      "Equipment Repair",
+      "Sidewalk Repair (Make Safe)"
+     ],
+     "ex": [
+      "Noted Case referred to George Wright Management.",
+      "Noted If more information is available please provide. Date location time contact info etc"
+     ]
+    },
+    {
+     "q": "PARK_Cemetery Maintenance Request",
+     "total": 58,
+     "closed": 58,
+     "bad": 8.6,
+     "dup": 1.7,
+     "miss": 1.7,
+     "own": 0,
+     "inv": 5.2,
+     "noev": 0,
+     "types": [
+      "Cemetery Maintenance Request",
+      "Parks General Request",
+      "Tree Maintenance Requests",
+      "Ground Maintenance"
+     ],
+     "ex": [
+      "Duplicate of Existing Case 5387129",
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi"
+     ]
+    },
+    {
+     "q": "PARK_Maintenance_Horticulture",
+     "total": 32,
+     "closed": 32,
+     "bad": 15.6,
+     "dup": 6.2,
+     "miss": 0,
+     "own": 6.2,
+     "inv": 3.1,
+     "noev": 0,
+     "types": [
+      "Ground Maintenance",
+      "Planting",
+      "Tree Maintenance Requests",
+      "Equipment Repair"
+     ],
+     "ex": [
+      "Noted Duplicate request. This has been sent to Park Admin. Constituents are asking for removal of yew shrubs near ball field because people hang out near them.",
+      "Resolved Fenway Road and crosswalks are part of DCR with the exception of the ones near the Emerald Necklace Conservancy which ENC maintains."
+     ]
+    },
+    {
+     "q": "PARK_Urban_Wilds",
+     "total": 26,
+     "closed": 24,
+     "bad": 8.3,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 8.3,
+     "noev": 0,
+     "types": [
+      "Tree Maintenance Requests",
+      "Ground Maintenance",
+      "Equipment Repair",
+      "Parks General Request"
+     ],
+     "ex": [
+      "Invalid Thank you for reporting this issue. The park in this area is owned by the Commonwealth of Massachusetts and managed by Massport. It is not an Urban Wild",
+      "Invalid Thank you for reaching out about this. The City is not obligated to prune tree limbs that are not diseased and/or hazardous. Similarly the City is not l"
+     ]
+    }
+   ],
+   "PROP": [
+    {
+     "q": "PROP_GRAF_GraffitiRemoval",
+     "total": 2574,
+     "closed": 2574,
+     "bad": 5.9,
+     "dup": 0.9,
+     "miss": 0.6,
+     "own": 2.9,
+     "inv": 1.5,
+     "noev": 0,
+     "types": [
+      "Graffiti Removal",
+      "PWD Graffiti",
+      "Traffic Signal Repair",
+      "Equipment Repair"
+     ],
+     "ex": [
+      "Referred to External Agency The graffiti tag at this location could not be removed by the City of Boston Property Management Department. The graffiti tag is loc",
+      "Noted The graffiti tag at this location could not be removed by the City of Boston Property Management Department because of the potential damage that could be "
+     ]
+    }
+   ],
+   "PWDx": [
+    {
+     "q": "PWDx_Code Enforcement",
+     "total": 38944,
+     "closed": 38944,
+     "bad": 1.7,
+     "dup": 0.2,
+     "miss": 0.3,
+     "own": 0.6,
+     "inv": 0.6,
+     "noev": 17.3,
+     "types": [
+      "Improper Storage of Trash (Barrels)",
+      "Poor Conditions of Property",
+      "Unshoveled Sidewalk",
+      "Illegal Dumping"
+     ],
+     "ex": [
+      "Noted No evidence found for a code enforcement violation at this time.",
+      "Noted After inspection of the trash there was no evidence found to be fined (no ticket issued). Placed request with PWD for removal of the trash."
+     ]
+    },
+    {
+     "q": "PWDx_Schedule a Bulk Item Pickup",
+     "total": 19238,
+     "closed": 1199,
+     "bad": 64.5,
+     "dup": 3.9,
+     "miss": 31.2,
+     "own": 0,
+     "inv": 29.4,
+     "noev": 0,
+     "types": [
+      "Schedule a Bulk Item Pickup",
+      "Schedule a Bulk Item Pickup SS",
+      "Poor Conditions of Property"
+     ],
+     "ex": [
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi",
+      "Noted This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submit "
+     ]
+    },
+    {
+     "q": "PWDx_Missed Trash\\Recycling\\Yard Waste\\Bulk Item",
+     "total": 12063,
+     "closed": 12063,
+     "bad": 7.6,
+     "dup": 3.3,
+     "miss": 1.4,
+     "own": 0.8,
+     "inv": 2.1,
+     "noev": 2.4,
+     "types": [
+      "Missed Trash/Recycling/Yard Waste/Bulk Item",
+      "Requests for Street Cleaning",
+      "Public Works General Request",
+      "General Comments For a Program or Policy"
+     ],
+     "ex": [
+      "Resolved Nothing found curbside during Inspections",
+      "Resolved Nothing found curbside"
+     ]
+    },
+    {
+     "q": "PWDx_District 1C: Downtown",
+     "total": 10839,
+     "closed": 10839,
+     "bad": 1.1,
+     "dup": 0.2,
+     "miss": 0.1,
+     "own": 0.7,
+     "inv": 0.1,
+     "noev": 0.8,
+     "types": [
+      "CE Collection",
+      "Requests for Street Cleaning",
+      "Pick up Dead Animal",
+      "Request for Pothole Repair"
+     ],
+     "ex": [
+      "Noted Nothing found at this location",
+      "Noted Private property owners responsibility"
+     ]
+    },
+    {
+     "q": "PWDx_WM_Mattress_Pickup",
+     "total": 8850,
+     "closed": 8850,
+     "bad": 7.7,
+     "dup": 0.5,
+     "miss": 2.8,
+     "own": 0,
+     "inv": 4.3,
+     "noev": 0,
+     "types": [
+      "Mattress_Pickup",
+      "CE Collection",
+      "Improper Storage of Trash (Barrels)",
+      "Requests for Street Cleaning"
+     ],
+     "ex": [
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi",
+      "Resolved This appointment has been rescheduled for Tuesday January 9 2024. As a reminder please place the mattress curbside any time after 5pm on Monday January"
+     ]
+    },
+    {
+     "q": "PWDx_Recycling Sent to Contractor",
+     "total": 7104,
+     "closed": 7104,
+     "bad": 0.1,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Recycling Cart Return",
+      "Request for Recycling Cart",
+      "Ground Maintenance",
+      "Poor Conditions of Property"
+     ],
+     "ex": [
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi",
+      "Duplicate of Existing Case DUP CASE 101005556973 SCHD FOR 7/12/24 DELV 1 CART PER 3 UNITS"
+     ]
+    },
+    {
+     "q": "PWDx_District 1B: North End",
+     "total": 6964,
+     "closed": 6964,
+     "bad": 0.9,
+     "dup": 0.1,
+     "miss": 0,
+     "own": 0.6,
+     "inv": 0.1,
+     "noev": 0.4,
+     "types": [
+      "CE Collection",
+      "Requests for Street Cleaning",
+      "Pick up Dead Animal",
+      "Empty Litter Basket"
+     ],
+     "ex": [
+      "Noted Nothing found at location",
+      "Resolved Nothing found at location"
+     ]
+    },
+    {
+     "q": "PWDx_District 03: North Dorchester",
+     "total": 4655,
+     "closed": 4655,
+     "bad": 5.4,
+     "dup": 1,
+     "miss": 1.3,
+     "own": 2.4,
+     "inv": 0.8,
+     "noev": 0.8,
+     "types": [
+      "Requests for Street Cleaning",
+      "CE Collection",
+      "Pick up Dead Animal",
+      "Request for Pothole Repair"
+     ],
+     "ex": [
+      "Noted Unable to locate due to weather will revisit the locations after the snow and ice melt in order to resolve your complaint",
+      "Noted Nothing found at this location"
+     ]
+    },
+    {
+     "q": "PWDx_District 04: Allston/Brighton",
+     "total": 4619,
+     "closed": 4619,
+     "bad": 3.1,
+     "dup": 0.4,
+     "miss": 0,
+     "own": 2.6,
+     "inv": 0.1,
+     "noev": 1.4,
+     "types": [
+      "CE Collection",
+      "Requests for Street Cleaning",
+      "Pick up Dead Animal",
+      "Request for Pothole Repair"
+     ],
+     "ex": [
+      "Noted Nothing found at this location",
+      "Noted Private property owners responsibility"
+     ]
+    },
+    {
+     "q": "PWDx_District 07: South Dorchester",
+     "total": 3968,
+     "closed": 3968,
+     "bad": 7.8,
+     "dup": 0.3,
+     "miss": 1.2,
+     "own": 6.2,
+     "inv": 0.1,
+     "noev": 0.6,
+     "types": [
+      "Requests for Street Cleaning",
+      "Request for Pothole Repair",
+      "Pick up Dead Animal",
+      "CE Collection"
+     ],
+     "ex": [
+      "Resolved This is private property",
+      "Resolved This is a private way"
+     ]
+    },
+    {
+     "q": "PWDx_Street Light Outages",
+     "total": 3675,
+     "closed": 3363,
+     "bad": 5.1,
+     "dup": 1.7,
+     "miss": 0.9,
+     "own": 1.9,
+     "inv": 0.7,
+     "noev": 0.1,
+     "types": [
+      "Street Light Outages",
+      "Parks Lighting/Electrical Issues",
+      "Major System Failure",
+      "Equipment Repair"
+     ],
+     "ex": [
+      "Resolved duplicate light is now working //AD",
+      "Resolved duplicate light is working //AD"
+     ]
+    },
+    {
+     "q": "PWDx_District 09: East Boston",
+     "total": 3421,
+     "closed": 3421,
+     "bad": 5.2,
+     "dup": 0.8,
+     "miss": 0.2,
+     "own": 4.2,
+     "inv": 0.1,
+     "noev": 1.5,
+     "types": [
+      "Requests for Street Cleaning",
+      "CE Collection",
+      "Request for Pothole Repair",
+      "Pick up Dead Animal"
+     ],
+     "ex": [
+      "Resolved Nothing found at location",
+      "Resolved On private property"
+     ]
+    },
+    {
+     "q": "PWDx_District 10B: Roxbury",
+     "total": 3250,
+     "closed": 3250,
+     "bad": 3.4,
+     "dup": 0.6,
+     "miss": 0.2,
+     "own": 2.2,
+     "inv": 0.4,
+     "noev": 1,
+     "types": [
+      "Requests for Street Cleaning",
+      "CE Collection",
+      "Request for Pothole Repair",
+      "Pick up Dead Animal"
+     ],
+     "ex": [
+      "Noted Nothing found at this location",
+      "Noted Private property owners responsibility"
+     ]
+    },
+    {
+     "q": "PWDx_District 05: South Boston",
+     "total": 3054,
+     "closed": 3054,
+     "bad": 2.8,
+     "dup": 0.5,
+     "miss": 0.5,
+     "own": 1.5,
+     "inv": 0.3,
+     "noev": 3.8,
+     "types": [
+      "Requests for Street Cleaning",
+      "CE Collection",
+      "Pick up Dead Animal",
+      "Request for Pothole Repair"
+     ],
+     "ex": [
+      "Resolved Nothing found at said location",
+      "Noted Nothing found at this location"
+     ]
+    },
+    {
+     "q": "PWDx_District 10A: Roxbury",
+     "total": 3053,
+     "closed": 3053,
+     "bad": 3.5,
+     "dup": 0.8,
+     "miss": 0,
+     "own": 2.5,
+     "inv": 0.2,
+     "noev": 1,
+     "types": [
+      "CE Collection",
+      "Requests for Street Cleaning",
+      "Request for Pothole Repair",
+      "Pick up Dead Animal"
+     ],
+     "ex": [
+      "Noted Nothing found at this location",
+      "Noted Private property owners responsibility"
+     ]
+    },
+    {
+     "q": "PWDx_District 02: Jamaica Plain",
+     "total": 2787,
+     "closed": 2787,
+     "bad": 5.3,
+     "dup": 0.2,
+     "miss": 0.2,
+     "own": 4,
+     "inv": 0.9,
+     "noev": 2.9,
+     "types": [
+      "Requests for Street Cleaning",
+      "Pick up Dead Animal",
+      "Request for Pothole Repair",
+      "CE Collection"
+     ],
+     "ex": [
+      "Noted Nothing found at this time",
+      "Noted Nothing found at this location"
+     ]
+    },
+    {
+     "q": "PWDx_Sidewalk Repair",
+     "total": 2784,
+     "closed": 712,
+     "bad": 33.4,
+     "dup": 25.1,
+     "miss": 2,
+     "own": 5.9,
+     "inv": 0.6,
+     "noev": 0,
+     "types": [
+      "Sidewalk Repair (Make Safe)",
+      "Contractor Complaints",
+      "Request for Pothole Repair",
+      "Public Works General Request"
+     ],
+     "ex": [
+      "Duplicate of Existing Case",
+      "Noted Eversource has been notified"
+     ]
+    },
+    {
+     "q": "PWDx_Sticker Request",
+     "total": 2436,
+     "closed": 2436,
+     "bad": 1.9,
+     "dup": 0.7,
+     "miss": 0.4,
+     "own": 0,
+     "inv": 0.8,
+     "noev": 0,
+     "types": [
+      "Sticker Request",
+      "Requests for Street Cleaning"
+     ],
+     "ex": [
+      "Resolved Delivered stickers as requested. Inspector did not want to intrude on private property.",
+      "Duplicate of Existing Case"
+     ]
+    },
+    {
+     "q": "PWDx_District 06: West Roxbury and Roslindale",
+     "total": 2238,
+     "closed": 2238,
+     "bad": 4.4,
+     "dup": 0.1,
+     "miss": 0.2,
+     "own": 3.2,
+     "inv": 0.8,
+     "noev": 3.4,
+     "types": [
+      "Pick up Dead Animal",
+      "Requests for Street Cleaning",
+      "Request for Pothole Repair",
+      "CE Collection"
+     ],
+     "ex": [
+      "Resolved Nothing found at this location at this time",
+      "Noted Nothing found at this location"
+     ]
+    },
+    {
+     "q": "PWDx_District 08: Hyde Park",
+     "total": 1967,
+     "closed": 1967,
+     "bad": 8.8,
+     "dup": 0.5,
+     "miss": 0.3,
+     "own": 5.3,
+     "inv": 2.7,
+     "noev": 1.4,
+     "types": [
+      "Requests for Street Cleaning",
+      "Request for Pothole Repair",
+      "Pick up Dead Animal",
+      "CE Collection"
+     ],
+     "ex": [
+      "Invalid This is a private way and is the responsibility of the abbutters for repairs",
+      "Invalid This is a private way and is the responsibility of the abbutters for repairs."
+     ]
+    },
+    {
+     "q": "PWDx_Roadway Repair_ARP_Resurfacing",
+     "total": 1730,
+     "closed": 74,
+     "bad": 31.1,
+     "dup": 17.6,
+     "miss": 5.4,
+     "own": 6.8,
+     "inv": 2.7,
+     "noev": 0,
+     "types": [
+      "Request for Pothole Repair",
+      "Roadway Repair",
+      "Contractor Complaints",
+      "Sidewalk Repair (Make Safe)"
+     ],
+     "ex": [
+      "Duplicate of Existing Case",
+      "Noted Duplicate of existing case. We have already placed this in the resurfacing queue. In the future please include a picture of these pipes."
+     ]
+    },
+    {
+     "q": "PWDx_Highway Construction",
+     "total": 1729,
+     "closed": 574,
+     "bad": 5.1,
+     "dup": 3.3,
+     "miss": 0.2,
+     "own": 1.4,
+     "inv": 0.2,
+     "noev": 0.3,
+     "types": [
+      "Sidewalk Repair (Make Safe)",
+      "Request for Pothole Repair",
+      "Requests for Street Cleaning",
+      "Sidewalk Repair"
+     ],
+     "ex": [
+      "Duplicate of Existing Case",
+      "Duplicate of Existing Case Duplicate of existing case 101002636901"
+     ]
+    },
+    {
+     "q": "PWDx_Contractor Complaints",
+     "total": 1722,
+     "closed": 1722,
+     "bad": 18,
+     "dup": 1.5,
+     "miss": 2.6,
+     "own": 11.8,
+     "inv": 2.2,
+     "noev": 2.9,
+     "types": [
+      "Contractor Complaints",
+      "Request for Pothole Repair",
+      "Sidewalk Repair (Make Safe)",
+      "Requests for Street Cleaning"
+     ],
+     "ex": [
+      "Noted Eversource has been notified",
+      "Noted National Grid has been notified"
+     ]
+    },
+    {
+     "q": "PWDx_District 1A: Charlestown",
+     "total": 944,
+     "closed": 944,
+     "bad": 1.5,
+     "dup": 0.2,
+     "miss": 0.1,
+     "own": 1,
+     "inv": 0.2,
+     "noev": 1.2,
+     "types": [
+      "Requests for Street Cleaning",
+      "Empty Litter Basket",
+      "CE Collection",
+      "Pick up Dead Animal"
+     ],
+     "ex": [
+      "Noted Nothing found at location",
+      "Noted Nothing found at this location"
+     ]
+    },
+    {
+     "q": "PWDx_Street Light_General Lighting Request",
+     "total": 930,
+     "closed": 885,
+     "bad": 7.3,
+     "dup": 0.7,
+     "miss": 1.1,
+     "own": 3.6,
+     "inv": 1.9,
+     "noev": 0.3,
+     "types": [
+      "General Lighting Request",
+      "Parks Lighting/Electrical Issues",
+      "Sidewalk Repair (Make Safe)",
+      "StreetLight Pole WO"
+     ],
+     "ex": [
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi",
+      "Resolved Checked area 2/8/23 and notified Eversource trouble room. Waited three hours with no response. 2/9/23 I called the Eversource trouble room and spoke to"
+     ]
+    },
+    {
+     "q": "PWDx_Recycling",
+     "total": 816,
+     "closed": 816,
+     "bad": 48,
+     "dup": 13.8,
+     "miss": 19.7,
+     "own": 0.5,
+     "inv": 14,
+     "noev": 0,
+     "types": [
+      "Request for Recycling Cart",
+      "Public Works General Request",
+      "General Comments For a Program or Policy",
+      "Requests for Street Cleaning"
+     ],
+     "ex": [
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi",
+      "Noted This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submit "
+     ]
+    },
+    {
+     "q": "PWDx_Street Light Knock Downs",
+     "total": 387,
+     "closed": 387,
+     "bad": 9.3,
+     "dup": 2.1,
+     "miss": 0.5,
+     "own": 2.8,
+     "inv": 4.1,
+     "noev": 1.3,
+     "types": [
+      "Street Light Knock Downs",
+      "Parks Lighting/Electrical Issues",
+      "Sign Repair",
+      "Traffic Signal Inspection"
+     ],
+     "ex": [
+      "Duplicate of Existing Case duplicate ref number 5344089",
+      "Resolved Nothing found at this location"
+     ]
+    },
+    {
+     "q": "PWDx_Request for Street Cleaning",
+     "total": 325,
+     "closed": 325,
+     "bad": 87.1,
+     "dup": 5.5,
+     "miss": 5.5,
+     "own": 0.9,
+     "inv": 75.1,
+     "noev": 0,
+     "types": [
+      "Requests for Street Cleaning",
+      "Requests for Traffic Signal Studies or Reviews",
+      "New Sign  Crosswalk or Pavement Marking"
+     ],
+     "ex": [
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi",
+      "Noted This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submit "
+     ]
+    },
+    {
+     "q": "PWDx_Roadway Repair",
+     "total": 321,
+     "closed": 116,
+     "bad": 55.2,
+     "dup": 13.8,
+     "miss": 10.3,
+     "own": 16.4,
+     "inv": 16.4,
+     "noev": 0,
+     "types": [
+      "Roadway Repair",
+      "Request for Pothole Repair",
+      "Contractor Complaints",
+      "Public Works General Request"
+     ],
+     "ex": [
+      "Duplicate of Existing Case",
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi"
+     ]
+    },
+    {
+     "q": "PWDx_Major System Failure",
+     "total": 262,
+     "closed": 262,
+     "bad": 17.6,
+     "dup": 3.8,
+     "miss": 1.5,
+     "own": 9.5,
+     "inv": 3.1,
+     "noev": 0.4,
+     "types": [
+      "Major System Failure",
+      "Street Light Outages",
+      "Street Light Knock Downs"
+     ],
+     "ex": [
+      "Noted National Grid resolved gas leak. Street lighting was able to make necessary repairs to our SLCB. We are waiting for eversource to reconnect electric servi",
+      "Duplicate of Existing Case Duplicate 5246198"
+     ]
+    },
+    {
+     "q": "PWDx_Graffiti",
+     "total": 239,
+     "closed": 239,
+     "bad": 7.5,
+     "dup": 0.4,
+     "miss": 2.1,
+     "own": 2.5,
+     "inv": 2.5,
+     "noev": 0,
+     "types": [
+      "PWD Graffiti",
+      "Requests for Street Cleaning",
+      "Public Works General Request",
+      "Traffic Signal Repair"
+     ],
+     "ex": [
+      "Noted My powerwash is on location and walked around and can't find find the graffiti. Submit with a better location and or pictures.",
+      "Noted Unable to locate complaint. Please provide a better location"
+     ]
+    },
+    {
+     "q": "PWDx_Recycling Cart Return",
+     "total": 199,
+     "closed": 199,
+     "bad": 37.7,
+     "dup": 8.5,
+     "miss": 11.6,
+     "own": 0,
+     "inv": 17.6,
+     "noev": 0,
+     "types": [
+      "Recycling Cart Return",
+      "Request for Recycling Cart",
+      "Public Works General Request",
+      "CE Collection"
+     ],
+     "ex": [
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi",
+      "Invalid incorrect e-form please reference case #101005793439"
+     ]
+    },
+    {
+     "q": "PWDx_IPL Damaged Cart Replacement",
+     "total": 176,
+     "closed": 176,
+     "bad": 22.2,
+     "dup": 5.7,
+     "miss": 16.5,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Recycling Cart Return"
+     ],
+     "ex": [
+      "Resolved NO ADDRESS LISTED WE DO NOT DELV TO INTERSECTIONS",
+      "Resolved NO ADDRESS LISTED"
+     ]
+    },
+    {
+     "q": "PWDx_Street Light Outages - Gas",
+     "total": 176,
+     "closed": 174,
+     "bad": 10.9,
+     "dup": 10.3,
+     "miss": 0.6,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Street Light Outages",
+      "Street Light Knock Downs",
+      "Equipment Repair",
+      "General Lighting Request"
+     ],
+     "ex": [
+      "Noted Duplicate case. Case 101005231899 issued to repair",
+      "Resolved The address and location on the map are for an acorn light need more information"
+     ]
+    },
+    {
+     "q": "PWDx_STRL Pole Compliance",
+     "total": 173,
+     "closed": 168,
+     "bad": 5.4,
+     "dup": 0,
+     "miss": 1.2,
+     "own": 3.6,
+     "inv": 0.6,
+     "noev": 0,
+     "types": [
+      "PWD Graffiti",
+      "Street Light Outages",
+      "Pole Compliance",
+      "General Lighting Request"
+     ],
+     "ex": [
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi",
+      "Resolved Graffiti removed by Verizon"
+     ]
+    },
+    {
+     "q": "PWDx_Requests for Pothole Repair",
+     "total": 149,
+     "closed": 149,
+     "bad": 96.6,
+     "dup": 6,
+     "miss": 15.4,
+     "own": 1.3,
+     "inv": 73.8,
+     "noev": 0,
+     "types": [
+      "Request for Pothole Repair"
+     ],
+     "ex": [
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi",
+      "Duplicate of Existing Case Duplicate of *101005271284"
+     ]
+    },
+    {
+     "q": "PWDx_Work Hours-Loud Noise Complaints",
+     "total": 128,
+     "closed": 128,
+     "bad": 34.4,
+     "dup": 3.9,
+     "miss": 17.2,
+     "own": 9.4,
+     "inv": 3.9,
+     "noev": 5.5,
+     "types": [
+      "Work Hours-Loud Noise Complaints"
+     ],
+     "ex": [
+      "Invalid address not allowed",
+      "Resolved I understand your frustration and want to help. It looks like a duplicate complaint was submitted without providing the specific details of the issue."
+     ]
+    },
+    {
+     "q": "PWDx_Street Light Knockdown Replacement",
+     "total": 118,
+     "closed": 101,
+     "bad": 5,
+     "dup": 0,
+     "miss": 1,
+     "own": 4,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Knockdown Replacement",
+      "Street Light Outages",
+      "Street Light Knock Downs",
+      "Sidewalk Repair (Make Safe)"
+     ],
+     "ex": [
+      "Resolved Installed new 24' concrete pole with standard arm and 220 watt flipper. Ran overhead to existing eversource fed pole and tied in",
+      "Resolved Replaced 24FT cement pole with single standard arm 274w and tied in to eversource feed HT GG and DP"
+     ]
+    },
+    {
+     "q": "PWDx_Empty Litter Basket",
+     "total": 109,
+     "closed": 109,
+     "bad": 11,
+     "dup": 3.7,
+     "miss": 4.6,
+     "own": 0,
+     "inv": 2.8,
+     "noev": 0,
+     "types": [
+      "Empty Litter Basket",
+      "Public Works General Request",
+      "CE Collection",
+      "Parks General Request"
+     ],
+     "ex": [
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi",
+      "Duplicate of Existing Case Duplicate 101005469189"
+     ]
+    },
+    {
+     "q": "PWDx_Litter Basket Maintenance",
+     "total": 108,
+     "closed": 108,
+     "bad": 16.7,
+     "dup": 9.3,
+     "miss": 1.9,
+     "own": 0,
+     "inv": 5.6,
+     "noev": 0.9,
+     "types": [
+      "Litter Basket Maintenance",
+      "Empty Litter Basket",
+      "PWD Graffiti",
+      "Requests for Street Cleaning"
+     ],
+     "ex": [
+      "Noted Duplicate of existing case #101005570604",
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi"
+     ]
+    },
+    {
+     "q": "PWDx_Request for Litter Basket Installation",
+     "total": 108,
+     "closed": 108,
+     "bad": 7.4,
+     "dup": 0.9,
+     "miss": 3.7,
+     "own": 1.9,
+     "inv": 0.9,
+     "noev": 0,
+     "types": [
+      "Request for Litter Basket Installation",
+      "Requests for Street Cleaning",
+      "Empty Litter Basket",
+      "General Comments For a Program or Policy"
+     ],
+     "ex": [
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi",
+      "Noted Dear constituent Morton St. is state property."
+     ]
+    },
+    {
+     "q": "PWDx_Street Light Outages - Long-Term Repair",
+     "total": 98,
+     "closed": 61,
+     "bad": 8.2,
+     "dup": 1.6,
+     "miss": 0,
+     "own": 6.6,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Street Light Outages",
+      "Request for Pothole Repair",
+      "General Lighting Request",
+      "StreetLight Pole WO"
+     ],
+     "ex": [
+      "Resolved All lights working except 36. We installed new pole and prepared for eversource to energize",
+      "Resolved Waiting on Eversource to splice their cables in the manhole. Conduit was repaired by Maverick. Ran temporary overhead span using approximately 65' of a"
+     ]
+    },
+    {
+     "q": "PWDx_Highway Construction General",
+     "total": 94,
+     "closed": 66,
+     "bad": 1.5,
+     "dup": 0,
+     "miss": 0,
+     "own": 1.5,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "PWD Graffiti",
+      "StreetLight Pole WO",
+      "Sidewalk Repair (Make Safe)",
+      "Request for Pothole Repair"
+     ],
+     "ex": []
+    },
+    {
+     "q": "PWDx_Pick Up Dead Animals",
+     "total": 91,
+     "closed": 91,
+     "bad": 83.5,
+     "dup": 4.4,
+     "miss": 7.7,
+     "own": 4.4,
+     "inv": 67,
+     "noev": 2.2,
+     "types": [
+      "Pick up Dead Animal",
+      "Animal Generic Request"
+     ],
+     "ex": [
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi",
+      "Invalid On private property"
+     ]
+    },
+    {
+     "q": "PWDx_Bridge Maintenance",
+     "total": 84,
+     "closed": 79,
+     "bad": 43,
+     "dup": 30.4,
+     "miss": 5.1,
+     "own": 6.3,
+     "inv": 2.5,
+     "noev": 0,
+     "types": [
+      "Sidewalk Repair (Make Safe)",
+      "Request for Pothole Repair",
+      "Bridge Maintenance",
+      "Public Works General Request"
+     ],
+     "ex": [
+      "Duplicate of Existing Case",
+      "Noted Duplicate of existing case"
+     ]
+    },
+    {
+     "q": "PWDx_Sidewalk Repair (Make Safe)",
+     "total": 80,
+     "closed": 80,
+     "bad": 87.5,
+     "dup": 6.2,
+     "miss": 6.2,
+     "own": 0,
+     "inv": 75,
+     "noev": 0,
+     "types": [
+      "Sidewalk Repair (Make Safe)"
+     ],
+     "ex": [
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi",
+      "Duplicate of Existing Case See case #101005265560"
+     ]
+    },
+    {
+     "q": "PWDx_Space Saver Removal",
+     "total": 63,
+     "closed": 11,
+     "bad": 100,
+     "dup": 0,
+     "miss": 45.5,
+     "own": 0,
+     "inv": 54.5,
+     "noev": 0,
+     "types": [
+      "Parking Enforcement",
+      "Space Savers",
+      "Transportation General Request",
+      "Requests for Street Cleaning"
+     ],
+     "ex": [
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi",
+      "Noted This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submit "
+     ]
+    },
+    {
+     "q": "PWDx_Roadway Repair_Reconstruction",
+     "total": 62,
+     "closed": 30,
+     "bad": 6.7,
+     "dup": 0,
+     "miss": 6.7,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Contractor Complaints",
+      "Sidewalk Repair (Make Safe)",
+      "Request for Pothole Repair",
+      "Work Hours-Loud Noise Complaints"
+     ],
+     "ex": [
+      "Noted There will be a specialty crosswalk installed soon. Please contact Sean Darden at 617-635-4968 for more information",
+      "Noted The City has received multiple requests to pave Beacon Street. The street was leafletted two weeks ago to let everyone on Beacon Street know that resurfac"
+     ]
+    },
+    {
+     "q": "PWDx_Requests for Snow Plowing",
+     "total": 54,
+     "closed": 54,
+     "bad": 98.1,
+     "dup": 5.6,
+     "miss": 3.7,
+     "own": 0,
+     "inv": 88.9,
+     "noev": 0,
+     "types": [
+      "Request for Snow Plowing"
+     ],
+     "ex": [
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi",
+      "Invalid wrong information provided."
+     ]
+    },
+    {
+     "q": "PWDx_Engineering_Design",
+     "total": 40,
+     "closed": 15,
+     "bad": 13.3,
+     "dup": 0,
+     "miss": 0,
+     "own": 13.3,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Sidewalk Repair (Make Safe)",
+      "Request for Pothole Repair",
+      "Public Works General Request",
+      "Roadway Repair"
+     ],
+     "ex": [
+      "Noted Thank you for bringing attention to this matter. The City notes that the nearby construction was National Grid and not Public Works. Reservoir Rd has been",
+      "Resolved This section of Stedman St is a private way from 37 Rossmore Road to approximately 230 feet southwest of 35 Brookley Road. PWD is not responsible for t"
+     ]
+    },
+    {
+     "q": "PWDx_Utility Casting Repair",
+     "total": 39,
+     "closed": 39,
+     "bad": 17.9,
+     "dup": 0,
+     "miss": 0,
+     "own": 17.9,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Utility Casting Repair",
+      "Request for Pothole Repair"
+     ],
+     "ex": [
+      "Noted Casting belonging to National Grid; National Grid has been notified and will be scheduling for repairs",
+      "Resolved Casting has been added to the list of bad castings and National Grid has been notified about the complaint."
+     ]
+    },
+    {
+     "q": "PWDx_Engineering_PIC",
+     "total": 28,
+     "closed": 5,
+     "bad": 20,
+     "dup": 0,
+     "miss": 0,
+     "own": 20,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Sidewalk Repair (Make Safe)",
+      "Public Works General Request",
+      "Tree Maintenance Requests",
+      "Request for Pothole Repair"
+     ],
+     "ex": [
+      "Noted Our records show Sherman St in Charlestown is a private way. As a private way the abutting property owners manage the enforcement of any parking restricti"
+     ]
+    },
+    {
+     "q": "PWDx_Roadway Repair_CRP_Resurfacing",
+     "total": 28,
+     "closed": 0,
+     "bad": 0,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Request for Pothole Repair",
+      "Roadway Repair",
+      "Contractor Complaints",
+      "Sign Repair"
+     ],
+     "ex": []
+    },
+    {
+     "q": "PWDx_Street Light_Upgrade Existing Lighting",
+     "total": 26,
+     "closed": 20,
+     "bad": 10,
+     "dup": 5,
+     "miss": 10,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Upgrade Existing Lighting",
+      "Street Light Outages",
+      "Municipal Parking Lot Complaints"
+     ],
+     "ex": [
+      "Duplicate of Existing Case wrong address --> correct case 101005719574",
+      "Resolved No address associated to request"
+     ]
+    },
+    {
+     "q": "PWDx_Street Light_Install New Lighting",
+     "total": 21,
+     "closed": 12,
+     "bad": 16.7,
+     "dup": 8.3,
+     "miss": 0,
+     "own": 0,
+     "inv": 8.3,
+     "noev": 0,
+     "types": [
+      "Install New Lighting",
+      "Sidewalk Repair (Make Safe)",
+      "Street Light Knock Downs"
+     ],
+     "ex": [
+      "Resolved duplicate light is working //AD"
+     ]
+    },
+    {
+     "q": "PWDx_Roadway Repair_Ponding",
+     "total": 16,
+     "closed": 1,
+     "bad": 0,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Request for Pothole Repair",
+      "Public Works General Request",
+      "Requests for Street Cleaning",
+      "BWSC General Request"
+     ],
+     "ex": []
+    },
+    {
+     "q": "PWDx_Snow Cases",
+     "total": 16,
+     "closed": 3,
+     "bad": 100,
+     "dup": 0,
+     "miss": 33.3,
+     "own": 0,
+     "inv": 66.7,
+     "noev": 0,
+     "types": [
+      "Misc. Snow Complaint",
+      "General Comments For a Program or Policy",
+      "Public Works General Request"
+     ],
+     "ex": [
+      "Invalid This case has been closed as there is not enough information to process this request. If you feel this has been closed in error please dial 311 to submi"
+     ]
+    },
+    {
+     "q": "PWDx_Street Light_Pickup_Clear Conduit",
+     "total": 7,
+     "closed": 7,
+     "bad": 0,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 0,
+     "noev": 0,
+     "types": [
+      "Pickup/Clear Conduit",
+      "Street Light Outages"
+     ],
+     "ex": []
+    },
+    {
+     "q": "PWDx_News Boxes",
+     "total": 3,
+     "closed": 3,
+     "bad": 33.3,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 33.3,
+     "noev": 0,
+     "types": [
+      "News Boxes",
+      "PWD Graffiti"
+     ],
+     "ex": []
+    },
+    {
+     "q": "PWDx_Requests for Snow Plowing (Emergency Responder)",
+     "total": 1,
+     "closed": 1,
+     "bad": 100,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 100,
+     "noev": 0,
+     "types": [
+      "Request for Snow Plowing (Emergency Responder)"
+     ],
+     "ex": []
+    },
+    {
+     "q": "PWDx_Utility Call-In",
+     "total": 1,
+     "closed": 1,
+     "bad": 100,
+     "dup": 0,
+     "miss": 0,
+     "own": 0,
+     "inv": 100,
+     "noev": 0,
+     "types": [
+      "Utility Call-In"
+     ],
+     "ex": []
+    }
+   ]
+  }
+ },
+ "actions": {
+  "dep": {
+   "ANML": [
+    [
+     "Pick up or remove items",
+     30.3
+    ],
+    [
+     "Contact the owner or resident",
+     8.3
+    ],
+    [
+     "Refer to another agency",
+     3
+    ]
+   ],
+   "BHA": [],
+   "BPD": [
+    [
+     "Refer to another agency",
+     7.1
+    ],
+    [
+     "Contact the owner or resident",
+     4.8
+    ]
+   ],
+   "BTDT": [
+    [
+     "Issue a ticket or citation",
+     15.9
+    ]
+   ],
+   "BWSC": [
+    [
+     "Repair, fill or replace",
+     36.6
+    ],
+    [
+     "Clean or sweep",
+     8.5
+    ],
+    [
+     "Pick up or remove items",
+     4.2
+    ]
+   ],
+   "DISB": [
+    [
+     "Install something new",
+     11.8
+    ],
+    [
+     "Refer to another agency",
+     5.9
+    ],
+    [
+     "Pick up or remove items",
+     5.9
+    ]
+   ],
+   "DND": [
+    [
+     "Clean or sweep",
+     15.4
+    ],
+    [
+     "Deliver or schedule a service",
+     15.4
+    ],
+    [
+     "Prune or remove a tree",
+     7.7
+    ],
+    [
+     "Inspect and monitor",
+     7.7
+    ],
+    [
+     "Refer to another agency",
+     7.7
+    ]
+   ],
+   "ECON": [
+    [
+     "Repair, fill or replace",
+     33.3
+    ],
+    [
+     "Pick up or remove items",
+     33.3
+    ],
+    [
+     "Inspect and monitor",
+     33.3
+    ]
+   ],
+   "GEN": [
+    [
+     "Pick up or remove items",
+     49.5
+    ]
+   ],
+   "GRNi": [
+    [
+     "Repair, fill or replace",
+     25
+    ]
+   ],
+   "INFO": [
+    [
+     "Refer to another agency",
+     11.2
+    ],
+    [
+     "Pick up or remove items",
+     11
+    ],
+    [
+     "Contact the owner or resident",
+     6.6
+    ],
+    [
+     "Repair, fill or replace",
+     3
+    ]
+   ],
+   "ISD": [
+    [
+     "Inspect and monitor",
+     28.1
+    ],
+    [
+     "Issue a violation or legal order",
+     9
+    ],
+    [
+     "Treat for pests",
+     6.9
+    ],
+    [
+     "Repair, fill or replace",
+     3.7
+    ],
+    [
+     "Contact the owner or resident",
+     3.6
+    ]
+   ],
+   "ONS": [
+    [
+     "Refer to another agency",
+     18.2
+    ],
+    [
+     "Install something new",
+     9.1
+    ]
+   ],
+   "PARK": [
+    [
+     "Prune or remove a tree",
+     32
+    ],
+    [
+     "Pick up or remove items",
+     18.7
+    ],
+    [
+     "Install something new",
+     12.5
+    ],
+    [
+     "Repair, fill or replace",
+     5.4
+    ],
+    [
+     "Clean or sweep",
+     4.1
+    ]
+   ],
+   "PROP": [
+    [
+     "Pick up or remove items",
+     63.1
+    ],
+    [
+     "Clean or sweep",
+     7.1
+    ],
+    [
+     "Tow or tag a vehicle",
+     5.8
+    ]
+   ],
+   "PWDx": [
+    [
+     "Pick up or remove items",
+     14.5
+    ],
+    [
+     "Deliver or schedule a service",
+     12.9
+    ],
+    [
+     "Issue a ticket or citation",
+     9.9
+    ],
+    [
+     "Issue a violation or legal order",
+     7.7
+    ],
+    [
+     "Install something new",
+     4.3
+    ]
+   ],
+   "Test": []
+  },
+  "q": {
+   "ANML|ANML_General": [
+    [
+     "Pick up or remove items",
+     30.3
+    ],
+    [
+     "Contact the owner or resident",
+     8.3
+    ],
+    [
+     "Refer to another agency",
+     3
+    ]
+   ],
+   "BPD|BPD_Districts": [
+    [
+     "Refer to another agency",
+     7.1
+    ],
+    [
+     "Contact the owner or resident",
+     4.8
+    ]
+   ],
+   "BTDT|BTDT_AVRS Interface Queue": [
+    [
+     "Tow or tag a vehicle",
+     4.2
+    ]
+   ],
+   "BTDT|BTDT_Abandoned Bicycle": [
+    [
+     "Refer to another agency",
+     47.2
+    ]
+   ],
+   "BTDT|BTDT_Administration": [
+    [
+     "Install something new",
+     3.9
+    ],
+    [
+     "Contact the owner or resident",
+     3.6
+    ],
+    [
+     "Inspect and monitor",
+     3.2
+    ]
+   ],
+   "BTDT|BTDT_District 01": [],
+   "BTDT|BTDT_District 02": [],
+   "BTDT|BTDT_District 03": [],
+   "BTDT|BTDT_District 04": [
+    [
+     "Repair, fill or replace",
+     8.5
+    ],
+    [
+     "Pick up or remove items",
+     4.3
+    ]
+   ],
+   "BTDT|BTDT_District 05": [
+    [
+     "Repair, fill or replace",
+     8.7
+    ]
+   ],
+   "BTDT|BTDT_District 06": [
+    [
+     "Repair, fill or replace",
+     9.5
+    ],
+    [
+     "Install something new",
+     3.7
+    ]
+   ],
+   "BTDT|BTDT_Engineering_New Sign and Pavement Marking Requests": [
+    [
+     "Install something new",
+     18.4
+    ],
+    [
+     "Inspect and monitor",
+     16.2
+    ],
+    [
+     "Contact the owner or resident",
+     9.5
+    ]
+   ],
+   "BTDT|BTDT_Engineering_Request for Traffic Signal Study or Review": [
+    [
+     "Repair, fill or replace",
+     11.5
+    ]
+   ],
+   "BTDT|BTDT_General Comments": [
+    [
+     "Contact the owner or resident",
+     7.8
+    ],
+    [
+     "Install something new",
+     5.9
+    ],
+    [
+     "Inspect and monitor",
+     4.8
+    ],
+    [
+     "Issue a ticket or citation",
+     4.6
+    ],
+    [
+     "Refer to another agency",
+     3.7
+    ]
+   ],
+   "BTDT|BTDT_OPC_Phone Bank Service": [
+    [
+     "Issue a ticket or citation",
+     10
+    ],
+    [
+     "Contact the owner or resident",
+     5
+    ]
+   ],
+   "BTDT|BTDT_OPC_Walk-In Service": [
+    [
+     "Contact the owner or resident",
+     13.3
+    ],
+    [
+     "Tow or tag a vehicle",
+     6.7
+    ],
+    [
+     "Issue a ticket or citation",
+     6.7
+    ]
+   ],
+   "BTDT|BTDT_Parking Enforcement": [
+    [
+     "Issue a ticket or citation",
+     21.5
+    ]
+   ],
+   "BTDT|BTDT_Parking Lot_Municipal Parking Lot Complaints": [
+    [
+     "Pick up or remove items",
+     25
+    ],
+    [
+     "Clean or sweep",
+     25
+    ],
+    [
+     "Prune or remove a tree",
+     3.6
+    ],
+    [
+     "Deliver or schedule a service",
+     3.6
+    ]
+   ],
+   "BTDT|BTDT_Permits & Special Events": [
+    [
+     "Pick up or remove items",
+     13.3
+    ],
+    [
+     "Repair, fill or replace",
+     6.7
+    ],
+    [
+     "Inspect and monitor",
+     6.7
+    ]
+   ],
+   "BTDT|BTDT_Sign Repair": [
+    [
+     "Repair, fill or replace",
+     3.1
+    ],
+    [
+     "Inspect and monitor",
+     3.1
+    ]
+   ],
+   "BTDT|BTDT_Sign Shop_Sign Installation": [
+    [
+     "Inspect and monitor",
+     3.7
+    ],
+    [
+     "Repair, fill or replace",
+     3.1
+    ]
+   ],
+   "BTDT|BTDT_Traffic Signal_Graffiti": [
+    [
+     "Pick up or remove items",
+     4.1
+    ],
+    [
+     "Clean or sweep",
+     3.6
+    ]
+   ],
+   "BTDT|BTDT_Traffic Signal_Repair": [
+    [
+     "Repair, fill or replace",
+     10.6
+    ]
+   ],
+   "BWSC|BWSC_All Cases": [
+    [
+     "Repair, fill or replace",
+     19.9
+    ],
+    [
+     "Clean or sweep",
+     11.6
+    ],
+    [
+     "Pick up or remove items",
+     5.8
+    ],
+    [
+     "Install something new",
+     3.3
+    ]
+   ],
+   "BWSC|BWSC_Pothole": [
+    [
+     "Repair, fill or replace",
+     79.3
+    ]
+   ],
+   "DISB|DISB_General_Request": [
+    [
+     "Install something new",
+     18.2
+    ],
+    [
+     "Refer to another agency",
+     18.2
+    ]
+   ],
+   "DISB|DISB_HP Sign": [
+    [
+     "Pick up or remove items",
+     8.7
+    ],
+    [
+     "Install something new",
+     8.7
+    ],
+    [
+     "Repair, fill or replace",
+     4.3
+    ],
+    [
+     "Inspect and monitor",
+     4.3
+    ]
+   ],
+   "DND|DND_General": [
+    [
+     "Clean or sweep",
+     15.4
+    ],
+    [
+     "Deliver or schedule a service",
+     15.4
+    ],
+    [
+     "Prune or remove a tree",
+     7.7
+    ],
+    [
+     "Inspect and monitor",
+     7.7
+    ],
+    [
+     "Refer to another agency",
+     7.7
+    ]
+   ],
+   "GEN|GEN_Needle_Pickup": [
+    [
+     "Pick up or remove items",
+     49.5
+    ]
+   ],
+   "INFO|INFO01_GenericeFormforOtherServiceRequestTypes": [
+    [
+     "Pick up or remove items",
+     16
+    ],
+    [
+     "Contact the owner or resident",
+     10.7
+    ],
+    [
+     "Refer to another agency",
+     7.6
+    ],
+    [
+     "Issue a ticket or citation",
+     3.2
+    ]
+   ],
+   "INFO|INFO03_Mobile \"Other\" Requests": [
+    [
+     "Deliver or schedule a service",
+     43.2
+    ],
+    [
+     "Pick up or remove items",
+     4.5
+    ]
+   ],
+   "INFO|INFO_BPHC": [
+    [
+     "Refer to another agency",
+     68.8
+    ]
+   ],
+   "INFO|INFO_Encampments": [
+    [
+     "Pick up or remove items",
+     17.4
+    ],
+    [
+     "Inspect and monitor",
+     10.1
+    ],
+    [
+     "Clean or sweep",
+     7.2
+    ]
+   ],
+   "INFO|INFO_Eversource": [
+    [
+     "Refer to another agency",
+     41.2
+    ],
+    [
+     "Repair, fill or replace",
+     11.8
+    ],
+    [
+     "Pick up or remove items",
+     11.8
+    ],
+    [
+     "Prune or remove a tree",
+     11.8
+    ],
+    [
+     "Issue a ticket or citation",
+     11.8
+    ]
+   ],
+   "INFO|INFO_HumanWaste": [
+    [
+     "Pick up or remove items",
+     27.3
+    ],
+    [
+     "Refer to another agency",
+     18.2
+    ],
+    [
+     "Clean or sweep",
+     18.2
+    ]
+   ],
+   "INFO|INFO_JC Decaux": [
+    [
+     "Clean or sweep",
+     50
+    ],
+    [
+     "Refer to another agency",
+     31.2
+    ],
+    [
+     "Issue a ticket or citation",
+     12.5
+    ]
+   ],
+   "INFO|INFO_Low Hanging Wire": [
+    [
+     "Refer to another agency",
+     75
+    ],
+    [
+     "Prune or remove a tree",
+     56.2
+    ],
+    [
+     "Pick up or remove items",
+     6.2
+    ]
+   ],
+   "INFO|INFO_MBTA": [
+    [
+     "Refer to another agency",
+     75.7
+    ]
+   ],
+   "INFO|INFO_Mass DCR": [
+    [
+     "Refer to another agency",
+     52.3
+    ],
+    [
+     "Repair, fill or replace",
+     15.3
+    ],
+    [
+     "Pick up or remove items",
+     7.7
+    ],
+    [
+     "Clean or sweep",
+     7.1
+    ],
+    [
+     "Contact the owner or resident",
+     3.5
+    ]
+   ],
+   "INFO|INFO_Mass DOT": [
+    [
+     "Refer to another agency",
+     59.6
+    ],
+    [
+     "Repair, fill or replace",
+     8.5
+    ],
+    [
+     "Contact the owner or resident",
+     6.4
+    ],
+    [
+     "Inspect and monitor",
+     4.3
+    ]
+   ],
+   "INFO|INFO_Massport": [
+    [
+     "Refer to another agency",
+     65.2
+    ],
+    [
+     "Clean or sweep",
+     21.7
+    ],
+    [
+     "Repair, fill or replace",
+     8.7
+    ],
+    [
+     "Pick up or remove items",
+     4.3
+    ]
+   ],
+   "INFO|INFO_Reallocation From Dept": [
+    [
+     "Deliver or schedule a service",
+     6.1
+    ],
+    [
+     "Refer to another agency",
+     3.8
+    ],
+    [
+     "Repair, fill or replace",
+     3.5
+    ]
+   ],
+   "INFO|INFO_USPS Issues": [
+    [
+     "Refer to another agency",
+     100
+    ]
+   ],
+   "INFO|INFO_Unsheltered_Persons": [
+    [
+     "Inspect and monitor",
+     7.1
+    ]
+   ],
+   "ISD|ISD_Administrative": [
+    [
+     "Refer to another agency",
+     16.6
+    ],
+    [
+     "Inspect and monitor",
+     3.3
+    ]
+   ],
+   "ISD|ISD_Building (INTERNAL)": [
+    [
+     "Inspect and monitor",
+     18.4
+    ],
+    [
+     "Repair, fill or replace",
+     7.4
+    ]
+   ],
+   "ISD|ISD_Electrical": [],
+   "ISD|ISD_Environmental Services (INTERNAL)": [
+    [
+     "Inspect and monitor",
+     48.4
+    ],
+    [
+     "Treat for pests",
+     18.7
+    ],
+    [
+     "Issue a violation or legal order",
+     16.5
+    ],
+    [
+     "Contact the owner or resident",
+     5.5
+    ]
+   ],
+   "ISD|ISD_Health (INTERNAL)": [
+    [
+     "Inspect and monitor",
+     67.9
+    ],
+    [
+     "Deliver or schedule a service",
+     15
+    ],
+    [
+     "Issue a ticket or citation",
+     10.6
+    ],
+    [
+     "Contact the owner or resident",
+     8.9
+    ],
+    [
+     "Clean or sweep",
+     8.3
+    ]
+   ],
+   "ISD|ISD_Housing (INTERNAL)": [
+    [
+     "Issue a violation or legal order",
+     11
+    ],
+    [
+     "Repair, fill or replace",
+     3.1
+    ],
+    [
+     "Inspect and monitor",
+     3
+    ]
+   ],
+   "ISD|ISD_Housing_ShortTermRental": [
+    [
+     "Pick up or remove items",
+     6.3
+    ],
+    [
+     "Inspect and monitor",
+     6.3
+    ]
+   ],
+   "ISD|ISD_Plumbing": [
+    [
+     "Inspect and monitor",
+     8.6
+    ],
+    [
+     "Refer to another agency",
+     4.3
+    ],
+    [
+     "Repair, fill or replace",
+     4.3
+    ]
+   ],
+   "ISD|ISD_Weights and Measures (INTERNAL)": [
+    [
+     "Inspect and monitor",
+     35.7
+    ],
+    [
+     "Contact the owner or resident",
+     16.7
+    ],
+    [
+     "Install something new",
+     4.8
+    ],
+    [
+     "Repair, fill or replace",
+     4.8
+    ]
+   ],
+   "PARK|PARK_Carpentry": [
+    [
+     "Repair, fill or replace",
+     42.3
+    ],
+    [
+     "Install something new",
+     35.7
+    ],
+    [
+     "Pick up or remove items",
+     6.2
+    ]
+   ],
+   "PARK|PARK_Cemetery Maintenance Request": [
+    [
+     "Clean or sweep",
+     5.2
+    ],
+    [
+     "Prune or remove a tree",
+     5.2
+    ],
+    [
+     "Inspect and monitor",
+     3.4
+    ],
+    [
+     "Pick up or remove items",
+     3.4
+    ],
+    [
+     "Repair, fill or replace",
+     3.4
+    ]
+   ],
+   "PARK|PARK_General Comments": [
+    [
+     "Refer to another agency",
+     13.6
+    ],
+    [
+     "Inspect and monitor",
+     3.4
+    ],
+    [
+     "Deliver or schedule a service",
+     3.4
+    ]
+   ],
+   "PARK|PARK_Graffiti": [
+    [
+     "Pick up or remove items",
+     62.2
+    ],
+    [
+     "Clean or sweep",
+     9.3
+    ]
+   ],
+   "PARK|PARK_Maintenance_Ground Maintenance": [
+    [
+     "Pick up or remove items",
+     6.6
+    ],
+    [
+     "Clean or sweep",
+     3.3
+    ]
+   ],
+   "PARK|PARK_Maintenance_Horticulture": [
+    [
+     "Prune or remove a tree",
+     15.6
+    ],
+    [
+     "Deliver or schedule a service",
+     6.2
+    ],
+    [
+     "Refer to another agency",
+     3.1
+    ],
+    [
+     "Install something new",
+     3.1
+    ],
+    [
+     "Repair, fill or replace",
+     3.1
+    ]
+   ],
+   "PARK|PARK_Maintenance_Lighting Electrical": [
+    [
+     "Repair, fill or replace",
+     29
+    ],
+    [
+     "Install something new",
+     9.8
+    ]
+   ],
+   "PARK|PARK_Maintenance_Region 1": [
+    [
+     "Pick up or remove items",
+     32.8
+    ],
+    [
+     "Clean or sweep",
+     19.2
+    ]
+   ],
+   "PARK|PARK_Maintenance_Region 2": [
+    [
+     "Clean or sweep",
+     20.1
+    ],
+    [
+     "Pick up or remove items",
+     6
+    ]
+   ],
+   "PARK|PARK_Maintenance_Region 3": [
+    [
+     "Inspect and monitor",
+     5.7
+    ],
+    [
+     "Pick up or remove items",
+     3.4
+    ]
+   ],
+   "PARK|PARK_Maintenance_Region 4": [
+    [
+     "Pick up or remove items",
+     24.3
+    ],
+    [
+     "Clean or sweep",
+     22.6
+    ]
+   ],
+   "PARK|PARK_Maintenance_Region 5": [
+    [
+     "Clean or sweep",
+     36.6
+    ],
+    [
+     "Pick up or remove items",
+     23.5
+    ],
+    [
+     "Deliver or schedule a service",
+     3.9
+    ]
+   ],
+   "PARK|PARK_Maintenance_Region 6": [
+    [
+     "Pick up or remove items",
+     24.2
+    ],
+    [
+     "Clean or sweep",
+     13.4
+    ]
+   ],
+   "PARK|PARK_Maintenance_Support Services": [],
+   "PARK|PARK_Maintenance_Trades": [
+    [
+     "Repair, fill or replace",
+     19.2
+    ],
+    [
+     "Refer to another agency",
+     7.4
+    ],
+    [
+     "Install something new",
+     7.4
+    ],
+    [
+     "Inspect and monitor",
+     7
+    ]
+   ],
+   "PARK|PARK_New Tree Requests": [
+    [
+     "Install something new",
+     76.8
+    ],
+    [
+     "Inspect and monitor",
+     9.3
+    ]
+   ],
+   "PARK|PARK_Painting": [],
+   "PARK|PARK_Park Improvement Requests": [
+    [
+     "Repair, fill or replace",
+     38.1
+    ],
+    [
+     "Install something new",
+     9.4
+    ],
+    [
+     "Contact the owner or resident",
+     9.1
+    ]
+   ],
+   "PARK|PARK_Plumbing": [
+    [
+     "Repair, fill or replace",
+     8.5
+    ]
+   ],
+   "PARK|PARK_Tree Emergencies": [
+    [
+     "Pick up or remove items",
+     64.1
+    ],
+    [
+     "Prune or remove a tree",
+     5.9
+    ]
+   ],
+   "PARK|PARK_Tree Maintenance Request": [
+    [
+     "Prune or remove a tree",
+     78.1
+    ],
+    [
+     "Pick up or remove items",
+     16.7
+    ],
+    [
+     "Inspect and monitor",
+     4.9
+    ]
+   ],
+   "PARK|PARK_Tree in Park": [
+    [
+     "Prune or remove a tree",
+     37.9
+    ],
+    [
+     "Pick up or remove items",
+     36.5
+    ],
+    [
+     "Inspect and monitor",
+     6.2
+    ],
+    [
+     "Repair, fill or replace",
+     3.3
+    ]
+   ],
+   "PARK|PARK_Urban_Wilds": [
+    [
+     "Pick up or remove items",
+     29.2
+    ],
+    [
+     "Prune or remove a tree",
+     12.5
+    ],
+    [
+     "Clean or sweep",
+     12.5
+    ],
+    [
+     "Issue a violation or legal order",
+     4.2
+    ],
+    [
+     "Inspect and monitor",
+     4.2
+    ]
+   ],
+   "PARK|PARK_Welding": [
+    [
+     "Repair, fill or replace",
+     45.9
+    ],
+    [
+     "Install something new",
+     11.9
+    ],
+    [
+     "Pick up or remove items",
+     3.7
+    ]
+   ],
+   "PROP|PROP_GRAF_GraffitiRemoval": [
+    [
+     "Pick up or remove items",
+     63.1
+    ],
+    [
+     "Clean or sweep",
+     7.1
+    ],
+    [
+     "Tow or tag a vehicle",
+     5.8
+    ]
+   ],
+   "PWDx|PWDx_Bridge Maintenance": [
+    [
+     "Repair, fill or replace",
+     24.1
+    ],
+    [
+     "Install something new",
+     7.6
+    ]
+   ],
+   "PWDx|PWDx_Code Enforcement": [
+    [
+     "Issue a ticket or citation",
+     33.6
+    ],
+    [
+     "Issue a violation or legal order",
+     26.4
+    ],
+    [
+     "Install something new",
+     10.7
+    ],
+    [
+     "Refer to another agency",
+     4.6
+    ],
+    [
+     "Pick up or remove items",
+     4.5
+    ]
+   ],
+   "PWDx|PWDx_Contractor Complaints": [
+    [
+     "Inspect and monitor",
+     16.8
+    ],
+    [
+     "Repair, fill or replace",
+     14.6
+    ],
+    [
+     "Contact the owner or resident",
+     13.8
+    ]
+   ],
+   "PWDx|PWDx_District 02: Jamaica Plain": [
+    [
+     "Pick up or remove items",
+     20.7
+    ],
+    [
+     "Clean or sweep",
+     9.1
+    ]
+   ],
+   "PWDx|PWDx_District 03: North Dorchester": [
+    [
+     "Pick up or remove items",
+     56.7
+    ],
+    [
+     "Clean or sweep",
+     15.9
+    ]
+   ],
+   "PWDx|PWDx_District 04: Allston/Brighton": [
+    [
+     "Pick up or remove items",
+     25.9
+    ],
+    [
+     "Clean or sweep",
+     7.5
+    ],
+    [
+     "Repair, fill or replace",
+     6.2
+    ]
+   ],
+   "PWDx|PWDx_District 05: South Boston": [
+    [
+     "Pick up or remove items",
+     50.8
+    ],
+    [
+     "Clean or sweep",
+     13.6
+    ],
+    [
+     "Deliver or schedule a service",
+     6.1
+    ]
+   ],
+   "PWDx|PWDx_District 06: West Roxbury and Roslindale": [
+    [
+     "Pick up or remove items",
+     42.5
+    ],
+    [
+     "Repair, fill or replace",
+     12.2
+    ],
+    [
+     "Clean or sweep",
+     10
+    ]
+   ],
+   "PWDx|PWDx_District 07: South Dorchester": [
+    [
+     "Pick up or remove items",
+     46.6
+    ],
+    [
+     "Repair, fill or replace",
+     14.9
+    ],
+    [
+     "Clean or sweep",
+     10.2
+    ],
+    [
+     "Deliver or schedule a service",
+     3.1
+    ]
+   ],
+   "PWDx|PWDx_District 08: Hyde Park": [
+    [
+     "Pick up or remove items",
+     31.4
+    ],
+    [
+     "Clean or sweep",
+     19
+    ],
+    [
+     "Repair, fill or replace",
+     4.6
+    ]
+   ],
+   "PWDx|PWDx_District 09: East Boston": [
+    [
+     "Pick up or remove items",
+     24.6
+    ],
+    [
+     "Clean or sweep",
+     7.5
+    ],
+    [
+     "Deliver or schedule a service",
+     5.5
+    ]
+   ],
+   "PWDx|PWDx_District 10A: Roxbury": [
+    [
+     "Pick up or remove items",
+     13.2
+    ]
+   ],
+   "PWDx|PWDx_District 10B: Roxbury": [
+    [
+     "Pick up or remove items",
+     14.2
+    ],
+    [
+     "Clean or sweep",
+     4.4
+    ]
+   ],
+   "PWDx|PWDx_District 1A: Charlestown": [
+    [
+     "Pick up or remove items",
+     12.9
+    ],
+    [
+     "Repair, fill or replace",
+     6.9
+    ],
+    [
+     "Clean or sweep",
+     5.4
+    ]
+   ],
+   "PWDx|PWDx_District 1B: North End": [
+    [
+     "Pick up or remove items",
+     16
+    ],
+    [
+     "Deliver or schedule a service",
+     3.6
+    ]
+   ],
+   "PWDx|PWDx_District 1C: Downtown": [
+    [
+     "Pick up or remove items",
+     12.4
+    ],
+    [
+     "Repair, fill or replace",
+     3.8
+    ],
+    [
+     "Clean or sweep",
+     3.8
+    ]
+   ],
+   "PWDx|PWDx_Empty Litter Basket": [
+    [
+     "Pick up or remove items",
+     6.4
+    ]
+   ],
+   "PWDx|PWDx_Engineering_Design": [
+    [
+     "Contact the owner or resident",
+     20
+    ],
+    [
+     "Repair, fill or replace",
+     6.7
+    ]
+   ],
+   "PWDx|PWDx_Graffiti": [
+    [
+     "Clean or sweep",
+     54.4
+    ],
+    [
+     "Pick up or remove items",
+     48.1
+    ]
+   ],
+   "PWDx|PWDx_Highway Construction": [
+    [
+     "Repair, fill or replace",
+     28.7
+    ]
+   ],
+   "PWDx|PWDx_Highway Construction General": [
+    [
+     "Pick up or remove items",
+     27.3
+    ],
+    [
+     "Clean or sweep",
+     18.2
+    ],
+    [
+     "Repair, fill or replace",
+     10.6
+    ]
+   ],
+   "PWDx|PWDx_IPL Damaged Cart Replacement": [],
+   "PWDx|PWDx_Litter Basket Maintenance": [
+    [
+     "Pick up or remove items",
+     16.7
+    ],
+    [
+     "Repair, fill or replace",
+     7.4
+    ],
+    [
+     "Clean or sweep",
+     6.5
+    ],
+    [
+     "Install something new",
+     4.6
+    ],
+    [
+     "Issue a ticket or citation",
+     3.7
+    ]
+   ],
+   "PWDx|PWDx_Major System Failure": [
+    [
+     "Repair, fill or replace",
+     23.7
+    ],
+    [
+     "Install something new",
+     13.7
+    ],
+    [
+     "Issue a ticket or citation",
+     3.4
+    ]
+   ],
+   "PWDx|PWDx_Missed Trash\\Recycling\\Yard Waste\\Bulk Item": [
+    [
+     "Deliver or schedule a service",
+     46.7
+    ],
+    [
+     "Pick up or remove items",
+     23.5
+    ],
+    [
+     "Inspect and monitor",
+     15
+    ]
+   ],
+   "PWDx|PWDx_Pick Up Dead Animals": [
+    [
+     "Pick up or remove items",
+     3.3
+    ]
+   ],
+   "PWDx|PWDx_Recycling": [],
+   "PWDx|PWDx_Recycling Cart Return": [
+    [
+     "Pick up or remove items",
+     8.5
+    ]
+   ],
+   "PWDx|PWDx_Recycling Sent to Contractor": [],
+   "PWDx|PWDx_Request for Litter Basket Installation": [
+    [
+     "Install something new",
+     63.9
+    ],
+    [
+     "Pick up or remove items",
+     13.9
+    ],
+    [
+     "Issue a ticket or citation",
+     11.1
+    ],
+    [
+     "Contact the owner or resident",
+     3.7
+    ]
+   ],
+   "PWDx|PWDx_Request for Street Cleaning": [],
+   "PWDx|PWDx_Requests for Pothole Repair": [],
+   "PWDx|PWDx_Requests for Snow Plowing": [],
+   "PWDx|PWDx_Roadway Repair": [
+    [
+     "Deliver or schedule a service",
+     4.3
+    ],
+    [
+     "Repair, fill or replace",
+     3.4
+    ]
+   ],
+   "PWDx|PWDx_Roadway Repair_ARP_Resurfacing": [
+    [
+     "Deliver or schedule a service",
+     5.4
+    ],
+    [
+     "Repair, fill or replace",
+     4.1
+    ]
+   ],
+   "PWDx|PWDx_Roadway Repair_Reconstruction": [
+    [
+     "Install something new",
+     10
+    ],
+    [
+     "Refer to another agency",
+     10
+    ],
+    [
+     "Pick up or remove items",
+     3.3
+    ],
+    [
+     "Repair, fill or replace",
+     3.3
+    ],
+    [
+     "Tow or tag a vehicle",
+     3.3
+    ]
+   ],
+   "PWDx|PWDx_STRL Pole Compliance": [
+    [
+     "Pick up or remove items",
+     54.2
+    ],
+    [
+     "Clean or sweep",
+     45.8
+    ],
+    [
+     "Repair, fill or replace",
+     27.4
+    ],
+    [
+     "Install something new",
+     5.4
+    ],
+    [
+     "Deliver or schedule a service",
+     3.6
+    ]
+   ],
+   "PWDx|PWDx_Schedule a Bulk Item Pickup": [
+    [
+     "Pick up or remove items",
+     6.7
+    ]
+   ],
+   "PWDx|PWDx_Sidewalk Repair": [
+    [
+     "Repair, fill or replace",
+     11
+    ]
+   ],
+   "PWDx|PWDx_Sidewalk Repair (Make Safe)": [],
+   "PWDx|PWDx_Space Saver Removal": [],
+   "PWDx|PWDx_Sticker Request": [
+    [
+     "Deliver or schedule a service",
+     96.3
+    ]
+   ],
+   "PWDx|PWDx_Street Light Knock Downs": [
+    [
+     "Pick up or remove items",
+     26.1
+    ],
+    [
+     "Repair, fill or replace",
+     17.8
+    ],
+    [
+     "Install something new",
+     12.9
+    ],
+    [
+     "Clean or sweep",
+     4.4
+    ]
+   ],
+   "PWDx|PWDx_Street Light Knockdown Replacement": [
+    [
+     "Install something new",
+     52.5
+    ],
+    [
+     "Repair, fill or replace",
+     35.6
+    ],
+    [
+     "Pick up or remove items",
+     15.8
+    ]
+   ],
+   "PWDx|PWDx_Street Light Outages": [
+    [
+     "Repair, fill or replace",
+     42.5
+    ],
+    [
+     "Install something new",
+     26.6
+    ],
+    [
+     "Clean or sweep",
+     6.4
+    ],
+    [
+     "Pick up or remove items",
+     3.1
+    ]
+   ],
+   "PWDx|PWDx_Street Light Outages - Gas": [
+    [
+     "Repair, fill or replace",
+     53.4
+    ],
+    [
+     "Install something new",
+     27.6
+    ],
+    [
+     "Clean or sweep",
+     14.4
+    ]
+   ],
+   "PWDx|PWDx_Street Light Outages - Long-Term Repair": [
+    [
+     "Repair, fill or replace",
+     37.7
+    ],
+    [
+     "Install something new",
+     29.5
+    ],
+    [
+     "Pick up or remove items",
+     8.2
+    ],
+    [
+     "Inspect and monitor",
+     4.9
+    ]
+   ],
+   "PWDx|PWDx_Street Light_General Lighting Request": [
+    [
+     "Repair, fill or replace",
+     24.7
+    ],
+    [
+     "Install something new",
+     23.7
+    ],
+    [
+     "Pick up or remove items",
+     11.9
+    ]
+   ],
+   "PWDx|PWDx_Street Light_Install New Lighting": [
+    [
+     "Install something new",
+     41.7
+    ],
+    [
+     "Repair, fill or replace",
+     25
+    ],
+    [
+     "Pick up or remove items",
+     8.3
+    ],
+    [
+     "Inspect and monitor",
+     8.3
+    ]
+   ],
+   "PWDx|PWDx_Street Light_Upgrade Existing Lighting": [
+    [
+     "Repair, fill or replace",
+     35
+    ],
+    [
+     "Install something new",
+     20
+    ],
+    [
+     "Pick up or remove items",
+     10
+    ],
+    [
+     "Inspect and monitor",
+     5
+    ]
+   ],
+   "PWDx|PWDx_Utility Casting Repair": [
+    [
+     "Repair, fill or replace",
+     46.2
+    ],
+    [
+     "Contact the owner or resident",
+     38.5
+    ]
+   ],
+   "PWDx|PWDx_WM_Mattress_Pickup": [
+    [
+     "Deliver or schedule a service",
+     86.7
+    ],
+    [
+     "Pick up or remove items",
+     3.2
+    ]
+   ],
+   "PWDx|PWDx_Work Hours-Loud Noise Complaints": [
+    [
+     "Inspect and monitor",
+     17.2
+    ],
+    [
+     "Contact the owner or resident",
+     7.8
+    ],
+    [
+     "Repair, fill or replace",
+     3.9
+    ]
+   ]
+  }
+ },
+ "mainTypes": {
+  "ANML|ANML_General": [
+   "Pick up Dead Animal",
+   "Rodent Activity"
+  ],
+  "BHA|BHA_General": [
+   "Requests for Street Cleaning",
+   "Request for Pothole Repair",
+   "Tree Maintenance Requests"
+  ],
+  "BPD|BPD_Districts": [
+   "Abandoned Vehicles",
+   "Traffic Signal Inspection",
+   "Requests for Street Cleaning"
+  ],
+  "BTDT|BTDT_AVRS Interface Queue": [
+   "Abandoned Vehicles"
+  ],
+  "BTDT|BTDT_Abandoned Bicycle": [
+   "Abandoned Bicycle"
+  ],
+  "BTDT|BTDT_Administration": [
+   "Transportation General Request"
+  ],
+  "BTDT|BTDT_BostonBikes": [
+   "Traffic Signal Inspection",
+   "Requests for Traffic Signal Studies or Reviews",
+   "Bicycle Issues"
+  ],
+  "BTDT|BTDT_Broken Meter Complaints": [
+   "Parking Meter Repairs",
+   "PWD Graffiti"
+  ],
+  "BTDT|BTDT_District 01": [
+   "Sign Repair"
+  ],
+  "BTDT|BTDT_District 02": [
+   "Sign Repair"
+  ],
+  "BTDT|BTDT_District 03": [
+   "Sign Repair"
+  ],
+  "BTDT|BTDT_District 04": [
+   "Sign Repair"
+  ],
+  "BTDT|BTDT_District 05": [
+   "Sign Repair"
+  ],
+  "BTDT|BTDT_District 06": [
+   "Sign Repair"
+  ],
+  "BTDT|BTDT_Engineering_New Sign and Pavement Marking Requests": [
+   "New Sign  Crosswalk or Pavement Marking"
+  ],
+  "BTDT|BTDT_Engineering_Request for Traffic Signal Study or Review": [
+   "Traffic Signal Inspection",
+   "Requests for Traffic Signal Studies or Reviews"
+  ],
+  "BTDT|BTDT_General Comments": [
+   "General Comments For a Program or Policy",
+   "New Sign  Crosswalk or Pavement Marking"
+  ],
+  "BTDT|BTDT_OPC_Phone Bank Service": [
+   "Phone Bank Service Inquiry",
+   "General Comments For a Program or Policy",
+   "Transportation General Request"
+  ],
+  "BTDT|BTDT_OPC_Walk-In Service": [
+   "General Comments For An Employee",
+   "General Comments For a Program or Policy",
+   "Walk-In Service Inquiry"
+  ],
+  "BTDT|BTDT_Parking Enforcement": [
+   "Parking Enforcement"
+  ],
+  "BTDT|BTDT_Parking Lot_Municipal Parking Lot Complaints": [
+   "Requests for Street Cleaning",
+   "Municipal Parking Lot Complaints",
+   "Ground Maintenance"
+  ],
+  "BTDT|BTDT_Parking Lot_PrivateParkingLotComplaints": [
+   "Private Parking Lot Complaints",
+   "Space Savers",
+   "General Comments For a Program or Policy"
+  ],
+  "BTDT|BTDT_Parking Lot_Valet Parking Problems": [
+   "Valet Parking Problems",
+   "New Sign  Crosswalk or Pavement Marking"
+  ],
+  "BTDT|BTDT_Pavement Marking_Maintenance": [
+   "Sidewalk Repair (Make Safe)",
+   "New Sign  Crosswalk or Pavement Marking"
+  ],
+  "BTDT|BTDT_Permits & Special Events": [
+   "Parking Enforcement",
+   "Contractor Complaints"
+  ],
+  "BTDT|BTDT_Sign Repair": [
+   "Sign Repair",
+   "New Sign  Crosswalk or Pavement Marking",
+   "Missing Sign"
+  ],
+  "BTDT|BTDT_Sign Shop Clerical": [
+   "General Comments For An Employee",
+   "Parking Enforcement"
+  ],
+  "BTDT|BTDT_Sign Shop_Sign Installation": [
+   "Sign Repair"
+  ],
+  "BTDT|BTDT_Traffic Signal_Graffiti": [
+   "Traffic Signal Repair",
+   "PWD Graffiti"
+  ],
+  "BTDT|BTDT_Traffic Signal_Knock Downs/Contractor": [
+   "Sign Repair",
+   "Traffic Signal Inspection"
+  ],
+  "BTDT|BTDT_Traffic Signal_Repair": [
+   "Traffic Signal Inspection"
+  ],
+  "BWSC|BWSC_All Cases": [
+   "Request for Pothole Repair",
+   "Catchbasin",
+   "BWSC General Request"
+  ],
+  "BWSC|BWSC_Pothole": [
+   "Request for Pothole Repair",
+   "Utility Casting Repair",
+   "BWSC Pothole"
+  ],
+  "DISB|DISB_General_Request": [
+   "New Sign  Crosswalk or Pavement Marking",
+   "General Comments For a Program or Policy",
+   "Sign Repair"
+  ],
+  "DISB|DISB_HP Sign": [
+   "Transportation General Request",
+   "Sign Repair",
+   "New Sign  Crosswalk or Pavement Marking"
+  ],
+  "DND|DND_General": [
+   "Tree Maintenance Requests",
+   "Ground Maintenance"
+  ],
+  "ECON|ECON_OutdoorDining": [
+   "Improper Storage of Trash (Barrels)",
+   "Parking Enforcement",
+   "Requests for Street Cleaning"
+  ],
+  "GEN|GEN_Needle_Pickup": [
+   "Needle Pickup"
+  ],
+  "GRNi|GRNi_Green_Infrastructure": [
+   "Sign Repair",
+   "Requests for Street Cleaning",
+   "Equipment Repair"
+  ],
+  "INFO|INFO01_GenericeFormforOtherServiceRequestTypes": [
+   "Animal Generic Request",
+   "Loud Parties/Music/People"
+  ],
+  "INFO|INFO02_SelfServiceGenericeFormforOtherServiceRequestTypes": [
+   "Equipment Repair",
+   "Pick up Dead Animal"
+  ],
+  "INFO|INFO03_Mobile \"Other\" Requests": [
+   "Student Move-in Issues"
+  ],
+  "INFO|INFO_BPHC": [
+   "Requests for Street Cleaning"
+  ],
+  "INFO|INFO_Down Wire": [
+   "Parks Lighting/Electrical Issues",
+   "Tree Maintenance Requests",
+   "Sidewalk Repair (Make Safe)"
+  ],
+  "INFO|INFO_Encampments": [
+   "Requests for Street Cleaning",
+   "Ground Maintenance"
+  ],
+  "INFO|INFO_Eversource": [
+   "Request for Pothole Repair",
+   "Street Light Outages"
+  ],
+  "INFO|INFO_Homeless Issue": [
+   "Requests for Street Cleaning",
+   "Parking Enforcement"
+  ],
+  "INFO|INFO_HumanWaste": [
+   "Requests for Street Cleaning",
+   "Pick up Dead Animal"
+  ],
+  "INFO|INFO_JC Decaux": [
+   "Requests for Street Cleaning"
+  ],
+  "INFO|INFO_Low Hanging Wire": [
+   "Tree Maintenance Requests",
+   "Street Light Outages"
+  ],
+  "INFO|INFO_MBTA": [
+   "Requests for Street Cleaning",
+   "Sign Repair"
+  ],
+  "INFO|INFO_Mass DCR": [
+   "Ground Maintenance",
+   "Requests for Street Cleaning",
+   "Request for Pothole Repair"
+  ],
+  "INFO|INFO_Mass DOT": [
+   "Requests for Street Cleaning",
+   "Request for Pothole Repair",
+   "Traffic Signal Inspection"
+  ],
+  "INFO|INFO_Massport": [
+   "Pick up Dead Animal",
+   "Equipment Repair",
+   "Ground Maintenance"
+  ],
+  "INFO|INFO_Mayors Policy Office": [
+   "General Comments For a Program or Policy",
+   "Public Works General Request"
+  ],
+  "INFO|INFO_Reallocation From Dept": [
+   "Requests for Street Cleaning",
+   "Request for Pothole Repair",
+   "Pick up Dead Animal"
+  ],
+  "INFO|INFO_USPS Issues": [
+   "PWD Graffiti",
+   "Requests for Street Cleaning"
+  ],
+  "INFO|INFO_Unsheltered_Persons": [
+   "Requests for Street Cleaning"
+  ],
+  "ISD|ISD_Administrative": [
+   "Sidewalk Repair (Make Safe)",
+   "Contractor Complaints",
+   "Requests for Street Cleaning"
+  ],
+  "ISD|ISD_Building (INTERNAL)": [
+   "Work w/out Permit",
+   "Contractors Complaint",
+   "Working Beyond Hours"
+  ],
+  "ISD|ISD_Electrical": [
+   "Electrical"
+  ],
+  "ISD|ISD_Environmental Services (INTERNAL)": [
+   "Rodent Activity",
+   "Pest Infestation - Residential"
+  ],
+  "ISD|ISD_Health (INTERNAL)": [
+   "Unsanitary Conditions - Establishment",
+   "Food Alert - Confirmed",
+   "Unsanitary Conditions - Food"
+  ],
+  "ISD|ISD_Housing (INTERNAL)": [
+   "Unsatisfactory Living Conditions",
+   "Heat - Excessive  Insufficient",
+   "Maintenance Complaint - Residential"
+  ],
+  "ISD|ISD_Housing_ShortTermRental": [
+   "Short Term Rental"
+  ],
+  "ISD|ISD_Plumbing": [
+   "Plumbing"
+  ],
+  "ISD|ISD_Weights and Measures (INTERNAL)": [
+   "Scanning Overcharge",
+   "Unit Pricing Wrong/Missing",
+   "Item Price Missing"
+  ],
+  "ONS|ONS_Allston_Brighton": [
+   "Sign Repair",
+   "Public Works General Request"
+  ],
+  "ONS|ONS_BackBay_Fenway_MissionHill": [
+   "Requests for Street Cleaning",
+   "Contractor Complaints",
+   "Litter Basket Maintenance"
+  ],
+  "ONS|ONS_Charlestown": [
+   "Requests for Street Cleaning",
+   "Public Works General Request"
+  ],
+  "ONS|ONS_EastBoston": [
+   "New Sign  Crosswalk or Pavement Marking",
+   "Requests for Street Cleaning",
+   "Improper Storage of Trash (Barrels)"
+  ],
+  "ONS|ONS_General": [
+   "New Sign  Crosswalk or Pavement Marking",
+   "Sign Repair"
+  ],
+  "ONS|ONS_HydePark": [
+   "Public Works General Request",
+   "Requests for Street Cleaning"
+  ],
+  "ONS|ONS_JamaicaPlain": [
+   "Parks General Request",
+   "General Comments For a Program or Policy",
+   "Traffic Signal Repair"
+  ],
+  "ONS|ONS_Mattapan": [
+   "New Sign  Crosswalk or Pavement Marking",
+   "Public Works General Request",
+   "General Comments For a Program or Policy"
+  ],
+  "ONS|ONS_MidDorchester": [
+   "Requests for Street Cleaning",
+   "General Traffic Engineering Request",
+   "New Sign  Crosswalk or Pavement Marking"
+  ],
+  "ONS|ONS_NorthEnd_WaterFront_WestEnd": [
+   "Sign Repair",
+   "Public Works General Request",
+   "New Sign  Crosswalk or Pavement Marking"
+  ],
+  "ONS|ONS_Roslindale": [
+   "Parking Enforcement",
+   "Requests for Traffic Signal Studies or Reviews"
+  ],
+  "ONS|ONS_Roxbury": [
+   "Illegal Vending",
+   "Working Beyond Hours",
+   "General Comments For a Program or Policy"
+  ],
+  "ONS|ONS_SouthBoston": [
+   "Sign Repair",
+   "General Lighting Request",
+   "Requests for Street Cleaning"
+  ],
+  "ONS|ONS_SouthDorchester": [
+   "Sign Repair",
+   "Public Works General Request",
+   "Equipment Repair"
+  ],
+  "ONS|ONS_WestRoxbury": [
+   "Request for Pothole Repair",
+   "New Sign  Crosswalk or Pavement Marking"
+  ],
+  "PARK|PARK_Carpentry": [
+   "Equipment Repair"
+  ],
+  "PARK|PARK_Cemetery Maintenance Request": [
+   "Cemetery Maintenance Request",
+   "Parks General Request",
+   "Tree Maintenance Requests"
+  ],
+  "PARK|PARK_General Comments": [
+   "General Comments For a Program or Policy",
+   "General Comments For An Employee"
+  ],
+  "PARK|PARK_Graffiti": [
+   "Equipment Repair",
+   "Ground Maintenance"
+  ],
+  "PARK|PARK_Maintenance_Ground Maintenance": [
+   "Ground Maintenance"
+  ],
+  "PARK|PARK_Maintenance_Horticulture": [
+   "Ground Maintenance",
+   "Planting",
+   "Tree Maintenance Requests"
+  ],
+  "PARK|PARK_Maintenance_Lighting Electrical": [
+   "Parks Lighting/Electrical Issues",
+   "Equipment Repair"
+  ],
+  "PARK|PARK_Maintenance_Region 1": [
+   "Ground Maintenance"
+  ],
+  "PARK|PARK_Maintenance_Region 2": [
+   "Ground Maintenance"
+  ],
+  "PARK|PARK_Maintenance_Region 3": [
+   "Ground Maintenance"
+  ],
+  "PARK|PARK_Maintenance_Region 4": [
+   "Ground Maintenance"
+  ],
+  "PARK|PARK_Maintenance_Region 5": [
+   "Ground Maintenance"
+  ],
+  "PARK|PARK_Maintenance_Region 6": [
+   "Ground Maintenance"
+  ],
+  "PARK|PARK_Maintenance_Support Services": [
+   "Ground Maintenance",
+   "Equipment Repair"
+  ],
+  "PARK|PARK_Maintenance_Trades": [
+   "Equipment Repair"
+  ],
+  "PARK|PARK_New Tree Requests": [
+   "New Tree Requests"
+  ],
+  "PARK|PARK_Painting": [
+   "Equipment Repair"
+  ],
+  "PARK|PARK_Park Improvement Requests": [
+   "Park Improvement Requests",
+   "Equipment Repair"
+  ],
+  "PARK|PARK_Plumbing": [
+   "Equipment Repair"
+  ],
+  "PARK|PARK_Tree Emergencies": [
+   "Tree Maintenance Requests",
+   "Tree Emergencies"
+  ],
+  "PARK|PARK_Tree Maintenance Request": [
+   "Tree Maintenance Requests"
+  ],
+  "PARK|PARK_Tree in Park": [
+   "Tree Maintenance Requests",
+   "Tree in Park"
+  ],
+  "PARK|PARK_Urban_Wilds": [
+   "Tree Maintenance Requests",
+   "Ground Maintenance",
+   "Equipment Repair"
+  ],
+  "PARK|PARK_Welding": [
+   "Equipment Repair"
+  ],
+  "PROP|PROP_GRAF_GraffitiRemoval": [
+   "Graffiti Removal"
+  ],
+  "PWDx|PWDx_Bridge Maintenance": [
+   "Sidewalk Repair (Make Safe)",
+   "Request for Pothole Repair",
+   "Bridge Maintenance"
+  ],
+  "PWDx|PWDx_Code Enforcement": [
+   "Improper Storage of Trash (Barrels)",
+   "Poor Conditions of Property"
+  ],
+  "PWDx|PWDx_Contractor Complaints": [
+   "Contractor Complaints",
+   "Request for Pothole Repair"
+  ],
+  "PWDx|PWDx_District 02: Jamaica Plain": [
+   "Requests for Street Cleaning",
+   "Pick up Dead Animal",
+   "Request for Pothole Repair"
+  ],
+  "PWDx|PWDx_District 03: North Dorchester": [
+   "Requests for Street Cleaning",
+   "CE Collection",
+   "Pick up Dead Animal"
+  ],
+  "PWDx|PWDx_District 04: Allston/Brighton": [
+   "CE Collection",
+   "Requests for Street Cleaning",
+   "Pick up Dead Animal"
+  ],
+  "PWDx|PWDx_District 05: South Boston": [
+   "Requests for Street Cleaning",
+   "CE Collection",
+   "Pick up Dead Animal"
+  ],
+  "PWDx|PWDx_District 06: West Roxbury and Roslindale": [
+   "Pick up Dead Animal",
+   "Requests for Street Cleaning",
+   "Request for Pothole Repair"
+  ],
+  "PWDx|PWDx_District 07: South Dorchester": [
+   "Requests for Street Cleaning",
+   "Request for Pothole Repair",
+   "Pick up Dead Animal"
+  ],
+  "PWDx|PWDx_District 08: Hyde Park": [
+   "Requests for Street Cleaning",
+   "Request for Pothole Repair",
+   "Pick up Dead Animal"
+  ],
+  "PWDx|PWDx_District 09: East Boston": [
+   "Requests for Street Cleaning",
+   "CE Collection",
+   "Request for Pothole Repair"
+  ],
+  "PWDx|PWDx_District 10A: Roxbury": [
+   "CE Collection",
+   "Requests for Street Cleaning",
+   "Request for Pothole Repair"
+  ],
+  "PWDx|PWDx_District 10B: Roxbury": [
+   "Requests for Street Cleaning",
+   "CE Collection",
+   "Request for Pothole Repair"
+  ],
+  "PWDx|PWDx_District 1A: Charlestown": [
+   "Requests for Street Cleaning",
+   "Empty Litter Basket",
+   "CE Collection"
+  ],
+  "PWDx|PWDx_District 1B: North End": [
+   "CE Collection",
+   "Requests for Street Cleaning"
+  ],
+  "PWDx|PWDx_District 1C: Downtown": [
+   "CE Collection",
+   "Requests for Street Cleaning"
+  ],
+  "PWDx|PWDx_Empty Litter Basket": [
+   "Empty Litter Basket"
+  ],
+  "PWDx|PWDx_Engineering_Design": [
+   "Sidewalk Repair (Make Safe)"
+  ],
+  "PWDx|PWDx_Engineering_PIC": [
+   "Sidewalk Repair (Make Safe)",
+   "Public Works General Request"
+  ],
+  "PWDx|PWDx_Graffiti": [
+   "PWD Graffiti"
+  ],
+  "PWDx|PWDx_Highway Construction": [
+   "Sidewalk Repair (Make Safe)",
+   "Request for Pothole Repair"
+  ],
+  "PWDx|PWDx_Highway Construction General": [
+   "PWD Graffiti",
+   "StreetLight Pole WO"
+  ],
+  "PWDx|PWDx_IPL Damaged Cart Replacement": [
+   "Recycling Cart Return"
+  ],
+  "PWDx|PWDx_Litter Basket Maintenance": [
+   "Litter Basket Maintenance",
+   "Empty Litter Basket"
+  ],
+  "PWDx|PWDx_Major System Failure": [
+   "Major System Failure"
+  ],
+  "PWDx|PWDx_Missed Trash\\Recycling\\Yard Waste\\Bulk Item": [
+   "Missed Trash/Recycling/Yard Waste/Bulk Item"
+  ],
+  "PWDx|PWDx_News Boxes": [
+   "News Boxes",
+   "PWD Graffiti"
+  ],
+  "PWDx|PWDx_Pick Up Dead Animals": [
+   "Pick up Dead Animal"
+  ],
+  "PWDx|PWDx_Recycling": [
+   "Request for Recycling Cart"
+  ],
+  "PWDx|PWDx_Recycling Cart Return": [
+   "Recycling Cart Return"
+  ],
+  "PWDx|PWDx_Recycling Sent to Contractor": [
+   "Recycling Cart Return",
+   "Request for Recycling Cart"
+  ],
+  "PWDx|PWDx_Request for Litter Basket Installation": [
+   "Request for Litter Basket Installation"
+  ],
+  "PWDx|PWDx_Request for Street Cleaning": [
+   "Requests for Street Cleaning"
+  ],
+  "PWDx|PWDx_Requests for Pothole Repair": [
+   "Request for Pothole Repair"
+  ],
+  "PWDx|PWDx_Requests for Snow Plowing": [
+   "Request for Snow Plowing"
+  ],
+  "PWDx|PWDx_Requests for Snow Plowing (Emergency Responder)": [
+   "Request for Snow Plowing (Emergency Responder)"
+  ],
+  "PWDx|PWDx_Roadway Repair": [
+   "Roadway Repair",
+   "Request for Pothole Repair"
+  ],
+  "PWDx|PWDx_Roadway Repair_ARP_Resurfacing": [
+   "Request for Pothole Repair"
+  ],
+  "PWDx|PWDx_Roadway Repair_CRP_Resurfacing": [
+   "Request for Pothole Repair",
+   "Roadway Repair",
+   "Contractor Complaints"
+  ],
+  "PWDx|PWDx_Roadway Repair_Ponding": [
+   "Request for Pothole Repair",
+   "Public Works General Request",
+   "Requests for Street Cleaning"
+  ],
+  "PWDx|PWDx_Roadway Repair_Reconstruction": [
+   "Contractor Complaints",
+   "Sidewalk Repair (Make Safe)"
+  ],
+  "PWDx|PWDx_STRL Pole Compliance": [
+   "PWD Graffiti",
+   "Street Light Outages",
+   "Pole Compliance"
+  ],
+  "PWDx|PWDx_Schedule a Bulk Item Pickup": [
+   "Schedule a Bulk Item Pickup",
+   "Schedule a Bulk Item Pickup SS"
+  ],
+  "PWDx|PWDx_Sidewalk Repair": [
+   "Sidewalk Repair (Make Safe)"
+  ],
+  "PWDx|PWDx_Sidewalk Repair (Make Safe)": [
+   "Sidewalk Repair (Make Safe)"
+  ],
+  "PWDx|PWDx_Snow Cases": [
+   "Misc. Snow Complaint"
+  ],
+  "PWDx|PWDx_Space Saver Removal": [
+   "Parking Enforcement",
+   "Space Savers",
+   "Transportation General Request"
+  ],
+  "PWDx|PWDx_Sticker Request": [
+   "Sticker Request"
+  ],
+  "PWDx|PWDx_Street Light Knock Downs": [
+   "Street Light Knock Downs"
+  ],
+  "PWDx|PWDx_Street Light Knockdown Replacement": [
+   "Knockdown Replacement"
+  ],
+  "PWDx|PWDx_Street Light Outages": [
+   "Street Light Outages"
+  ],
+  "PWDx|PWDx_Street Light Outages - Gas": [
+   "Street Light Outages"
+  ],
+  "PWDx|PWDx_Street Light Outages - Long-Term Repair": [
+   "Street Light Outages",
+   "Request for Pothole Repair"
+  ],
+  "PWDx|PWDx_Street Light_General Lighting Request": [
+   "General Lighting Request"
+  ],
+  "PWDx|PWDx_Street Light_Install New Lighting": [
+   "Install New Lighting"
+  ],
+  "PWDx|PWDx_Street Light_Pickup_Clear Conduit": [
+   "Pickup/Clear Conduit",
+   "Street Light Outages"
+  ],
+  "PWDx|PWDx_Street Light_Upgrade Existing Lighting": [
+   "Upgrade Existing Lighting"
+  ],
+  "PWDx|PWDx_Utility Call-In": [
+   "Utility Call-In"
+  ],
+  "PWDx|PWDx_Utility Casting Repair": [
+   "Utility Casting Repair",
+   "Request for Pothole Repair"
+  ],
+  "PWDx|PWDx_WM_Mattress_Pickup": [
+   "Mattress_Pickup"
+  ],
+  "PWDx|PWDx_Work Hours-Loud Noise Complaints": [
+   "Work Hours-Loud Noise Complaints"
+  ],
+  "Test|TestQueue": [
+   "Request for Pothole Repair"
+  ]
+ }
+}

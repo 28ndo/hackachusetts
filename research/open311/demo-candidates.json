@@ -1,0 +1,1782 @@
+{
+ "parkway_reports_by_street": [
+  [
+   "centre st",
+   400
+  ],
+  [
+   "columbia rd",
+   142
+  ],
+  [
+   "arborway",
+   113
+  ],
+  [
+   "fenway",
+   58
+  ],
+  [
+   "soldiers field",
+   53
+  ],
+  [
+   "neponset",
+   39
+  ],
+  [
+   "jamaicaway",
+   35
+  ],
+  [
+   "american legion",
+   32
+  ],
+  [
+   "vfw pkwy",
+   31
+  ],
+  [
+   "gallivan",
+   20
+  ],
+  [
+   "day blvd",
+   14
+  ],
+  [
+   "riverway",
+   14
+  ],
+  [
+   "truman",
+   12
+  ],
+  [
+   "morrissey",
+   11
+  ],
+  [
+   "storrow",
+   5
+  ]
+ ],
+ "parkway_examples": [
+  {
+   "service_request_id": "101006755911",
+   "service_name": "Damaged Sign",
+   "status": "closed",
+   "requested_datetime": "2026-09-24T20:39:00Z",
+   "address": "Intersection of Lochstead Ave and Centre St, Jamaica Plain",
+   "description": "Fire lane sign removed",
+   "status_notes": "Case Resolved.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790282342/boston/production/r2wahexv2hkwwzmsboio.jpg#spot=db03a294-d1a4-478d-abfc-f817f046ca6d"
+  },
+  {
+   "service_request_id": "05165012-2bf6-45b0-aa0f-1cb88f5fb96e",
+   "service_name": "Street Light Knockdown",
+   "status": "open",
+   "requested_datetime": "2026-09-25T11:46:02Z",
+   "address": "Gallivan Blvd & Myrtlebank Ave",
+   "description": "Leaning power/telephone pole on Myrtlebank Ave at the corner of Gallivan Blvd. If you look at the right side the power line to the streetlight on Gallivan is pulled tight, no slack at all. The main lines along Myrtlebank are drooping quite  bit.",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1790336737:boston:production:rwdeuzy6a2it1qkshxnl/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1790336736/boston/production/qaxxzn8po1obo3j95s6r.jpg"
+  },
+  {
+   "service_request_id": "101006756472",
+   "service_name": "Damaged Sign",
+   "status": "open",
+   "requested_datetime": "2026-09-25T21:24:00Z",
+   "address": "Intersection of Spring Park Ave and Centre St, Jamaica Plain",
+   "description": "Pedestrian sign post is directly in front of the driveway to 509 Centre Street. It requires a dangerous turn to get onto the street. If moved to the edge of the crosswalk, it would be safer. Previous signs at this crosswalk have been repeatedly run over.",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790371485/boston/production/totjkxeyclx5ef64uxpt.jpg#spot=28120da0-859d-479a-aa5b-a7b25d2e488b"
+  },
+  {
+   "service_request_id": "94e80746-e7a3-4f1a-9b4f-e8a403853bab",
+   "service_name": "Street Light Outage",
+   "status": "open",
+   "requested_datetime": "2026-09-26T21:50:00Z",
+   "address": "Arborway & Forest Hills St",
+   "description": null,
+   "status_notes": "Transitioned. Reallocated to Non-City of Boston Stakeholder.",
+   "media_url": null
+  },
+  {
+   "service_request_id": "8ee2c839-4ecd-4d80-a4d1-099dda0856df",
+   "service_name": "Fallen Tree or Branches",
+   "status": "closed",
+   "requested_datetime": "2026-09-26T23:16:09Z",
+   "address": "Baker St & VFW Pkwy",
+   "description": null,
+   "status_notes": "Resolved. Request Completed - nothing found at the location.",
+   "media_url": null
+  },
+  {
+   "service_request_id": "4e6a615f-da7c-446e-aba9-aa7119ee6a0b",
+   "service_name": "Fallen Tree or Branches",
+   "status": "open",
+   "requested_datetime": "2026-09-26T23:19:24Z",
+   "address": "Clearwater Rd & VFW Pkwy",
+   "description": null,
+   "status_notes": null,
+   "media_url": null
+  },
+  {
+   "service_request_id": "b2e9230d-703e-4982-a7c8-814eeeb98086",
+   "service_name": "Fallen Tree or Branches",
+   "status": "closed",
+   "requested_datetime": "2026-09-26T23:42:47Z",
+   "address": "123 Centre St, Boston, MA 02119",
+   "description": null,
+   "status_notes": "Resolved. Request Completed - removed by northern tree.",
+   "media_url": null
+  },
+  {
+   "service_request_id": "bb5744aa-3cbc-4c09-9576-a18aa87e27d6",
+   "service_name": "Fallen Tree or Branches",
+   "status": "closed",
+   "requested_datetime": "2026-09-27T01:43:30Z",
+   "address": "American Legion Hwy & Walk Hill St",
+   "description": null,
+   "status_notes": "Noted. Duplicate Request.",
+   "media_url": null
+  },
+  {
+   "service_request_id": "49232dc3-d631-4b7d-907d-2aa11237d121",
+   "service_name": "Fallen Tree or Branches",
+   "status": "open",
+   "requested_datetime": "2026-09-27T01:47:21Z",
+   "address": "Columbia Rd & Old Colony Ave",
+   "description": null,
+   "status_notes": null,
+   "media_url": null
+  },
+  {
+   "service_request_id": "0d16515d-36e0-497b-a433-f1cbdaf3c15e",
+   "service_name": "Fallen Tree or Branches",
+   "status": "closed",
+   "requested_datetime": "2026-09-27T12:01:50Z",
+   "address": "1748 Columbia Rd, Boston, MA 02127",
+   "description": null,
+   "status_notes": "Resolved. Request Completed - Large leader from a COB tree removed by Royer.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1790513403:boston:production:sp0digifgjyj80bkdqin/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1790513405:boston:production:aokeoklt8bkmfktjzzc6/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1790512135/boston/production/umukk9285tyboojkzguv.jpg"
+  },
+  {
+   "service_request_id": "18cbd8bf-0f2c-4e46-b3c2-ad26a6ad242c",
+   "service_name": "Fallen Tree or Branches",
+   "status": "closed",
+   "requested_datetime": "2026-09-27T12:10:49Z",
+   "address": "1754 Columbia Rd, Boston, MA 02127",
+   "description": null,
+   "status_notes": "Noted. Duplicate Request - duplicate of BCS-00334152.",
+   "media_url": null
+  },
+  {
+   "service_request_id": "3f56d738-e539-4736-b377-8fc29fee9cc1",
+   "service_name": "Tree or Stump Removal",
+   "status": "closed",
+   "requested_datetime": "2026-09-27T17:21:24Z",
+   "address": "1754 Columbia Rd, Boston, MA 02127",
+   "description": "Request for evaluation of rotted tree trunk\n\nThanks to the crews who cleared the fallen branch so fast! \n\nLooking at where the branch broke, the inside of the trunk has a good amount of black rot. Could an arborist please come out and take a look to see if the whole tree needs to be removed? Thank you!",
+   "status_notes": "Resolved. Completed by Task - Tree was removed by Royer Tree Service. A new tree request case will be made for this location. If you have any questions, please call the Park Line at 617-635-8733.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790529658/boston/production/guzxcfp9fbsuqh9rgbc6.jpg"
+  },
+  {
+   "service_request_id": "34f288ee-406d-41d8-a9d4-56a4cda861ab",
+   "service_name": "Sidewalk Repair",
+   "status": "open",
+   "requested_datetime": "2026-09-27T19:18:23Z",
+   "address": "704-718 Centre St, Boston, MA 02130",
+   "description": "Uneven/ deteriorated sidewalk. Trip hazard.",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1790536675:boston:production:el4siyabsnev4pfss32a/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1790536674/boston/production/qww4r4wndvm4pxdiuzjc.jpg"
+  },
+  {
+   "service_request_id": "78a21ef8-165e-40e2-a547-f55a8be8a129",
+   "service_name": "Park Light Outage",
+   "status": "closed",
+   "requested_datetime": "2026-09-27T21:53:18Z",
+   "address": "1005 Columbia Rd, Boston, MA 02127",
+   "description": null,
+   "status_notes": "Resolved. Completed by Task - permit was canceled.",
+   "media_url": null
+  },
+  {
+   "service_request_id": "72627ed6-db9a-4523-be53-a5fb45542ed6",
+   "service_name": "Fallen Tree or Branches",
+   "status": "open",
+   "requested_datetime": "2026-09-27T22:33:16Z",
+   "address": "Clifford St & Neponset Valley Pkwy",
+   "description": "Tree is close to falling off right on the corner of Clifford Street and Neponset Valley Parkway in front of a house and multiple crosswalks. There is already caution tape and traffic cones, but that will obviously not hold if the tree falls. I\u2019m unsure if this already has been reported, but I want to ensure it does.",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790548371/boston/production/pytipsyhk18m84rrllxy.jpg"
+  },
+  {
+   "service_request_id": "6ca3b0f1-de7d-41b5-8973-4ca6a2f2d3e3",
+   "service_name": "Street Light Outage",
+   "status": "open",
+   "requested_datetime": "2026-09-28T10:55:50Z",
+   "address": "593 Gallivan Blvd, Boston, MA 02124",
+   "description": null,
+   "status_notes": "Transitioned. Reallocated to Non-City of Boston Stakeholder.",
+   "media_url": null
+  },
+  {
+   "service_request_id": "83721627-0392-4ccd-aa3a-73e7bec938d1",
+   "service_name": "Fallen Tree or Branches",
+   "status": "open",
+   "requested_datetime": "2026-09-28T13:11:00Z",
+   "address": "239 Neponset Valley Pkwy, Boston, MA 02136",
+   "description": "Subject: Urgent Request for Tree Inspection and Maintenance on Neponset Valley Parkway.\n\nGood morning,\n\nI am submitting this report to bring attention to the large trees that are falling and creating a potential safety hazard along Neponset Valley Parkway, particularly between 209 and 239 Neponset Valley Parkway.\n\nI am respectfully requesting that the City send the appropriate tree management team to inspect this area and address the damaged and potentially dangerous trees and properties. I am also requesting that the tree limbs and branches in front of 229 and 239 Neponset Valley Parkway be properly cut back and removed where necessary.\n\nTaking care of these trees and damaged branches now could help prevent future property damage, injuries, or other serious hazards, especially as we approach the winter season when snow, ice, and strong winds can make these conditions worse.\n\nThe safety of residents and their homes is very important, and I respectfully ask that this matter be inspected and addressed as soon as possible.\n\nThank you for your attention to this safety concern and for your assistance in keeping the residents of Neponset Valley Parkway safe. some of this trees are over 40 years old you can see clearly from the pictures. Some areas are properly taken care of while some areas have been neglected. This makes us wonder. Kindly let us do the needful to avoid destruction.\n\nRespectfully,\nConcern citizen of the Commonwealth.",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1790601033:boston:production:a0h27siqndb8zaf8ozus/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1790601034:boston:production:skxouv8vwrczn79sed29/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1790601031/boston/production/eeq4tcihrwrbuwpiqdoj.jpg"
+  },
+  {
+   "service_request_id": "801be236-5551-4e21-8311-dcbf65de2c83",
+   "service_name": "Pothole",
+   "status": "closed",
+   "requested_datetime": "2026-09-28T13:48:53Z",
+   "address": "891 Centre St, Boston, MA 02130",
+   "description": "Multiple dangerous potholes in the intersection/corner of 891 Centre Street, Arborway and Prince Street, Jamaica Plain, MA.  Natioanl Grid had replaced major pipes couple years ago in this area.  National Grid did not correctly apply asphalt in this busy intersection and as a result potholes have developed and are getting larger and deeper.  Please repair ASAP before winter begins.",
+   "status_notes": "Noted. No issue found at location - nothing found at this location need pictures or better location.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1790682891:boston:production:vrlv1eo20za4jdiobz31/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1790682889/boston/production/u4kkrli1exjxng4vx1jp.jpg"
+  },
+  {
+   "service_request_id": "101006757264",
+   "service_name": "Damaged Sign",
+   "status": "closed",
+   "requested_datetime": "2026-09-28T15:31:00Z",
+   "address": "Intersection of Freeport St and William T Morrissey Blvd, Dorchester",
+   "description": "UMass Boston Harbor",
+   "status_notes": "If this is located on the grounds of UMass Boston, the school would be responsible for repair.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1790609365:boston:production:embbgca9ot5unmeilkae/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1790609368:boston:production:khzpxteiuit4ssgn2myx/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1790609363/boston/production/makwm0xfyoeorsdbdxya.jpg"
+  },
+  {
+   "service_request_id": "101006757355",
+   "service_name": "Damaged Sign",
+   "status": "closed",
+   "requested_datetime": "2026-09-28T18:31:00Z",
+   "address": "400 Soldiers Field Rd, Allston",
+   "description": "Yield sign needed at merge lane.  There is no longer a sign as you merge onto Storrow from Soldiers Field road.  Seems like a safety hazard.",
+   "status_notes": "Resubmitted as BCS-00356941 to Mass DCR.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790620298/boston/production/sfdnjqqpkgylltywe9om.jpg#spot=f34f5ec9-1066-4f5b-926f-058c97b78a0e"
+  },
+  {
+   "service_request_id": "f73e793a-9886-4ac0-81c7-53f1051f7abb",
+   "service_name": "Fallen Tree or Branches",
+   "status": "open",
+   "requested_datetime": "2026-09-28T20:58:39Z",
+   "address": "E Broadway & William J Day Blvd",
+   "description": "Tree down ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790629114/boston/production/gq6brscwncnb24wc1oo4.jpg"
+  },
+  {
+   "service_request_id": "03f85776-a9d9-4235-90b3-467950194c76",
+   "service_name": "Illegally Blocked Sidewalk",
+   "status": "closed",
+   "requested_datetime": "2026-09-28T21:22:51Z",
+   "address": "44-46 Soldiers Field Pl, Boston, MA 02135",
+   "description": "Car blocking sidewalk across from the Charley apartments  in the cul de sac ",
+   "status_notes": "Transitioned. Reallocated to Non-City of Boston Stakeholder.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1790630566:boston:production:bfnqnna6es3l6vg2uiva/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1790630565/boston/production/cmrfgcffkmjfg6jzfyjo.jpg"
+  },
+  {
+   "service_request_id": "1ac2582a-70f7-4a16-bf47-133539536fa7",
+   "service_name": "Pothole",
+   "status": "open",
+   "requested_datetime": "2026-09-28T21:52:08Z",
+   "address": "1231A-1231B Centre St, Boston, MA 02132",
+   "description": "Open Construction pit in roadway. Steel \nplate needed, at a minimum. ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790632323/boston/production/xgea2aob6bulhuuof8ju.jpg"
+  },
+  {
+   "service_request_id": "cd88743d-d403-4e08-8977-5cda88132732",
+   "service_name": "Pothole",
+   "status": "open",
+   "requested_datetime": "2026-09-29T00:20:36Z",
+   "address": "Centre St & VFW Pkwy",
+   "description": null,
+   "status_notes": null,
+   "media_url": null
+  },
+  {
+   "service_request_id": "1c0458de-d1ce-418e-9b1b-bea90612b7af",
+   "service_name": "Pothole",
+   "status": "open",
+   "requested_datetime": "2026-09-29T02:50:10Z",
+   "address": "Centre St & Walter St",
+   "description": "Large roadway defect/depression near storm drain around 1214 Centre Street, Jamaica Plain. My vehicle suffered a flat tire after striking the defect at approximately 6:40pm on September 28, 2026. AAA advised me that several other vehicles had also sustained flat tires at this location. Cones were subsequently placed around the defect. There appears to be active/recent roadway construction in the area.",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790649960/boston/production/ntocz6rt3plglppjyaxv.jpg"
+  },
+  {
+   "service_request_id": "ff63960e-0187-45bc-a357-16c7fd5ed5a0",
+   "service_name": "Fallen Tree or Branches",
+   "status": "closed",
+   "requested_datetime": "2026-09-29T11:39:51Z",
+   "address": "150-160 American Legion Hwy, Boston, MA 02124",
+   "description": "Broken tree from storm ",
+   "status_notes": "Resolved. Request Completed - removed by JD OD.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1790691489:boston:production:ihtzjbqizkl1c2mty93d/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1790691487/boston/production/dqcktntk0tokar0bxzsl.jpg"
+  },
+  {
+   "service_request_id": "824d75d4-cf78-491d-bb92-1ff26938aaed",
+   "service_name": "Fallen Tree or Branches",
+   "status": "closed",
+   "requested_datetime": "2026-09-29T15:44:26Z",
+   "address": "Agassiz Rd & Fenway",
+   "description": "Broken willow limb- still partially connected to tree but could break anytime. ",
+   "status_notes": "Resolved. Request Completed - removed hanger from city park, BY DR GR.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1790696638:boston:production:mepremthvfrrehbl1gle/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1790808331:boston:production:r3i77n46ib1qcx43yarp/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1790696636/boston/production/szpobzstcmpbfhymf5ct.jpg"
+  },
+  {
+   "service_request_id": "3488fc95-3dbd-414f-9ecc-20b3241caec0",
+   "service_name": "Street Light Other",
+   "status": "open",
+   "requested_datetime": "2026-09-29T18:09:02Z",
+   "address": "Centre St & Guernsey St",
+   "description": "Daylighting request at the corner of Montclair and Centre, residents submitted petition with roughly 50 signatures. ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1790705271:boston:production:qoa5iuvos7aokjby9cep/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1790705274:boston:production:yyfj3bl4wjwrqlsbcbpq/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1790705266/boston/production/y1pk5gjb6eqvc1yurhvh.jpg"
+  },
+  {
+   "service_request_id": "ab26ef90-aabf-4254-a0bd-59160dc59f65",
+   "service_name": "Fallen Tree or Branches",
+   "status": "open",
+   "requested_datetime": "2026-09-29T22:46:55Z",
+   "address": "Arborway & Jamaicaway",
+   "description": "There is a large fallen branch hanging over a frequently used walkway on the emerald necklace. My husband tried to pull it down and said it was stuck. It looks like it could fall at any time on bicyclists and pedestrians. ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790721991/boston/production/pk4xxfsujxuevhmx7bir.jpg"
+  },
+  {
+   "service_request_id": "d077bcc0-8e81-4517-8cee-5770659ace3c",
+   "service_name": "Sidewalk Repair",
+   "status": "open",
+   "requested_datetime": "2026-09-29T23:49:05Z",
+   "address": "Brookline Ave & Riverway",
+   "description": "Dangerous roots and bumps on bike path leading to the intersection of Brookline Ave and Riverway. It is a series of roots that cause difficulty with biking and for those with mobility issues.",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1790725720:boston:production:cwwbelvmlgmx1kubstqi/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1790725721:boston:production:vr6uqmdirmmqyq1qgkkq/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1790725719/boston/production/khywedgjlvmd2p1yv1rj.jpg"
+  },
+  {
+   "service_request_id": "9ba8a10c-4417-4b26-9c08-0b8d4e7c578a",
+   "service_name": "Pothole",
+   "status": "closed",
+   "requested_datetime": "2026-09-30T13:12:25Z",
+   "address": "Keane Rd & VFW Pkwy",
+   "description": "BWSC utility access hole has sunken and now is a large pothole. Difficult to show the extent of the how much it has sunk in photos. Cars hit it regularly. \nLocated on Keane Rd at the intersection of Keane and VFW Pkwy. \n ",
+   "status_notes": "Resolved. Violation issued. - We have notified BWSC, and they are scheduling the repairs.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_236//l_v1790773917:boston:production:ovnwmlbiqbygeb4uoze4/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_266/l_v1790773918:boston:production:zngh7zjn0qrc7cqugatu/c_limit,h_748,w_236/fl_layer_apply,g_north_west,x_522/v1790773915/boston/production/pom266mxrxxkwz59gvff.jpg"
+  },
+  {
+   "service_request_id": "987a9cb5-5aa4-434e-be0d-54bc5908bf1a",
+   "service_name": "Illegally Blocked Sidewalk",
+   "status": "closed",
+   "requested_datetime": "2026-09-30T14:30:39Z",
+   "address": "358-358C Centre St, Boston, MA 02130",
+   "description": "Illegally dumped.",
+   "status_notes": "Resolved. Request Completed - removed.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790778634/boston/production/b8b0hhzqnqumygm1j17g.jpg"
+  },
+  {
+   "service_request_id": "4df66c00-b3c9-4135-89bc-086d7af7aaa7",
+   "service_name": "Sidewalk Repair",
+   "status": "open",
+   "requested_datetime": "2026-09-30T14:54:37Z",
+   "address": "1848-1852 Centre St, Boston, MA 02132",
+   "description": "uneven sidewalk/walking surface- trip hazard- appears the sidewalk is lifting due to growing tree roots and the asphalt repair is not holding- in front of Santander Bank @1850 Centre St West Roxbury MA",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/c_limit,h_748,w_364//l_v1790779939:boston:production:kdr832q2vfbwdxobzwte/c_limit,h_748,w_364/fl_layer_apply,g_north_west,x_394/v1790779937/boston/production/sj4rt5vtizeh6iwl8sib.jpg"
+  },
+  {
+   "service_request_id": "ae22d0d7-ee8c-41c9-bde8-e905f81d9933",
+   "service_name": "Traffic Signal Request",
+   "status": "open",
+   "requested_datetime": "2026-09-30T19:05:08Z",
+   "address": "Centre St & Green St",
+   "description": "The light at Green St & Centre St in JP was recently repaired & the light timing is now so short that only a couple cars can make it through the light & it\u2019s causing a major backup down Green St ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790795084/boston/production/hicsswufb9nc61dhbu7v.jpg"
+  },
+  {
+   "service_request_id": "983ee8ee-b8a5-430c-b39b-da1f314e8052",
+   "service_name": "Illegally Blocked Sidewalk",
+   "status": "closed",
+   "requested_datetime": "2026-09-30T19:11:59Z",
+   "address": "1868 Centre St, Boston, MA 02132",
+   "description": "truck is completely blocking sidewalk access pedestrians are having to walk in the street.",
+   "status_notes": "Resolved. Reallocated to Non-City of Boston Stakeholder.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790795514/boston/production/ubx7tvjdm13axoxseegs.jpg"
+  },
+  {
+   "service_request_id": "e6065c5f-ee1b-4ccf-b5fb-1c20be2b5c47",
+   "service_name": "Tree or Stump Removal",
+   "status": "closed",
+   "requested_datetime": "2026-09-30T19:42:34Z",
+   "address": "364-366 Neponset Ave, Boston, MA 02122",
+   "description": "Fallen tree",
+   "status_notes": "Resolved. Request Completed - broken Limbs removed from play area  trees need to be trimmed.",
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790797352/boston/production/nhqykc3qrhfqdo1b35bn.jpg"
+  },
+  {
+   "service_request_id": "32b03088-4cd1-4bd3-bfe3-f64c8205c152",
+   "service_name": "Street Light Outage",
+   "status": "open",
+   "requested_datetime": "2026-10-01T00:22:39Z",
+   "address": "270 Arborway, Boston, MA 02130",
+   "description": "The street light across from 270 Arborway, Jamaica Plain, MA 02130 is out and needs to be fixed. Thank you",
+   "status_notes": "Transitioned. Reallocated to Non-City of Boston Stakeholder.",
+   "media_url": null
+  },
+  {
+   "service_request_id": "e83ae78a-faee-4be1-b51f-fedfb9c37449",
+   "service_name": "Traffic Signal Request",
+   "status": "open",
+   "requested_datetime": "2026-10-01T11:54:30Z",
+   "address": "Gallivan Blvd & Hallet St, Dorchester, MA 02122",
+   "description": null,
+   "status_notes": null,
+   "media_url": null
+  },
+  {
+   "service_request_id": "ddd20e96-c03f-4b32-a955-02e10308c4fb",
+   "service_name": "Traffic Signal Request",
+   "status": "open",
+   "requested_datetime": "2026-10-01T14:57:37Z",
+   "address": "Centre St & Walter St",
+   "description": "The traffic light at the intersection of Walter St and Centre St in Roslindale needs to be turned on. Construction has been going on for over a year and it's a dangerous intersection.",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790866474/boston/production/khlghudfqr3ohccue7rs.png"
+  },
+  {
+   "service_request_id": "ac7468d8-4f34-49fb-b5de-a9772192292a",
+   "service_name": "Pothole",
+   "status": "open",
+   "requested_datetime": "2026-10-01T15:23:49Z",
+   "address": "794 VFW Pkwy, Boston, MA 02132",
+   "description": "Bad road construction manhole wobble making excessive metal to metal clashing noise . Can I put asphalt on top of it if public works doesn\u2019t take action since I made requests before ",
+   "status_notes": null,
+   "media_url": "https://spot-boston-res.cloudinary.com/image/upload/v1790868084/boston/production/a3a0daghvzolcqvbsumw.jpg"
+  }
+ ],
+ "repeat_spots": [
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3466,
+   "lon": -71.0717,
+   "reports": 36,
+   "statuses": [
+    [
+     "open",
+     23
+    ],
+    [
+     "closed",
+     13
+    ]
+   ],
+   "address": "60 Chandler St, Boston",
+   "first": "2026-09-25T12:33:14Z",
+   "last": "2026-10-23T16:39:22Z",
+   "status_notes": [
+    "Resolved. Officer Dispatched.",
+    "Resolved. No Violation Found.",
+    "Case Resolved. Thank you for reporting to 311. The vehicle is not at location. Should you need further assistance, we encourage you to call Boston 311 directly.",
+    "Noted."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.335,
+   "lon": -71.0329,
+   "reports": 17,
+   "statuses": [
+    [
+     "closed",
+     12
+    ],
+    [
+     "open",
+     5
+    ]
+   ],
+   "address": "770 E Fourth St, South Boston",
+   "first": "2026-09-25T04:49:16Z",
+   "last": "2026-10-23T21:18:04Z",
+   "status_notes": [
+    "Resolved. Officer Dispatched.",
+    "Case Resolved. The vehicles in violation has been issued a ticket.",
+    "Case Resolved. The vehicle in violation has been issued a ticket.",
+    "Resolved. Vehicle Ticketed."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3493,
+   "lon": -71.0609,
+   "reports": 17,
+   "statuses": [
+    [
+     "closed",
+     10
+    ],
+    [
+     "open",
+     7
+    ]
+   ],
+   "address": "61 Harvard St, Boston",
+   "first": "2026-10-08T13:02:40Z",
+   "last": "2026-10-22T04:36:53Z",
+   "status_notes": [
+    "Resolved. Officer Dispatched.",
+    "Resolved. <div>Cleared out, thanks for submitting.</div>.",
+    "Resolved. Vehicle Ticketed."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3783,
+   "lon": -71.039,
+   "reports": 14,
+   "statuses": [
+    [
+     "open",
+     11
+    ],
+    [
+     "closed",
+     3
+    ]
+   ],
+   "address": "339 Meridian St, East Boston",
+   "first": "2026-09-25T16:00:11Z",
+   "last": "2026-10-24T14:21:33Z",
+   "status_notes": [
+    "Resolved. Officer Dispatched.",
+    "Case Resolved. The vehicles in violation has been issued a ticket."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3709,
+   "lon": -71.0379,
+   "reports": 14,
+   "statuses": [
+    [
+     "open",
+     7
+    ],
+    [
+     "closed",
+     7
+    ]
+   ],
+   "address": "1 Emmons St, East Boston",
+   "first": "2026-09-29T08:50:14Z",
+   "last": "2026-10-23T17:42:30Z",
+   "status_notes": [
+    "Case Resolved. The violator(s),  at this location,  was/were ticketed.  Reported at 8:09  pm.",
+    "Case Resolved. The vehicles in violation had been moved.",
+    "Resolved. Vehicle Ticketed.",
+    "Case Resolved. The vehicles in violation has been issued a ticket."
+   ]
+  },
+  {
+   "service_name": "Improper Trash Storage",
+   "lat": 42.3103,
+   "lon": -71.0613,
+   "reports": 14,
+   "statuses": [
+    [
+     "closed",
+     14
+    ]
+   ],
+   "address": "195 Hancock St, Boston, MA 02122",
+   "first": "2026-09-30T12:14:14Z",
+   "last": "2026-10-22T15:43:16Z",
+   "status_notes": [
+    "Noted. No violation found by Code Enforcement - does not warrant a violation.",
+    "Noted. No violation found by Code Enforcement - no code enforcement violation found.",
+    "Noted. No violation found by Code Enforcement - No code enforcement violation found.",
+    "Resolved. Citation issued."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3113,
+   "lon": -71.0736,
+   "reports": 11,
+   "statuses": [
+    [
+     "closed",
+     7
+    ],
+    [
+     "open",
+     4
+    ]
+   ],
+   "address": "206 Magnolia St, Dorchester",
+   "first": "2026-09-29T11:02:00Z",
+   "last": "2026-10-23T14:34:30Z",
+   "status_notes": [
+    "Resolved. Officer Dispatched.",
+    "Resolved. No Violation Found.",
+    "Case Resolved. Thank you for reporting to 311. The vehicles moved before we could be issued a Citation. Should you need further assistance, we encourage you to call Boston 311 directly.",
+    "Resolved. Vehicle Ticketed."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3488,
+   "lon": -71.0824,
+   "reports": 9,
+   "statuses": [
+    [
+     "open",
+     5
+    ],
+    [
+     "closed",
+     4
+    ]
+   ],
+   "address": "815 Boylston St, Boston",
+   "first": "2026-09-25T00:26:58Z",
+   "last": "2026-10-20T20:34:09Z",
+   "status_notes": [
+    "Case Resolved. Double parkers moved out.  Taxi Stand violators ticketed.",
+    "Resolved. No Vehicle Found."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.344,
+   "lon": -71.0661,
+   "reports": 9,
+   "statuses": [
+    [
+     "open",
+     9
+    ]
+   ],
+   "address": "Intersection of E Berkeley St and Washington St, Roxbury",
+   "first": "2026-09-25T10:26:27Z",
+   "last": "2026-10-08T15:22:35Z",
+   "status_notes": []
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.2485,
+   "lon": -71.1172,
+   "reports": 9,
+   "statuses": [
+    [
+     "open",
+     9
+    ]
+   ],
+   "address": "Intersection of Pond St and Williams Ave, Hyde Park",
+   "first": "2026-09-26T00:14:18Z",
+   "last": "2026-10-14T10:23:30Z",
+   "status_notes": []
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3415,
+   "lon": -71.0688,
+   "reports": 9,
+   "statuses": [
+    [
+     "open",
+     9
+    ]
+   ],
+   "address": "Intersection of Washington St and Waltham St, Roxbury",
+   "first": "2026-10-02T18:22:09Z",
+   "last": "2026-10-04T18:42:42Z",
+   "status_notes": []
+  },
+  {
+   "service_name": "Illegally Blocked Sidewalk",
+   "lat": 42.3841,
+   "lon": -71.0178,
+   "reports": 9,
+   "statuses": [
+    [
+     "closed",
+     8
+    ],
+    [
+     "open",
+     1
+    ]
+   ],
+   "address": "95 Byron St, Boston, MA 02128",
+   "first": "2026-10-07T00:44:06Z",
+   "last": "2026-10-23T02:44:31Z",
+   "status_notes": [
+    "Resolved. Citation issued. - a citation was issued at this location for the occupying of city property without a valid posted permit to due so with all the materials and equipment!",
+    "Noted. No violation found by Code Enforcement - Permits on file.",
+    "Transitioned. Reallocated to Non-City of Boston Stakeholder.",
+    "Resolved. Citation issued."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3449,
+   "lon": -71.0651,
+   "reports": 9,
+   "statuses": [
+    [
+     "open",
+     9
+    ]
+   ],
+   "address": "Intersection of Traveler St and Washington St, Roxbury",
+   "first": "2026-10-09T15:27:10Z",
+   "last": "2026-10-10T16:02:45Z",
+   "status_notes": []
+  },
+  {
+   "service_name": "Pothole",
+   "lat": 42.3161,
+   "lon": -71.0817,
+   "reports": 8,
+   "statuses": [
+    [
+     "closed",
+     8
+    ]
+   ],
+   "address": "14 Quincy St, Boston, MA 02119",
+   "first": "2026-09-24T21:48:29Z",
+   "last": "2026-10-11T17:35:52Z",
+   "status_notes": [
+    "Resolved. Violation issued."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3336,
+   "lon": -71.0372,
+   "reports": 8,
+   "statuses": [
+    [
+     "open",
+     5
+    ],
+    [
+     "closed",
+     3
+    ]
+   ],
+   "address": "290 K St, South Boston",
+   "first": "2026-09-25T23:09:42Z",
+   "last": "2026-10-22T21:51:01Z",
+   "status_notes": [
+    "Resolved. Officer Dispatched.",
+    "Case Resolved. Thank you for reporting to 311. The vehicle is not at location. Should you need further assistance, we encourage you to call Boston 311 directly.",
+    "Resolved. Vehicle Moved."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3435,
+   "lon": -71.0713,
+   "reports": 8,
+   "statuses": [
+    [
+     "open",
+     8
+    ]
+   ],
+   "address": "98 Waltham St, Roxbury",
+   "first": "2026-09-27T17:52:53Z",
+   "last": "2026-10-13T19:58:22Z",
+   "status_notes": []
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.2895,
+   "lon": -71.0585,
+   "reports": 8,
+   "statuses": [
+    [
+     "open",
+     7
+    ],
+    [
+     "closed",
+     1
+    ]
+   ],
+   "address": "88 Monsignor Patrick J Lydon Way, Dorchester",
+   "first": "2026-09-28T21:20:49Z",
+   "last": "2026-10-09T17:28:00Z",
+   "status_notes": [
+    "Case Resolved. The violator(s),  at this location,  was/were ticketed.  Reported at 8:30  pm."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.2967,
+   "lon": -71.1143,
+   "reports": 8,
+   "statuses": [
+    [
+     "open",
+     8
+    ]
+   ],
+   "address": "45-47Wenham St, Jamaica Plain",
+   "first": "2026-09-29T14:49:09Z",
+   "last": "2026-10-16T13:08:49Z",
+   "status_notes": []
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3315,
+   "lon": -71.0364,
+   "reports": 8,
+   "statuses": [
+    [
+     "open",
+     7
+    ],
+    [
+     "closed",
+     1
+    ]
+   ],
+   "address": "620-622E Eighth St, South Boston",
+   "first": "2026-09-29T17:20:41Z",
+   "last": "2026-10-19T07:27:42Z",
+   "status_notes": [
+    "Resolved. Vehicle Ticketed."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3326,
+   "lon": -71.0473,
+   "reports": 8,
+   "statuses": [
+    [
+     "open",
+     5
+    ],
+    [
+     "closed",
+     3
+    ]
+   ],
+   "address": "36 Thomas Park, South Boston",
+   "first": "2026-09-30T02:46:42Z",
+   "last": "2026-10-23T07:10:40Z",
+   "status_notes": [
+    "Resolved. Vehicle Ticketed.",
+    "Case Resolved. The vehicles in violation has been issued a ticket.",
+    "Resolved. Valid Resident Parking Permit."
+   ]
+  },
+  {
+   "service_name": "Trash Placed Out Early",
+   "lat": 42.3521,
+   "lon": -71.0832,
+   "reports": 8,
+   "statuses": [
+    [
+     "closed",
+     8
+    ]
+   ],
+   "address": "Fairfield St & Public Alley No. 416",
+   "first": "2026-09-30T17:17:41Z",
+   "last": "2026-10-24T13:32:55Z",
+   "status_notes": [
+    "Noted. Access Issue - trash day.",
+    "Noted. Access Issue.",
+    "Noted. No violation found by Code Enforcement - sent to dpw for removal.",
+    "Resolved. Trash Collected."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3613,
+   "lon": -71.0652,
+   "reports": 8,
+   "statuses": [
+    [
+     "closed",
+     5
+    ],
+    [
+     "open",
+     3
+    ]
+   ],
+   "address": "Intersection of Joy St and Cambridge St, Boston",
+   "first": "2026-09-30T21:17:48Z",
+   "last": "2026-10-22T21:22:26Z",
+   "status_notes": [
+    "Resolved. Officer Dispatched.",
+    "Resolved. No Violation Found.",
+    "Resolved. No Vehicle Found.",
+    "Resolved. No Vehicle Found. Officer Dispatched."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3013,
+   "lon": -71.1102,
+   "reports": 8,
+   "statuses": [
+    [
+     "closed",
+     5
+    ],
+    [
+     "open",
+     3
+    ]
+   ],
+   "address": "445 Arborway, Jamaica Plain",
+   "first": "2026-10-01T12:18:04Z",
+   "last": "2026-10-23T12:33:52Z",
+   "status_notes": [
+    "Resolved. Officer Dispatched.",
+    "Noted. Case Noted."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3013,
+   "lon": -71.1105,
+   "reports": 8,
+   "statuses": [
+    [
+     "closed",
+     5
+    ],
+    [
+     "open",
+     3
+    ]
+   ],
+   "address": "Intersection of Morton St and Arborway, Jamaica Plain",
+   "first": "2026-10-01T13:36:24Z",
+   "last": "2026-10-22T22:01:20Z",
+   "status_notes": [
+    "Case Resolved. This location is \"All Clear\" of violators.  Reported at 6:52  pm.",
+    "Resolved. No Vehicle Found.",
+    "Resolved. Officer Dispatched."
+   ]
+  },
+  {
+   "service_name": "Traffic Signal Request",
+   "lat": 42.2759,
+   "lon": -71.1257,
+   "reports": 8,
+   "statuses": [
+    [
+     "closed",
+     6
+    ],
+    [
+     "open",
+     2
+    ]
+   ],
+   "address": "Metropolitan Ave & Poplar St",
+   "first": "2026-10-06T12:21:37Z",
+   "last": "2026-10-07T14:07:32Z",
+   "status_notes": [
+    "Resolved. Completed by Task - Reported by shop all out, upon arrival stop and go checked indications coming up normal, clear alarms ok.\n\n  Int.stop and go.",
+    "Transitioned. Reallocated to Non-City of Boston Stakeholder - We identified a issue in the disconnect. Our contractor has been notified and is going to replace the circuit breaker in the disconnect. He will be on scene this afternoon.",
+    "Resolved. Completed by Task.",
+    "Resolved. Completed by Task - No power in the CB, is Eversource problem, notified tech base, and 311."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3494,
+   "lon": -71.061,
+   "reports": 8,
+   "statuses": [
+    [
+     "open",
+     6
+    ],
+    [
+     "closed",
+     2
+    ]
+   ],
+   "address": "57 Harvard St, Boston",
+   "first": "2026-10-07T13:07:10Z",
+   "last": "2026-10-24T05:37:00Z",
+   "status_notes": [
+    "Case Resolved. This vehicle has a Temp Rental Chinatown Resident Parking Permit.",
+    "Resolved. Officer Dispatched."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3332,
+   "lon": -71.033,
+   "reports": 8,
+   "statuses": [
+    [
+     "closed",
+     5
+    ],
+    [
+     "open",
+     3
+    ]
+   ],
+   "address": "680 E Sixth St, South Boston",
+   "first": "2026-10-08T11:47:31Z",
+   "last": "2026-10-22T01:29:37Z",
+   "status_notes": [
+    "Resolved. Vehicle Ticketed.",
+    "Case Noted. Thanks for submitting.",
+    "Resolved. Vehicle Moved."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3261,
+   "lon": -71.0809,
+   "reports": 8,
+   "statuses": [
+    [
+     "closed",
+     8
+    ]
+   ],
+   "address": "35 Winthrop St, Boston, MA 02119",
+   "first": "2026-10-20T19:40:30Z",
+   "last": "2026-10-20T19:40:44Z",
+   "status_notes": [
+    "Resolved. Officer Dispatched."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3613,
+   "lon": -71.0653,
+   "reports": 7,
+   "statuses": [
+    [
+     "closed",
+     5
+    ],
+    [
+     "open",
+     2
+    ]
+   ],
+   "address": "Intersection of Charles River Plz and Cambridge St, Boston",
+   "first": "2026-09-24T20:06:45Z",
+   "last": "2026-10-22T20:13:23Z",
+   "status_notes": [
+    "Resolved. No Vehicle Found.",
+    "Resolved. Officer Dispatched.",
+    "Resolved. No Violation Found.",
+    "Resolved. <div>The vehicle in violation has been moved</div>."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3385,
+   "lon": -71.1076,
+   "reports": 7,
+   "statuses": [
+    [
+     "open",
+     7
+    ]
+   ],
+   "address": "425-425 Brookline Ave, Boston",
+   "first": "2026-09-25T13:22:31Z",
+   "last": "2026-10-13T14:05:18Z",
+   "status_notes": []
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3213,
+   "lon": -71.104,
+   "reports": 7,
+   "statuses": [
+    [
+     "open",
+     6
+    ],
+    [
+     "closed",
+     1
+    ]
+   ],
+   "address": "Intersection of Armstrong St and Ashley St, Jamaica Plain",
+   "first": "2026-09-25T16:34:00Z",
+   "last": "2026-10-24T17:41:30Z",
+   "status_notes": [
+    "Resolved. No Violation Found."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3372,
+   "lon": -71.0339,
+   "reports": 7,
+   "statuses": [
+    [
+     "closed",
+     4
+    ],
+    [
+     "open",
+     3
+    ]
+   ],
+   "address": "725 E Second St, South Boston",
+   "first": "2026-09-25T23:46:55Z",
+   "last": "2026-10-23T23:45:31Z",
+   "status_notes": [
+    "Case Resolved. Cleared out, thanks for submitting.",
+    "Resolved. Vehicle Ticketed.",
+    "Case Resolved. The vehicles in violation has been moved.",
+    "Noted."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.347,
+   "lon": -71.0717,
+   "reports": 7,
+   "statuses": [
+    [
+     "open",
+     5
+    ],
+    [
+     "closed",
+     2
+    ]
+   ],
+   "address": "59 Chandler St, Boston",
+   "first": "2026-09-28T12:04:28Z",
+   "last": "2026-10-13T20:51:10Z",
+   "status_notes": [
+    "Case Resolved. Thank you for reporting to 311. The vehicles are no longer at that location. Should you need further assistance, we encourage you to call Boston 311 directly.",
+    "Duplicate of Existing Case."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.294,
+   "lon": -71.1361,
+   "reports": 7,
+   "statuses": [
+    [
+     "open",
+     4
+    ],
+    [
+     "closed",
+     3
+    ]
+   ],
+   "address": "1408Centre St, Roslindale",
+   "first": "2026-09-28T18:30:00Z",
+   "last": "2026-10-23T14:04:08Z",
+   "status_notes": [
+    "Resolved. No Violation Found.",
+    "Resolved. Vehicle Ticketed.",
+    "Case Resolved. The vehicles in violation has been moved."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.2818,
+   "lon": -71.0685,
+   "reports": 7,
+   "statuses": [
+    [
+     "open",
+     4
+    ],
+    [
+     "closed",
+     3
+    ]
+   ],
+   "address": "5 Galty Ave, Dorchester",
+   "first": "2026-09-28T19:51:46Z",
+   "last": "2026-10-08T19:21:00Z",
+   "status_notes": [
+    "Case Resolved. This location is \"All Clear\" of violators.  Reported at 8:35  pm.",
+    "Case Resolved. This location is \"All Clear\" of violators.  Reported at 6:00 pm.",
+    "Case Resolved. The violator(s),  at this location,  was/were ticketed.  Reported at 6:08  pm."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3012,
+   "lon": -71.1095,
+   "reports": 7,
+   "statuses": [
+    [
+     "open",
+     7
+    ]
+   ],
+   "address": "455 Arborway, Jamaica Plain",
+   "first": "2026-09-30T13:48:29Z",
+   "last": "2026-10-13T16:43:17Z",
+   "status_notes": []
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3437,
+   "lon": -71.0659,
+   "reports": 7,
+   "statuses": [
+    [
+     "open",
+     7
+    ]
+   ],
+   "address": "1138-1138 Washington St, Roxbury",
+   "first": "2026-09-30T17:08:52Z",
+   "last": "2026-10-12T13:59:00Z",
+   "status_notes": []
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3329,
+   "lon": -71.0924,
+   "reports": 7,
+   "statuses": [
+    [
+     "open",
+     4
+    ],
+    [
+     "closed",
+     3
+    ]
+   ],
+   "address": "Intersection of Prentiss St and Tremont St, Mission Hill",
+   "first": "2026-10-01T18:15:55Z",
+   "last": "2026-10-21T16:14:58Z",
+   "status_notes": [
+    "Resolved. Officer Dispatched.",
+    "Resolved. No Vehicle Found.",
+    "Resolved. Vehicle Ticketed."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3316,
+   "lon": -71.0364,
+   "reports": 7,
+   "statuses": [
+    [
+     "closed",
+     4
+    ],
+    [
+     "open",
+     3
+    ]
+   ],
+   "address": "620-622E Eighth St, South Boston",
+   "first": "2026-10-01T19:54:47Z",
+   "last": "2026-10-24T14:19:41Z",
+   "status_notes": [
+    "Resolved. Officer Dispatched.",
+    "Resolved. No Vehicle Found.",
+    "Resolved. Vehicle Ticketed."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3467,
+   "lon": -71.0727,
+   "reports": 7,
+   "statuses": [
+    [
+     "open",
+     5
+    ],
+    [
+     "closed",
+     2
+    ]
+   ],
+   "address": "79 Chandler St, Boston",
+   "first": "2026-10-02T13:09:00Z",
+   "last": "2026-10-16T12:35:15Z",
+   "status_notes": [
+    "Case Resolved. Thank you for reporting to 311. Multiple vehicles have been issued a citation in this area. Should you need further assistance, we encourage you to call Boston 311 directly.",
+    "Resolved. Vehicle Ticketed."
+   ]
+  },
+  {
+   "service_name": "Traffic Signal Request",
+   "lat": 42.3132,
+   "lon": -71.1141,
+   "reports": 7,
+   "statuses": [
+    [
+     "open",
+     4
+    ],
+    [
+     "closed",
+     3
+    ]
+   ],
+   "address": "Centre St & Green St",
+   "first": "2026-10-06T12:03:29Z",
+   "last": "2026-10-09T20:08:32Z",
+   "status_notes": [
+    "Noted. This case was not processed correctly.&nbsp; A new case was created BCS-00050106.",
+    "Resolved. Completed by Task - Adjusted Time for Green Street."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3437,
+   "lon": -71.066,
+   "reports": 7,
+   "statuses": [
+    [
+     "closed",
+     6
+    ],
+    [
+     "open",
+     1
+    ]
+   ],
+   "address": "1138-1138 Washington St, Roxbury",
+   "first": "2026-10-13T15:34:58Z",
+   "last": "2026-10-23T10:55:49Z",
+   "status_notes": [
+    "Resolved. Officer Dispatched.",
+    "Resolved. Vehicle removed by owner.",
+    "Resolved. Vehicle Ticketed.",
+    "Resolved. Vehicle Moved."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3613,
+   "lon": -71.0659,
+   "reports": 6,
+   "statuses": [
+    [
+     "open",
+     5
+    ],
+    [
+     "closed",
+     1
+    ]
+   ],
+   "address": "173-177 Cambridge St, Boston",
+   "first": "2026-09-24T21:27:54Z",
+   "last": "2026-10-15T01:53:11Z",
+   "status_notes": [
+    "Resolved. <div>The vehicle in violation has been moved</div>."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3397,
+   "lon": -71.0798,
+   "reports": 6,
+   "statuses": [
+    [
+     "open",
+     5
+    ],
+    [
+     "closed",
+     1
+    ]
+   ],
+   "address": "765 Tremont St, Roxbury",
+   "first": "2026-09-24T21:32:39Z",
+   "last": "2026-10-20T16:28:48Z",
+   "status_notes": [
+    "Resolved. <div>Cleared out,&nbsp;thanks for submitting.</div>."
+   ]
+  },
+  {
+   "service_name": "Overflowing Trash",
+   "lat": 42.3355,
+   "lon": -71.0495,
+   "reports": 6,
+   "statuses": [
+    [
+     "closed",
+     6
+    ]
+   ],
+   "address": "88 F St, Boston, MA 02127",
+   "first": "2026-09-25T03:16:38Z",
+   "last": "2026-10-02T01:13:57Z",
+   "status_notes": [
+    "Resolved. Citation issued. - violation has been issued.",
+    "Resolved. Citation issued."
+   ]
+  },
+  {
+   "service_name": "Overflowing Trash",
+   "lat": 42.3649,
+   "lon": -71.0546,
+   "reports": 6,
+   "statuses": [
+    [
+     "closed",
+     5
+    ],
+    [
+     "open",
+     1
+    ]
+   ],
+   "address": "45 Prince St, Boston, MA 02113",
+   "first": "2026-09-25T20:00:27Z",
+   "last": "2026-10-18T21:03:00Z",
+   "status_notes": [
+    "Resolved. Trash can has been emptied.",
+    "Resolved. Area has been treated.",
+    "Resolved. Request Completed - barrels emptied."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.35,
+   "lon": -71.0695,
+   "reports": 6,
+   "statuses": [
+    [
+     "open",
+     3
+    ],
+    [
+     "closed",
+     3
+    ]
+   ],
+   "address": "250 Stuart St, Boston",
+   "first": "2026-09-26T14:52:48Z",
+   "last": "2026-10-17T04:57:13Z",
+   "status_notes": [
+    "Noted. <div>dispatched for enforcement.</div>.",
+    "Noted. <div>Dispatched</div>.",
+    "Resolved. Vehicle Moved."
+   ]
+  },
+  {
+   "service_name": "Unsatisfactory Living Conditions",
+   "lat": 42.3498,
+   "lon": -71.1334,
+   "reports": 6,
+   "statuses": [
+    [
+     "closed",
+     4
+    ],
+    [
+     "open",
+     2
+    ]
+   ],
+   "address": "1277 Commonwealth Ave, Apt 403, Allston",
+   "first": "2026-09-27T16:47:00Z",
+   "last": "2026-10-22T20:22:00Z",
+   "status_notes": [
+    "Case Noted. on-call.",
+    "Case Noted. Scheduled for 10/14.",
+    "Case Noted.",
+    "Case Noted. Scheduled for 10/16/26."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3429,
+   "lon": -71.069,
+   "reports": 6,
+   "statuses": [
+    [
+     "open",
+     5
+    ],
+    [
+     "closed",
+     1
+    ]
+   ],
+   "address": "280 Shawmut Ave, B, Roxbury",
+   "first": "2026-09-27T22:22:00Z",
+   "last": "2026-10-16T02:03:17Z",
+   "status_notes": [
+    "Resolved. Vehicle Moved."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.344,
+   "lon": -71.066,
+   "reports": 6,
+   "statuses": [
+    [
+     "open",
+     6
+    ]
+   ],
+   "address": "Intersection of E Berkeley St and Washington St, Roxbury",
+   "first": "2026-09-28T14:05:45Z",
+   "last": "2026-10-06T13:29:50Z",
+   "status_notes": []
+  },
+  {
+   "service_name": "Pothole",
+   "lat": 42.3367,
+   "lon": -71.0759,
+   "reports": 6,
+   "statuses": [
+    [
+     "closed",
+     5
+    ],
+    [
+     "open",
+     1
+    ]
+   ],
+   "address": "10 E Springfield St, Boston, MA 02118",
+   "first": "2026-09-28T18:47:34Z",
+   "last": "2026-10-05T22:51:06Z",
+   "status_notes": [
+    "Resolved. Roadway has been repaired."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3323,
+   "lon": -71.0293,
+   "reports": 6,
+   "statuses": [
+    [
+     "closed",
+     4
+    ],
+    [
+     "open",
+     2
+    ]
+   ],
+   "address": "169 O St, South Boston",
+   "first": "2026-09-29T02:39:31Z",
+   "last": "2026-10-14T23:20:33Z",
+   "status_notes": [
+    "Case Resolved. The vehicle in violation has been issued a ticket.",
+    "Case Resolved. 5RRH11 has a southie RPP.",
+    "Case Resolved. The vehicles in violation has been issued a ticket.",
+    "Resolved. Vehicle Ticketed."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3067,
+   "lon": -71.0812,
+   "reports": 6,
+   "statuses": [
+    [
+     "open",
+     5
+    ],
+    [
+     "closed",
+     1
+    ]
+   ],
+   "address": "20 Bishop Joe L Smith Way, Dorchester",
+   "first": "2026-09-29T10:59:10Z",
+   "last": "2026-10-21T10:55:34Z",
+   "status_notes": [
+    "Resolved. Vehicle Moved."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3412,
+   "lon": -71.051,
+   "reports": 6,
+   "statuses": [
+    [
+     "closed",
+     4
+    ],
+    [
+     "open",
+     2
+    ]
+   ],
+   "address": "205 W Second St, South Boston",
+   "first": "2026-09-29T22:33:21Z",
+   "last": "2026-10-23T22:36:30Z",
+   "status_notes": [
+    "Case Resolved. ticketed, thanks for submitting.",
+    "Case Resolved. Ticketed, thanks for submitting.",
+    "Resolved. Vehicle Moved.",
+    "Resolved. Vehicle Ticketed."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3428,
+   "lon": -71.0641,
+   "reports": 6,
+   "statuses": [
+    [
+     "open",
+     5
+    ],
+    [
+     "closed",
+     1
+    ]
+   ],
+   "address": "60 Paul Sullivan Way, Roxbury",
+   "first": "2026-09-30T00:10:00Z",
+   "last": "2026-10-18T21:38:34Z",
+   "status_notes": [
+    "Resolved. Officer Dispatched."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3356,
+   "lon": -71.0439,
+   "reports": 6,
+   "statuses": [
+    [
+     "open",
+     3
+    ],
+    [
+     "closed",
+     3
+    ]
+   ],
+   "address": "510 E Broadway, South Boston",
+   "first": "2026-09-30T00:49:47Z",
+   "last": "2026-10-18T21:41:06Z",
+   "status_notes": [
+    "Resolved. No Vehicle Found.",
+    "Resolved. Vehicle Ticketed."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3337,
+   "lon": -71.0464,
+   "reports": 6,
+   "statuses": [
+    [
+     "open",
+     3
+    ],
+    [
+     "closed",
+     3
+    ]
+   ],
+   "address": "24 Thomas Park, South Boston",
+   "first": "2026-09-30T02:48:02Z",
+   "last": "2026-10-22T07:54:02Z",
+   "status_notes": [
+    "Resolved. Vehicle Ticketed.",
+    "Case Resolved. The vehicles in violation has been issued a ticket.",
+    "Resolved. Valid Resident Parking Permit."
+   ]
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3793,
+   "lon": -71.0652,
+   "reports": 6,
+   "statuses": [
+    [
+     "open",
+     3
+    ],
+    [
+     "closed",
+     3
+    ]
+   ],
+   "address": "20 Russell St, Charlestown",
+   "first": "2026-09-30T17:24:00Z",
+   "last": "2026-10-21T20:52:10Z",
+   "status_notes": [
+    "Resolved. <div>Duplicate case</div>.",
+    "Noted. <div>2 hour parking is over for the day, resubmit tomorrow.</div>.",
+    "Resolved. <div>Cleared out,&nbsp;thanks for submitting.</div>."
+   ]
+  },
+  {
+   "service_name": "Traffic Signal Request",
+   "lat": 42.3382,
+   "lon": -71.1538,
+   "reports": 6,
+   "statuses": [
+    [
+     "open",
+     6
+    ]
+   ],
+   "address": "Chestnut Hill Ave & Commonwealth Ave",
+   "first": "2026-09-30T20:38:31Z",
+   "last": "2026-10-08T14:28:06Z",
+   "status_notes": []
+  },
+  {
+   "service_name": "Illegal Parking",
+   "lat": 42.3012,
+   "lon": -71.1099,
+   "reports": 6,
+   "statuses": [
+    [
+     "open",
+     5
+    ],
+    [
+     "closed",
+     1
+    ]
+   ],
+   "address": "445 Arborway, Jamaica Plain",
+   "first": "2026-10-01T12:18:01Z",
+   "last": "2026-10-13T16:43:10Z",
+   "status_notes": [
+    "Case Resolved. This location is \"All Clear\" of violators.  Reported at 6:52  pm."
+   ]
+  }
+ ]
+}

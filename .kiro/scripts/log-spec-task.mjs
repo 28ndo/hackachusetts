@@ -1,6 +1,7 @@
-// PostTaskExec hook: append a row to the spec task trail at the end of KIRO_LOG.md.
+// PostTaskExec hook: append a row to this person's spec task trail in docs/kiro-log/.
+// One file per git user, so three people pushing never conflict; KIRO_LOG.md is compiled from these at the end.
 // Kiro sends {spec_name, task_name, task_success, cwd, ...} as JSON on stdin.
-import { appendFileSync, readFileSync } from "node:fs";
+import { appendFileSync, existsSync, mkdirSync, readFileSync } from "node:fs";
 import { execSync } from "node:child_process";
 import { join } from "node:path";
 
@@ -22,8 +23,15 @@ try {
   const dirty = git("status --porcelain") ? " + uncommitted" : "";
   const result = p.task_success === false ? "failed" : "done";
 
+  const dir = join(cwd, "docs", "kiro-log");
+  const slug = who.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "unknown";
+  const file = join(dir, `trail-${slug}.md`);
+  mkdirSync(dir, { recursive: true });
+  if (!existsSync(file)) {
+    appendFileSync(file, `# Spec task trail: ${who}\n\n| Time | Who | Spec | Task | Result | Commit |\n|---|---|---|---|---|---|\n`);
+  }
   appendFileSync(
-    join(cwd, "KIRO_LOG.md"),
+    file,
     `| ${time} | ${cell(who)} | ${cell(p.spec_name)} | ${cell(p.task_name)} | ${result} | ${commit}${dirty} |\n`
   );
 } catch {
