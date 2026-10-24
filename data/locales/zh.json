@@ -1,0 +1,18 @@
+{
+  "_meta": {
+    "locale": "zh",
+    "label": "中文 (简体)",
+    "note": "Machine-drafted, pending city language review. Placeholders: {date}, {owner}, {note}, {contact}."
+  },
+  "outcome": {
+    "FIXED": "已于 {date} 修好。谢谢您的报告。",
+    "MADE_SAFE": "我们已先做了安全处理。完整维修安排在 {date}。",
+    "SCHEDULED": "已安排在 {date} 处理。工作完成后我们会通知您。",
+    "DEFERRED_CAPITAL": "这需要一个较大的工程。我们的目标时间是 {date}。",
+    "NOT_OURS": "我们已把这个问题转给 {owner}，这个地点由他们负责。",
+    "NOT_FOUND": "我们的工作人员没有找到这个问题。您能发一张照片或提供更多细节吗？",
+    "PRIVATE_PROPERTY": "这里是私人产业，市政府不能进行维修。请联系 {contact}。",
+    "DUPLICATE": "已经有人报告过这个问题。我们已把您的报告和他们的合并，并在跟进处理。",
+    "NEEDS_INFO": "工作人员在开始前需要更多信息：{note}"
+  }
+}

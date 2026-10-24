@@ -1,33 +1,40 @@
-// The shared contract. Both teammates build against this file.
-// OWNER: Niklas. Never edit without saying so explicitly in your response (show the diff).
-//
-// Types mirror research/build-plan.md §3 (data model), §6 (outcome codes),
-// §4 (entity entry format), and the interfaces in PLAYBOOK.md §2.
+// The shared contract for the dispatch ledger (v2 rebuild).
+// Mirrors research/build-plan.md §3 (data model), §4 (entity catalog),
+// §5 (routing + priority), §6 (outcome codes) and §7 (scorecard).
+// Every module builds against this file. Change it only on purpose.
 
 // ---------------------------------------------------------------------------
 // §3 Data model
 // ---------------------------------------------------------------------------
 
-/** Where a report entered the system. */
 export type ReportSource = "open311" | "agent" | "phone" | "employee";
 
-/** raw intake (one Open311 request) */
+/** Raw intake: one Open311 request. */
 export interface Report {
   id: string;
   source: ReportSource;
   serviceName: string;
+  /** familyOf(serviceName), or "not routed" */
+  serviceFamily: string;
+  /** English text (the auto-translation when the intake tagged one) */
   description?: string;
+  /** The reporter's own words when they wrote in another language */
+  originalText?: string;
   lat: number;
   lon: number;
   address: string;
-  mediaUrl?: string;
+  mediaUrls: string[];
   requestedAt: string;
+  /** The city's own closure text today (the "before"). Raw HTML stripped. */
+  cityStatus?: "open" | "closed";
+  cityStatusNotes?: string;
   problemId?: string;
-  /**
-   * From the intake's "-- original (xx-XX) --" tag, or a future agent/app
-   * field; default "en".
-   */
-  preferredLanguage?: string;
+  /** Locale parsed from the "-- original (xx-XX) --" tag; "en" by default. */
+  preferredLanguage: string;
+  /** Nearest MassDOT Road Inventory segment, set offline by the seed. */
+  roadSegmentId?: string;
+  jurisdictionCode?: string;
+  roadName?: string;
 }
 
 export type ProblemStatus =
@@ -39,27 +46,23 @@ export type ProblemStatus =
   | "deferred"
   | "not_actionable";
 
-/** one real-world issue (a cluster of reports) */
+/** One real-world issue: a cluster of reports. */
 export interface Problem {
   id: string;
   serviceFamily: string;
   lat: number;
   lon: number;
+  address: string;
   roadSegmentId?: string;
-  neighborhood: string;
-  blockGroupId?: string;
-  /** MassGIS EJ2020 join at ingest; lens only, never in priority (§5b). */
-  ejCriteria?: string;
-  /** Share of households with limited English; lens only. */
-  limitedEnglishPct?: number;
+  roadName?: string;
+  /** MassDOT Road Inventory: 0 unaccepted, 1 MassDOT, 2 City, 3 DCR, 5 Massport, B state college, H private */
+  jurisdictionCode?: string;
   reportIds: string[];
   reporterCount: number;
   firstReportedAt: string;
   lastReportedAt: string;
   status: ProblemStatus;
   priority: Priority;
-  /** MassDOT Road Inventory jurisdiction code, precomputed by the ledger. */
-  jurisdictionCode?: string;
 }
 
 export type AssignmentState =
@@ -70,9 +73,9 @@ export type AssignmentState =
   | "rerouted"
   | "stale";
 
-export type RoutingConfidence = "rule" | "jurisdiction" | "learned";
+export type RoutingConfidence = "rule" | "jurisdiction" | "learned" | "triage";
 
-/** a work packet sent to one entity (a problem can have several over time) */
+/** A work packet sent to one entity. A problem can have several over time (hops). */
 export interface Assignment {
   id: string;
   problemId: string;
@@ -86,32 +89,35 @@ export interface Assignment {
   state: AssignmentState;
 }
 
-/** the entity's structured answer (replaces "Noted") */
+/** The entity's structured answer. Replaces free-text "Noted". */
 export interface Outcome {
   id: string;
   assignmentId: string;
   code: OutcomeCode;
   note?: string;
   photoUrl?: string;
+  /** ISO date (YYYY-MM-DD) or a label like "spring 2027" */
   scheduledFor?: string;
   newOwnerId?: string;
   by: string;
   at: string;
 }
 
-/** what the system learned */
+/** What the system learned from a NOT_OURS. */
 export interface RoutingOverride {
+  id: string;
   serviceFamily: string;
-  /** keyed by road segment, or an area key when no segment is known */
   roadSegmentId?: string;
+  /** ~50 m grid key when no segment is known: `${lat.toFixed(4)}:${lon.toFixed(4)}` style */
   areaKey?: string;
   entityId: string;
   learnedFrom: string;
+  learnedFromEntityId: string;
   createdAt: string;
 }
 
 // ---------------------------------------------------------------------------
-// §4 Entity catalog entry format
+// §4 Entity catalog (data/entities.yaml)
 // ---------------------------------------------------------------------------
 
 export type EntityKind =
@@ -122,7 +128,6 @@ export type EntityKind =
   | "authority"
   | "private";
 
-/** A "can't" rule from the department map; each one is a pre-dispatch check. */
 export interface EntityCant {
   rule: string;
   check: string;
@@ -139,36 +144,33 @@ export interface EntityWorkload {
   open?: number;
 }
 
-/** Today's referral-queue handoff stats, for the "before" story. */
 export interface EntityHandoffToday {
   ontimePct?: number;
   stillOpen?: number;
   referredOnPct?: number;
 }
 
-/** from the catalog (§4), loaded from data/entities.yaml */
 export interface Entity {
   id: string;
   name: string;
   kind: EntityKind;
   department?: string;
   queues: string[];
-  /** service families this entity owns */
   owns: string[];
   where?: { jurisdictionCodes?: string[] };
-  /** hazard 1–5 per service family this entity owns */
   hazard?: Record<string, number>;
-  /** required items, checked before dispatch */
   need?: string[];
-  /** optional items */
   help?: string[];
-  /** each one is a pre-dispatch check */
   cant?: EntityCant[];
   workload?: EntityWorkload;
   handoffToday?: EntityHandoffToday;
+  /** e.g. "48h", "4h" */
   respondWithin?: string;
   contact?: string;
 }
+
+/** The ops triage queue is a pseudo-entity with this id. */
+export const TRIAGE_ID = "triage";
 
 // ---------------------------------------------------------------------------
 // §6 Outcome codes
@@ -185,26 +187,51 @@ export type OutcomeCode =
   | "DUPLICATE"
   | "NEEDS_INFO";
 
+export const OUTCOME_CODES: OutcomeCode[] = [
+  "FIXED",
+  "MADE_SAFE",
+  "SCHEDULED",
+  "DEFERRED_CAPITAL",
+  "NOT_OURS",
+  "NOT_FOUND",
+  "PRIVATE_PROPERTY",
+  "DUPLICATE",
+  "NEEDS_INFO",
+];
+
+/** Extra input an outcome code needs from the entity. */
+export type OutcomeInput = "scheduledFor" | "newOwnerId" | "note" | "photoUrl";
+
 /** One row of the OUTCOMES protocol table (§6). */
 export interface OutcomeSpec {
+  /** Short button label, e.g. "Fixed" */
+  label: string;
+  /** What happens next, automatically (shown as a hint under the button). */
+  nextStep: string;
   nextProblemStatus: ProblemStatus;
   nextAssignmentState: AssignmentState;
-  /** extra inputs this code requires from the entity */
-  needs?: string[];
-  residentMessage(outcome: Outcome): string;
+  /** Required inputs. */
+  needs: OutcomeInput[];
+  /** Optional inputs. */
+  optional: OutcomeInput[];
 }
 
+/** Locales with a resident message per outcome code (data/locales/<code>.json). */
+export const LOCALES = ["en", "es", "ht", "zh"] as const;
+export type Locale = (typeof LOCALES)[number];
+
 // ---------------------------------------------------------------------------
-// Priority (§5) and routing (PLAYBOOK §2)
+// §5 Priority and routing
 // ---------------------------------------------------------------------------
 
-/** priority = hazard × people × overdue, with each factor shown on the card. */
+/** priority = hazard × people × overdue; each factor shown on the card. */
 export interface Priority {
   score: number;
   hazard: number;
   people: number;
   overdue: number;
   gap: number;
+  /** e.g. "7 people waiting · 9 days overdue · hazard 3" */
   why: string;
 }
 
@@ -212,52 +239,162 @@ export interface RoutingDecision {
   entityId: string;
   queue?: string;
   reason: string;
-  confidence: "learned" | "jurisdiction" | "rule" | "triage";
-  /** required items still missing from the packet (from entity.need) */
+  confidence: RoutingConfidence;
+  /** required packet items (from entity.need) not satisfied by the reports */
   missing: string[];
+  /** set when a pre-dispatch check suggests closing with this code (e.g. private way) */
+  suggestedOutcome?: OutcomeCode;
 }
 
-/** The result of applying an outcome: what moved and what the resident sees. */
+/** The result of applying an outcome. */
 export interface StateChange {
   problemId: string;
   assignmentId: string;
+  code: OutcomeCode;
   previousProblemStatus: ProblemStatus;
   nextProblemStatus: ProblemStatus;
   previousAssignmentState: AssignmentState;
   nextAssignmentState: AssignmentState;
+  /** Resident message in English (preview panel renders other locales itself). */
   residentMessage: string;
-  /** a new assignment created as a side effect, e.g. after NOT_OURS reroute */
-  newAssignmentId?: string;
-  /** a routing override learned as a side effect */
+  newAssignment?: Assignment;
   learnedOverride?: RoutingOverride;
 }
 
 // ---------------------------------------------------------------------------
-// Repo interface (PLAYBOOK §2). P2 implements it against Postgres;
-// Niklas uses fixtureRepo until it lands.
+// Read models for the UI (served by Repo so pages never write SQL)
 // ---------------------------------------------------------------------------
+
+export interface EntityCounts {
+  entityId: string;
+  open: number;
+  overdue: number;
+  /** open packets with a reporter whose preferredLanguage is not "en" */
+  nonEnglish: number;
+}
 
 export interface ScorecardRow {
   entityId: string;
-  acknowledgeHours?: number;
-  ontimePct?: number;
-  rerouteRate?: number;
-  reopenRate?: number;
-  notFoundShare?: number;
+  open: number;
+  overdue: number;
+  /** closed via an outcome (any code) */
+  answered: number;
+  fixed: number;
+  rerouted: number;
+  notFound: number;
+  deferred: number;
+  /** share of problems this entity ever handled that were re-reported after FIXED (0 when none) */
+  reopenRate: number;
+  /** median hours from sentAt to first outcome, undefined when no outcomes yet */
+  medianResponseHours?: number;
 }
 
+export interface TopCluster {
+  problemId: string;
+  serviceFamily: string;
+  address: string;
+  reporterCount: number;
+  entityId: string;
+  assignmentId: string;
+  /** what the city told reporters today, e.g. "Noted." (first non-empty cityStatusNotes) */
+  cityNoteBefore?: string;
+}
+
+export interface Overview {
+  totalReports: number;
+  routableReports: number;
+  totalProblems: number;
+  routedProblems: number;
+  triageProblems: number;
+  /** share of reports that collapsed into an existing problem */
+  duplicateShare: number;
+  /** share of the city's own closure notes that start with "Noted" */
+  cityNotedShare: number;
+  reportsByDay: { day: string; count: number }[];
+  byFamily: { family: string; reports: number; problems: number }[];
+  entities: EntityCounts[];
+  topClusters: TopCluster[];
+  learnedRules: RoutingOverride[];
+  outcomesRecorded: number;
+  replayRemaining: number;
+}
+
+/** Optional inbox filter: only packets with a reporter who wrote in another language. */
+export interface InboxFilter {
+  nonEnglish?: boolean;
+}
+
+export interface InboxItem {
+  rank: number;
+  assignment: Assignment;
+  problem: Problem;
+  /** lead report's description (English translation if the tag was present) */
+  description?: string;
+  photoCount: number;
+  firstPhotoUrl?: string;
+  reporterLanguages: string[];
+  /** true when respondBy is in the past and state is sent */
+  overdue: boolean;
+}
+
+export interface HistoryEvent {
+  at: string;
+  kind: "report" | "assignment" | "outcome";
+  /** short human line, e.g. "Sent to DCR (DCR parkway, Road Inventory)" */
+  text: string;
+  entityId?: string;
+  code?: OutcomeCode;
+  confidence?: RoutingConfidence;
+}
+
+export interface Packet {
+  assignment: Assignment;
+  problem: Problem;
+  reports: Report[];
+  /** every hop and answer for this problem, oldest first */
+  history: HistoryEvent[];
+  outcomes: Outcome[];
+  /** entity.need items not satisfied by the reports */
+  missing: string[];
+}
+
+export interface ReplayResult {
+  report: Report;
+  problem: Problem;
+  assignment: Assignment;
+  /** true when the report joined an existing problem */
+  joinedExisting: boolean;
+  decision: RoutingDecision;
+}
+
+// ---------------------------------------------------------------------------
+// Repo: the only thing pages and server actions talk to
+// ---------------------------------------------------------------------------
+
 export interface Repo {
-  listInbox(entityId: string): Promise<Assignment[]>;
+  // reads
+  overview(): Promise<Overview>;
+  listInbox(entityId: string, limit?: number, filter?: InboxFilter): Promise<InboxItem[]>;
+  getPacket(assignmentId: string): Promise<Packet | undefined>;
   getProblem(problemId: string): Promise<Problem | undefined>;
-  recordOutcome(outcome: Outcome): Promise<void>;
-  createAssignment(assignment: Assignment): Promise<void>;
-  updateAssignment(
-    assignmentId: string,
-    patch: Partial<Assignment>,
-  ): Promise<void>;
-  updateProblem(problemId: string, patch: Partial<Problem>): Promise<void>;
-  addOverride(override: RoutingOverride): Promise<void>;
+  getAssignment(assignmentId: string): Promise<Assignment | undefined>;
+  listReports(problemId: string): Promise<Report[]>;
   listOverrides(): Promise<RoutingOverride[]>;
   scorecard(): Promise<ScorecardRow[]>;
-  ingestReport(report: Report): Promise<Problem>;
+  /** open (not resolved / not_actionable) problems of this family within `meters` of the point */
+  listOpenProblemsNear(lat: number, lon: number, serviceFamily: string, meters: number): Promise<Problem[]>;
+
+  // writes
+  createAssignment(assignment: Assignment): Promise<void>;
+  updateAssignment(assignmentId: string, patch: Partial<Assignment>): Promise<void>;
+  updateProblem(problemId: string, patch: Partial<Problem>): Promise<void>;
+  recordOutcome(outcome: Outcome): Promise<void>;
+  addOverride(override: RoutingOverride): Promise<void>;
+  /** insert a report and attach it to problemId (updates problem reportIds/reporterCount/lastReportedAt) */
+  attachReport(report: Report, problem: Problem): Promise<void>;
+  createProblem(problem: Problem): Promise<void>;
+
+  // replay
+  /** pops the next held-back report, or undefined when the queue is empty */
+  nextReplayReport(): Promise<Report | undefined>;
 }

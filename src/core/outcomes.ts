@@ -1,64 +1,78 @@
+// The outcome protocol that replaces "Noted" (build-plan §6).
+
 import type { OutcomeCode, OutcomeSpec } from "@/core/types";
 
-/**
- * The protocol that replaces "Noted" (§6): every code maps to a next problem
- * status, a next assignment state, and a plain-language resident message.
- *
- * TODO (P3, routing-and-priority spec): fill in every code with the §6 next
- * steps and grade-8 resident message templates. Placeholders ({date}, {owner})
- * get filled from the Outcome. Keep English keys in sync with data/locales.
- */
 export const OUTCOMES: Record<OutcomeCode, OutcomeSpec> = {
   FIXED: {
+    label: "Fixed",
+    nextStep: "The problem is marked resolved and watched for 30 days in case it comes back.",
     nextProblemStatus: "resolved",
     nextAssignmentState: "closed",
-    residentMessage: () => "TODO: resident message for FIXED",
+    needs: [],
+    optional: ["photoUrl", "note"],
   },
   MADE_SAFE: {
+    label: "Made safe",
+    nextStep: "The problem stays open with a follow-up on the date you give.",
     nextProblemStatus: "in_progress",
     nextAssignmentState: "in_progress",
     needs: ["scheduledFor"],
-    residentMessage: () => "TODO: resident message for MADE_SAFE",
+    optional: [],
   },
   SCHEDULED: {
+    label: "Scheduled",
+    nextStep: "The work is marked in progress, with a nudge if the date passes.",
     nextProblemStatus: "in_progress",
     nextAssignmentState: "in_progress",
     needs: ["scheduledFor"],
-    residentMessage: () => "TODO: resident message for SCHEDULED",
+    optional: [],
   },
   DEFERRED_CAPITAL: {
+    label: "Needs a larger project",
+    nextStep: "The problem is deferred to the target date and counted apart from failures.",
     nextProblemStatus: "deferred",
     nextAssignmentState: "closed",
     needs: ["scheduledFor"],
-    residentMessage: () => "TODO: resident message for DEFERRED_CAPITAL",
+    optional: [],
   },
   NOT_OURS: {
+    label: "Not ours",
+    nextStep: "The packet goes to the owner you pick, and the system learns the rule for this spot.",
     nextProblemStatus: "routed",
     nextAssignmentState: "rerouted",
     needs: ["newOwnerId"],
-    residentMessage: () => "TODO: resident message for NOT_OURS",
+    optional: ["note"],
   },
   NOT_FOUND: {
+    label: "Couldn't find it",
+    nextStep: "Every reporter is asked for a photo or confirmation; it closes if nobody replies in 7 days.",
     nextProblemStatus: "acknowledged",
     nextAssignmentState: "acknowledged",
-    needs: ["note"],
-    residentMessage: () => "TODO: resident message for NOT_FOUND",
+    needs: [],
+    optional: ["note"],
   },
   PRIVATE_PROPERTY: {
+    label: "Private property",
+    nextStep: "The problem closes and reporters are told who to contact.",
     nextProblemStatus: "not_actionable",
     nextAssignmentState: "closed",
-    residentMessage: () => "TODO: resident message for PRIVATE_PROPERTY",
+    needs: [],
+    optional: ["note"],
   },
   DUPLICATE: {
+    label: "Duplicate",
+    nextStep: "This packet closes and the reports are tracked on the other problem.",
     nextProblemStatus: "not_actionable",
     nextAssignmentState: "closed",
-    needs: ["note"],
-    residentMessage: () => "TODO: resident message for DUPLICATE",
+    needs: [],
+    optional: ["note"],
   },
   NEEDS_INFO: {
+    label: "Needs info",
+    nextStep: "Your question goes to every reporter on this problem.",
     nextProblemStatus: "acknowledged",
     nextAssignmentState: "acknowledged",
     needs: ["note"],
-    residentMessage: () => "TODO: resident message for NEEDS_INFO",
+    optional: [],
   },
 };

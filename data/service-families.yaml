@@ -1,0 +1,47 @@
+# Maps Open311 service_name → a routable service family (build-plan §10).
+# Families: streetlight, pothole, sidewalk, tree, signal, sign, wire.
+# Any service_name not listed here maps to "not routed" (familyOf fallback)
+# but is still counted in the totals. Names are matched case-insensitively.
+#
+# Source: the distinct service_name values in the 2026-09-24..10-24 snapshot
+# (research/open311/boston-open311-2026-09-24_to_2026-10-24.json).
+
+families:
+  streetlight:
+    - Street Light Outage
+    - Street Light Electrical Safety
+    - Street Light Other
+    - Street Light Knockdown
+    - Park Light Outage
+
+  pothole:
+    - Pothole
+
+  sidewalk:
+    - Sidewalk Repair
+    - Illegally Blocked Sidewalk
+
+  tree:
+    - Fallen Tree or Branches
+    - Pruning Request
+    - Tree or Stump Removal
+    - Planting Request
+
+  signal:
+    - Traffic Signal Request
+    - Traffic Signal Knockdown
+    - Install New Signal
+
+  sign:
+    - Missing / Knocked Down Sign
+    - New / Modified Sign Request
+    - Damaged Sign
+    - Missing Sign
+    - Sign Knockdown
+    - Damaged/Faded Sign
+    - Unauthorized Signage
+
+  # No standalone "downed wire" service in this snapshot; streetlight electrical
+  # and knockdown reports carry the wire hazard. Kept for the entity catalog and
+  # the Eversource owner; populated from real names if the feed adds them.
+  wire: []

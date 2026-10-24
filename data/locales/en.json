@@ -1,0 +1,18 @@
+{
+  "_meta": {
+    "locale": "en",
+    "label": "English",
+    "note": "Machine-drafted, pending city language review. Placeholders: {date}, {owner}, {note}, {contact}."
+  },
+  "outcome": {
+    "FIXED": "Fixed on {date}. Thanks for reporting it.",
+    "MADE_SAFE": "We made it safe for now. The full repair is scheduled for {date}.",
+    "SCHEDULED": "This is scheduled for {date}. We will update you when the work is done.",
+    "DEFERRED_CAPITAL": "This needs a larger project. Our target is {date}.",
+    "NOT_OURS": "We sent this to {owner}, who owns this location.",
+    "NOT_FOUND": "Our crew could not find the problem. Can you send a photo or more detail?",
+    "PRIVATE_PROPERTY": "This is on private property, so the city cannot do the repair. Please contact {contact}.",
+    "DUPLICATE": "Someone already reported this. We merged your report with theirs and are tracking it.",
+    "NEEDS_INFO": "The crew needs more information before they can start: {note}"
+  }
+}

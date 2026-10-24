@@ -1,0 +1,18 @@
+{
+  "_meta": {
+    "locale": "es",
+    "label": "Español",
+    "note": "Machine-drafted, pending city language review. Placeholders: {date}, {owner}, {note}, {contact}."
+  },
+  "outcome": {
+    "FIXED": "Se arregló el {date}. Gracias por avisarnos.",
+    "MADE_SAFE": "Por ahora lo dejamos seguro. La reparación completa está programada para {date}.",
+    "SCHEDULED": "Esto está programado para {date}. Le avisaremos cuando terminemos el trabajo.",
+    "DEFERRED_CAPITAL": "Esto necesita un proyecto más grande. Nuestra meta es {date}.",
+    "NOT_OURS": "Enviamos esto a {owner}, que es responsable de este lugar.",
+    "NOT_FOUND": "Nuestro equipo no encontró el problema. ¿Puede enviar una foto o más detalles?",
+    "PRIVATE_PROPERTY": "Esto está en propiedad privada, así que la ciudad no puede hacer la reparación. Por favor, comuníquese con {contact}.",
+    "DUPLICATE": "Otra persona ya reportó esto. Unimos su reporte con el de ellos y le estamos dando seguimiento.",
+    "NEEDS_INFO": "El equipo necesita más información antes de empezar: {note}"
+  }
+}
