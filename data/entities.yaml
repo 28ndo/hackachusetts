@@ -1,0 +1,126 @@
+# Entity catalog — built from research/department-map.json per build-plan.md §4.
+# Workload and quality figures are 2024 legacy-system data.
+# Queue checklists are suggestions mined from closure comments.
+# hazard values per §5: downed wire=5, pothole=3, sidewalk=3, streetlight=2, tree=3, litter=1.
+
+- id: pwd-street-lighting
+  name: Public Works, Street Lighting
+  kind: city_dept                 # city_dept | state_agency | utility | other_town | authority | private
+  department: PWDx                # key in department-map.json
+  queues: ["PWDx_Street Light Outages", "PWDx_Street Light Outages - Long-Term Repair"]
+  owns: [streetlight]             # service families
+  hazard:
+    streetlight: 2
+  where: { jurisdictionCodes: ["2"] }    # MassDOT Road Inventory: 0 unaccepted, 1 MassDOT, 2 City, 3 DCR, 5 Massport, B state college, H private
+  need: ["Pole number (tag on the pole) or nearest address"]
+  help: ["Out, flickering, or on during the day", "Photo that shows the surroundings"]
+  cant:                           # each one is a pre-dispatch check
+    - { rule: "State roads and DCR parkways", check: "Jurisdictn in [1, 3]", sendTo: [massdot, dcr] }
+    - { rule: "Private ways and private property", check: "Jurisdictn in [0, H]", outcome: PRIVATE_PROPERTY }
+  workload: { perDay: 10.0, medianDays: 10.0, p90Days: 184.5, slaDays: 15, ontimePct: 48.7, open: 312 }
+  respondWithin: 48h
+
+- id: pwd-sidewalks
+  name: Public Works, Sidewalk Repair
+  kind: city_dept
+  department: PWDx
+  queues: ["PWDx_Sidewalk Repair"]
+  owns: [sidewalk]
+  hazard:
+    sidewalk: 3
+  where: { jurisdictionCodes: ["2"] }
+  need: ["Exact address or nearest landmark", "Which part of the sidewalk (in front of which number)"]
+  help: ["Photo that shows the surroundings", "Is it a tripping hazard"]
+  cant:
+    - { rule: "State roads and DCR parkways", check: "Jurisdictn in [1, 3]", sendTo: [massdot, dcr] }
+    - { rule: "Private ways and private property", check: "Jurisdictn in [0, H]", outcome: PRIVATE_PROPERTY }
+  workload: { perDay: 7.6, medianDays: 2.7, p90Days: 528.1, slaDays: 1.4, ontimePct: 14.7, open: 2072 }
+  respondWithin: 48h
+
+- id: pwd-highway-d07
+  name: "Public Works, District 07: South Dorchester"
+  kind: city_dept
+  department: PWDx
+  queues: ["PWDx_District 07: South Dorchester"]
+  owns: [pothole, street_cleaning]
+  hazard:
+    pothole: 3
+    street_cleaning: 1
+  where: { jurisdictionCodes: ["2"] }
+  need: ["Exact address or nearest landmark", "Which part of the street (lane, near which corner)", "What needs cleaning (litter, broken glass, spill)"]
+  help: ["Photo that shows the surroundings", "How big it is (for potholes)"]
+  cant:
+    - { rule: "State roads and DCR parkways", check: "Jurisdictn in [1, 3]", sendTo: [massdot, dcr] }
+    - { rule: "Private ways and private property", check: "Jurisdictn in [0, H]", outcome: PRIVATE_PROPERTY }
+  workload: { perDay: 10.8, medianDays: 0.07, p90Days: 1.0, slaDays: 1.2, ontimePct: 94.9, open: 0 }
+  respondWithin: 48h
+
+- id: parks-forestry
+  name: Parks and Recreation, Tree Maintenance
+  kind: city_dept
+  department: PARK
+  queues: ["PARK_Tree Maintenance Request"]
+  owns: [tree]
+  hazard:
+    tree: 3
+  where: { jurisdictionCodes: ["2"] }
+  need: ["Address the tree is in front of", "What is wrong (dead, broken branch, leaning)"]
+  help: ["Photo", "Is it on wires or blocking the road", "Is the tree on the sidewalk strip or in a private yard"]
+  cant:
+    - { rule: "Trees on private property", check: "Jurisdictn in [0, H]", outcome: PRIVATE_PROPERTY }
+    - { rule: "DCR parks", check: "DCR park layer", sendTo: [dcr] }
+    - { rule: "Trees tangled in power lines", check: "on wires", sendTo: [eversource] }
+  workload: { perDay: 20.0, medianDays: 21.9, p90Days: 161.0, slaDays: 365, ontimePct: 99.0, open: 2 }
+  respondWithin: 48h
+
+- id: dcr
+  name: Department of Conservation and Recreation
+  kind: state_agency
+  queues: ["INFO_Mass DCR"]       # today's handoff: a 311 referral queue
+  owns: [pothole, sidewalk, streetlight, tree, litter]
+  hazard:
+    pothole: 3
+    sidewalk: 3
+    streetlight: 2
+    tree: 3
+    litter: 1
+  where: { jurisdictionCodes: ["3"] }
+  need: [streetName, nearestCrossStreet, roadSegmentId, "What the problem is"]
+  help: [photo, reporterCount]
+  workload: { perDay: 6.8, medianDays: 6.8, p90Days: 54.8, slaDays: 3, ontimePct: 9.9, open: 1992 }
+  handoffToday: { ontimePct: 9.9, stillOpen: 1992 }
+  respondWithin: 48h
+  contact: "verify before the demo"
+
+- id: massdot
+  name: Massachusetts Department of Transportation
+  kind: state_agency
+  queues: ["INFO_Mass DOT"]       # today's handoff: a 311 referral queue
+  owns: [pothole, sidewalk, streetlight]
+  hazard:
+    pothole: 3
+    sidewalk: 3
+    streetlight: 2
+  where: { jurisdictionCodes: ["1"] }
+  need: [streetName, nearestCrossStreet, roadSegmentId, "What the problem is"]
+  help: [photo, reporterCount]
+  workload: { perDay: 2.0, medianDays: 5.8, p90Days: 160.2, slaDays: 1.6, ontimePct: 3.8, open: 697 }
+  handoffToday: { ontimePct: 3.8, stillOpen: 697 }
+  respondWithin: 48h
+  contact: "verify before the demo"
+
+- id: eversource
+  name: Eversource
+  kind: utility
+  queues: ["INFO_Eversource"]     # today's handoff: a 311 referral queue
+  owns: [streetlight, tree, wire]
+  hazard:
+    streetlight: 2
+    tree: 3
+    wire: 5
+  need: ["Exact location", "What the problem is (down wire, low-hanging wire, tree on wires, pole damage)"]
+  help: ["Photo", "Is it sparking or blocking the road (if yes, call 911)"]
+  workload: { perDay: 0.4, medianDays: 10.0, p90Days: 145.1, slaDays: 3, ontimePct: 16.9, open: 131 }
+  handoffToday: { ontimePct: 16.9, stillOpen: 131 }
+  respondWithin: 48h
+  contact: "verify before the demo"
